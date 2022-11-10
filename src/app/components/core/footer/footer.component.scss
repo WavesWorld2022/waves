@@ -1,0 +1,64 @@
+.footer {
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: url("../../../../assets/images/background_waves.jpeg") no-repeat center;
+  background-size: cover;
+  position: relative;
+   &::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     background: #006cb7;
+     opacity: .9;
+     z-index: 1;
+   }
+  .navbar {
+    width: 100%;
+    margin: 0;
+    padding: 0 50px;
+    z-index: 2;
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .picture {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          position: absolute;
+          font-size: 1.4rem;
+          font-weight: 600;
+          color: #006cb7;
+
+        }
+      }
+      .nav-link {
+        color: #fff;
+      }
+      img {
+        width: 30px;
+        height: auto;
+      }
+    }
+  }
+}
+.copyrights{
+  background: #065791;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  p{
+    margin: 0;
+    color: #fff;
+    text-align: center;
+  }
+}

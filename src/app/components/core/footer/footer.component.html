@@ -1,0 +1,26 @@
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="navbar">
+          <li *ngFor="let button of buttons" class="nav-item">
+            <div class="picture">
+              <img src="assets/images/shield.png" alt="shield">
+              <span>{{button.charAt(0)}}</span>
+            </div>
+            <a class="nav-link" [routerLink]="[button]">{{button}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="copyrights">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p>© 2022 Waves World. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</div>
