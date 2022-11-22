@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  buttons = ['explore', 'compare', 'manufactures', 'technologies', 'products']
+  nav = [
+    { title: 'explore', id: 'home' },
+    { title: 'compare', id: 'compare' },
+    { title: 'manufactures', id: 'manufactures' },
+    { title: 'technologies', id: 'technologies' },
+    { title: 'products', id: 'products' }
+  ];
 
   constructor() { }
 

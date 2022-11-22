@@ -16,7 +16,10 @@ import { CompareComponent } from './components/compare/compare.component';
 import { ManufacturesComponent } from './components/manufactures/manufactures.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 import { ProductsComponent } from './components/products/products.component';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
+import { ContactComponent } from './components/contact/contact.component';
+import { MagazineComponent } from './components/magazine/magazine.component';
+import { LoaderComponent } from './components/core/loader/loader.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { GoogleMapsModule } from '@angular/google-maps'
     CompareComponent,
     ManufacturesComponent,
     TechnologiesComponent,
-    ProductsComponent
+    ProductsComponent,
+    ContactComponent,
+    MagazineComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

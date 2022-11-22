@@ -41,6 +41,7 @@ a {
   scroll-behavior: smooth;
 }
 .page{
+  position: relative;
   padding-bottom: 60px;
   min-height: calc(100vh - 206px);
   &__header{
@@ -51,18 +52,18 @@ a {
     margin: 60px 0 30px;
     font-size: 24px;
     font-weight: 600;
-    color: #1c6eb3;
+    color: #008bb2;
   }
 }
 
 .hero{
-  background: #065791;
+  background: #008bb2;
   background-size: cover !important;
   position: relative;
   padding: 0;
   &:before{
     content: "";
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.1);
     position: absolute;
     top: 0;
     right: 0;
@@ -90,5 +91,63 @@ a {
     color: #fff;
     padding: 0;
     margin-bottom: 0;
+  }
+}
+.text-right{
+  text-align: right;
+}
+
+@media all and (max-width: 768px) {
+  .table-wrapper{
+    max-height: calc(100vh - 297px);
+    overflow: auto;
+  }
+  .hero{
+    display: none;
+  }
+  .location-nav{
+    li{
+      img{
+        width: 25px;
+      }
+      .picture{
+        span{
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .d-none-mobile{
+    display: none !important;
+  }
+  .page {
+    min-height: calc(100vh - 171px);
+  }
+  .page__navigation .col:first-child {
+    display: none;
+  }
+  .table-striped {
+    tr{
+      vertical-align: middle;
+      th{
+        font-size: 12px;
+        min-width: 65px;
+      }
+      td{
+        padding: 3px !important;
+        vertical-align: middle;
+        img{
+          position: absolute;
+          right: 0 !important;
+          top: 0 !important;
+        }
+        span {
+          font-size: 13px !important;
+          padding: 0 !important;
+          line-height: 15px !important;
+          display: inline-block;
+        }
+      }
+    }
   }
 }

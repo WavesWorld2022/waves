@@ -21,12 +21,12 @@
           padding: 24px;
 
           .nav-link:hover {
-            color: #2276b9;
-            border-bottom: 6px solid #ababab;
+            color: #008bb2;
+            // border-bottom: 6px solid #ababab;
           }
           .nav-link.active {
-            color: #2276b9;
-            border-bottom: 6px solid #1c6eb3;
+            color: #008bb2;
+            // border-bottom: 6px solid #008bb2;
           }
         }
       }
@@ -34,3 +34,20 @@
   }
 }
 
+
+
+@media all and (max-width: 768px){
+  .header{
+    height: 60px;
+    .container{
+      .navbar {
+        padding: 0;
+        &-brand {
+          img {
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

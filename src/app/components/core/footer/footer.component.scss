@@ -15,7 +15,7 @@
      right: 0;
      bottom: 0;
      left: 0;
-     background: #006cb7;
+     background: #008bb2;
      opacity: .9;
      z-index: 1;
    }
@@ -28,6 +28,17 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      cursor: pointer;
+      &.active{
+        .nav-link{
+          color: #ffd334;
+        }
+        .picture{
+          span{
+            color: #bf9601;
+          }
+        }
+      }
       .picture {
         position: relative;
         display: flex;
@@ -38,7 +49,7 @@
           position: absolute;
           font-size: 1.4rem;
           font-weight: 600;
-          color: #006cb7;
+          color: #008bb2;
 
         }
       }
@@ -53,12 +64,21 @@
   }
 }
 .copyrights{
-  background: #065791;
+  background: #097593;
   padding-top: 10px;
   padding-bottom: 10px;
   p{
     margin: 0;
     color: #fff;
     text-align: center;
+  }
+}
+@media all and (max-width: 768px) {
+  .footer{
+    height: 75px;
+    padding: 20px 0;
+    a.nav-link {
+      display: none;
+    }
   }
 }

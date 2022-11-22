@@ -1,4 +1,41 @@
-<div class="page">
+<app-loader *ngIf="isLoading"></app-loader>
+<div *ngIf="!isLoading" class="page">
+  <div class="control-panel">
+    <div class="container">
+      <div class="row text-right">
+        <div class="col">
+          <ul class="location-nav navbar">
+            <li *ngFor="let i of nav"
+                [class.active]="activeFilter === i.id"
+                (click)="activeFilter = i.id">
+              <div class="picture">
+                <img src="assets/images/{{i.icon}}.png" alt="shield">
+                <span>{{i.title}}</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col d-none-mobile">
+          <div class="row">
+            <div class="control-panel__inner">
+              <div class="search">
+                <img src="../../../assets/icons/search.svg" alt="">
+                <input type="text" placeholder="Search...">
+              </div>
+              <div class="zoom">
+                <button (click)="zoomIn()" class="zoom__btn zoom__btn_in">
+                  <img src="../../../assets/icons/plus.svg" alt="">
+                </button>
+                <button (click)="zoomOut()" class="zoom__btn zoom__btn_out">
+                  <img src="../../../assets/icons/minus.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <google-map
     [height]="height"
     width="100%"
@@ -7,16 +44,42 @@
     [options]="options"
   >
     <map-marker
-      #markerElem
+      #somemarker="mapMarker"
       *ngFor="let marker of markers"
       [position]="marker.position"
       [label]="marker.label"
       [title]="marker.title"
       [options]="marker.options"
-      (mapClick)="openInfo(markerElem, marker.info)"
+      (mapClick)="openInfo(somemarker, marker)"
     ></map-marker>
-    <map-info-window>{{ infoContent }}</map-info-window>
+   <!-- <map-info-window>
+     <div>
+        <p>Booking</p>
+        <p>Need a ticket to surf?</p>
+        <p>Tap here to book the wave closest to you: <strong>Surf Poel!</strong></p>
+        <p>Purchase a ticket and surf.</p>
+      </div>
+    </map-info-window>-->
+
+    <!--
+      CHANGE TICKETS
+      Need to change your ticket ?
+      Tap here to change your ticket to the Surf Poel!
+      CHANGE PURCHASED TICKETS
+    -->
+
+    <!--
+      DID YOU KNOW
+      <Title news article>
+      <Article excerpt,  4 lines>
+      FIND OUT MORE
+    -->
+
+    <!--
+      GETTING THERE
+      Heading to Surf Poel today?
+      Tap here to get directions
+      GET DIRECTIONS
+    -->
   </google-map>
-  <!--<button (click)="zoomIn()">Zoom in</button>
-  <button (click)="zoomOut()">Zoom out</button>-->
 </div>
