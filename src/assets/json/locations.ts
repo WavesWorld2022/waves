@@ -20,8 +20,6 @@ export const locations = [
     "wave_specifications": "1",
     "url": "https://www.wewantwaves.nl/",
     "reflink": "https://www.watersportcenter.nl/over-ons/surfpool/book.php?ref=wavesguide23ABC1232019",
-    "nearby_natural_wave_spots": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -97,14 +95,12 @@ export const locations = [
     "session_photo_price": "3",
     "wave_specifications": "4",
     "reflink": "https://adventureparcsnowdonia.com/surf-snowdonia/referral.php?ref=123456",
-    "nearby_natural_wave_spots": "3",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "VISIT Snowdonia",
     "book_now_subtitle": "Just surf the waves",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -290,8 +286,6 @@ export const locations = [
     "session_photo_price": "",
     "wave_specifications": "2",
     "reflink": "https://www.surf-langenfeld.de/home-en.html?ref=123456",
-    "nearby_natural_wave_spots": "2",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -409,7 +403,6 @@ export const locations = [
     "wave_specifications": "1",
     "reflink": "",
     "nearby_natural_wave_spots": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Trein1",
@@ -463,8 +456,6 @@ export const locations = [
     "session_photo_price": "",
     "wave_specifications": "1",
     "reflink": "",
-    "nearby_natural_wave_spots": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -531,13 +522,11 @@ export const locations = [
     },
     "correspondence_address": "Av. Siam, s/n, 38660 Costa Adeje, Santa Cruz de Tenerife, Spain",
     "nearest_city": "Los Cristianos",
-    "nearby_natural_wave_spots": "3",
     "board_rental": "",
     "wetsuit_rental": "",
     "session_video_price": "",
     "session_photo_price": "",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "VISIT Siam",
@@ -624,7 +613,6 @@ export const locations = [
     },
     "correspondence_address": "Kanupark Markkleeberg Wildwasserkehre 1 04416 Markkleeberg/OT Auenhain T: +49 (0) 34 297 / 14 12 91 F: +49 (0) 34 297 / 14 12 98 info@kanupark-markkleeberg.com",
     "nearest_city": "Leipzig",
-    "nearby_natural_wave_spots": "1",
     "board_rental": "0",
     "wetsuit_rental": "0",
     "session_video_price": "",
@@ -636,7 +624,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -696,7 +683,6 @@ export const locations = [
     },
     "correspondence_address": "Himlabadet - University Sallén 13 060-19 8:00 p.m. info@himlabadet.se",
     "nearest_city": "stockholm",
-    "nearby_natural_wave_spots": "1",
     "board_rental": "",
     "wetsuit_rental": "",
     "session_video_price": "",
@@ -708,7 +694,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "The first surfstream",
@@ -768,13 +753,11 @@ export const locations = [
     },
     "correspondence_address": "Have a question about surfing at BSR? Give us a call or shoot us a text: (254) 447-1194 Contact Us Pro Shop: 254.227.6388 5347 Old Mexia Rd Waco TX 76705 https://www.bsrcablepark.com/contact/  FareHarbor is BSR's online Dutch booking software and support. https://fareharbor.com/tour/partnerships-and-integrations/contact/",
     "nearest_city": "Austin / Dallas",
-    "nearby_natural_wave_spots": "1",
     "board_rental": "0",
     "wetsuit_rental": "",
     "session_video_price": "",
     "session_photo_price": "",
     "wave_specifications": "3",
-    "wp_featherlight_disable": "",
     "board_included": "1",
     "wetsuit_included": "1",
     "book_now_title": "Book a session",
@@ -957,7 +940,6 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "San Francisco / Los Angeles",
-    "nearby_natural_wave_spots": "2",
     "board_rental": "",
     "wetsuit_rental": "",
     "session_video_price": "",
@@ -969,7 +951,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -1103,7 +1084,6 @@ export const locations = [
     },
     "correspondence_address": "I can't find an affiliate option. There is an option to organize a private event. (add to passes) Sessions last 2,5 - 3 hours ",
     "nearest_city": "Orlando",
-    "nearby_natural_wave_spots": "1",
     "board_rental": "0",
     "wetsuit_rental": "",
     "session_video_price": "50",
@@ -1115,7 +1095,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Disney’s Typhoon Lagoon - Hang 10 at a Private Surf Session",
@@ -1243,13 +1222,11 @@ export const locations = [
     },
     "correspondence_address": "https://urbnsurf.com/contact/",
     "nearest_city": "Melbourne",
-    "nearby_natural_wave_spots": "1",
     "board_rental": "15",
     "wetsuit_rental": "10",
     "session_video_price": "40",
     "session_photo_price": "12",
     "wave_specifications": "6",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "VISIT URBN Surf Melbourne",
@@ -1548,13 +1525,11 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "sydney",
-    "nearby_natural_wave_spots": "1",
     "board_rental": "0.00",
     "wetsuit_rental": "0.00",
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -1621,7 +1596,6 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "Washington",
-    "nearby_natural_wave_spots": "1",
     "board_rental": "0.00",
     "wetsuit_rental": "0.00",
     "session_video_price": "0.00",
@@ -1633,7 +1607,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -1770,7 +1743,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Surf Beach",
@@ -1877,7 +1849,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Surfstream (flowrider type)",
@@ -1933,7 +1904,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "4",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "1",
     "book_now_title": "",
@@ -2103,7 +2073,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "2",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -2196,7 +2165,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "book_now_title": "",
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
@@ -2267,7 +2235,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "three breaks - Reef, Inside, and Bay.",
@@ -2318,13 +2285,11 @@ export const locations = [
     },
     "correspondence_address": "https://www.thewave.com/become_an_affiliate/ https://wiki.awin.com/index.php/Main_Page",
     "nearest_city": "Bristol",
-    "nearby_natural_wave_spots": "3",
     "board_rental": "0.00",
     "wetsuit_rental": "0.00",
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "9",
-    "wp_featherlight_disable": "",
     "board_included": "1",
     "wetsuit_included": "1",
     "book_now_title": "VISIT the wave Bristol",
@@ -2694,7 +2659,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "advanced",
@@ -2750,7 +2714,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -2824,7 +2787,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -2886,7 +2848,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -2948,7 +2909,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -3010,7 +2970,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "2",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "VISIT the artificial wave to improve your city life",
@@ -3098,13 +3057,11 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "Nantes",
-    "nearby_natural_wave_spots": "2",
     "board_rental": "0.00",
     "wetsuit_rental": "0.00",
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -3233,7 +3190,6 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "Nantes",
-    "nearby_natural_wave_spots": "2",
     "board_rental": "0.00",
     "wetsuit_rental": "0.00",
     "session_video_price": "0.00",
@@ -3309,7 +3265,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "2",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "VISIT the wave",
@@ -3412,7 +3367,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "VISIT BigSurfAZ",
@@ -3508,7 +3462,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "book_now_title": "",
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
@@ -3569,7 +3522,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "book_now_title": "",
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
@@ -3630,7 +3582,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -3739,13 +3690,11 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "Osnabrück",
-    "nearby_natural_wave_spots": "1",
     "board_rental": "0.00",
     "wetsuit_rental": "0.00",
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "2",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -3843,13 +3792,11 @@ export const locations = [
     },
     "correspondence_address": "DEINE FRAGE KONNTE NICHT BEANTWORTET WERDEN? Bitte schreibe uns eine Mail an info@wellenwerk-berlin.de.  Nur in dringenden Fällen, kannst du uns Werktags zwischen 13 und 18 Uhr telefonisch unter+49 (0)30 204 56 226 erreichen.",
     "nearest_city": "Berlin",
-    "nearby_natural_wave_spots": "1",
     "board_rental": "0.00",
     "wetsuit_rental": "0.00",
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "4",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "VISIT Wellenwerk",
@@ -4007,7 +3954,6 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "Osnabrück",
-    "nearby_natural_wave_spots": "1",
     "board_rental": "0.00",
     "wetsuit_rental": "0.00",
     "session_video_price": "0.00",
@@ -4102,7 +4048,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -4168,7 +4113,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -4232,7 +4176,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "2",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -4324,7 +4267,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -4386,7 +4328,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -4448,7 +4389,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "board_included": "0",
     "wetsuit_included": "0",
     "book_now_title": "",
@@ -4515,7 +4455,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "The slab",
@@ -4565,7 +4504,6 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "auckland",
-    "nearby_natural_wave_spots": "1",
     "board_included": "0",
     "board_rental": "0.00",
     "wetsuit_included": "0",
@@ -4577,7 +4515,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Swell",
@@ -4665,7 +4602,6 @@ export const locations = [
     "book_now_subtitle": "",
     "book_now_button_caption": "BOOK NOW",
     "book_now": "",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "18-million-gallon wave “pool”",
@@ -4726,7 +4662,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "La Vague Advanced",
@@ -4780,7 +4715,6 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "San Bernardino",
-    "nearby_natural_wave_spots": "1",
     "board_included": "0",
     "board_rental": "0.00",
     "wetsuit_included": "0",
@@ -4788,7 +4722,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Expert",
@@ -4870,7 +4803,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -4940,7 +4872,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "3",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced Free Surfing",
@@ -5079,7 +5010,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "ramps and wedges",
@@ -5153,7 +5083,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Training",
@@ -5226,7 +5155,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "6",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Beast (AirSection)",
@@ -5488,7 +5416,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "www.praiadagrama",
@@ -5558,7 +5485,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Ratho",
@@ -5628,7 +5554,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Florian",
@@ -5700,7 +5625,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Nur Experts",
@@ -5770,7 +5694,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "2",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -5890,7 +5813,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "The Giant",
@@ -5976,7 +5898,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "2",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Flowrider tripple",
@@ -6076,7 +5997,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "3",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Beginner ",
@@ -6232,7 +6152,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "2",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Standing wave - beginner",
@@ -6343,7 +6262,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "4",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Kids",
@@ -6514,7 +6432,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "2",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "First Wave",
@@ -6614,7 +6531,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "3",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Beginner",
@@ -6755,7 +6671,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "3",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "DA WAVE",
@@ -6920,7 +6835,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -6994,7 +6908,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Gracht",
@@ -7063,7 +6976,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -7132,7 +7044,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Endless 1",
@@ -7201,7 +7112,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "UmaOla",
@@ -7275,7 +7185,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Webbers Tube",
@@ -7346,7 +7255,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -7419,7 +7327,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Riverwave",
@@ -7481,7 +7388,6 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "Makinohara",
-    "nearby_natural_wave_spots": "1",
     "board_included": "0",
     "board_rental": "0.00",
     "wetsuit_included": "0",
@@ -7489,7 +7395,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "3",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Expert course",
@@ -7642,7 +7547,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "2",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Peak wave",
@@ -7744,7 +7648,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Leinewelle",
@@ -7815,7 +7718,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Citywave 1",
@@ -7888,7 +7790,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Bend",
@@ -7960,7 +7861,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Endless surf 1",
@@ -8034,7 +7934,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -8108,7 +8007,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Loooong",
@@ -8182,7 +8080,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Replanned",
@@ -8246,7 +8143,6 @@ export const locations = [
     },
     "correspondence_address": "",
     "nearest_city": "Brisbane",
-    "nearby_natural_wave_spots": "1",
     "board_included": "0",
     "board_rental": "0.00",
     "wetsuit_included": "0",
@@ -8254,7 +8150,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Advanced",
@@ -8343,7 +8238,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Discussed",
@@ -8412,7 +8306,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Nr2",
@@ -8482,7 +8375,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Coal 1",
@@ -8552,7 +8444,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Landlocked settings",
@@ -8623,7 +8514,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Inbetween",
@@ -8693,7 +8583,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Londone",
@@ -8764,7 +8653,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "SouthUK1",
@@ -8833,7 +8721,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "X",
@@ -8903,7 +8790,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "South Carolina 1",
@@ -8973,7 +8859,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Grande",
@@ -9045,7 +8930,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Fuchslochwelle",
@@ -9116,7 +9000,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Traunstein ",
@@ -9188,7 +9071,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "WOLFRATSHAUSEN",
@@ -9262,7 +9144,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "3",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Beginner",
@@ -9391,7 +9272,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "beginner wave",
@@ -9461,7 +9341,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Beginner",
@@ -9531,7 +9410,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Secret",
@@ -9602,7 +9480,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Beginner",
@@ -9675,7 +9552,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Beginner",
@@ -9745,7 +9621,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "Perfect Swell",
@@ -9817,7 +9692,6 @@ export const locations = [
     "session_video_price": "0.00",
     "session_photo_price": "0.00",
     "wave_specifications": "1",
-    "wp_featherlight_disable": "",
     "waves": [
       {
         "wave_name": "AllWaves nr1",
