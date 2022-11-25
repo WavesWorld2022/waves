@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {data} from "../assets/json/data";
 import {waveLocations} from "../assets/json/markers";
+import {locations} from "../assets/json/locations";
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,82 @@ export class AppComponent implements OnInit {
 */
 
     // this.downloadJson(locations)
+
+   /* const loc: any = [];
+
+    locations.forEach((l: any) => {
+      const w0: any = {};
+      const w1: any = {};
+      const w2: any = {};
+      const w3: any = {};
+      const w4: any = {};
+      const w5: any = {};
+      const w6: any = {};
+      const w7: any = {};
+
+      const WS = [w0, w1, w2, w3, w4, w5, w6, w7];
+
+
+      const n0: any = {};
+      const n1: any = {};
+      const n2: any = {};
+
+      const N = [n0, n1, n2];
+
+      Object.keys(l).forEach((k: any) => {
+        for(let i = 0; i < 8; i++) {
+          if(k.includes('wave_specifications_' + [i] + '_')){
+            const newKey = k.replace('wave_specifications_' + [i] + '_', '');
+            if(i === 0) w0[newKey] = l[k];
+            if(i === 1) w1[newKey] = l[k];
+            if(i === 2) w2[newKey] = l[k];
+            if(i === 3) w3[newKey] = l[k];
+            if(i === 4) w4[newKey] = l[k];
+            if(i === 5) w5[newKey] = l[k];
+            if(i === 6) w6[newKey] = l[k];
+            if(i === 7) w7[newKey] = l[k];
+          }
+        }
+      })
+
+      Object.keys(l).forEach((k: any) => {
+        for(let i = 0; i < 3; i++) {
+          if(k.includes('nearby_natural_wave_spots_' + [i] + '_natural_spot_')){
+            const newKey = k.replace('nearby_natural_wave_spots_' + [i] + '_natural_spot_', '');
+            if(i === 0) n0[newKey] = l[k];
+            if(i === 1) n1[newKey] = l[k];
+            if(i === 2) n2[newKey] = l[k];
+          }
+        }
+      })
+
+      const waves = JSON.parse(JSON.stringify(WS.filter((w: any) => Object.keys(w).length > 0)));
+      const near = JSON.parse(JSON.stringify(N.filter((w: any) => Object.keys(w).length > 0)));
+
+      Object.keys(l).forEach((k: any) => {
+        for(let i = 0; i < 8; i++) {
+          if(k.includes('wave_specifications_' + [i] + '_')){
+            delete l[k]
+          }
+        }
+      })
+
+      Object.keys(l).forEach((k: any) => {
+        for(let i = 0; i < 8; i++) {
+          if(k.includes('nearby_natural_wave_spots_' + [i] + '_natural_spot_')){
+            delete l[k]
+          }
+        }
+      })
+
+      l.waves = waves;
+      l.nearby_natural_spots = near;
+      loc.push(l)
+
+    })
+
+    this.downloadJson(loc)*/
+
   }
 
   downloadJson(myJson: any){
