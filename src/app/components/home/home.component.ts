@@ -3,6 +3,7 @@ import {GoogleMap, MapInfoWindow, MapMarker} from "@angular/google-maps";
 import {waveLocations} from "../../../assets/json/markers";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
 import {posts} from "../../../assets/json/post";
+import {locations} from "../../../assets/json/locations";
 
 @Component({
   selector: 'app-home',
@@ -51,7 +52,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.onGetMarkers();
     // @ts-ignore
-    this.height = (window.innerHeight - 206) + 'px';
+    this.height = (window.innerHeight - (window.innerWidth < 980 ? 171 : 206)) + 'px';
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
         lat: position.coords.latitude,
@@ -64,27 +65,28 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   onGetMarkers() {
-    // console.log(posts.length)
-    // console.log(waveLocations.length)
-    waveLocations.forEach(location => {
-      this.markers.push(
-        {
-          position: {
-            lat: location.lat,
-            lng: location.lng,
-          },
-          label: null,
-          info: "",
-          title: '',
-          options: {},
-        }
-      )
+    locations.forEach(location => {
+      if(location.visit_address) {
+        this.markers.push(
+          {
+            position: {
+              lat: Number(location.visit_address.lat),
+              lng: Number(location.visit_address.lng),
+            },
+            label: null,
+            info: "",
+            title: '',
+            options: {},
+          }
+        )
+      }
     })
   }
 
   ngAfterViewInit() {
-    // @ts-ignore
-    this.map.googleMap.setOptions({styles: this.options.styles});
+    if(this.map) {
+      this.map.googleMap?.setOptions({styles: this.options.styles});
+    }
   }
 
   zoomIn() {
