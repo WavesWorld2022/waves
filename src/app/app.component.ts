@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'vawes';
 
   ngOnInit() {
+    console.log(locations.filter(l => !l.waves))
     /*const a: any[] = [];
     const locations: any[] = [];
 
