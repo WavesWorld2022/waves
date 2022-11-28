@@ -1,7 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {data} from "../assets/json/data";
-import {waveLocations} from "../assets/json/markers";
-import {locations} from "../assets/json/locations";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +9,6 @@ export class AppComponent implements OnInit {
   title = 'vawes';
 
   ngOnInit() {
-    console.log(locations.filter(l => !l.waves))
     /*const a: any[] = [];
     const locations: any[] = [];
 

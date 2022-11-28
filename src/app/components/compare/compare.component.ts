@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {waveLocations} from "../../../assets/json/wave-locations";
+import {locations} from "../../../assets/json/locations";
 
 @Component({
   selector: 'app-compare',
@@ -27,8 +27,8 @@ export class CompareComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    waveLocations
-      .sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+    locations
+      .sort((a,b) => (a.post!.title > b.post!.title) ? 1 : ((b.post!.title > a.post!.title) ? -1 : 0))
       .forEach((m: any) => {
         this.waveLocations.push(m);
       })

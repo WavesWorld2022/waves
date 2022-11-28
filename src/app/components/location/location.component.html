@@ -1,0 +1,13 @@
+<app-loader *ngIf="!location"></app-loader>
+<div *ngIf="location" class="page">
+  <div class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-8">
+          <p class="hero__title">{{location.post.title}}</p>
+          <p class="hero__sub-title">{{location.slogan ? location.slogan : location.information}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ import {TechnologiesComponent} from './components/technologies/technologies.comp
 import {ProductsComponent} from './components/products/products.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {MagazineComponent} from './components/magazine/magazine.component';
+import {LocationComponent} from './components/location/location.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -22,6 +23,10 @@ export const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'magazine', component: MagazineComponent},
   {path: 'magazine', component: MagazineComponent},
+  {path: 'location', children: [
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
+    {path: ':id', component: LocationComponent},
+  ]},
 ];
 
 @NgModule({

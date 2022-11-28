@@ -7,7 +7,7 @@
           <ul class="location-nav navbar">
             <li *ngFor="let i of nav"
                 [class.active]="activeFilter === i.id"
-                (click)="activeFilter = i.id">
+                (click)="onFilter(i)">
               <div class="picture">
                 <img src="assets/images/{{i.icon}}.png" alt="shield">
                 <span>{{i.title}}</span>
@@ -20,7 +20,21 @@
             <div class="control-panel__inner">
               <div class="search">
                 <img src="../../../assets/icons/search.svg" alt="">
-                <input type="text" placeholder="Search...">
+                <input [typeahead]="data"
+                       (keyup)="onFilter()"
+                       (typeaheadOnSelect)="onFilter()"
+                       [(ngModel)]="selected"
+                       [typeaheadScrollable]="true"
+                       [typeaheadOptionsInScrollableView]="5"
+                       typeaheadOptionField="post.title"
+                       placeholder="Search..."
+                       [typeaheadItemTemplate]="customItemTemplate"
+                       class="form-control">
+
+                <ng-template #customItemTemplate let-model="item" let-index="index">
+                 <h5>{{model.post.title}}</h5>
+                </ng-template>
+
               </div>
               <div class="zoom">
                 <button (click)="zoomIn()" class="zoom__btn zoom__btn_in">
@@ -53,12 +67,20 @@
       (mapClick)="openInfo(somemarker, marker)"
     ></map-marker>
     <map-info-window>
-      {{infoContent}}
-     <div>
-        <p>Booking</p>
+     <div *ngIf="infoContent && infoContent.title">
+        <!--<p>Booking</p>
         <p>Need a ticket to surf?</p>
         <p>Tap here to book the wave closest to you: <strong>Surf Poel!</strong></p>
-        <p>Purchase a ticket and surf.</p>
+        <p>Purchase a ticket and surf.</p>-->
+
+       <p class="marker__label">Getting there</p>
+       <p class="marker__title">
+         Heading to
+         <strong [routerLink]="'../location/' + infoContent.name">{{infoContent.title}}</strong>
+         today?
+       </p>
+       <p class="marker__label">Tap here to get directions</p>
+       <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
       </div>
     </map-info-window>
 

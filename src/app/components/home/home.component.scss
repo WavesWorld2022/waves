@@ -110,3 +110,35 @@
     }
   }
 }
+
+.marker{
+  &__label{
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #c2a026;
+  }
+  &__title{
+    font-size: 16px;
+    margin: 10px 0 10px;
+    font-weight: 600;
+    color: #0b4871;
+    max-width: 320px;
+    line-height: 18px;
+    strong{
+      cursor: pointer;
+      font-weight: 600;
+      color: #008bb2;
+    }
+  }
+  &__action{
+    font-weight: 600;
+    text-decoration: none;
+    background: #008bb2;
+    padding: 8px 16px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 7px;
+    font-size: 13px;
+    margin: 0;
+  }
+}

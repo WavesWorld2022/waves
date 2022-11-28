@@ -20,6 +20,10 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { ContactComponent } from './components/contact/contact.component';
 import { MagazineComponent } from './components/magazine/magazine.component';
 import { LoaderComponent } from './components/core/loader/loader.component'
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +39,19 @@ import { LoaderComponent } from './components/core/loader/loader.component'
     ProductsComponent,
     ContactComponent,
     MagazineComponent,
-    LoaderComponent
+    LoaderComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    BrowserAnimationsModule,
+    TypeaheadModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
