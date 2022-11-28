@@ -266,35 +266,35 @@ export const locations = [{
   "book_now_button_caption": "BOOK NOW",
   "book_now": "",
   "waves": [{
-    "wave_name": "Medium Surf Session",
-    "status": "open only summer season",
-    "commissioning_date": "20190310",
+    "wave_name": "Medium Surf Session", //
+    "status": "open only summer season", //
+    "commissioning_date": "20190310", //
     "maintenance": "",
     "tech_type": "1",
-    "tech_energy_consumption": "350",
-    "wave_difficulty": "Beginner",
-    "wave_shape": "blue",
-    "wave_height": "120",
-    "wave_width": "8",
-    "wave_direction": "both",
-    "ride_duration": "60",
-    "wave_pump": "15000",
-    "waves_per_hour": "5",
-    "customers_per_hour": "12",
-    "customers_per_wave": "1",
-    "price_adult_high": "37",
-    "price_adult_low": "",
-    "price_child_high": "37",
-    "price_child_low": "",
-    "water_temp": "19",
-    "water_type": "sweet",
-    "water_quality": "Good",
-    "recommended_wetsuite": ["3_2"],
-    "wave_system": "standing-wave",
-    "wave_frequency": "0",
-    "wave_length": "0",
-    "wave_speed": "0",
-    "minimum_age": "12",
+    "tech_energy_consumption": "350", //
+    "wave_difficulty": "Beginner", //
+    "wave_shape": "blue", //
+    "wave_height": "120", //
+    "wave_width": "8", //
+    "wave_direction": "both", //
+    "ride_duration": "60", //
+    "wave_pump": "15000", //
+    "waves_per_hour": "5", //
+    "customers_per_hour": "12",//
+    "customers_per_wave": "1", //
+    "price_adult_high": "37",//
+    "price_adult_low": "",//
+    "price_child_high": "37",//
+    "price_child_low": "",//
+    "water_temp": "19", //
+    "water_type": "sweet", //
+    "water_quality": "Good", //
+    "recommended_wetsuite": ["3_2"],//
+    "wave_system": "standing-wave", //
+    "wave_frequency": "0", //
+    "wave_length": "0", //
+    "wave_speed": "0",//
+    "minimum_age": "12",//
     "passes": ""
   }, {
     "wave_name": "Big Surf Session",
