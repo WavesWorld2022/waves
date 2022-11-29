@@ -87,6 +87,7 @@
   }
   &__list {
     padding: 0;
+    margin-bottom: 2rem;
     .item {
       font-size: 16px;
       padding: 8px 0;
@@ -111,7 +112,9 @@
       display: flex;
       gap: 2rem;
       //justify-content: space-between;
-      margin: 0;
+      margin: -30px;
+      padding: 30px;
+      background: rgba(0, 22, 29, 0.3);
     }
   }
   &__text {
@@ -148,4 +151,11 @@
   font-size: 16px;
   line-height: 21px;
   color: #00465a;
+}
+
+select {
+  background: transparent;
+  border: none;
+  margin-bottom: 8px;
+  outline: none;
 }

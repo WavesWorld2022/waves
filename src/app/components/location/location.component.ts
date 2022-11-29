@@ -27,6 +27,7 @@ export class LocationComponent {
   marker: any;
 
   wave: any;
+  selectedWave!: string;
 
   constructor(
     private router: Router,
@@ -54,7 +55,18 @@ export class LocationComponent {
         }*/
       }
       this.wave = this.location.waves[0];
+      this.selectedWave = this.location.waves[0].wave_name;
       console.log(this.wave)
     });
+  }
+
+  onSelectWave(event: any) {
+    console.log(event)
+    this.wave = this.location.waves.find((wave: any) => wave.wave_name === event);
+    console.log(this.wave)
+  }
+
+  getDate(date: string) {
+    return new Date(date.slice(0, 4) + '.' + date.slice(4, 6) + '.' + date.slice(6)).toDateString().slice(3);
   }
 }

@@ -37,10 +37,12 @@
             <div *ngIf="location.waves.length" class="section section_waves">
               <div class="section__header">
                 <h2 class="section__title section__title_bordered">Waves</h2>
-                <select *ngIf="location.waves.length > 1" class="section__dropdown"></select>
               </div>
               <div class="section__content">
-                <h3 class="section__subtitle">{{wave.wave_name}}</h3>
+                <!--<h3 >{{wave.wave_name}}</h3>-->
+                <select class="section__subtitle" [(ngModel)]="selectedWave" (ngModelChange)="onSelectWave($event)"  *ngIf="location.waves.length > 1">
+                  <option *ngFor="let item of location.waves" [value]="item.wave_name">{{item.wave_name}}</option>
+                </select>
                 <ul class="section__list section__list-vertical">
                   <li class="item" *ngIf="+wave.wave_difficulty">
                     <strong>Wave difficulty:</strong> {{wave.wave_difficulty}}
@@ -91,7 +93,7 @@
                     <strong>Energy Consumption:</strong> {{wave.tech_energy_consumption}} kWh
                   </li>
                   <li class="item" *ngIf="wave.commissioning_date">
-                    <strong>Open for public since:</strong> {{wave.commissioning_date}}
+                    <strong>Open for public since:</strong> {{getDate(wave.commissioning_date)}}
                   </li>
                   <li class="item" *ngIf="wave.status">
                     <strong>Status:</strong> {{wave.status}}
