@@ -54,7 +54,7 @@
             <th>Manufacturers</th>
           </tr>
           <tr *ngFor="let item of manufacturers">
-            <td>
+            <td [routerLink]="'../manufactures/' + item.link">
               <span>{{item.title}}</span>
               <img src="../../../assets/icons/chevron.svg" alt="">
             </td>

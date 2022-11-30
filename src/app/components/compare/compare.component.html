@@ -57,10 +57,10 @@
           </tr>
           <tr *ngFor="let item of waveLocations">
             <td>
-              <span>{{item.title}}</span>
+              <span>{{item.post.title}}</span>
             </td>
-            <td class="text-right">20</td>
-            <td class="text-right">10</td>
+            <td class="text-right">{{item['waves'][0]['price_adult_high']}}</td>
+            <td class="text-right">{{item['waves'][0]['price_adult_high'] / (item['waves'][0]['waves_per_hour'] * item['waves'][0]['ride_duration'])}}</td>
           </tr>
         </table>
       </div>

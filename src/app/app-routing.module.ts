@@ -10,6 +10,7 @@ import {ProductsComponent} from './components/products/products.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {MagazineComponent} from './components/magazine/magazine.component';
 import {LocationComponent} from './components/location/location.component';
+import {ManufacturesItemComponent} from './components/manufactures/manufactures-item/manufactures-item.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -17,7 +18,10 @@ export const routes: Routes = [
   {path: 'about-us', component: AboutUsComponent},
   {path: 'explore', component: ExploreComponent},
   {path: 'compare', component: CompareComponent},
-  {path: 'manufactures', component: ManufacturesComponent},
+  {path: 'manufactures', children: [
+      {path: '', component: ManufacturesComponent},
+      {path: ':id', component: ManufacturesItemComponent},
+    ]},
   {path: 'technologies', component: TechnologiesComponent},
   {path: 'products', component: ProductsComponent},
   {path: 'contact', component: ContactComponent},

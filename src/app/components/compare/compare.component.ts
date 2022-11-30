@@ -28,7 +28,9 @@ export class CompareComponent implements OnInit {
 
   ngOnInit(): void {
     locations
-      .sort((a,b) => (a.post!.title > b.post!.title) ? 1 : ((b.post!.title > a.post!.title) ? -1 : 0))
+      .filter((l: any) => l.post && l.post.title)
+      // @ts-ignore
+      .sort((a,b) => (a.post.title > b.post.title) ? 1 : ((b.post.title > a.post.title) ? -1 : 0))
       .forEach((m: any) => {
         this.waveLocations.push(m);
       })
@@ -36,6 +38,8 @@ export class CompareComponent implements OnInit {
       this.isLoading = false;
     }, 1000);
   }
+
+  // PPMSonBoard = price_adult_high / (waves_per_hour x ride_duration)
 
 }
 

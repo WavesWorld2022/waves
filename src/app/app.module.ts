@@ -24,6 +24,7 @@ import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { LocationComponent } from './components/location/location.component';
+import { ManufacturesItemComponent } from './components/manufactures/manufactures-item/manufactures-item.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LocationComponent } from './components/location/location.component';
     ContactComponent,
     MagazineComponent,
     LoaderComponent,
-    LocationComponent
+    LocationComponent,
+    ManufacturesItemComponent
   ],
   imports: [
     BrowserModule,
