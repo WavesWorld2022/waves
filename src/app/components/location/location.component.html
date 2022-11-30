@@ -6,6 +6,239 @@
         <div class="col-8">
           <p class="hero__title">{{location.post.title}}</p>
           <p class="hero__sub-title">{{location.slogan ? location.slogan : location.information}}</p>
+          <div class="hero__buttons">
+            <a *ngIf="location.reflink" href="{{location.reflink}}" class="button">
+              {{location.book_now_button_caption}}
+            </a>
+            <a *ngIf="location.url" href="{{location.url}}" class="button">
+              LEARN MORE
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--<button class="hero__share button">
+        SHARE WITH
+      </button>-->
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col col-8">
+          <div class="content__main">
+            <div *ngIf="location.post.content" class="section">
+              <h2 class="section__title">Description</h2>
+              <div class="section__text" [innerHTML]="replaceURLs(location.post.content) | safe: 'html'"></div>
+            </div>
+
+            <div *ngIf="location.waves.length" class="section section_waves">
+              <div class="section__header">
+                <h2 class="section__title section__title_bordered">Waves</h2>
+              </div>
+              <div class="section__content">
+                <!--<h3 >{{wave.wave_name}}</h3>-->
+                <select class="section__subtitle" [(ngModel)]="selectedWave" (ngModelChange)="onSelectWave($event)"  *ngIf="location.waves.length > 1">
+                  <option *ngFor="let item of location.waves" [value]="item.wave_name">{{item.wave_name}}</option>
+                </select>
+                <ul class="section__list section__list-vertical">
+                  <li class="item" *ngIf="+wave.wave_difficulty">
+                    <strong>Wave difficulty:</strong> {{wave.wave_difficulty}}
+                  </li>
+                  <li class="item" *ngIf="+wave.wave_shape">
+                    <strong>Wave shape:</strong> {{wave.wave_shape}}
+                  </li>
+                  <li class="item" *ngIf="+wave.wave_height">
+                    <strong>Wave height:</strong> {{wave.wave_height}}cm
+                  </li>
+                  <li class="item" *ngIf="+wave.wave_speed">
+                    <strong>Wave speed:</strong> {{wave.wave_speed}}
+                  </li>
+                  <li class="item" *ngIf="+wave.wave_frequency">
+                    <strong>Wave frequency:</strong> {{wave.wave_frequency}}
+                  </li>
+                  <li class="item" *ngIf="+wave.wave_width">
+                    <strong>Wave width:</strong> {{wave.wave_width}}
+                  </li>
+                  <li class="item" *ngIf="+wave.wave_length">
+                    <strong>Wave length:</strong> {{wave.wave_length}}
+                  </li>
+                  <li class="item" *ngIf="+wave.wave_direction">
+                    <strong>Wave direction:</strong> {{wave.wave_direction}}
+                  </li>
+                  <li class="item" *ngIf="+wave.wave_pump">
+                    <strong>Wave pump:</strong> {{wave.wave_pump}}
+                  </li>
+                  <li class="item" *ngIf="+wave.wave_system">
+                    <strong>Wave system:</strong> {{wave.wave_system}}
+                  </li>
+                  <li class="item" *ngIf="+wave.wave_speed">
+                    <strong>Wave speed:</strong> {{wave.wave_speed}}
+                  </li>
+                  <li class="item" *ngIf="+wave.waves_per_hour">
+                    <strong>Waves per hour:</strong> {{wave.waves_per_hour}}
+                  </li>
+                  <li class="item" *ngIf="+wave.ride_duration">
+                    <strong>Ride duration:</strong> {{wave.ride_duration}}
+                  </li>
+                  <li class="item" *ngIf="+wave.customers_per_hour">
+                    <strong>Max customers per hour:</strong> {{wave.customers_per_hour}}
+                  </li>
+                  <li class="item" *ngIf="+wave.customers_per_wave">
+                    <strong>Max customers per vawe:</strong> {{wave.customers_per_wave}}
+                  </li>
+                  <li class="item" *ngIf="wave.tech_energy_consumption">
+                    <strong>Energy Consumption:</strong> {{wave.tech_energy_consumption}} kWh
+                  </li>
+                  <li class="item" *ngIf="wave.commissioning_date">
+                    <strong>Open for public since:</strong> {{getDate(wave.commissioning_date)}}
+                  </li>
+                  <li class="item" *ngIf="wave.status">
+                    <strong>Status:</strong> {{wave.status}}
+                  </li>
+                  <li class="item" *ngIf="+wave.minimum_age">
+                    <strong>Minimum age:</strong> {{wave.minimum_age}} years
+                  </li>
+
+                </ul>
+
+                <ng-container *ngIf="isPricing(wave)">
+                  <h3 class="section__subtitle">Pricing</h3>
+                  <ul class="section__list">
+                    <li class="item" *ngIf="+wave.price_adult_high">
+                      <strong>Price adult high:</strong> € {{wave.price_adult_high}}
+                    </li>
+                    <li class="item" *ngIf="+wave.price_adult_low">
+                      <strong>Price adult low:</strong> € {{wave.price_adult_low}}
+                    </li>
+                    <li class="item" *ngIf="+wave.price_child_high">
+                      <strong>Price child high:</strong> € {{wave.price_child_high}}
+                    </li>
+                    <li class="item" *ngIf="+wave.price_child_low">
+                      <strong>Price child low:</strong> € {{wave.price_child_low}}
+                    </li>
+                  </ul>
+                </ng-container>
+
+                <ul class="section__list section__list-horizontal">
+                  <li class="item" *ngIf="+wave.water_temp">
+                    <img src="assets/icons/thermometer.png" alt="">
+                    <div>
+                      <strong>Water temperature</strong> <br>{{wave.water_temp}}&#8451;
+                    </div>
+                  </li>
+                  <li class="item" *ngIf="wave.water_type">
+                    <img src="assets/icons/water.png" alt="">
+                    <div><strong>Water type</strong> <br>{{wave.water_type}}</div>
+                  </li>
+                  <!--TODO: Water quality long string -->
+                  <li class="item" *ngIf="wave.water_quality">
+                    <img src="assets/icons/water_quality.png" alt="">
+                    <div><strong>Water quality</strong> <br>{{wave.water_quality.length < 20 ? wave.water_quality : 'Good'}}</div>
+                  </li>
+                  <li class="item" *ngIf="wave.recommended_wetsuite?.length">
+                    <img src="assets/icons/wetsuit.png" alt="">
+                    <div>
+                      <strong>Recommended wetsuit:</strong><br>
+                      <span *ngFor="let item of wave.recommended_wetsuite">{{item}} </span>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div *ngIf="location.nearby_natural_spots.length" class="section nearby-points">
+              <h2 class="section__title">Nearby natural spots</h2>
+                <google-map
+                  width="100%"
+                  height="400"
+                  [zoom]="nearbySpotsZoom"
+                  [center]="coords"
+                  [options]="options"
+                >
+                  <map-marker
+                    #nearbySpot="mapMarker"
+                    *ngFor="let spot of naturalSpotsMarkers"
+                    [position]="spot.position"
+                    [title]="spot.title"
+                    [options]="spot.options"
+                    (mapClick)="openInfo(nearbySpot, spot)"
+                  >
+                  </map-marker>
+                  <map-info-window>
+                    <div *ngIf="infoContent && infoContent.title">
+                      <p class="marker__title">
+                        <strong>{{infoContent.title}}</strong>
+                      </p>
+                      <p class="marker__label">{{infoContent.address}}</p>
+                      <p class="marker__label">Tap here to get directions</p>
+                      <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
+                    </div>
+                  </map-info-window>
+                </google-map>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="content__side">
+            <google-map
+              width="100%"
+              height="300"
+              [zoom]="zoom"
+              [center]="coords"
+              [options]="options"
+            >
+              <map-marker
+                [position]="marker.position"
+                [title]="marker.title"
+                [options]="marker.options"
+              >
+              </map-marker>
+            </google-map>
+            <div *ngIf="location?.visit_address?.address" class="mt-4 address">
+              {{location.visit_address.address}}
+            </div>
+
+            <div *ngIf="location.board_rental
+                 || location.wetsuit_rental
+                 || location.session_video_price
+                 || location.session_photo_price
+                 || location.wave_specifications
+                 || location.board_included
+                 || location.wetsuit_included"
+                 class="section mt-4"
+            >
+              <h2 class="section__title">Main Information</h2>
+              <div class="section__text">
+                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.board_rental">
+                  <span>Board rental / hr</span><span>€{{location.board_rental}}/hour</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.wetsuit_rental">
+                  <span>Wetsuit rental / hr</span><span>€{{location.wetsuit_rental}}/hour</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_video_price">
+                  <span>Session video price / hr</span><span>€{{location.session_video_price}}/hour</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_photo_price">
+                  <span>Session photo price / hr</span><span>€{{location.session_photo_price}}/hour</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_photo_price">
+                  <span>Session photo price / hr</span><span>€{{location.session_photo_price}}/hour</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.wave_specifications">
+                  <span>Wave specifications</span><span>{{location.wave_specifications}}</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.board_included">
+                  <span>Board included</span><span>{{location.board_included}}</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.wetsuit_included">
+                  <span>Wetsuit included</span><span>{{location.wetsuit_included}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

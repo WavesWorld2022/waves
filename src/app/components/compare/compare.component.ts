@@ -30,13 +30,22 @@ export class CompareComponent implements OnInit {
     locations
       .filter((l: any) => l.post && l.post.title)
       // @ts-ignore
-      .sort((a,b) => (a.post.title > b.post.title) ? 1 : ((b.post.title > a.post.title) ? -1 : 0))
+      .sort((a,b) => (this.getPPMSonBoard(a) > this.getPPMSonBoard(b)) ? 1 : ((this.getPPMSonBoard(b) > this.getPPMSonBoard(a)) ? -1 : 0))
+      .reverse()
       .forEach((m: any) => {
         this.waveLocations.push(m);
       })
     setTimeout(() => {
       this.isLoading = false;
     }, 1000);
+  }
+
+  getPPMSonBoard(item: any) {
+    const price = item['waves'] && item['waves'][0] && ['price_adult_high'] ? item['waves'][0]['price_adult_high'] : 0;
+    const waves = item['waves'] && item['waves'][0] && ['waves_per_hour'] ? item['waves'][0]['waves_per_hour'] : 0;
+    const duration = item['waves'] && item['waves'][0] && ['ride_duration'] ? item['waves'][0]['ride_duration'] : 0;
+    const PPMSonBoard = Number(price)/(Number(waves)*Number(duration));
+    return (isNaN(PPMSonBoard) || PPMSonBoard === 0) ? '-' : PPMSonBoard.toFixed(2)
   }
 
   // PPMSonBoard = price_adult_high / (waves_per_hour x ride_duration)

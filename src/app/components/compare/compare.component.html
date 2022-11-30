@@ -59,8 +59,8 @@
             <td>
               <span>{{item.post.title}}</span>
             </td>
-            <td class="text-right">{{item['waves'][0]['price_adult_high']}}</td>
-            <td class="text-right">{{item['waves'][0]['price_adult_high'] / (item['waves'][0]['waves_per_hour'] * item['waves'][0]['ride_duration'])}}</td>
+            <td class="text-right">{{+item['waves'][0]['price_adult_high'] > 0 ? +item['waves'][0]['price_adult_high'] : '-'}}</td>
+            <td class="text-right">{{getPPMSonBoard(item)}}</td>
           </tr>
         </table>
       </div>

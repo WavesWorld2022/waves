@@ -33,7 +33,7 @@ ul {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 * {
@@ -154,6 +154,25 @@ a {
           display: inline-block;
         }
       }
+    }
+  }
+}
+.youtube{
+  margin: 15px 0;
+}
+typeahead-container{
+  right: 0 !important;
+  left: initial !important;
+  .dropdown-item{
+    h5{
+      margin: 0;
+    }
+  }
+  .dropdown-item.active,
+  .dropdown-item:active {
+    background-color: #0b7593;
+    h5{
+      color: #fff;
     }
   }
 }
