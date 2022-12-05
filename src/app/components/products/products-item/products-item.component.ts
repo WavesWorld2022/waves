@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
 import {products} from "../../../../assets/json/products";
+import {manufacturer} from "../../../../assets/json/manufacturer";
 import {StringParserService} from "../../../services/string-parser.service";
 
 @Component({
@@ -25,6 +26,13 @@ export class ProductsItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(location.origin)
   }
 
+  goTo(type: string, manufacturerID: string) {
+    // @ts-ignore
+    let goToUrl = '/' + type + '/' + manufacturer.find(item => item.id === +manufacturerID).link;
+    console.log(goToUrl)
+    this.router.navigate([goToUrl])
+  }
 }

@@ -4,6 +4,9 @@ export const products = [
     title: "5 waves plunger XL",
     content: "",
     excerpt: "",
+    manufacturer: "273",
+    manufacturer_url: "https://www.youtube.com/zAKwYG1URZE",
+    technology_type: "267",
     date: "2019-09-27 15:28:28",
     postType: "wave_system",
     link: "/5-waves/"
@@ -13,6 +16,9 @@ export const products = [
     title: "PerfectSwell",
     content: "",
     excerpt: "",
+    manufacturer: "274",
+    manufacturer_url: "https:\/\/perfectswellsurf.com\/",
+    technology_type: "881",
     date: "2019-09-27 15:29:54",
     postType: "wave_system",
     link: "/282/"
@@ -22,6 +28,9 @@ export const products = [
     title: "Wavegarden Lagoon",
     content: "",
     excerpt: "",
+    manufacturer: "275",
+    manufacturer_url: "https:\/\/wavegarden.com\/wavegarden-cove\/",
+    technology_type: "269",
     date: "2019-09-27 15:31:50",
     postType: "wave_system",
     link: "/wavegarden-cove/"
@@ -31,6 +40,9 @@ export const products = [
     title: "Kelly Slater Wave Co",
     content: "",
     excerpt: "",
+    manufacturer: "276",
+    manufacturer_url: "https:\/\/vimeo.com\/215697214",
+    technology_type: "315",
     date: "2019-09-27 15:33:32",
     postType: "wave_system",
     link: "/284/"
@@ -40,6 +52,9 @@ export const products = [
     title: "Unit surf pool 1",
     content: "",
     excerpt: "",
+    manufacturer: "277",
+    manufacturer_url: "https:\/\/www.surf-pool.com\/",
+    technology_type: "270",
     date: "2019-09-27 15:38:00",
     postType: "wave_system",
     link: "/unit-surf-pool-1/"
@@ -49,6 +64,9 @@ export const products = [
     title: "Unit surf pool 2",
     content: "",
     excerpt: "",
+    manufacturer: "277",
+    manufacturer_url: "https:\/\/www.surf-pool.com\/",
+    technology_type: "270",
     date: "2019-09-27 15:38:33",
     postType: "wave_system",
     link: "/unit-surf-pool-2/"
@@ -58,6 +76,9 @@ export const products = [
     title: "Citywave",
     content: "",
     excerpt: "",
+    manufacturer: "278",
+    manufacturer_url: "https:\/\/citywave.de\/technology\/",
+    technology_type: "270",
     date: "2019-09-27 15:39:51",
     postType: "wave_system",
     link: "/citywave/"
@@ -67,6 +88,9 @@ export const products = [
     title: "Point Break Surf",
     content: "",
     excerpt: "",
+    manufacturer: "279",
+    manufacturer_url: "https:\/\/www.murphyswaves.com\/products\/surf-pools\/point-break-surf\/",
+    technology_type: "271",
     date: "2019-09-27 15:41:33",
     postType: "wave_system",
     link: "/point-break-surf/"
@@ -76,6 +100,9 @@ export const products = [
     title: "SurfPoel",
     content: "",
     excerpt: "",
+    manufacturer: "280",
+    manufacturer_url: "https:\/\/surfpoel.nl\/",
+    technology_type: "1004",
     date: "2019-09-27 15:42:55",
     postType: "wave_system",
     link: "/surfpoel/"
@@ -85,6 +112,9 @@ export const products = [
     title: "Okahina Wave",
     content: "",
     excerpt: "",
+    manufacturer: "291",
+    manufacturer_url: "https:\/\/wavepoolmag.com\/how-the-okahina-wave-system-works\/",
+    technology_type: "1041",
     date: "2019-09-27 15:52:40",
     postType: "wave_system",
     link: "/okahina-wave/"
@@ -94,6 +124,9 @@ export const products = [
     title: "Flowrider compact",
     content: "",
     excerpt: "",
+    manufacturer: "293",
+    manufacturer_url: "https:\/\/www.flowrider.com\/product\/flowrider-compact\/",
+    technology_type: "270",
     date: "2019-09-27 15:57:22",
     postType: "wave_system",
     link: "/flowrider-compact/"
@@ -103,6 +136,9 @@ export const products = [
     title: "Flowrider Single",
     content: "",
     excerpt: "",
+    manufacturer: "293",
+    manufacturer_url: "https:\/\/www.flowrider.com\/product\/flowrider-single\/",
+    technology_type: "270",
     date: "2019-09-27 15:58:29",
     postType: "wave_system",
     link: "/flowrider-single/"
@@ -112,6 +148,9 @@ export const products = [
     title: "Flowrider Double",
     content: "",
     excerpt: "",
+    manufacturer: "293",
+    manufacturer_url: "https:\/\/www.flowrider.com\/product\/flowrider-double\/",
+    technology_type: "270",
     date: "2019-09-27 15:59:12",
     postType: "wave_system",
     link: "/flowrider-double/"
@@ -121,6 +160,9 @@ export const products = [
     title: "Flowrider Triple",
     content: "",
     excerpt: "",
+    manufacturer: "293",
+    manufacturer_url: "https:\/\/www.flowrider.com\/product\/flowrider-triple\/",
+    technology_type: "270",
     date: "2019-09-27 15:59:47",
     postType: "wave_system",
     link: "/flowrider-triple/"
@@ -130,6 +172,9 @@ export const products = [
     title: "Flowrider Wave in a Box",
     content: "",
     excerpt: "",
+    manufacturer: "293",
+    manufacturer_url: "https:\/\/www.flowrider.com\/product\/flowrider-wave-in-a-box\/",
+    technology_type: "270",
     date: "2019-09-27 16:00:23",
     postType: "wave_system",
     link: "/flowrider-wave-in-a-box/"
@@ -139,6 +184,9 @@ export const products = [
     title: "Flowrider Mobile",
     content: "",
     excerpt: "",
+    manufacturer: "293",
+    manufacturer_url: "https:\/\/www.flowrider.com\/product\/flowrider-mobile\/",
+    technology_type: "270",
     date: "2019-09-27 16:00:55",
     postType: "wave_system",
     link: "/flowrider-mobile/"
@@ -148,6 +196,9 @@ export const products = [
     title: "Flowbarrel Ten",
     content: "",
     excerpt: "",
+    manufacturer: "293",
+    manufacturer_url: "https:\/\/www.flowrider.com\/product\/flowbarrel-ten\/",
+    technology_type: "270",
     date: "2019-09-27 16:01:42",
     postType: "wave_system",
     link: "/flowbarrel-ten/"
@@ -157,6 +208,9 @@ export const products = [
     title: "Flowbarrel Ten Double",
     content: "",
     excerpt: "",
+    manufacturer: "293",
+    manufacturer_url: "https:\/\/www.flowrider.com\/product\/flowbarrel-ten-double\/",
+    technology_type: "270",
     date: "2019-09-27 16:02:11",
     postType: "wave_system",
     link: "/flowbarrel-ten-double/"
@@ -166,6 +220,9 @@ export const products = [
     title: "WaveOz",
     content: "",
     excerpt: "",
+    manufacturer: "293",
+    manufacturer_url: "https:\/\/www.flowrider.com\/product\/waveoz\/",
+    technology_type: "270",
     date: "2019-09-27 16:03:18",
     postType: "wave_system",
     link: "/waveoz/"
@@ -175,6 +232,9 @@ export const products = [
     title: "LatiTube",
     content: "",
     excerpt: "",
+    manufacturer: "293",
+    manufacturer_url: "https:\/\/www.flowrider.com\/product\/latitube\/",
+    technology_type: "270",
     date: "2019-09-27 16:04:13",
     postType: "wave_system",
     link: "/latitube/"
@@ -184,6 +244,9 @@ export const products = [
     title: "Wavegarden Cove URBNSURF",
     content: "",
     excerpt: "",
+    manufacturer: "275",
+    manufacturer_url: "https:\/\/urbnsurf.com\/about\/",
+    technology_type: "881",
     date: "2019-09-27 20:24:19",
     postType: "wave_system",
     link: "/wavegarden-urbnsurf/"
@@ -193,6 +256,9 @@ export const products = [
     title: "Webber Wavepool Australia",
     content: "",
     excerpt: "",
+    manufacturer: "383",
+    manufacturer_url: "http:\/\/wavepoolmag.com\/webber-wave-pools-update-us-licenses-and-smart-hulls\/",
+    technology_type: "1004",
     date: "2019-10-03 22:17:26",
     postType: "wave_system",
     link: "/wavepool/"
@@ -202,6 +268,9 @@ export const products = [
     title: "Swellspot",
     content: "",
     excerpt: "",
+    manufacturer: "387",
+    manufacturer_url: "http:\/\/www.swellspot.com\/index.html",
+    technology_type: "391",
     date: "2019-10-04 15:13:42",
     postType: "wave_system",
     link: "/swellspot/"
@@ -211,6 +280,9 @@ export const products = [
     title: "32’ Surfstream",
     content: "",
     excerpt: "",
+    manufacturer: "274",
+    manufacturer_url: "",
+    technology_type: "270",
     date: "2019-10-11 19:17:59",
     postType: "wave_system",
     link: "/surfstream/"
@@ -220,6 +292,9 @@ export const products = [
     title: "Surf Wave Pool",
     content: "",
     excerpt: "",
+    manufacturer: "430",
+    manufacturer_url: "https:\/\/www.whitewaterwest.com\/products\/wave-pools\/",
+    technology_type: "391",
     date: "2019-10-13 11:54:21",
     postType: "wave_system",
     link: "/surf-wave-pool/"
@@ -229,6 +304,9 @@ export const products = [
     title: "Freak Peak",
     content: "",
     excerpt: "",
+    manufacturer: "274",
+    manufacturer_url: "https:\/\/www.youtube.com\/watch?v=TCeNS6tLex4",
+    technology_type: "881",
     date: "2019-10-13 12:59:36",
     postType: "wave_system",
     link: "/freak-peak/"
@@ -238,6 +316,9 @@ export const products = [
     title: "Surf Loch, Wave Loch, and Wave House  (>1991) (standing)",
     content: "",
     excerpt: "",
+    manufacturer: "587",
+    manufacturer_url: "http:\/\/www.wavehouse.com\/venues\/",
+    technology_type: "270",
     date: "2019-11-02 08:06:51",
     postType: "wave_system",
     link: "/wave-house/"
@@ -247,6 +328,9 @@ export const products = [
     title: "Wave Loch Surfpool (rolling)",
     content: "",
     excerpt: "",
+    manufacturer: "587",
+    manufacturer_url: "https:\/\/www.surfloch.com\/technology?gclid=EAIaIQobChMIoeSbmvz36QIVZbR3Ch1CqwckEAAYASABEgL9GfD_BwE",
+    technology_type: "881",
     date: "2019-11-02 08:19:45",
     postType: "wave_system",
     link: "/wave-loch-surfpool/"
@@ -256,6 +340,9 @@ export const products = [
     title: "Vapor Wave Product",
     content: "",
     excerpt: "",
+    manufacturer: "741",
+    manufacturer_url: "http:\/\/swellplanet.mystrikingly.com\/",
+    technology_type: "272",
     date: "2020-04-12 21:14:04",
     postType: "wave_system",
     link: "/vapor-wave-product/"
@@ -265,6 +352,9 @@ export const products = [
     title: "Dexters  BigSurfAZ",
     content: "",
     excerpt: "",
+    manufacturer: "774",
+    manufacturer_url: "https:\/\/www.inventionandtech.com\/category\/inventor\/phil-dexter",
+    technology_type: "271",
     date: "2020-05-10 08:30:30",
     postType: "wave_system",
     link: "/dexters-bigsurfaz/"
@@ -274,6 +364,9 @@ export const products = [
     title: "RESPONSE-ENGINEER \"carry wave generator",
     content: "",
     excerpt: "",
+    manufacturer: "776",
+    manufacturer_url: "http:\/\/response-engineer.jp\/kobe_reyes.html",
+    technology_type: "271",
     date: "2020-05-10 20:25:26",
     postType: "wave_system",
     link: "/response-engineer-kobe-wave/"
@@ -283,6 +376,9 @@ export const products = [
     title: "Endless Surf",
     content: "",
     excerpt: "",
+    manufacturer: "430",
+    manufacturer_url: "https:\/\/www.surfertoday.com\/surfing\/la-vague-grand-paris-the-new-wave-pool-by-whitewater",
+    technology_type: "881",
     date: "2020-05-22 14:15:10",
     postType: "wave_system",
     link: "/endless-surf/"
@@ -292,6 +388,9 @@ export const products = [
     title: "Plunger 2 - compact plunger pool model",
     content: "",
     excerpt: "",
+    manufacturer: "273",
+    manufacturer_url: "https:\/\/www.surfertoday.com\/surfing\/surf-lakes-announce-compact-wave-pool-model",
+    technology_type: "267",
     date: "2020-10-03 08:41:24",
     postType: "wave_system",
     link: "/plunger-2-compact-plunger-pool-model/"
@@ -301,6 +400,9 @@ export const products = [
     title: "Wavemaster",
     content: "",
     excerpt: "",
+    manufacturer: "1000",
+    manufacturer_url: "http:\/\/www.olassurfingtech.com\/index.php",
+    technology_type: "272",
     date: "2021-01-10 22:07:20",
     postType: "wave_system",
     link: "/wavemaster/"
@@ -310,6 +412,9 @@ export const products = [
     title: "Webber Wavepool USA",
     content: "",
     excerpt: "",
+    manufacturer: "1005",
+    manufacturer_url: "http:\/\/oceansportsdevelopment.com\/pool\/",
+    technology_type: "1004",
     date: "2021-01-12 21:30:07",
     postType: "wave_system",
     link: "/webber-by-osd/"
@@ -319,6 +424,9 @@ export const products = [
     title: "Blackforestwave",
     content: "",
     excerpt: "",
+    manufacturer: "1010",
+    manufacturer_url: "https:\/\/blackforestwave.de\/",
+    technology_type: "748",
     date: "2021-01-30 21:47:57",
     postType: "wave_system",
     link: "/1011/"
@@ -328,6 +436,9 @@ export const products = [
     title: "SwelMFG",
     content: "",
     excerpt: "",
+    manufacturer: "1021",
+    manufacturer_url: "http:\/\/www.swellmfg.com\/",
+    technology_type: "272",
     date: "2021-04-04 20:35:53",
     postType: "wave_system",
     link: "/swelmfg/"
@@ -337,6 +448,9 @@ export const products = [
     title: "SurfKing wave machine",
     content: "",
     excerpt: "",
+    manufacturer: "1042",
+    manufacturer_url: "https:\/\/www.barrandwray.com\/pools\/products-services\/wave-machines",
+    technology_type: "271",
     date: "2021-08-17 19:56:11",
     postType: "wave_system",
     link: "/surfking-wave-machine/"
@@ -346,6 +460,9 @@ export const products = [
     title: "River",
     content: "",
     excerpt: "",
+    manufacturer: "1047",
+    manufacturer_url: "",
+    technology_type: "748",
     date: "2021-08-23 07:07:52",
     postType: "wave_system",
     link: "/river/"
@@ -355,6 +472,9 @@ export const products = [
     title: "Epic Surf (standing)",
     content: "",
     excerpt: "",
+    manufacturer: "1064",
+    manufacturer_url: "https:\/\/www.epic.surf\/",
+    technology_type: "270",
     date: "2021-08-29 11:20:25",
     postType: "wave_system",
     link: "/epic-surf-standing/"
@@ -364,6 +484,9 @@ export const products = [
     title: "Okahina",
     content: "",
     excerpt: "",
+    manufacturer: "291",
+    manufacturer_url: "",
+    technology_type: "1041",
     date: "2021-08-31 20:04:22",
     postType: "wave_system",
     link: "/okahina/"
@@ -373,6 +496,9 @@ export const products = [
     title: "Any Wave -CM7",
     content: "",
     excerpt: "",
+    manufacturer: "1087",
+    manufacturer_url: "https:\/\/kaanawaveco.com\/product-2\/",
+    technology_type: "270",
     date: "2021-10-31 16:29:29",
     postType: "wave_system",
     link: "/any-wave/"
@@ -382,6 +508,9 @@ export const products = [
     title: "Dreamwave Modularsystem",
     content: "",
     excerpt: "",
+    manufacturer: "1099",
+    manufacturer_url: "https:\/\/www.dreamwave-international.com\/",
+    technology_type: "748",
     date: "2021-12-23 19:18:50",
     postType: "wave_system",
     link: "/dreamwave-modularsystem/"
@@ -391,6 +520,9 @@ export const products = [
     title: "Static Wave Tech France 1",
     content: "",
     excerpt: "",
+    manufacturer: "1113",
+    manufacturer_url: "https:\/\/city-surf-park.com\/technologie-vague-indoor",
+    technology_type: "270",
     date: "2022-01-21 20:40:48",
     postType: "wave_system",
     link: "/static-wave-tech-france-1/"
@@ -400,6 +532,9 @@ export const products = [
     title: "AllWaves Nr1",
     content: "",
     excerpt: "",
+    manufacturer: "1124",
+    manufacturer_url: "https:\/\/allwaves.surf\/technology\/",
+    technology_type: "1123",
     date: "2022-02-05 20:53:07",
     postType: "wave_system",
     link: "/allwaves-nr1/"

@@ -17,7 +17,15 @@ export class StringParserService {
         hyperlink = 'http://' + hyperlink;
       }
       if(hyperlink.includes('youtube.com') || hyperlink.includes('youtu.be')) {
-        let you = 'https://www.youtube.com/embed/' + hyperlink.replace(hyperlink.includes('youtube.com') ? 'https://youtube.com/' : 'https://youtu.be/', '')
+        let you;
+
+        if (hyperlink.includes('watch?v=')) {
+          hyperlink = hyperlink.replace('watch?v=', '');
+        }
+
+        hyperlink.includes('www.youtube.com')
+        ? you = 'https://www.youtube.com/embed/' + hyperlink.replace('https://www.youtube.com/', '')
+        : you = 'https://www.youtube.com/embed/' + hyperlink.replace(hyperlink.includes('youtube.com') ? 'https://youtube.com/' : 'https://youtu.be/', '');
         return '<div class="youtube"><iframe width="100%" height="400" src="' + you + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
       } else if(hyperlink.includes('vimeo.com')) {
         let vim = 'https://player.vimeo.com/video/' + hyperlink.replace('https://vimeo.com/', '')
