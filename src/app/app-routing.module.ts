@@ -11,6 +11,8 @@ import {ContactComponent} from './components/contact/contact.component';
 import {MagazineComponent} from './components/magazine/magazine.component';
 import {LocationComponent} from './components/location/location.component';
 import {ManufacturesItemComponent} from './components/manufactures/manufactures-item/manufactures-item.component';
+import {TechnologiesItemComponent} from "./components/technologies/technologies-item/technologies-item.component";
+import {ProductsItemComponent} from "./components/products/products-item/products-item.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -22,8 +24,14 @@ export const routes: Routes = [
       {path: '', component: ManufacturesComponent},
       {path: ':id', component: ManufacturesItemComponent},
     ]},
-  {path: 'technologies', component: TechnologiesComponent},
-  {path: 'products', component: ProductsComponent},
+  {path: 'technologies', children: [
+      {path: '', component: TechnologiesComponent},
+      {path: ':id', component: TechnologiesItemComponent}
+    ]},
+  {path: 'products', children: [
+      {path: '', component: ProductsComponent},
+      {path: ':id', component: ProductsItemComponent}
+    ]},
   {path: 'contact', component: ContactComponent},
   {path: 'magazine', component: MagazineComponent},
   {path: 'magazine', component: MagazineComponent},

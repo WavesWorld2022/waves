@@ -1,0 +1,29 @@
+<app-loader *ngIf="!product"></app-loader>
+<div *ngIf="product" class="page">
+  <div class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-8">
+          <p class="hero__title">{{product.title}}</p><!--
+          <p class="hero__sub-title">{{manufacturer.excerpt}}</p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!--
+                <div class="page__content" [innerHTML]="manufacturer.content.length < manufacturer.excerpt.length ? manufacturer.excerpt : manufacturer.content"></div>
+        -->
+        <div *ngIf="product.content" class="section">
+          <!--<h2 class="section__title">About {{manufacturer.title}}</h2>-->
+          <div class="d-flex flex-column gap-5">
+            <div class="section__text" *ngIf="product.excerpt" [innerHTML]="parserService.replaceURLs(product.excerpt) | safe: 'html'"></div>
+            <div class="section__text" *ngIf="product.content" [innerHTML]="parserService.replaceURLs(product.content) | safe: 'html'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

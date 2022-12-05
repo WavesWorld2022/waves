@@ -30,7 +30,7 @@
         <div class="col">
           <p class="page__title">Technologies</p>
         </div>
-        <div class="col">
+        <!--<div class="col">
           <ul class="location-nav navbar">
             <li *ngFor="let i of nav"
                 [class.active]="activeFilter === i.id"
@@ -41,7 +41,7 @@
               </div>
             </li>
           </ul>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@
             <th>Technologies</th>
           </tr>
           <tr *ngFor="let item of technologies">
-            <td>
+            <td [routerLink]="'../technologies/' + item.permalink">
               <span>{{item.title}}</span>
               <img src="../../../assets/icons/chevron.svg" alt="">
             </td>

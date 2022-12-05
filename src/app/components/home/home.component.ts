@@ -83,13 +83,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
           direction: 'https://www.google.com/maps/dir/?api=1&origin='+ origin +'&destination='+ destination +'&travelmode=driving',
           title: location.post.title,
           name: location.post.name,
+          reflink: location.reflink,
           options: {
             icon: '../assets/icons/' + this.activeFilter + '.png'
           },
         }
       )
     })
-    console.log(this.markers)
   }
 
   ngAfterViewInit() {

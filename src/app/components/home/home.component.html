@@ -50,6 +50,18 @@
       </div>
     </div>
   </div>
+  <div class="details">
+    <div class="container">
+      <div class="row ">
+        <div class="col-8">
+          <p>Last updated: <strong>just now</strong></p>
+        </div>
+        <div class="col text-right">
+          <p>Items: <strong>{{markers.length}}</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
   <google-map
     [height]="height"
     width="100%"
@@ -73,14 +85,15 @@
         <p>Tap here to book the wave closest to you: <strong>Surf Poel!</strong></p>
         <p>Purchase a ticket and surf.</p>-->
 
-       <p class="marker__label">Getting there</p>
+       <!--<p class="marker__label">Getting there</p>-->
        <p class="marker__title">
          Heading to
          <strong [routerLink]="'../location/' + infoContent.name">{{infoContent.title}}</strong>
          today?
        </p>
-       <p class="marker__label">Tap here to get directions</p>
-       <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
+       <!--<p class="marker__label">Tap here to get directions</p>-->
+         <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
+         <a [href]="infoContent.reflink" class="marker__action marker__action-outline" target="_blank">BOOK NOW</a>
       </div>
     </map-info-window>
 

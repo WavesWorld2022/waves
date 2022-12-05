@@ -9,7 +9,7 @@
   z-index: 5;
   margin: 0;
   background: rgba(0, 0, 0, .1);
-  padding: 15px 15px 0;
+  padding: 51px 15px 0;
   &__inner{
     display: flex;
     justify-content: flex-end;
@@ -96,6 +96,19 @@
     }
   }
 }
+
+.details{
+  background: #008bb2;
+  padding: 10px 0;
+  p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  .text-right {
+    margin-right: 2px;
+  }
+}
 @media all and (max-width: 768px){
   .location-nav{
     li{
@@ -132,6 +145,7 @@
   }
   &__action{
     font-weight: 600;
+    height: 29px;
     text-decoration: none;
     background: #008bb2;
     padding: 8px 16px;
@@ -140,5 +154,14 @@
     border-radius: 7px;
     font-size: 13px;
     margin: 0;
+    box-sizing: border-box;
+
+    &-outline {
+      background: transparent;
+      border: 2px #008bb2 solid;
+      padding: 7px 15px;
+      color: #008bb2;
+      margin-left: 20px;
+    }
   }
 }

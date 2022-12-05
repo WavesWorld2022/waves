@@ -34,7 +34,7 @@
           <ul class="location-nav navbar">
             <li *ngFor="let i of nav"
                 [class.active]="activeFilter === i.id"
-                (click)="activeFilter = i.id">
+                (click)="onFilter(i)">
               <div class="picture">
                 <img src="assets/images/{{i.icon}}.png" alt="shield">
                 <span>{{i.title}}</span>
@@ -46,16 +46,16 @@
     </div>
   </div>
 
-  <div class="container">
+  <div *ngIf="filteredLocations.length" class="container">
     <div class="row">
       <div class="col table-wrapper">
         <table class="table table-striped">
           <tr>
             <th>Wavelocation</th>
             <th class="text-right">Hour</th>
-            <th class="text-right">On Board</th>
+            <th class="text-right">PPMSonBoard</th>
           </tr>
-          <tr *ngFor="let item of waveLocations">
+          <tr *ngFor="let item of filteredLocations">
             <td>
               <span>{{item.post.title}}</span>
             </td>
@@ -65,5 +65,10 @@
         </table>
       </div>
     </div>
+  </div>
+
+  <div *ngIf="!filteredLocations.length" class="container nodata">
+      <h3 class="nodata__title">No available wavelocations on Your request</h3>
+      <button class="nodata__button" (click)="onFilter(nav[0])">Reset filter</button>
   </div>
 </div>

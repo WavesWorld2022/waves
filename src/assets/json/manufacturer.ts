@@ -92,7 +92,7 @@ export const manufacturer = [
   {
     id: 383,
     title: "Webber",
-    content: "<h1 class=\"entry-title\">Shaping waves to accentuate the experience and accelerate learning</h1>",
+    content: "<h4>Shaping waves to accentuate the experience and accelerate learning</h4>",
     excerpt: "In a nutshell you need a high wave rate, you need to make waves that surfers want, and you need to be able to change those waves from year to year, day to day, wave to wave or even during the ride.",
     date: "2019-10-03 21:58:14",
     link: "webber",

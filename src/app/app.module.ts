@@ -24,6 +24,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {LocationComponent} from './components/location/location.component';
 import {SafePipeModule} from 'safe-pipe';
 import {ManufacturesItemComponent} from './components/manufactures/manufactures-item/manufactures-item.component';
+import { TechnologiesItemComponent } from './components/technologies/technologies-item/technologies-item.component';
+import { ProductsItemComponent } from './components/products/products-item/products-item.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import {ManufacturesItemComponent} from './components/manufactures/manufactures-
     MagazineComponent,
     LoaderComponent,
     LocationComponent,
-    ManufacturesItemComponent
+    ManufacturesItemComponent,
+    TechnologiesItemComponent,
+    ProductsItemComponent
   ],
   imports: [
     BrowserModule,

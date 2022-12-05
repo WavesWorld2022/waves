@@ -35,12 +35,12 @@
             <div *ngIf="location.waves.length" class="section section_waves">
               <div class="section__header">
                 <h2 class="section__title section__title_bordered">Waves</h2>
-              </div>
-              <div class="section__content">
-                <!--<h3 >{{wave.wave_name}}</h3>-->
                 <select class="section__subtitle" [(ngModel)]="selectedWave" (ngModelChange)="onSelectWave($event)"  *ngIf="location.waves.length > 1">
                   <option *ngFor="let item of location.waves" [value]="item.wave_name">{{item.wave_name}}</option>
                 </select>
+              </div>
+              <div class="section__content">
+                <!--<h3 >{{wave.wave_name}}</h3>-->
                 <ul class="section__list section__list-vertical">
                   <li class="item" *ngIf="+wave.wave_difficulty">
                     <strong>Wave difficulty:</strong> {{wave.wave_difficulty}}
@@ -172,7 +172,6 @@
                         <strong>{{infoContent.title}}</strong>
                       </p>
                       <p class="marker__label">{{infoContent.address}}</p>
-                      <p class="marker__label">Tap here to get directions</p>
                       <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
                     </div>
                   </map-info-window>

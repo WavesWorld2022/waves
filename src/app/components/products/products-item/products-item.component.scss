@@ -13,6 +13,9 @@
   padding: 25px 30px;
   margin: 2rem 0;
   &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     line-height: 1.75;
     font-size: 18px;
     color: #00465a;

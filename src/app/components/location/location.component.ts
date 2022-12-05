@@ -124,6 +124,6 @@ export class LocationComponent {
       } else {
         return '<a href="' + hyperlink + '" target="_blank" rel="noopener noreferrer">' + url + '</a>'
       }
-    }).replace('Source:', '<br><strong>Source:</strong>');
+    }).replace(/Source:/gi, '<br><strong>Source:</strong>');
   }
 }
