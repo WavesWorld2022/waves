@@ -21,8 +21,8 @@
               <div class="search">
                 <img src="../../../assets/icons/search.svg" alt="">
                 <input [typeahead]="data"
-                       (keyup)="onFilter()"
-                       (typeaheadOnSelect)="onFilter()"
+                       (keyup)="onFilter($event)"
+                       (typeaheadOnSelect)="goToLocation($event)"
                        [(ngModel)]="selected"
                        [typeaheadScrollable]="true"
                        [typeaheadOptionsInScrollableView]="5"
@@ -119,3 +119,20 @@
     -->
   </google-map>
 </div>
+
+<ng-template #bookingModal>
+  <div class="modal-body text-center">
+    <p class="popup__title">Booking</p>
+    <p class="popup__text">Need a ticket to surf?</p>
+    <p class="popup__text popup__text-bold">
+      Tap here to book the wave closest to you:
+      <strong *ngIf="nearestLocation?.title"
+              (click)="goToNearestLocation(nearestLocation.name)"
+      >
+        {{nearestLocation.title}}
+      </strong>
+    </p>
+    <p class="popup__text">Purchase a ticket and surf!</p>
+    <button class="popup__close" (click)="closeModal()">✕</button>
+  </div>
+</ng-template>

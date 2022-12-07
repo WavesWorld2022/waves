@@ -23,7 +23,12 @@
             <div class="section__text" *ngIf="product.content" [innerHTML]="parserService.replaceURLs(product.content) | safe: 'html'"></div>
 
             <div class="section__text" *ngIf="product.manufacturer_url" [innerHTML]="parserService.replaceURLs(product.manufacturer_url) | safe: 'html'"></div>
-            <div class="section__text" *ngIf="product.manufacturer" (click)="goTo('manufactures', product.manufacturer)">More about manufacturer here</div>
+            <a class="section__text flex-row justify-content-start" *ngIf="product.manufacturer">
+              More about manufacturer <strong (click)="goTo('manufactures', product.manufacturer)">here</strong>
+            </a>
+            <a class="section__text flex-row justify-content-start" *ngIf="product.technology_type">
+              More about technology <strong (click)="goTo('technologies', product.technology_type)">here</strong>
+            </a>
 
           </div>
         </div>

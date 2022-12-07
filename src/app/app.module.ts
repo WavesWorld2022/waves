@@ -26,6 +26,7 @@ import {SafePipeModule} from 'safe-pipe';
 import {ManufacturesItemComponent} from './components/manufactures/manufactures-item/manufactures-item.component';
 import { TechnologiesItemComponent } from './components/technologies/technologies-item/technologies-item.component';
 import { ProductsItemComponent } from './components/products/products-item/products-item.component';
+import {ModalModule} from "ngx-bootstrap/modal";
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ProductsItemComponent } from './components/products/products-item/produ
     TypeaheadModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    SafePipeModule
+    SafePipeModule,
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

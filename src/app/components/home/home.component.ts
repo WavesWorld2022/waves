@@ -1,7 +1,9 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {GoogleMap, MapInfoWindow} from "@angular/google-maps";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
 import {locations} from "../../../assets/json/locations";
+import {Router} from "@angular/router";
+import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +11,7 @@ import {locations} from "../../../assets/json/locations";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  modalRef?: BsModalRef;
   data = locations.filter(location => location.post && location.post.title);
   selected = '';
   isLoading = true;
@@ -26,6 +29,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.status === 'permanently closed' || (w.status === 'open only summer season' && !this.isSummer)},
     {id: 'f-10', title: '<8',  icon: 'shield-0', query: (w: any) => w.minimum_age < 8}
   ];
+  @ViewChild('bookingModal', {static: true}) bookingModal!: TemplateRef<any>
   // @ts-ignore
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
   // @ts-ignore
@@ -47,8 +51,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     minZoom: 0,
     styles: GoogleMapConfig.styles
   };
+  nearestLocation: any;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private modalService: BsModalService,
+  ) { }
 
   get isSummer(): boolean {
     const month = new Date().getMonth() + 1;
@@ -63,10 +71,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
         lng: position.coords.longitude,
       };
     });
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 1000);
+
     this.onFilter(this.nav[0]);
+
+    if (!sessionStorage.getItem('homeModalShown')) {
+      this.findClosestMarker();
+      this.modalRef = this.modalService.show(this.bookingModal, {class: 'modal-md modal-dialog-centered'});
+    } else {
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 1000);
+    }
   }
 
   onGetMarkers(arr: any[]) {
@@ -118,15 +133,70 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   onFilter(filter?: any) {
     if(filter) {
-      this.activeFilter = filter.id;
-      this.onGetMarkers(this.data.filter(location => (location.waves as any[]).find(filter.query)));
+      if (filter.type === 'keyup') {
+        this.onGetMarkers(this.data.filter((location: any) => location.post.title.toLowerCase().includes(filter.target.value.toLowerCase())));
+      } else {
+        this.activeFilter = filter.id;
+        this.onGetMarkers(this.data.filter(location => (location.waves as any[]).find(filter.query)));
+      }
     } else {
       this.activeFilter = 'f-1';
       this.onGetMarkers(this.data.filter(location => location.visit_address && location.visit_address.name && location.visit_address.name.toLowerCase().includes(this.selected.toLowerCase())));
     }
   }
 
-  test() {
-    console.log(this.selected)
+  goToLocation(event: any) {
+    this.router.navigate([`/location/${event.item.post.name}`])
+  }
+
+  goToNearestLocation(location: string) {
+    this.router.navigate(['/location', location])
+    this.modalRef?.hide();
+    sessionStorage.setItem('homeModalShown', 'true');
+  }
+
+  closeModal() {
+    this.modalRef?.hide();
+    sessionStorage.setItem('homeModalShown', 'true');
+  }
+
+  findClosestMarker() {
+    this.getPosition().then(resp => {
+      let nearestIndex = 1;
+      let tempDist = 25000;
+      const fromLng = +resp.lng;
+      const fromLat = +resp.lat;
+
+      this.markers.forEach((marker, i) => {
+        const dist = this.calculateDistance({lat: fromLat, lng: fromLng},{lat: +marker.position.lat, lng: +marker.position.lng});
+        if (dist < tempDist) {
+          tempDist = dist;
+          nearestIndex = i;
+        }
+      })
+      this.nearestLocation = this.markers[nearestIndex];
+      this.isLoading = false;
+    })
+      .catch(err => console.log(err))
+  }
+
+  getPosition(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resp => {
+        resolve({lng: resp.coords.longitude, lat: resp.coords.latitude});
+      }, err => {
+        reject(err);
+      });
+    });
+  }
+
+  calculateDistance(mk1: any, mk2: any) {
+    const R = 3958.8;
+    const rlat1 = mk1.lat * (Math.PI/180);
+    const rlat2 = mk2.lat * (Math.PI/180);
+    const difflat = rlat2-rlat1;
+    const difflon = (mk2.lng-mk1.lng) * (Math.PI/180);
+
+    return 2 * R * Math.asin(Math.sqrt(Math.sin(difflat / 2) * Math.sin(difflat / 2) + Math.cos(rlat1) * Math.cos(rlat2) * Math.sin(difflon / 2) * Math.sin(difflon / 2)));
   }
 }

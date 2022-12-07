@@ -4323,7 +4323,7 @@ export const locations = [{
   "book_now_subtitle": "",
   "book_now_button_caption": "BOOK NOW",
   "book_now": "",
-  "visit_address": {"address": "Olympiades, Paris, France", "lat": "48.8243102\";s:3:\"lng\";s:9:\"2.3656822"},
+  "visit_address": {"address": "Olympiades, Paris, France", "lat": "48.8243102", "lng": "2.3656822"},
   "correspondence_address": "",
   "nearest_city": "Paris",
   "nearby_natural_wave_spots": "",

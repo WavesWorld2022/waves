@@ -4,6 +4,7 @@ import {filter} from "rxjs";
 import {products} from "../../../../assets/json/products";
 import {manufacturer} from "../../../../assets/json/manufacturer";
 import {StringParserService} from "../../../services/string-parser.service";
+import {technologies} from "../../../../assets/json/technologies";
 
 @Component({
   selector: 'app-products-item',
@@ -29,10 +30,15 @@ export class ProductsItemComponent implements OnInit {
     console.log(location.origin)
   }
 
-  goTo(type: string, manufacturerID: string) {
-    // @ts-ignore
-    let goToUrl = '/' + type + '/' + manufacturer.find(item => item.id === +manufacturerID).link;
-    console.log(goToUrl)
+  goTo(type: string, id: string) {
+    let goToUrl;
+
+    type === 'manufactures'
+      // @ts-ignore
+      ? goToUrl = `/${type}/${manufacturer.find(item => item.id === +id).link}`
+      // @ts-ignore
+      : goToUrl = `/${type}/${technologies.find((item: any) => item.id === +id).permalink}`
+
     this.router.navigate([goToUrl])
   }
 }

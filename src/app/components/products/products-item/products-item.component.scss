@@ -20,6 +20,12 @@
     font-size: 18px;
     color: #00465a;
 
+    strong {
+      margin-left: 5px;
+      color: #cfa70f;
+      cursor: pointer;
+    }
+
     ::ng-deep{
       a {
         font-weight: 600;

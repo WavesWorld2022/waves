@@ -161,7 +161,37 @@
       border: 2px #008bb2 solid;
       padding: 7px 15px;
       color: #008bb2;
-      margin-left: 20px;
+      margin-left: 12px;
+    }
+  }
+}
+
+::ng-deep {
+  .popup {
+    position: relative;
+    &__title {
+      font-size: 16px;
+      margin: 10px 0 10px;
+      font-weight: 600;
+      color: #0b4871;
+      line-height: 18px;
+    }
+    &__text {
+      &-bold {
+        font-weight: 600;
+      }
+      strong {
+        cursor: pointer;
+        color: #008bb2;
+      }
+    }
+    &__close {
+      background: transparent;
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin: 16px;
+      line-height: 1;
     }
   }
 }
