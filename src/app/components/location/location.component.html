@@ -85,7 +85,7 @@
                     <strong>Max customers per hour:</strong> {{wave.customers_per_hour}}
                   </li>
                   <li class="item" *ngIf="+wave.customers_per_wave">
-                    <strong>Max customers per vawe:</strong> {{wave.customers_per_wave}}
+                    <strong>Max customers per wave:</strong> {{wave.customers_per_wave}}
                   </li>
                   <li class="item" *ngIf="wave.tech_energy_consumption">
                     <strong>Energy Consumption:</strong> {{wave.tech_energy_consumption}} kWh
@@ -104,7 +104,7 @@
 
                 <ng-container *ngIf="isPricing(wave)">
                   <h3 class="section__subtitle">Pricing</h3>
-                  <ul class="section__list">
+                  <ul class="section__list section__list-single">
                     <li class="item" *ngIf="+wave.price_adult_high">
                       <strong>Price adult high:</strong> € {{wave.price_adult_high}}
                     </li>
@@ -116,6 +116,12 @@
                     </li>
                     <li class="item" *ngIf="+wave.price_child_low">
                       <strong>Price child low:</strong> € {{wave.price_child_low}}
+                    </li>
+                    <li class="item" *ngIf="+location.board_rental">
+                      <strong>Board rental / hr:</strong> € {{location.board_rental}}
+                    </li>
+                    <li class="item" *ngIf="+location.wetsuit_rental">
+                      <strong>Wetsuit rental / hr:</strong> € {{location.wetsuit_rental}}
                     </li>
                   </ul>
                 </ng-container>
@@ -211,12 +217,6 @@
             >
               <h2 class="section__title">Main Information</h2>
               <div class="section__text">
-                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.board_rental">
-                  <span>Board rental / hr</span><span>€{{location.board_rental}}/hour</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.wetsuit_rental">
-                  <span>Wetsuit rental / hr</span><span>€{{location.wetsuit_rental}}/hour</span>
-                </div>
                 <div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_video_price">
                   <span>Session video price / hr</span><span>€{{location.session_video_price}}/hour</span>
                 </div>

@@ -76,7 +76,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     if (!sessionStorage.getItem('homeModalShown')) {
       this.findClosestMarker();
-      this.modalRef = this.modalService.show(this.bookingModal, {class: 'modal-md modal-dialog-centered'});
     } else {
       setTimeout(() => {
         this.isLoading = false;
@@ -175,9 +174,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
       })
       this.nearestLocation = this.markers[nearestIndex];
+      this.modalRef = this.modalService.show(this.bookingModal, {class: 'modal-md modal-dialog-centered'});
       this.isLoading = false;
     })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err)
+        this.isLoading = false;
+      })
   }
 
   getPosition(): Promise<any> {

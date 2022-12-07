@@ -2,7 +2,7 @@
 <div *ngIf="!isLoading" class="page">
   <div class="control-panel">
     <div class="container">
-      <div class="row text-right">
+      <div class="row text-right flex-column flex-md-row">
         <div class="col">
           <ul class="location-nav navbar">
             <li *ngFor="let i of nav"
@@ -15,7 +15,7 @@
             </li>
           </ul>
         </div>
-        <div class="col d-none-mobile">
+        <div class="col">
           <div class="row">
             <div class="control-panel__inner">
               <div class="search">
@@ -54,7 +54,7 @@
     <div class="container">
       <div class="row ">
         <div class="col-8">
-          <p>Last updated: <strong>just now</strong></p>
+          <p>Last updated: <strong>25.11.2022</strong></p>
         </div>
         <div class="col text-right">
           <p>Items: <strong>{{markers.length}}</strong></p>

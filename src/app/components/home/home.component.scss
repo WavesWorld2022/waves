@@ -100,6 +100,11 @@
 .details{
   background: #008bb2;
   padding: 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3000;
   p {
     margin: 0;
     color: #ffffff;
@@ -120,6 +125,17 @@
           font-size: 12px;
         }
       }
+    }
+  }
+  .control-panel{
+    padding: 51px 15px 15px;
+
+    &__inner {
+      margin-top: 15px;
+    }
+    .search {
+      width: 100%;
+      margin-left: 0;
     }
   }
 }

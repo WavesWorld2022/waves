@@ -117,7 +117,7 @@
          width: 2rem;
        }
     }
-    &-vertical {
+    &-vertical, &-single {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 5%;
@@ -159,6 +159,10 @@
           margin-right: 5px;
         }
       }
+    }
+    &-single {
+      grid-template-columns: 1fr;
+      margin: 2rem 0;
     }
   }
   &__text {
