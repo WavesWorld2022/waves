@@ -73,7 +73,7 @@
               "browserTarget": "vawes:build:production"
             },
             "development": {
-              "browserTarget": "vawes:build:development"
+              "browserTarget": "waves:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "vawes:build"
+            "browserTarget": "waves:build"
           }
         },
         "test": {

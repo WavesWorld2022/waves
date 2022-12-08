@@ -236,3 +236,13 @@ select {
   margin-bottom: 8px;
   outline: none;
 }
+
+@media all and (max-width: 768px) {
+  .section__header {
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+  .section__list-horizontal {
+    flex-wrap: wrap;
+  }
+}
