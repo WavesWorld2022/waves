@@ -40,8 +40,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   markers: any[] = [];
   height: string | number = 500;
   zoom = 2;
+  isFiltersShown = false;
+  isMap = true;
   // @ts-ignore
   options: google.maps.MapOptions = {
+    gestureHandling: 'greedy',
     disableDefaultUI: true,
     mapTypeId: 'terrain',
     zoomControl: false,
@@ -110,6 +113,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if(this.map) {
       this.map.googleMap?.setOptions({styles: this.options.styles});
     }
+  }
+
+  onToggleFilters() {
+    this.isFiltersShown = !this.isFiltersShown;
+  }
+
+  onToggleLayout() {
+    this.isMap = !this.isMap;
   }
 
   zoomIn() {

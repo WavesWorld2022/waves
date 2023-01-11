@@ -1,9 +1,39 @@
 <app-loader *ngIf="isLoading"></app-loader>
+
+<div class="header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg justify-content-between">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" alt="logo">
+      </a>
+      <div class="search">
+        <img src="../../../assets/icons/search.svg" alt="">
+        <input [typeahead]="data"
+               (keyup)="onFilter($event)"
+               (typeaheadOnSelect)="goToLocation($event)"
+               [(ngModel)]="selected"
+               [typeaheadScrollable]="true"
+               [typeaheadOptionsInScrollableView]="5"
+               typeaheadOptionField="post.title"
+               placeholder="Search..."
+               [typeaheadItemTemplate]="customItemTemplate"
+               class="form-control">
+
+        <ng-template #customItemTemplate let-model="item" let-index="index">
+          <h5>{{model.post.title}}</h5>
+        </ng-template>
+
+      </div>
+    </nav>
+  </div>
+</div>
+
+
 <div *ngIf="!isLoading" class="page">
-  <div class="control-panel">
+  <div class="control-panel" [class.list]="!isMap">
     <div class="container">
       <div class="row text-right flex-column flex-md-row">
-        <div class="col">
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <ul class="location-nav navbar">
             <li *ngFor="let i of nav"
                 [class.active]="activeFilter === i.id"
@@ -15,46 +45,15 @@
             </li>
           </ul>
         </div>
-        <div class="col">
-          <div class="row">
-            <div class="control-panel__inner">
-              <div class="search">
-                <img src="../../../assets/icons/search.svg" alt="">
-                <input [typeahead]="data"
-                       (keyup)="onFilter($event)"
-                       (typeaheadOnSelect)="goToLocation($event)"
-                       [(ngModel)]="selected"
-                       [typeaheadScrollable]="true"
-                       [typeaheadOptionsInScrollableView]="5"
-                       typeaheadOptionField="post.title"
-                       placeholder="Search..."
-                       [typeaheadItemTemplate]="customItemTemplate"
-                       class="form-control">
-
-                <ng-template #customItemTemplate let-model="item" let-index="index">
-                 <h5>{{model.post.title}}</h5>
-                </ng-template>
-
-              </div>
-              <div class="zoom">
-                <button (click)="zoomIn()" class="zoom__btn zoom__btn_in">
-                  <img src="../../../assets/icons/plus.svg" alt="">
-                </button>
-                <button (click)="zoomOut()" class="zoom__btn zoom__btn_out">
-                  <img src="../../../assets/icons/minus.svg" alt="">
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
+
   <div class="details">
     <div class="container">
       <div class="row ">
         <div class="col-8">
-          <p>Last updated: <strong>25.11.2022</strong></p>
+          <p>Last updated: <strong>25.12.2022</strong></p>
         </div>
         <div class="col text-right">
           <p>Items: <strong>{{markers.length}}</strong></p>
@@ -62,62 +61,99 @@
       </div>
     </div>
   </div>
-  <google-map
-    [height]="height"
-    width="100%"
-    [zoom]="zoom"
-    [center]="center"
-    [options]="options"
-  >
-    <map-marker
-      #somemarker="mapMarker"
-      *ngFor="let marker of markers"
-      [position]="marker.position"
-      [label]="marker.label"
-      [title]="marker.title"
-      [options]="marker.options"
-      (mapClick)="openInfo(somemarker, marker)"
-    ></map-marker>
-    <map-info-window>
-     <div *ngIf="infoContent && infoContent.title">
-        <!--<p>Booking</p>
-        <p>Need a ticket to surf?</p>
-        <p>Tap here to book the wave closest to you: <strong>Surf Poel!</strong></p>
-        <p>Purchase a ticket and surf.</p>-->
 
-       <!--<p class="marker__label">Getting there</p>-->
-       <p class="marker__title">
-         Heading to
-         <strong [routerLink]="'../location/' + infoContent.name">{{infoContent.title}}</strong>
-         today?
-       </p>
-       <!--<p class="marker__label">Tap here to get directions</p>-->
-         <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
-         <a [href]="infoContent.reflink" class="marker__action marker__action-outline" target="_blank">BOOK NOW</a>
-      </div>
-    </map-info-window>
+  <div class="layout">
+    <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in">
+      <img src="../../../assets/icons/list-task.svg" alt="" *ngIf="isMap">
+      <img src="../../../assets/icons/pin-map.svg" alt="" *ngIf="!isMap">
+    </button>
+  </div>
 
-    <!--
-      CHANGE TICKETS
-      Need to change your ticket ?
-      Tap here to change your ticket to the Surf Poel!
-      CHANGE PURCHASED TICKETS
-    -->
+  <div class="zoom" *ngIf="isMap">
+    <button (click)="zoomIn()" class="zoom__btn zoom__btn_in">
+      <img src="../../../assets/icons/plus.svg" alt="">
+    </button>
+    <button (click)="zoomOut()" class="zoom__btn zoom__btn_out">
+      <img src="../../../assets/icons/minus.svg" alt="">
+    </button>
+  </div>
 
-    <!--
-      DID YOU KNOW
-      <Title news article>
-      <Article excerpt,  4 lines>
-      FIND OUT MORE
-    -->
+  <div class="locations"
+       *ngIf="!isMap"
+       [style.height]="height">
+    <ul class="locations__list">
+      <li *ngFor="let marker of markers" class="locations-item">
+        <p class="locations-item__title" [routerLink]="'../location/' + marker.name">{{marker.title}}</p>
+        <div class="locations-item__actions">
+          <a [href]="marker.direction" class="locations-item__action locations-item__action-outline" target="_blank">
+            <img src="../../../assets/icons/signpost-split.svg" alt="">
+          </a>
+          <a [href]="marker.reflink" class="locations-item__action locations-item__action-outline" target="_blank">
+            <img src="../../../assets/icons/ticket-perforated.svg" alt="">
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-    <!--
-      GETTING THERE
-      Heading to Surf Poel today?
-      Tap here to get directions
-      GET DIRECTIONS
-    -->
-  </google-map>
+  <ng-container *ngIf="isMap">
+    <google-map
+      [height]="height"
+      width="100%"
+      [zoom]="zoom"
+      [center]="center"
+      [options]="options"
+    >
+      <map-marker
+        #somemarker="mapMarker"
+        *ngFor="let marker of markers"
+        [position]="marker.position"
+        [label]="marker.label"
+        [title]="marker.title"
+        [options]="marker.options"
+        (mapClick)="openInfo(somemarker, marker)"
+      ></map-marker>
+      <map-info-window>
+        <div *ngIf="infoContent && infoContent.title">
+          <!--<p>Booking</p>
+          <p>Need a ticket to surf?</p>
+          <p>Tap here to book the wave closest to you: <strong>Surf Poel!</strong></p>
+          <p>Purchase a ticket and surf.</p>-->
+
+          <!--<p class="marker__label">Getting there</p>-->
+          <p class="marker__title">
+            Heading to
+            <strong [routerLink]="'../location/' + infoContent.name">{{infoContent.title}}</strong>
+            today?
+          </p>
+          <!--<p class="marker__label">Tap here to get directions</p>-->
+          <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
+          <a [href]="infoContent.reflink" class="marker__action marker__action-outline" target="_blank">BOOK NOW</a>
+        </div>
+      </map-info-window>
+
+      <!--
+        CHANGE TICKETS
+        Need to change your ticket ?
+        Tap here to change your ticket to the Surf Poel!
+        CHANGE PURCHASED TICKETS
+      -->
+
+      <!--
+        DID YOU KNOW
+        <Title news article>
+        <Article excerpt,  4 lines>
+        FIND OUT MORE
+      -->
+
+      <!--
+        GETTING THERE
+        Heading to Surf Poel today?
+        Tap here to get directions
+        GET DIRECTIONS
+      -->
+    </google-map>
+  </ng-container>
 </div>
 
 <ng-template #bookingModal>

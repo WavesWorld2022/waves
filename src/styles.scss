@@ -104,6 +104,12 @@ a {
 }
 
 @media all and (max-width: 768px) {
+  .header .dropdown.open {
+    z-index: 999 !important;
+    transform: none !important;
+    top: 45px !important;
+    width: calc(100vw - 20px) !important;
+  }
   .table-wrapper{
     max-height: calc(100vh - 297px);
     overflow: auto;
@@ -172,4 +178,8 @@ typeahead-container{
       color: #fff;
     }
   }
+}
+.gm-style .gm-style-iw-c {
+  max-width: calc(100vw - 30px) !important;
+  margin-left: -5px;
 }
