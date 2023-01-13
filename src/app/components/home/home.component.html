@@ -36,7 +36,7 @@
         <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <ul class="location-nav navbar">
             <li *ngFor="let i of nav"
-                [class.active]="activeFilter === i.id"
+                [class.active]="activeFilterCheck(i.id)"
                 (click)="onFilter(i)">
               <div class="picture">
                 <img src="assets/images/{{i.icon}}.png" alt="shield">

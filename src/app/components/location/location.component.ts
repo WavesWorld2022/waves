@@ -5,13 +5,14 @@ import {locations} from "../../../assets/json/locations";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
 import {DomSanitizer} from '@angular/platform-browser';
 import {MapInfoWindow} from "@angular/google-maps";
+import {WeatherService} from "../../services/weather.service";
 
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
   styleUrls: ['./location.component.scss']
 })
-export class LocationComponent {
+export class LocationComponent implements OnInit{
   @ViewChild(MapInfoWindow, { static: false }) info!: MapInfoWindow;
   location: any;
   zoom = 12;
@@ -39,7 +40,8 @@ export class LocationComponent {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private weatherService: WeatherService
   ) {
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -89,6 +91,10 @@ export class LocationComponent {
     });
   }
 
+  ngOnInit() {
+    this.calculateWaterTemp(this.coords.lat, this.coords.lng);
+  }
+
   isPricing(wave: any) {
     return +wave.price_adult_high || +wave.price_adult_low || +wave.price_child_high || +wave.price_child_low;
   }
@@ -104,6 +110,36 @@ export class LocationComponent {
   openInfo(spot: any, content: any) {
     this.infoContent = content;
     this.info.open(spot);
+  }
+
+  calculateWaterTemp(lat: any, lng: any) {
+    this.weatherService.getWeatherData(lat, lng).subscribe(data => {
+      const actualWaterTemp = Math.round(data.main.temp - 3);
+      const recommendedWetsuit = '';
+
+      this.location.waves.forEach((wave: any, i: number) => {
+        if (wave.wave_system === 'river') {
+          //not indoor
+          this.location.waves[i].water_temp = actualWaterTemp;
+
+          if (actualWaterTemp <= 3) {
+            this.location.waves[i].recommended_wetsuite = ['6/5mm to 7mm thickness wetsuit'];
+          } else if (actualWaterTemp >= 4 && actualWaterTemp <= 7) {
+            this.location.waves[i].recommended_wetsuite = ['5/4mm to 6/5mm thickness wetsuit'];
+          } else if (actualWaterTemp >= 8 && actualWaterTemp <= 11) {
+            this.location.waves[i].recommended_wetsuite = ['4/3mm to 5/4mm thickness wetsuit'];
+          } else if (actualWaterTemp >= 12 && actualWaterTemp <= 17) {
+            this.location.waves[i].recommended_wetsuite = ['3/2mm to 4/3mm thickness wetsuit'];
+          } else if (actualWaterTemp >= 18 && actualWaterTemp <= 20) {
+            this.location.waves[i].recommended_wetsuite = ['wetsuit 2mm'];
+          } else if (actualWaterTemp >= 21 && actualWaterTemp <= 25) {
+            this.location.waves[i].recommended_wetsuite = ['wetsuit 1mm'];
+          } else if (actualWaterTemp >= 26) {
+            this.location.waves[i].recommended_wetsuite = ['wetsuit with UV protection of Lycra (UV Lycra)'];
+          }
+        }
+      })
+    })
   }
 
   replaceURLs(message: any) {

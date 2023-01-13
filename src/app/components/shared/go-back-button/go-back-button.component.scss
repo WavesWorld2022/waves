@@ -1,0 +1,21 @@
+.go-back {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 30px;
+  position: absolute;
+  background: transparent;
+  left: 4%;
+  bottom: -4rem;
+  z-index: 10000;
+  color: #ffffff;
+}
+
+@media all and (max-width: 768px) {
+  .go-back {
+    font-size: 20px;
+    color: #003749;
+    //bottom: -70px;
+    left: 2%;
+  }
+}

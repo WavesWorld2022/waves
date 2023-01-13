@@ -27,6 +27,8 @@ import {ManufacturesItemComponent} from './components/manufactures/manufactures-
 import { TechnologiesItemComponent } from './components/technologies/technologies-item/technologies-item.component';
 import { ProductsItemComponent } from './components/products/products-item/products-item.component';
 import {ModalModule} from "ngx-bootstrap/modal";
+import {HttpClientModule} from "@angular/common/http";
+import { GoBackButtonComponent } from './components/shared/go-back-button/go-back-button.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import {ModalModule} from "ngx-bootstrap/modal";
     LocationComponent,
     ManufacturesItemComponent,
     TechnologiesItemComponent,
-    ProductsItemComponent
+    ProductsItemComponent,
+    GoBackButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import {ModalModule} from "ngx-bootstrap/modal";
     ReactiveFormsModule,
     SafePipeModule,
     ModalModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
