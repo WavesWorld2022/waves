@@ -83,19 +83,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.data.forEach(loc => {
-      console.log(loc)
-      /*loc.waves.forEach(wave => {
-        console.log(wave.wave_system);
-      })*/
-    })
     this.height = (window.innerHeight - (window.innerWidth < 980 ? 171 : 206)) + 'px';
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       };
-      console.log(this.center)
     });
 
     this.onFilter(this.nav[0]);

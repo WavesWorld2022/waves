@@ -29,6 +29,7 @@ import { ProductsItemComponent } from './components/products/products-item/produ
 import {ModalModule} from "ngx-bootstrap/modal";
 import {HttpClientModule} from "@angular/common/http";
 import { GoBackButtonComponent } from './components/shared/go-back-button/go-back-button.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { GoBackButtonComponent } from './components/shared/go-back-button/go-bac
     ReactiveFormsModule,
     SafePipeModule,
     ModalModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

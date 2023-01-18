@@ -1,4 +1,4 @@
-import {Component, OnInit, SecurityContext, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, SecurityContext, ViewChild} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
 import {locations} from "../../../assets/json/locations";
@@ -6,6 +6,7 @@ import {GoogleMapConfig} from "../../../assets/json/google-map.config";
 import {DomSanitizer} from '@angular/platform-browser';
 import {MapInfoWindow} from "@angular/google-maps";
 import {WeatherService} from "../../services/weather.service";
+import {SlickCarouselComponent} from "ngx-slick-carousel";
 
 @Component({
   selector: 'app-location',
@@ -14,6 +15,8 @@ import {WeatherService} from "../../services/weather.service";
 })
 export class LocationComponent implements OnInit{
   @ViewChild(MapInfoWindow, { static: false }) info!: MapInfoWindow;
+  @ViewChild('slickModal', {static: false}) slickModal!: SlickCarouselComponent;
+  @ViewChild('dropdownToggle') dropdownToggle!: ElementRef;
   location: any;
   zoom = 12;
   nearbySpotsZoom = 10;
@@ -36,6 +39,9 @@ export class LocationComponent implements OnInit{
   selectedWave!: string;
 
   infoContent: any;
+
+  slideConfig = {"slidesToShow": 1, "slidesToScroll": 1};
+  isPhoneScreen!: boolean;
 
   constructor(
     private router: Router,
@@ -89,6 +95,7 @@ export class LocationComponent implements OnInit{
         this.selectedWave = this.location.waves[0].wave_name;
       }
     });
+    innerWidth >= 768 ? this.isPhoneScreen = false : this.isPhoneScreen = true;
   }
 
   ngOnInit() {
@@ -99,8 +106,10 @@ export class LocationComponent implements OnInit{
     return +wave.price_adult_high || +wave.price_adult_low || +wave.price_child_high || +wave.price_child_low;
   }
 
-  onSelectWave(event: any) {
-    this.wave = this.location.waves.find((wave: any) => wave.wave_name === event);
+  onSelectWave(value: any) {
+    this.wave = this.location.waves.find((wave: any) => wave.wave_name === value);
+    // @ts-ignore
+    document.querySelector(".text-box").value = value;
   }
 
   getDate(date: string) {
@@ -161,5 +170,18 @@ export class LocationComponent implements OnInit{
         return '<a href="' + hyperlink + '" target="_blank" rel="noopener noreferrer">' + url + '</a>'
       }
     }).replace(/Source:/gi, '<br><strong>Source:</strong>');
+  }
+
+  onDropdown() {
+    this.dropdownToggle.nativeElement.classList.toggle("active")
+  }
+
+  next() {
+    this.slickModal.slickNext();
+  }
+
+  prev() {
+    console.log(this.slickModal)
+    this.slickModal.slickPrev();
   }
 }

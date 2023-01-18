@@ -49,11 +49,13 @@ export class CompareComponent implements OnInit {
   }
 
   getPPMSonBoard(item: any) {
+    //console.log(item)
     const price = item['waves'] && item['waves'][0] && ['price_adult_high'] ? item['waves'][0]['price_adult_high'] : 0;
     const waves = item['waves'] && item['waves'][0] && ['waves_per_hour'] ? item['waves'][0]['waves_per_hour'] : 0;
     const duration = item['waves'] && item['waves'][0] && ['ride_duration'] ? item['waves'][0]['ride_duration'] : 0;
     const PPMSonBoard = (Number(price)/(Number(waves)*Number(duration))) * 60;
-    return (isNaN(PPMSonBoard) || PPMSonBoard === 0) ? '-' : (PPMSonBoard / 60).toFixed(2)
+    /*return (isNaN(PPMSonBoard) || PPMSonBoard === 0) ? '-' : (PPMSonBoard / 60).toFixed(2)*/
+    return (isNaN(PPMSonBoard) || PPMSonBoard === 0) ? '-' : Math.round(PPMSonBoard * 100) / 100;
   }
 
   // PPMSonBoard = price_adult_high / (waves_per_hour x ride_duration)
