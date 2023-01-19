@@ -10,8 +10,9 @@ export class CompareComponent implements OnInit {
   isLoading = false;
   selected = '';
   activeFilter = 'f-1';
+  center: any;
 
-  nav = [
+  /*nav = [
     {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: any) => w},
     {id: 'f-2',  title: 'ME',  icon: 'shield-1', query: (w: any) => w},
     {id: 'f-3',  title: 'R',   icon: 'shield-2', query: (w: any) => w.wave_system !== 'standing-wave' && w.wave_system !== 'river'},
@@ -22,6 +23,18 @@ export class CompareComponent implements OnInit {
     {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.status === 'planned'},
     {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.status === 'permanently closed' || (w.status === 'open only summer season' && !this.isSummer)},
     {id: 'f-10', title: '<8',  icon: 'shield-0', query: (w: any) => w.minimum_age < 8}
+  ];*/
+  nav = [
+    {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: any) => w},
+    {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: any) => w},
+    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.wave_system !== 'standing-wave' && w.wave_system !== 'river'},
+    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: any) => w.wave_system === 'standing-wave'},
+    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.wave_system === 'river'},
+    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.wave_system !== 'river'},
+    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.status !== 'permanently closed' && this.isOpenedLocation(w.commissioning_date) || (w.status === 'open only summer season' && this.isSummer)},
+    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.status === 'planned' || !this.isOpenedLocation(w.waves.commissioning_date)},
+    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.status === 'permanently closed' && this.isOpenedLocation(w.commissioning_date)},
+    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: any) => w.minimum_age < 8}
   ];
   waveLocations: any[] = [];
   filteredLocations: any[] = [];
@@ -34,6 +47,13 @@ export class CompareComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.center = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      };
+    });
+
     locations
       .filter((l: any) => l.post && l.post.title && !(isNaN(Number(this.getPPMSonBoard(l))) || Number(this.getPPMSonBoard(l)) === 0))
       // @ts-ignore
@@ -65,12 +85,34 @@ export class CompareComponent implements OnInit {
 
     if(filter) {
       this.activeFilter = filter.id;
-      this.filteredLocations = [...this.waveLocations.filter(location => (location.waves as any[]).find(filter.query))];
+      filter.id !== 'f-2'
+        ? this.filteredLocations = [...this.waveLocations.filter(location => (location.waves as any[]).find(filter.query))]
+        : this.filteredLocations = [...this.waveLocations.filter(location =>  {return this.checkDistanceBetweenOriginAndLocation(location.visit_address.lat, location.visit_address.lng)})];
     } else {
       this.activeFilter = 'f-1';
       this.filteredLocations = [this.filteredLocations.filter(location => location.visit_address && location.visit_address.name && location.visit_address.name.toLowerCase().includes(this.selected.toLowerCase()))];
     }
   }
 
+  isOpenedLocation(date: string): boolean {
+    const toFormat = date.slice(0,4) + '-' + date.slice(4, 6) + '-' + date.slice(6)
+    return new Date(toFormat) < new Date();
+  }
+
+  checkDistanceBetweenOriginAndLocation(lat: string, lng: string) {
+    let locPos = {lat, lng};
+
+    return this.calculateDistance(this.center, locPos) <= 622;
+  }
+
+  calculateDistance(mk1: any, mk2: any) {
+    const R = 3958.8;
+    const rlat1 = mk1.lat * (Math.PI/180);
+    const rlat2 = mk2.lat * (Math.PI/180);
+    const difflat = rlat2-rlat1;
+    const difflon = (mk2.lng-mk1.lng) * (Math.PI/180);
+
+    return 2 * R * Math.asin(Math.sqrt(Math.sin(difflat / 2) * Math.sin(difflat / 2) + Math.cos(rlat1) * Math.cos(rlat2) * Math.sin(difflon / 2) * Math.sin(difflon / 2)));
+  }
 }
 

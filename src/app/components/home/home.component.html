@@ -161,14 +161,19 @@
     <p class="popup__title">Booking</p>
     <p class="popup__text">Need a ticket to surf?</p>
     <p class="popup__text popup__text-bold">
-      Tap here to book the wave closest to you:
+      This is the closest open wave to You:
       <strong *ngIf="nearestLocation?.title"
               (click)="goToNearestLocation(nearestLocation.name)"
       >
         {{nearestLocation.title}}
       </strong>
     </p>
+
+    <a [href]="nearestLocation.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
+    <a [href]="nearestLocation.reflink" class="marker__action marker__action-outline" target="_blank">BOOK NOW</a>
+
     <p class="popup__text">Purchase a ticket and surf!</p>
+
     <button class="popup__close" (click)="closeModal()">✕</button>
   </div>
 </ng-template>

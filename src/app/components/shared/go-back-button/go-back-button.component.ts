@@ -20,7 +20,7 @@ export class GoBackButtonComponent implements OnInit {
     ngOnInit() {
         this.isDesktop = innerWidth >= 768;
         this.route = this.router.url.split('/').filter(item => item);
-        this.isNextStepToHome = this.route.length === 1;
+        this.isNextStepToHome = this.route.length === 1 || (this.route.length === 2 && this.route.includes('location'));
     }
 
     goBack(): void {

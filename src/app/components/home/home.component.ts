@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   nav = [
     {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: any) => w},
     {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: any) => w},
-    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.wave_system !== 'rolling'},
+    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.wave_system !== 'standing-wave' && w.wave_system !== 'river'},
     {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: any) => w.wave_system === 'standing-wave'},
     {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.wave_system === 'river'},
     {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.wave_system !== 'river'},
@@ -118,6 +118,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
           title: location.post.title,
           name: location.post.name,
           reflink: location.reflink,
+          status: location.status === 'permanently closed' && this.isOpenedLocation(location.waves[0].commissioning_date) ? 'closed' : 'opened',
           options: {
             icon: this.activeFilters.length > 1
                 ? '../assets/icons/multiple-filter.png'
@@ -234,10 +235,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
       const fromLat = +resp.lat;
 
       this.markers.forEach((marker, i) => {
-        const dist = this.calculateDistance({lat: fromLat, lng: fromLng},{lat: +marker.position.lat, lng: +marker.position.lng});
-        if (dist < tempDist) {
-          tempDist = dist;
-          nearestIndex = i;
+        if (marker.status === 'opened') {
+          const dist = this.calculateDistance({lat: fromLat, lng: fromLng},{lat: +marker.position.lat, lng: +marker.position.lng});
+          if (dist < tempDist) {
+            tempDist = dist;
+            nearestIndex = i;
+          }
         }
       })
       this.nearestLocation = this.markers[nearestIndex];

@@ -56,7 +56,7 @@
             <th class="text-right">Hour</th>
             <th class="text-right">PPMSonBoard</th>
           </tr>
-          <tr *ngFor="let item of filteredLocations">
+          <tr *ngFor="let item of filteredLocations" [routerLink]="['../location', item.post.name]">
             <td>
               <span>{{item.post.title}}</span>
             </td>

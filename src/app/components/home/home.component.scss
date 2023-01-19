@@ -271,6 +271,9 @@
 }
 
 ::ng-deep {
+  .modal-content {
+    width: 70%;
+  }
   .popup {
     position: relative;
     &__title {
@@ -281,6 +284,7 @@
       line-height: 18px;
     }
     &__text {
+      margin-top: 16px;
       &-bold {
         font-weight: 600;
       }
