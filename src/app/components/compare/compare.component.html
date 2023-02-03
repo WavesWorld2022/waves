@@ -34,7 +34,7 @@
         <div class="col">
           <ul class="location-nav navbar">
             <li *ngFor="let i of nav"
-                [class.active]="activeFilter === i.id"
+                [class.active]="activeFilterCheck(i.id)"
                 (click)="onFilter(i)">
               <div class="picture">
                 <img src="assets/images/{{i.icon}}.png" alt="shield">
@@ -54,7 +54,12 @@
           <tr>
             <th>Wavelocation</th>
             <th class="text-right">Hour</th>
-            <th class="text-right">PPMSonBoard</th>
+            <th class="text-right"
+                [popover]="calculationInfo"
+                triggers="mouseenter:mouseleave"
+            >
+              Price Per Minute Surfing
+            </th>
           </tr>
           <tr *ngFor="let item of filteredLocations" [routerLink]="['../location', item.post.name]">
             <td>
@@ -73,3 +78,16 @@
       <button class="nodata__button" (click)="onFilter(nav[0])">Reset filter</button>
   </div>
 </div>
+
+<ng-template #calculationInfo >
+  <div>
+    Price Adult High (euro) / Rides Per Hour * Duration Ride<br>
+    Example:<br>
+    Price Adult High = 50 (euro)<br>
+    Rides Per Hour = 10<br>
+    Duration Ride = 15 seconds<br>
+    Calculation:<br>
+    150 seconds = 2,5 minute<br>
+    50/2,5 = 20 euro per minute surfing.
+  </div>
+</ng-template>

@@ -7,7 +7,7 @@
   background: transparent;
   left: 4%;
   bottom: -4rem;
-  z-index: 10000;
+  z-index: 100;
   color: #ffffff;
 }
 
@@ -15,6 +15,7 @@
   .go-back {
     font-size: 20px;
     color: #003749;
+    font-weight: 600;
     //bottom: -70px;
     left: 2%;
   }

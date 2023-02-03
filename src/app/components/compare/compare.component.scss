@@ -136,3 +136,7 @@
     }
   }
 }
+
+::ng-deep popover-container {
+  max-width: 100% !important;
+}

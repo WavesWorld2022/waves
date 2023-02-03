@@ -5,4 +5,14 @@
 }
 .page{
   padding-bottom: 0;
+
+  .hero__title {
+    margin-bottom: 2rem;
+  }
+
+  .email {
+    font-weight: 600;
+    color: #cfa70f;
+    font-size: 24px;
+  }
 }

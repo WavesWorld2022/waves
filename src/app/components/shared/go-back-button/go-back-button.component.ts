@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {JSONFile} from "@angular/cli/src/utilities/json-file";
+import {HomeComponent} from "../../home/home.component";
 
 @Component({
   selector: 'app-go-back-button',
@@ -11,20 +12,20 @@ export class GoBackButtonComponent implements OnInit {
 
   isDesktop!: boolean;
   route: any;
-  isNextStepToHome!: boolean;
+  isLocationPage!: boolean;
 
   constructor(
-      private router: Router
+      private router: Router,
   ) {}
 
     ngOnInit() {
         this.isDesktop = innerWidth >= 768;
         this.route = this.router.url.split('/').filter(item => item);
-        this.isNextStepToHome = this.route.length === 1 || (this.route.length === 2 && this.route.includes('location'));
+        this.isLocationPage = this.route.includes('location');
     }
 
     goBack(): void {
     this.route.pop();
-    this.router.navigate([this.route.join('/')]);
+    this.router.navigate(['/home']);
   }
 }

@@ -38,6 +38,7 @@ export class CompareComponent implements OnInit {
   ];
   waveLocations: any[] = [];
   filteredLocations: any[] = [];
+  activeFilters: any[] = [];
 
   constructor() { }
 
@@ -62,6 +63,7 @@ export class CompareComponent implements OnInit {
       .forEach((m: any) => {
         this.waveLocations.push(m);
       })
+
     setTimeout(() => {
       this.isLoading = false;
     }, 1000);
@@ -82,12 +84,45 @@ export class CompareComponent implements OnInit {
 
   onFilter(filter?: any) {
     this.filteredLocations.length = 0;
+    let filteredGatherData = [...this.waveLocations];
 
     if(filter) {
-      this.activeFilter = filter.id;
-      filter.id !== 'f-2'
-        ? this.filteredLocations = [...this.waveLocations.filter(location => (location.waves as any[]).find(filter.query))]
-        : this.filteredLocations = [...this.waveLocations.filter(location =>  {return this.checkDistanceBetweenOriginAndLocation(location.visit_address.lat, location.visit_address.lng)})];
+       if (filter.id !== 'f-1') {
+        if (this.activeFilters.includes(this.nav[0])) {
+          this.activeFilters.shift();
+        } else if (filter.id === 'f-7' && this.activeFilters.includes(this.nav[8])) {
+          const removeIndex = this.activeFilters.findIndex(f => f.id === this.nav[8].id);
+          this.activeFilters.splice(removeIndex, 1);
+        } else if (filter.id === 'f-9' && this.activeFilters.includes(this.nav[6])) {
+          const removeIndex = this.activeFilters.findIndex(f => f.id === this.nav[6].id);
+          this.activeFilters.splice(removeIndex, 1);
+        }
+
+        if (!this.activeFilters.includes(filter)) {
+          this.activeFilters.push(filter);
+        } else {
+          const removeIndex = this.activeFilters.findIndex(f => f.id === filter.id);
+          this.activeFilters.splice(removeIndex, 1);
+          if (!this.activeFilters.length) {
+            this.activeFilters = [this.nav[0]];
+          }
+        }
+
+        this.activeFilters.forEach(f => {
+          filteredGatherData = filteredGatherData.filter(location => {
+            return f.id !== 'f-2'
+                ? (location.waves as any[]).find(f.query)
+                : this.checkDistanceBetweenOriginAndLocation(location.visit_address.lat, location.visit_address.lng);
+          });
+        })
+        filteredGatherData = [...new Set(filteredGatherData)];
+        this.filteredLocations = filteredGatherData;
+      } else if (filter.id === 'f-1') {
+
+        this.activeFilters = [this.nav[0]];
+        this.filteredLocations = filteredGatherData;
+      }
+
     } else {
       this.activeFilter = 'f-1';
       this.filteredLocations = [this.filteredLocations.filter(location => location.visit_address && location.visit_address.name && location.visit_address.name.toLowerCase().includes(this.selected.toLowerCase()))];
@@ -97,6 +132,10 @@ export class CompareComponent implements OnInit {
   isOpenedLocation(date: string): boolean {
     const toFormat = date.slice(0,4) + '-' + date.slice(4, 6) + '-' + date.slice(6)
     return new Date(toFormat) < new Date();
+  }
+
+  activeFilterCheck(filterId: string) {
+    return this.activeFilters.find((f: any) => f.id === filterId);
   }
 
   checkDistanceBetweenOriginAndLocation(lat: string, lng: string) {

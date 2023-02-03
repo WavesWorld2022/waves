@@ -142,7 +142,7 @@
     }
   }
   .control-panel{
-    padding: 50px 0 0 65px !important;
+    padding: 50px 65px 0 0 !important;
 
     &__inner {
       margin-top: 15px;
@@ -357,8 +357,7 @@
   }
   .layout{
     top: 36px;
-    left: 0;
-    right: inherit;
+    right: 0;
   }
   .header{
     height: 60px;

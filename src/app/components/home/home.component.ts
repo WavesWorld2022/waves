@@ -4,6 +4,7 @@ import {GoogleMapConfig} from "../../../assets/json/google-map.config";
 import {locations} from "../../../assets/json/locations";
 import {Router} from "@angular/router";
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
+import {NavigationService} from "../../services/navigation.service";
 
 @Component({
   selector: 'app-home',
@@ -40,7 +41,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.status !== 'permanently closed' && this.isOpenedLocation(w.commissioning_date) || (w.status === 'open only summer season' && this.isSummer)},
     {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.status === 'planned' || !this.isOpenedLocation(w.commissioning_date)},
     {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.status === 'permanently closed' && this.isOpenedLocation(w.commissioning_date)},
-    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: any) => w.minimum_age < 8}
+    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: any) => w.minimum_age <= 8}
   ];
   @ViewChild('bookingModal', {static: true}) bookingModal!: TemplateRef<any>
   // @ts-ignore
@@ -55,7 +56,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   height: string | number = 500;
   zoom = 2;
   isFiltersShown = false;
-  isMap = sessionStorage.getItem('homePageMode') === 'map';
+  isMap: boolean;
   // @ts-ignore
   options: google.maps.MapOptions = {
     gestureHandling: 'greedy',
@@ -70,11 +71,20 @@ export class HomeComponent implements OnInit, AfterViewInit {
   };
   nearestLocation: any;
 
+  browserRefresh?: boolean;
+
   constructor(
     private router: Router,
     private modalService: BsModalService,
+    private navService: NavigationService
   ) {
     sessionStorage.setItem('prevRoutes', JSON.stringify([]));
+
+    !sessionStorage.getItem('homePageMode') ? (
+        this.isMap = true
+    ) : (
+        this.isMap = sessionStorage.getItem('homePageMode') === 'map'
+    );
   }
 
   get isSummer(): boolean {
@@ -83,6 +93,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    console.log(this.isMap);
+    this.browserRefresh = this.navService.browserRefreshed;
+
     this.height = (window.innerHeight - (window.innerWidth < 980 ? 171 : 206)) + 'px';
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
@@ -91,14 +104,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
       };
     });
 
-    this.onFilter(this.nav[0]);
+    if (JSON.parse(sessionStorage.getItem('filters')!)?.length > 1) {
+      JSON.parse(sessionStorage.getItem('filters')!).forEach((f: any) => {
+        const filter = this.nav.find(i => f === i.id);
+        this.onFilter(filter);
+      })
+    } else {
+      this.onFilter(this.nav[0]);
+    }
 
     if (!sessionStorage.getItem('homeModalShown')) {
       this.findClosestMarker();
     } else {
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 1000);
+      this.browserRefresh
+          ? (setTimeout(() => {
+            this.isLoading = false;
+          }, 1000))
+          : (this.isLoading = false);
     }
   }
 
@@ -160,6 +182,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   openInfo(marker: any, content: any) {
     this.infoContent = content;
     this.info.open(marker);
+
+    let pos = marker._position;
+    pos.lat = pos.lat + 7;
+
+    this.map.googleMap?.panTo(pos);
   }
 
   onFilter(filter?: any) {
@@ -206,6 +233,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     } else {
       this.onGetMarkers(this.data.filter(location => location.visit_address && location.visit_address.name && location.visit_address.name.toLowerCase().includes(this.selected.toLowerCase())));
     }
+    sessionStorage.setItem('filters', JSON.stringify(this.activeFilters.map(i => i.id)))
   }
 
   activeFilterCheck(filterId: string) {

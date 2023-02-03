@@ -24,12 +24,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {LocationComponent} from './components/location/location.component';
 import {SafePipeModule} from 'safe-pipe';
 import {ManufacturesItemComponent} from './components/manufactures/manufactures-item/manufactures-item.component';
-import { TechnologiesItemComponent } from './components/technologies/technologies-item/technologies-item.component';
-import { ProductsItemComponent } from './components/products/products-item/products-item.component';
+import {TechnologiesItemComponent} from './components/technologies/technologies-item/technologies-item.component';
+import {ProductsItemComponent} from './components/products/products-item/products-item.component';
 import {ModalModule} from "ngx-bootstrap/modal";
 import {HttpClientModule} from "@angular/common/http";
-import { GoBackButtonComponent } from './components/shared/go-back-button/go-back-button.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import {GoBackButtonComponent} from './components/shared/go-back-button/go-back-button.component';
+import {SlickCarouselModule} from 'ngx-slick-carousel';
+import {StarsComponent} from "./components/about-us/stars/stars.component";
+import {EllipsisModule} from "ngx-ellipsis";
+import {PopoverModule} from "ngx-bootstrap/popover";
 
 @NgModule({
   declarations: [
@@ -50,23 +53,26 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     ManufacturesItemComponent,
     TechnologiesItemComponent,
     ProductsItemComponent,
-    GoBackButtonComponent
+    GoBackButtonComponent,
+    StarsComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    GoogleMapsModule,
-    BrowserAnimationsModule,
-    TypeaheadModule.forRoot(),
-    FormsModule,
-    ReactiveFormsModule,
-    SafePipeModule,
-    ModalModule.forRoot(),
-    HttpClientModule,
-    SlickCarouselModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        GoogleMapsModule,
+        BrowserAnimationsModule,
+        TypeaheadModule.forRoot(),
+        FormsModule,
+        ReactiveFormsModule,
+        SafePipeModule,
+        ModalModule.forRoot(),
+        HttpClientModule,
+        SlickCarouselModule,
+        EllipsisModule,
+        PopoverModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
