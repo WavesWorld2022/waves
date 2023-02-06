@@ -93,7 +93,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    console.log(this.isMap);
     this.browserRefresh = this.navService.browserRefreshed;
 
     this.height = (window.innerHeight - (window.innerWidth < 980 ? 171 : 206)) + 'px';

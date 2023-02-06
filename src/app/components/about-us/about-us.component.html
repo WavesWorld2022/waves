@@ -16,7 +16,7 @@
       <div class="col">
         <p class="page__title">Meet the waves guide team</p>
         <div class="member-wrapper row">
-          <div class="col-4" *ngFor="let member of members" >
+          <div class="col-12 col-md-4 col-sm-6" *ngFor="let member of members" >
             <div class="card member" (click)="onShowMore(member)">
               <img src="{{member.image}}" alt="avatar" class="member__img">
               <h3 class="member__name">{{member.name}}</h3>
