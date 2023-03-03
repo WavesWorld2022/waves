@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {manufacturer} from "../../../assets/json/manufacturer";
+import {FireService} from "../../services/fire.service";
 
 @Component({
   selector: 'app-manufactures',
@@ -24,17 +24,18 @@ export class ManufacturesComponent implements OnInit {
   ];
   manufacturers: any[] = [];
 
-  constructor() { }
+  constructor(private fireService: FireService) { }
 
   ngOnInit(): void {
-    manufacturer
-      .sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
-      .forEach((m: any) => {
-        this.manufacturers.push(m);
-      })
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 1000);
+    this.fireService.onGetCollection('manufacturer').subscribe(resp => {
+      resp.sort((a: any, b: any) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+          .forEach((m: any) => {
+            this.manufacturers.push(m);
+          })
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 1000);
+    })
   }
 
 }

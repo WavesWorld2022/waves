@@ -1,5 +1,5 @@
 <app-header></app-header>
-<app-loader *ngIf="!technology"></app-loader>
+<app-loader *ngIf="!technology && isLoading"></app-loader>
 <div *ngIf="technology" class="page">
   <div class="hero">
     <div class="container">

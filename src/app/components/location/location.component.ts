@@ -1,19 +1,19 @@
-import {Component, ElementRef, OnInit, SecurityContext, ViewChild} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
-import {locations} from "../../../assets/json/locations";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
 import {DomSanitizer} from '@angular/platform-browser';
 import {MapInfoWindow} from "@angular/google-maps";
 import {WeatherService} from "../../services/weather.service";
 import {SlickCarouselComponent} from "ngx-slick-carousel";
+import {FireService} from "../../services/fire.service";
 
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
   styleUrls: ['./location.component.scss']
 })
-export class LocationComponent implements OnInit{
+export class LocationComponent {
   @ViewChild(MapInfoWindow, { static: false }) info!: MapInfoWindow;
   @ViewChild('slickModal', {static: false}) slickModal!: SlickCarouselComponent;
   @ViewChild('dropdownToggle') dropdownToggle!: ElementRef;
@@ -44,6 +44,7 @@ export class LocationComponent implements OnInit{
   isPhoneScreen!: boolean;
 
   constructor(
+    private fireService: FireService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private sanitizer: DomSanitizer,
@@ -52,54 +53,52 @@ export class LocationComponent implements OnInit{
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      //console.log(this.activatedRoute.snapshot.params['id'])
-      this.location = locations.find(l => l.post && l.post.name === this.activatedRoute.snapshot.params['id']);
-      if(!this.location) {
-        this.router.navigate(['../../home'])
-      } else {
-        this.coords = {
-          lat: +this.location.visit_address.lat,
-          lng: +this.location.visit_address.lng,
-        }
-        this.marker = {
-          position: {
+      this.fireService.onGetCollection('locations').subscribe(resp => {
+        this.location = resp.find((l:any) => l.post && l.post.name === this.activatedRoute.snapshot.params['id']);
+        if(!this.location) {
+          this.router.navigate(['../../home'])
+        } else {
+          this.coords = {
             lat: +this.location.visit_address.lat,
             lng: +this.location.visit_address.lng,
-          },
-          title: this.location.post.title,
-          direction: ''
-          /*options: {
-            animation: google.maps.Animation.DROP,
-            icon: '../assets/iconsInUse/location_1.png'
-          }*/
-        }
-
-        this.location.nearby_natural_spots.forEach((spot: any) => {
-          const destination = spot.address.address && spot.address.lat && spot.address.lng ? spot.address.lat + ',' + spot.address.lng : '';
-          const origin = this.location.visit_address.address && this.location.visit_address.lat && this.location.visit_address.lng
-            ? this.location.visit_address.lat + ',' + this.location.visit_address.lng
-            : '';
-
-          let marker = {
-            position: {
-              lat: +spot.address.lat,
-              lng: +spot.address.lng
-            },
-            title: spot.name,
-            address: spot.address.address,
-            direction: 'https://www.google.com/maps/dir/?api=1&origin='+ origin +'&destination='+ destination +'&travelmode=driving',
           }
-          this.naturalSpotsMarkers.push(marker);
-        })
-        this.wave = this.location.waves[0];
-        this.selectedWave = this.location.waves[0].wave_name;
-      }
+          this.calculateWaterTemp(this.coords.lat, this.coords.lng);
+          this.marker = {
+            position: {
+              lat: +this.location.visit_address.lat,
+              lng: +this.location.visit_address.lng,
+            },
+            title: this.location.post.title,
+            direction: ''
+            /*options: {
+              animation: google.maps.Animation.DROP,
+              icon: '../assets/iconsInUse/location_1.png'
+            }*/
+          }
+
+          this.location.nearby_natural_spots.forEach((spot: any) => {
+            const destination = spot.address.address && spot.address.lat && spot.address.lng ? spot.address.lat + ',' + spot.address.lng : '';
+            const origin = this.location.visit_address.address && this.location.visit_address.lat && this.location.visit_address.lng
+              ? this.location.visit_address.lat + ',' + this.location.visit_address.lng
+              : '';
+
+            let marker = {
+              position: {
+                lat: +spot.address.lat,
+                lng: +spot.address.lng
+              },
+              title: spot.name,
+              address: spot.address.address,
+              direction: 'https://www.google.com/maps/dir/?api=1&origin='+ origin +'&destination='+ destination +'&travelmode=driving',
+            }
+            this.naturalSpotsMarkers.push(marker);
+          })
+          this.wave = this.location.waves[0];
+          this.selectedWave = this.location.waves[0].wave_name;
+        }
+      })
     });
     innerWidth >= 768 ? this.isPhoneScreen = false : this.isPhoneScreen = true;
-  }
-
-  ngOnInit() {
-    this.calculateWaterTemp(this.coords.lat, this.coords.lng);
   }
 
   isPricing(wave: any) {

@@ -1,10 +1,11 @@
 import {AfterViewInit, Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {GoogleMap, MapInfoWindow} from "@angular/google-maps";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
-import {locations} from "../../../assets/json/locations";
 import {Router} from "@angular/router";
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {NavigationService} from "../../services/navigation.service";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {FireService} from "../../services/fire.service";
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import {NavigationService} from "../../services/navigation.service";
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   modalRef?: BsModalRef;
-  data = locations.filter(location => location.post && location.post.title);
+  data = [];
   selected = '';
   isLoading = true;
   //activeFilter = 'f-1';
@@ -74,6 +75,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   browserRefresh?: boolean;
 
   constructor(
+    private fireService: FireService,
     private router: Router,
     private modalService: BsModalService,
     private navService: NavigationService
@@ -93,34 +95,40 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.browserRefresh = this.navService.browserRefreshed;
+    this.fireService.onGetCollection('locations').subscribe((resp: any) => {
+      this.data.length = 0;
+      this.data = resp.filter((location: any) => location.post && location.post.title);
+      setTimeout(() => {
+        this.browserRefresh = this.navService.browserRefreshed;
 
-    this.height = (window.innerHeight - (window.innerWidth < 980 ? 171 : 206)) + 'px';
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.center = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
+        this.height = (window.innerHeight - (window.innerWidth < 980 ? 171 : 206)) + 'px';
+        navigator.geolocation.getCurrentPosition((position) => {
+          this.center = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+        });
+
+        if (JSON.parse(sessionStorage.getItem('filters')!)?.length > 1) {
+          JSON.parse(sessionStorage.getItem('filters')!).forEach((f: any) => {
+            const filter = this.nav.find(i => f === i.id);
+            this.onFilter(filter);
+          })
+        } else {
+          this.onFilter(this.nav[0]);
+        }
+
+        if (!sessionStorage.getItem('homeModalShown')) {
+          this.findClosestMarker();
+        } else {
+          this.browserRefresh
+            ? (setTimeout(() => {
+              this.isLoading = false;
+            }, 1000))
+            : (this.isLoading = false);
+        }
+      }, 1000);
     });
-
-    if (JSON.parse(sessionStorage.getItem('filters')!)?.length > 1) {
-      JSON.parse(sessionStorage.getItem('filters')!).forEach((f: any) => {
-        const filter = this.nav.find(i => f === i.id);
-        this.onFilter(filter);
-      })
-    } else {
-      this.onFilter(this.nav[0]);
-    }
-
-    if (!sessionStorage.getItem('homeModalShown')) {
-      this.findClosestMarker();
-    } else {
-      this.browserRefresh
-          ? (setTimeout(() => {
-            this.isLoading = false;
-          }, 1000))
-          : (this.isLoading = false);
-    }
   }
 
   onGetMarkers(arr: any[]) {
@@ -227,10 +235,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.onGetMarkers(filteredGatherData);
       } else if (filter.id === 'f-1') {
         this.activeFilters = [this.nav[0]];
-        this.onGetMarkers(this.data.filter(location => (location.waves as any[]).find(filter.query)));
+        this.onGetMarkers(this.data.filter((location: any) => (location.waves as any[]).find(filter.query)));
       }
     } else {
-      this.onGetMarkers(this.data.filter(location => location.visit_address && location.visit_address.name && location.visit_address.name.toLowerCase().includes(this.selected.toLowerCase())));
+      this.onGetMarkers(this.data.filter((location: any) => location.visit_address && location.visit_address.name && location.visit_address.name.toLowerCase().includes(this.selected.toLowerCase())));
     }
     sessionStorage.setItem('filters', JSON.stringify(this.activeFilters.map(i => i.id)))
   }

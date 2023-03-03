@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {technologies} from "../../../assets/json/technologies";
+import {FireService} from "../../services/fire.service";
 
 @Component({
   selector: 'app-technologies',
@@ -24,16 +24,17 @@ export class TechnologiesComponent implements OnInit {
   ];
   technologies: any[] = [];
 
-  constructor() { }
+  constructor(private fireService: FireService) { }
 
   ngOnInit(): void {
-    technologies
-      .sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
-      .forEach((m: any) => {
-        this.technologies.push(m);
-      })
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 1000);
+    this.fireService.onGetCollection('technologies').subscribe(resp => {
+      resp.sort((a: any, b: any ) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+        .forEach((m: any) => {
+          this.technologies.push(m);
+        })
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 1000);
+    })
   }
 }

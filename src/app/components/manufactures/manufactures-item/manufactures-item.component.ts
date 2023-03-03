@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
-import {manufacturer} from "../../../../assets/json/manufacturer";
 import {StringParserService} from "../../../services/string-parser.service";
+import {FireService} from "../../../services/fire.service";
 
 @Component({
   selector: 'app-manufactures-item',
@@ -11,8 +11,10 @@ import {StringParserService} from "../../../services/string-parser.service";
 })
 export class ManufacturesItemComponent {
   manufacturer: any;
+  isLoading = true;
 
   constructor(
+    private fireService: FireService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     public parserService: StringParserService
@@ -20,7 +22,12 @@ export class ManufacturesItemComponent {
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.manufacturer = manufacturer.find(l => l.link === this.activatedRoute.snapshot.params['id'])
+      this.fireService.onGetCollection('manufacturer').subscribe((resp: any) => {
+        this.manufacturer = resp.find((l: any) => l.link === this.activatedRoute.snapshot.params['id'])
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 1000);
+      })
     });
   }
 

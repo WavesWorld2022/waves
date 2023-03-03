@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {locations} from "../../../assets/json/locations";
+import {FireService} from "../../services/fire.service";
 
 @Component({
   selector: 'app-compare',
@@ -40,7 +40,7 @@ export class CompareComponent implements OnInit {
   filteredLocations: any[] = [];
   activeFilters: any[] = [];
 
-  constructor() { }
+  constructor(private fireService: FireService) { }
 
   get isSummer(): boolean {
     const month = new Date().getMonth() + 1;
@@ -55,19 +55,19 @@ export class CompareComponent implements OnInit {
       };
     });
 
-    locations
-      .filter((l: any) => l.post && l.post.title && !(isNaN(Number(this.getPPMSonBoard(l))) || Number(this.getPPMSonBoard(l)) === 0))
-      // @ts-ignore
-      .sort((a,b) => (this.getPPMSonBoard(a) > this.getPPMSonBoard(b)) ? 1 : ((this.getPPMSonBoard(b) > this.getPPMSonBoard(a)) ? -1 : 0))
-      .reverse()
-      .forEach((m: any) => {
-        this.waveLocations.push(m);
-      })
-
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 1000);
-    this.onFilter(this.nav[0]);
+    this.fireService.onGetCollection('locations').subscribe((resp: any) => {
+      resp.filter((l: any) => l.post && l.post.title && !(isNaN(Number(this.getPPMSonBoard(l))) || Number(this.getPPMSonBoard(l)) === 0))
+        // @ts-ignore
+        .sort((a,b) => (this.getPPMSonBoard(a) > this.getPPMSonBoard(b)) ? 1 : ((this.getPPMSonBoard(b) > this.getPPMSonBoard(a)) ? -1 : 0))
+        .reverse()
+        .forEach((m: any) => {
+          this.waveLocations.push(m);
+        })
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 1000);
+      this.onFilter(this.nav[0]);
+    });
   }
 
   getPPMSonBoard(item: any) {
