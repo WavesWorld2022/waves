@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
+import {IProduct} from "../../shared/models";
+import {take, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-products',
@@ -27,7 +29,8 @@ export class ProductsComponent implements OnInit {
   constructor(private fireService: FireService) { }
 
   ngOnInit(): void {
-    this.fireService.onGetCollection('products').subscribe(resp => {
+    this.fireService.onGetCollection('products');
+    this.fireService.collectionData$.pipe(take(1)).subscribe((resp: IProduct[]) => {
       resp.sort((a: any, b: any) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
         .forEach((m: any) => {
           this.products.push(m);

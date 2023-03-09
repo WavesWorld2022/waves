@@ -1,19 +1,20 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {filter} from "rxjs";
+import {filter, Subject, takeUntil} from "rxjs";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
 import {DomSanitizer} from '@angular/platform-browser';
 import {MapInfoWindow} from "@angular/google-maps";
 import {WeatherService} from "../../services/weather.service";
 import {SlickCarouselComponent} from "ngx-slick-carousel";
 import {FireService} from "../../services/fire.service";
+import {ILocation} from "../../shared/models";
 
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
   styleUrls: ['./location.component.scss']
 })
-export class LocationComponent {
+export class LocationComponent implements OnDestroy {
   @ViewChild(MapInfoWindow, { static: false }) info!: MapInfoWindow;
   @ViewChild('slickModal', {static: false}) slickModal!: SlickCarouselComponent;
   @ViewChild('dropdownToggle') dropdownToggle!: ElementRef;
@@ -42,6 +43,7 @@ export class LocationComponent {
 
   slideConfig = {"slidesToShow": 1, "slidesToScroll": 1};
   isPhoneScreen!: boolean;
+  destroyer$ = new Subject();
 
   constructor(
     private fireService: FireService,
@@ -53,7 +55,8 @@ export class LocationComponent {
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.fireService.onGetCollection('locations').subscribe(resp => {
+      this.fireService.onGetCollection('locations');
+      this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: ILocation[]) => {
         this.location = resp.find((l:any) => l.post && l.post.name === this.activatedRoute.snapshot.params['id']);
         if(!this.location) {
           this.router.navigate(['../../home'])
@@ -101,6 +104,10 @@ export class LocationComponent {
     innerWidth >= 768 ? this.isPhoneScreen = false : this.isPhoneScreen = true;
   }
 
+  ngOnDestroy() {
+    this.destroyer$.complete();
+  }
+
   isPricing(wave: any) {
     return +wave.price_adult_high || +wave.price_adult_low || +wave.price_child_high || +wave.price_child_low;
   }
@@ -123,11 +130,9 @@ export class LocationComponent {
   calculateWaterTemp(lat: any, lng: any) {
     this.weatherService.getWeatherData(lat, lng).subscribe(data => {
       const actualWaterTemp = Math.round(data.main.temp - 3);
-      const recommendedWetsuit = '';
 
       this.location.waves.forEach((wave: any, i: number) => {
-        if (wave.wave_system === 'river') {
-          //not indoor
+        if (!wave.wave_indoor) {
           this.location.waves[i].water_temp = actualWaterTemp;
 
           if (actualWaterTemp <= 3) {

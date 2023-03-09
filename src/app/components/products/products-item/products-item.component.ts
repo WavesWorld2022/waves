@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {filter} from "rxjs";
+import {filter, take} from "rxjs";
 import {StringParserService} from "../../../services/string-parser.service";
 import {FireService} from "../../../services/fire.service";
 
@@ -22,7 +22,8 @@ export class ProductsItemComponent {
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.fireService.onGetCollection('products').subscribe((resp: any) => {
+      this.fireService.onGetCollection('products');
+      this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
         this.product = resp.find((l: any) => l.link.replace(/^\/|\/$/g, '') === this.activatedRoute.snapshot.params['id']);
         setTimeout(() => {
           this.isLoading = false;
@@ -32,7 +33,8 @@ export class ProductsItemComponent {
   }
 
   goTo(type: string, id: string) {
-    this.fireService.onGetCollection(type === 'manufactures' ? 'manufacturer' : 'technologies').subscribe((resp: any) => {
+    this.fireService.onGetCollection(type === 'manufactures' ? 'manufacturer' : 'technologies');
+    this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
       this.router.navigate([`/${type}/${type === 'manufactures' ? resp.find((l: any) => l.id == id).link : resp.find((l: any) => l.id == id).permalink}`])
     })
   }

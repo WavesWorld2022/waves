@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
+import {ITechnology} from "../../shared/models";
 
 @Component({
   selector: 'app-technologies',
@@ -27,7 +28,8 @@ export class TechnologiesComponent implements OnInit {
   constructor(private fireService: FireService) { }
 
   ngOnInit(): void {
-    this.fireService.onGetCollection('technologies').subscribe(resp => {
+    this.fireService.onGetCollection('technologies');
+    this.fireService.collectionData$.subscribe((resp: ITechnology[]) => {
       resp.sort((a: any, b: any ) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
         .forEach((m: any) => {
           this.technologies.push(m);

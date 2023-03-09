@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
+import {IManufacturer} from "../../shared/models";
+import {take} from "rxjs";
 
 @Component({
   selector: 'app-manufactures',
@@ -27,7 +29,8 @@ export class ManufacturesComponent implements OnInit {
   constructor(private fireService: FireService) { }
 
   ngOnInit(): void {
-    this.fireService.onGetCollection('manufacturer').subscribe(resp => {
+    this.fireService.onGetCollection('manufacturer');
+    this.fireService.collectionData$.pipe(take(1)).subscribe((resp: IManufacturer[]) => {
       resp.sort((a: any, b: any) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
           .forEach((m: any) => {
             this.manufacturers.push(m);

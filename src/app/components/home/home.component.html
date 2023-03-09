@@ -156,7 +156,7 @@
 </div>
 
 <ng-template #bookingModal>
-  <div class="modal-body text-center">
+  <div class="modal-body text-center popup">
     <p class="popup__title">Booking</p>
     <p class="popup__text">Need a ticket to surf?</p>
     <p class="popup__text popup__text-bold">
@@ -168,7 +168,7 @@
       </strong>
     </p>
 
-    <a [href]="nearestLocation.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
+    <a [href]="nearestLocation.direction" class="marker__action popup__button" target="_blank">GET DIRECTIONS</a>
     <a [href]="nearestLocation.reflink" class="marker__action marker__action-outline" target="_blank">BOOK NOW</a>
 
     <p class="popup__text">Purchase a ticket and surf!</p>

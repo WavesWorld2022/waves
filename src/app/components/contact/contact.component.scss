@@ -16,3 +16,10 @@
     font-size: 24px;
   }
 }
+
+@media all and (max-width: 768px) {
+  .hero {
+    display: block;
+    height: calc(100vh - 171px);
+  }
+}

@@ -274,6 +274,9 @@
   .modal-content {
     width: 70%;
   }
+  .modal-dialog {
+    justify-content: center;
+  }
   .popup {
     position: relative;
     &__title {
@@ -371,6 +374,16 @@
           }
         }
       }
+    }
+  }
+}
+
+@media all and (max-width: 442px){
+  .marker__action {
+    margin-left: 0;
+    width: 100%;
+    &:nth-of-type(1) {
+      margin-bottom: 12px;
     }
   }
 }

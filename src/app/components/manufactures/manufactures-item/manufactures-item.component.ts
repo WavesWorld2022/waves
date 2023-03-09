@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {filter} from "rxjs";
+import {filter, Subject, take, takeUntil} from "rxjs";
 import {StringParserService} from "../../../services/string-parser.service";
 import {FireService} from "../../../services/fire.service";
 
@@ -22,7 +22,8 @@ export class ManufacturesItemComponent {
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.fireService.onGetCollection('manufacturer').subscribe((resp: any) => {
+      this.fireService.onGetCollection('manufacturer');
+      this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
         this.manufacturer = resp.find((l: any) => l.link === this.activatedRoute.snapshot.params['id'])
         setTimeout(() => {
           this.isLoading = false;

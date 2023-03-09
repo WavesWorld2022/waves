@@ -1,22 +1,23 @@
-import {AfterViewInit, Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {GoogleMap, MapInfoWindow} from "@angular/google-maps";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
 import {Router} from "@angular/router";
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {NavigationService} from "../../services/navigation.service";
-import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {FireService} from "../../services/fire.service";
+import {locations} from "../../../assets/json/locations";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   modalRef?: BsModalRef;
   data = [];
   selected = '';
-  isLoading = true;
+  isLoading = false;
   //activeFilter = 'f-1';
 
   /*nav = [
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.wave_system !== 'standing-wave' && w.wave_system !== 'river'},
     {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: any) => w.wave_system === 'standing-wave'},
     {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.wave_system === 'river'},
-    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.wave_system !== 'river'},
+    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.wave_indoor},
     {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.status !== 'permanently closed' && this.isOpenedLocation(w.commissioning_date) || (w.status === 'open only summer season' && this.isSummer)},
     {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.status === 'planned' || !this.isOpenedLocation(w.commissioning_date)},
     {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.status === 'permanently closed' && this.isOpenedLocation(w.commissioning_date)},
@@ -73,6 +74,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   nearestLocation: any;
 
   browserRefresh?: boolean;
+  destroyer$ = new Subject();
 
   constructor(
     private fireService: FireService,
@@ -80,6 +82,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private modalService: BsModalService,
     private navService: NavigationService
   ) {
+    this.browserRefresh = this.navService.browserRefreshed;
+    this.isLoading = this.browserRefresh;
     sessionStorage.setItem('prevRoutes', JSON.stringify([]));
 
     !sessionStorage.getItem('homePageMode') ? (
@@ -95,12 +99,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.fireService.onGetCollection('locations').subscribe((resp: any) => {
+    this.fireService.onGetCollection('locations');
+    this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: any) => {
       this.data.length = 0;
       this.data = resp.filter((location: any) => location.post && location.post.title);
       setTimeout(() => {
-        this.browserRefresh = this.navService.browserRefreshed;
-
         this.height = (window.innerHeight - (window.innerWidth < 980 ? 171 : 206)) + 'px';
         navigator.geolocation.getCurrentPosition((position) => {
           this.center = {
@@ -162,6 +165,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     if(this.map) {
       this.map.googleMap?.setOptions({styles: this.options.styles});
     }
+  }
+
+  ngOnDestroy() {
+    this.destroyer$.complete();
   }
 
   onToggleFilters() {

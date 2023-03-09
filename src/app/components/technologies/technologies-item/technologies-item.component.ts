@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {filter} from "rxjs";
+import {filter, Subject, takeUntil} from "rxjs";
 import {StringParserService} from "../../../services/string-parser.service";
 import {FireService} from "../../../services/fire.service";
 
@@ -9,9 +9,10 @@ import {FireService} from "../../../services/fire.service";
   templateUrl: './technologies-item.component.html',
   styleUrls: ['./technologies-item.component.scss']
 })
-export class TechnologiesItemComponent implements OnInit {
+export class TechnologiesItemComponent implements OnInit, OnDestroy {
   isLoading = true;
   technology: any;
+  destroyer$ = new Subject();
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -21,7 +22,8 @@ export class TechnologiesItemComponent implements OnInit {
     router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      this.fireService.onGetCollection('technologies').subscribe((resp: any) => {
+      this.fireService.onGetCollection('technologies');
+      this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: any) => {
         resp.forEach((l: any) => console.log(l.permalink.replace(/^\/|\/$/g, '')))
         this.technology = resp.find((l: any) => l.permalink.replace(/^\/|\/$/g, '') === this.activatedRoute.snapshot.params['id']);
         setTimeout(() => {
@@ -32,5 +34,8 @@ export class TechnologiesItemComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+  ngOnDestroy() {
+    this.destroyer$.complete();
+  }
 
 }

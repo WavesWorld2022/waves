@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-compare',
@@ -39,6 +40,7 @@ export class CompareComponent implements OnInit {
   waveLocations: any[] = [];
   filteredLocations: any[] = [];
   activeFilters: any[] = [];
+  destroyer$ = new Subject();
 
   constructor(private fireService: FireService) { }
 
@@ -55,7 +57,8 @@ export class CompareComponent implements OnInit {
       };
     });
 
-    this.fireService.onGetCollection('locations').subscribe((resp: any) => {
+    this.fireService.onGetCollection('locations');
+    this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: any) => {
       resp.filter((l: any) => l.post && l.post.title && !(isNaN(Number(this.getPPMSonBoard(l))) || Number(this.getPPMSonBoard(l)) === 0))
         // @ts-ignore
         .sort((a,b) => (this.getPPMSonBoard(a) > this.getPPMSonBoard(b)) ? 1 : ((this.getPPMSonBoard(b) > this.getPPMSonBoard(a)) ? -1 : 0))
@@ -68,6 +71,10 @@ export class CompareComponent implements OnInit {
       }, 1000);
       this.onFilter(this.nav[0]);
     });
+  }
+
+  ngOnDestroy() {
+    this.destroyer$.complete();
   }
 
   getPPMSonBoard(item: any) {
