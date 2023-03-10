@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {filter, take} from "rxjs";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {take} from "rxjs";
 import {StringParserService} from "../../../services/string-parser.service";
 import {FireService} from "../../../services/fire.service";
 
@@ -9,7 +9,7 @@ import {FireService} from "../../../services/fire.service";
   templateUrl: './products-item.component.html',
   styleUrls: ['./products-item.component.scss']
 })
-export class ProductsItemComponent {
+export class ProductsItemComponent implements OnInit {
   product: any;
   isLoading = true;
 
@@ -19,17 +19,16 @@ export class ProductsItemComponent {
     private activatedRoute: ActivatedRoute,
     public parserService: StringParserService
   ) {
-    router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      this.fireService.onGetCollection('products');
-      this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
-        this.product = resp.find((l: any) => l.link.replace(/^\/|\/$/g, '') === this.activatedRoute.snapshot.params['id']);
-        setTimeout(() => {
-          this.isLoading = false;
-        }, 1000);
-      })
-    });
+  }
+
+  ngOnInit() {
+    this.fireService.onGetCollection('products');
+    this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
+      this.product = resp.find((l: any) => l.link.replace(/^\/|\/$/g, '') === this.activatedRoute.snapshot.params['id']);
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 1000);
+    })
   }
 
   goTo(type: string, id: string) {

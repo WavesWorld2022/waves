@@ -26,7 +26,25 @@ export interface ILocation {
     book_now_subtitle: string,
     book_now_button_caption: string,
     book_now: string,
-    waves: [{
+    waves: ILocationWave[],
+    nearby_natural_spots: [{
+        name: string,
+        address: {
+            address: string,
+            lat: string,
+            lng: string
+        },
+        external_link: string
+    }],
+    post: {
+        title: string,
+        name: string,
+        id: string,
+        content: string
+    }
+}
+
+export interface ILocationWave {
     wave_name: string,
     status: string,
     commissioning_date: string,
@@ -67,20 +85,4 @@ export interface ILocation {
     minimum_age: string,
     minimum_surfer_length: string, // client
     passes: string
-}],
-    nearby_natural_spots: [{
-    name: string,
-    address: {
-        address: string,
-        lat: string,
-        lng: string
-    },
-    external_link: string
-}],
-    post: {
-        title: string,
-        name: string,
-        id: string,
-        content: string
-    }
 }

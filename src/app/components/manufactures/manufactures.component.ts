@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FireService} from "../../services/fire.service";
 import {IManufacturer} from "../../shared/models";
 import {take} from "rxjs";
@@ -40,5 +40,4 @@ export class ManufacturesComponent implements OnInit {
       }, 1000);
     })
   }
-
 }

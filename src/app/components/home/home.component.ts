@@ -6,7 +6,7 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {NavigationService} from "../../services/navigation.service";
 import {FireService} from "../../services/fire.service";
 import {locations} from "../../../assets/json/locations";
-import {Subject, takeUntil} from "rxjs";
+import {Subject, take} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -99,27 +99,29 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.height = (window.innerHeight - (window.innerWidth < 980 ? 171 : 206)) + 'px';
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.center = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      };
+    });
     this.fireService.onGetCollection('locations');
-    this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: any) => {
+    this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
       this.data.length = 0;
       this.data = resp.filter((location: any) => location.post && location.post.title);
-      setTimeout(() => {
-        this.height = (window.innerHeight - (window.innerWidth < 980 ? 171 : 206)) + 'px';
-        navigator.geolocation.getCurrentPosition((position) => {
-          this.center = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-        });
 
-        if (JSON.parse(sessionStorage.getItem('filters')!)?.length > 1) {
-          JSON.parse(sessionStorage.getItem('filters')!).forEach((f: any) => {
-            const filter = this.nav.find(i => f === i.id);
-            this.onFilter(filter);
-          })
-        } else {
-          this.onFilter(this.nav[0]);
-        }
+      if (JSON.parse(sessionStorage.getItem('filters')!)?.length > 1) {
+        JSON.parse(sessionStorage.getItem('filters')!).forEach((f: any) => {
+          const filter = this.nav.find(i => f === i.id);
+          this.onFilter(filter);
+        })
+      } else if (JSON.parse(sessionStorage.getItem('filters')!)?.length === 1) {
+        const filter = this.nav.find(i => JSON.parse(sessionStorage.getItem('filters')!)[0] === i.id)
+        this.onFilter(filter);
+      } else {
+        this.onFilter(this.nav[0]);
+      }
 
         if (!sessionStorage.getItem('homeModalShown')) {
           this.findClosestMarker();
@@ -130,7 +132,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
             }, 1000))
             : (this.isLoading = false);
         }
-      }, 1000);
     });
   }
 
@@ -238,7 +239,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           });
         })
         filteredGatherData = [...new Set(filteredGatherData)];
-
         this.onGetMarkers(filteredGatherData);
       } else if (filter.id === 'f-1') {
         this.activeFilters = [this.nav[0]];
