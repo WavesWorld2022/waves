@@ -53,10 +53,10 @@
               <div class="section__content">
                 <!--<h3 >{{wave.wave_name}}</h3>-->
                 <ul class="section__list section__list-vertical">
-                  <li class="item" *ngIf="+wave.wave_difficulty">
+                  <li class="item" *ngIf="wave.wave_difficulty">
                     <strong>Wave difficulty:</strong> {{wave.wave_difficulty}}
                   </li>
-                  <li class="item" *ngIf="+wave.wave_shape">
+                  <li class="item" *ngIf="wave.wave_shape">
                     <strong>Wave shape:</strong> {{wave.wave_shape}}
                   </li>
                   <li class="item" *ngIf="+wave.wave_height">
@@ -301,7 +301,7 @@
               {{location.book_now_button_caption}}
             </a>
 
-            <div *ngIf="location.nearby_natural_spots.length" class="section nearby-points">
+            <div *ngIf="location.nearby_natural_spots?.length" class="section nearby-points">
               <h2 class="section__title">Nearby natural spots</h2>
                 <google-map
                   width="100%"

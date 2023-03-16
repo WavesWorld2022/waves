@@ -79,7 +79,7 @@ export class LocationComponent implements OnDestroy {
             }*/
           }
 
-          this.location.nearby_natural_spots.forEach((spot: any) => {
+          this.location.nearby_natural_spots?.forEach((spot: any) => {
             const destination = spot.address.address && spot.address.lat && spot.address.lng ? spot.address.lat + ',' + spot.address.lng : '';
             const origin = this.location.visit_address.address && this.location.visit_address.lat && this.location.visit_address.lng
               ? this.location.visit_address.lat + ',' + this.location.visit_address.lng
