@@ -33,7 +33,7 @@
               <div class="section__text" [innerHTML]="replaceURLs(location.post.content) | safe: 'html'"></div>
             </div>
 
-            <div *ngIf="!isPhoneScreen || isPhoneScreen && location.waves.length === 1" class="section section_waves">
+            <!--<div *ngIf="!isPhoneScreen || isPhoneScreen && location.waves.length === 1" class="section section_waves">
               <div class="section__header">
                 <h2 class="section__title section__title_bordered">Waves</h2>
 
@@ -46,12 +46,12 @@
 
                 <div *ngIf="location.waves.length === 1" class="wavename">{{wave.wave_name}}</div>
 
-                <!--<select class="section__subtitle" [(ngModel)]="selectedWave" (ngModelChange)="onSelectWave($event)"  *ngIf="location.waves.length > 1">
+                &lt;!&ndash;<select class="section__subtitle" [(ngModel)]="selectedWave" (ngModelChange)="onSelectWave($event)"  *ngIf="location.waves.length > 1">
                   <option *ngFor="let item of location.waves" [value]="item.wave_name">{{item.wave_name}}</option>
-                </select>-->
+                </select>&ndash;&gt;
               </div>
               <div class="section__content">
-                <!--<h3 >{{wave.wave_name}}</h3>-->
+                &lt;!&ndash;<h3 >{{wave.wave_name}}</h3>&ndash;&gt;
                 <ul class="section__list section__list-vertical">
                   <li class="item" *ngIf="wave.wave_difficulty">
                     <strong>Wave difficulty:</strong> {{wave.wave_difficulty}}
@@ -145,7 +145,7 @@
                     <img src="assets/icons/water.png" alt="">
                     <div><strong>Water type</strong> <br>{{wave.water_type}}</div>
                   </li>
-                  <!--TODO: Water quality long string -->
+                  &lt;!&ndash;TODO: Water quality long string &ndash;&gt;
                   <li class="item" *ngIf="wave.water_quality">
                     <img src="assets/icons/water_quality.png" alt="">
                     <div><strong>Water quality</strong> <br>{{wave.water_quality.length < 20 ? wave.water_quality : 'Good'}}</div>
@@ -159,13 +159,13 @@
                   </li>
                 </ul>
               </div>
-            </div>
+            </div>-->
 
            <!-- <a *ngIf="isPhoneScreen && location.waves.length === 1" href="{{location.reflink}}" class="button" style="position:relative; margin: 0">
               {{location.book_now_button_caption}}
             </a>-->
 
-            <div *ngIf="location.waves.length > 1 && isPhoneScreen" style="position:relative;">
+            <div *ngIf="location.waves.length > 1" style="position:relative;">
               <ngx-slick-carousel class="carousel"
                                   #slickModal="slick-carousel"
                                   [config]="slideConfig">
@@ -350,7 +350,7 @@
               </map-marker>
             </google-map>
             <div *ngIf="location?.visit_address?.address" class="mt-4 address">
-              {{location.visit_address.address}}
+              <a target="_blank" [href]="'https://www.google.com/maps/dir/?api=1&destination=' + (location.visit_address && location.visit_address.lat && location.visit_address.lng ? location.visit_address.lat + ',' + location.visit_address.lng : '') + '&travelmode=driving'"> {{location.visit_address.address}}</a>
             </div>
 
             <div *ngIf="location.board_rental

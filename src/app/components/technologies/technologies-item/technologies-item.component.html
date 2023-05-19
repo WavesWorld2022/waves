@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-8">
-          <p class="hero__title">{{technology.title}}</p><!--
+          <p class="hero__title">{{technology.waveProductionMethodName}}</p><!--
           <p class="hero__sub-title">{{manufacturer.excerpt}}</p>-->
         </div>
       </div>
@@ -17,11 +17,11 @@
         <!--
                 <div class="page__content" [innerHTML]="manufacturer.content.length < manufacturer.excerpt.length ? manufacturer.excerpt : manufacturer.content"></div>
         -->
-        <div *ngIf="technology.content" class="section">
+        <div *ngIf="technology.waveProductionMethodAbout" class="section">
           <!--<h2 class="section__title">About {{manufacturer.title}}</h2>-->
          <div class="d-flex flex-column gap-5">
-           <div class="section__text" *ngIf="technology.excerpt" [innerHTML]="parserService.replaceURLs(technology.excerpt) | safe: 'html'"></div>
-           <div class="section__text" *ngIf="technology.content" [innerHTML]="parserService.replaceURLs(technology.content) | safe: 'html'"></div>
+           <div class="section__text" *ngIf="technology.waveProductionMethodExcerpt" [innerHTML]="parserService.replaceURLs(technology.waveProductionMethodExcerpt) | safe: 'html'"></div>
+           <div class="section__text" *ngIf="technology.waveProductionMethodAbout" [innerHTML]="parserService.replaceURLs(technology.waveProductionMethodAbout) | safe: 'html'"></div>
          </div>
         </div>
       </div>

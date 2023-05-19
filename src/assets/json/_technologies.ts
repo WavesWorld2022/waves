@@ -1,4 +1,4 @@
-export const technologies = [
+export const _technologies = [
   {
     id: 267,
     title: "plunger",

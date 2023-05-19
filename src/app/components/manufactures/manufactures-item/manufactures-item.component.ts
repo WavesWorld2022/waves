@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {take} from "rxjs";
 import {StringParserService} from "../../../services/string-parser.service";
 import {FireService} from "../../../services/fire.service";
+import {IManufacturer} from "../../../shared/models";
 
 @Component({
   selector: 'app-manufactures-item',
@@ -10,7 +11,7 @@ import {FireService} from "../../../services/fire.service";
   styleUrls: ['./manufactures-item.component.scss']
 })
 export class ManufacturesItemComponent implements OnInit {
-  manufacturer: any;
+  manufacturer!: IManufacturer;
   isLoading = true;
 
   constructor(
@@ -23,7 +24,7 @@ export class ManufacturesItemComponent implements OnInit {
   ngOnInit() {
     this.fireService.onGetCollection('manufacturer');
     this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
-      this.manufacturer = resp.find((l: any) => l.link === this.activatedRoute.snapshot.params['id'])
+      this.manufacturer = resp.find((l: IManufacturer) => l.manufacturerKey === this.activatedRoute.snapshot.params['id'])
       setTimeout(() => {
         this.isLoading = false;
       }, 1000);

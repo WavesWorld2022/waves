@@ -224,12 +224,12 @@
 
 .button-slider {
   position: absolute;
-  top: 72px;
-  background: #475760;
-  border-radius: 50%;
+  top: 26px;
+  background: rgba(255, 255, 255, .4);
+  border-radius: 8px;
   padding: 3px;
   &__prev{
-    left: 2%;
+    right: 55px;
     transform: rotate(180deg);
   }
   &__next{
@@ -244,6 +244,7 @@
 .wavename {
   color: #fff;
   font-weight: 900;
+  margin-right: 60px;
 }
 
 :host {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
-import {IProduct} from "../../shared/models";
+import {IProduct, IWaveSystemProduct} from "../../shared/models";
 import {take, takeUntil} from "rxjs";
 
 @Component({
@@ -24,7 +24,7 @@ export class ProductsComponent implements OnInit {
     {id: 'f-9', title: '[-]', icon: 'shield-0'},
     {id: 'f-10', title: '<8', icon: 'shield-0'}
   ];
-  products: any[] = [];
+  products: IWaveSystemProduct[] = [];
 
   constructor(private fireService: FireService) { }
 

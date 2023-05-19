@@ -5,7 +5,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-8">
-          <p class="hero__title">{{product.title}}</p><!--
+          <p class="hero__title">{{product.waveSystemProductName}}</p><!--
           <p class="hero__sub-title">{{manufacturer.excerpt}}</p>-->
         </div>
       </div>
@@ -17,18 +17,18 @@
         <!--
                 <div class="page__content" [innerHTML]="manufacturer.content.length < manufacturer.excerpt.length ? manufacturer.excerpt : manufacturer.content"></div>
         -->
-        <div *ngIf="product.content || product.exerpt || product.manufacturer_url" class="section">
+        <div *ngIf="product.waveSystemProductAbout || product.waveSystemProductExcerpt || product.waveSystemProductURL" class="section">
           <!--<h2 class="section__title">About {{manufacturer.title}}</h2>-->
           <div class="d-flex flex-column gap-5">
-            <div class="section__text" *ngIf="product.excerpt" [innerHTML]="parserService.replaceURLs(product.excerpt) | safe: 'html'"></div>
-            <div class="section__text" *ngIf="product.content" [innerHTML]="parserService.replaceURLs(product.content) | safe: 'html'"></div>
+            <div class="section__text" *ngIf="product.waveSystemProductExcerpt" [innerHTML]="parserService.replaceURLs(product.waveSystemProductExcerpt) | safe: 'html'"></div>
+            <div class="section__text" *ngIf="product.waveSystemProductAbout" [innerHTML]="parserService.replaceURLs(product.waveSystemProductAbout) | safe: 'html'"></div>
 
-            <div class="section__text" *ngIf="product.manufacturer_url" [innerHTML]="parserService.replaceURLs(product.manufacturer_url) | safe: 'html'"></div>
-            <a class="section__text flex-row justify-content-start" *ngIf="product.manufacturer">
-              More about manufacturer <strong (click)="goTo('manufactures', product.manufacturer)">here</strong>
+            <div class="section__text" *ngIf="product.waveSystemProductURL" [innerHTML]="parserService.replaceURLs(product.waveSystemProductURL) | safe: 'html'"></div>
+            <a class="section__text flex-row justify-content-start" *ngIf="product.waveSystemProductManufacturer">
+              More about manufacturer <strong (click)="goTo('manufactures', product.waveSystemProductManufacturer)">here</strong>
             </a>
-            <a class="section__text flex-row justify-content-start" *ngIf="product.technology_type">
-              More about technology <strong (click)="goTo('technologies', product.technology_type)">here</strong>
+            <a class="section__text flex-row justify-content-start" *ngIf="product.waveSystemProductProductionMethod">
+              More about technology <strong (click)="goTo('technologies', product.waveSystemProductProductionMethod)">here</strong>
             </a>
 
           </div>

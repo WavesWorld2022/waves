@@ -16,7 +16,7 @@
     <div class="container">
       <div class="row ">
         <div class="col-8">
-          <p>Last updated: <strong>25.12.2022</strong></p>
+          <p>Last updated: <strong>28.04.2023</strong></p>
         </div>
         <div class="col text-right">
           <p>Items: <strong>{{technologies.length}}</strong></p>
@@ -55,8 +55,8 @@
             <th>Technologies</th>
           </tr>
           <tr *ngFor="let item of technologies">
-            <td [routerLink]="'../technologies/' + item.permalink">
-              <span>{{item.title}}</span>
+            <td [routerLink]="'../technologies/' + item.waveProductionMethodKey">
+              <span>{{item.waveProductionMethodName}}</span>
               <img src="../../../assets/icons/chevron.svg" alt="">
             </td>
           </tr>

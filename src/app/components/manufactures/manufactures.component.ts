@@ -24,7 +24,7 @@ export class ManufacturesComponent implements OnInit {
     {id: 'f-9', title: '[-]', icon: 'shield-0'},
     {id: 'f-10', title: '<8', icon: 'shield-0'}
   ];
-  manufacturers: any[] = [];
+  manufacturers: IManufacturer[] = [];
 
   constructor(private fireService: FireService) { }
 

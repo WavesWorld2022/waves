@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
-import {ITechnology} from "../../shared/models";
+import {ITechnology, IWaveProductionMethod} from "../../shared/models";
 
 @Component({
   selector: 'app-technologies',
@@ -23,13 +23,13 @@ export class TechnologiesComponent implements OnInit {
     {id: 'f-9', title: '[-]', icon: 'shield-0'},
     {id: 'f-10', title: '<8', icon: 'shield-0'}
   ];
-  technologies: any[] = [];
+  technologies: IWaveProductionMethod[] = [];
 
   constructor(private fireService: FireService) { }
 
   ngOnInit(): void {
-    this.fireService.onGetCollection('technologies');
-    this.fireService.collectionData$.subscribe((resp: ITechnology[]) => {
+    this.fireService.onGetCollection('production-methods');
+    this.fireService.collectionData$.subscribe((resp: IWaveProductionMethod[]) => {
       resp.sort((a: any, b: any ) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
         .forEach((m: any) => {
           this.technologies.push(m);

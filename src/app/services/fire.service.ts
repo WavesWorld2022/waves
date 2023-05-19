@@ -14,15 +14,15 @@ export class FireService {
     private afs: AngularFirestore,
   ) {}
 
-  upload(arr: [], collection: string) {
-    [].forEach(product => {
+  upload(arr: any[], collection: string) {
+    arr.forEach(product => {
       setTimeout(() => {
         this.afs
           .collection(collection)
-          .doc(String(product['id']))
+          .doc(String(product['waveProductionMethodKey']))
           .set(product)
           .then(() => {
-            console.log(product['id'])
+            console.log(product['waveProductionMethodKey'])
           });
       }, 100);
     });

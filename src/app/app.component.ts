@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {FireService} from "./services/fire.service";
+import {productionMethod} from "../assets/json/production-method";
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,11 @@ import {Component, OnInit} from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'waves';
 
+  constructor(private fireService: FireService) { }
+
+
   ngOnInit() {
+    // this.fireService.upload(productionMethod, 'production-methods')
     /*const a: any[] = [];
     const locations: any[] = [];
 

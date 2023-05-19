@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {take} from "rxjs";
 import {StringParserService} from "../../../services/string-parser.service";
 import {FireService} from "../../../services/fire.service";
+import {IManufacturer, IWaveProductionMethod, IWaveSystemProduct} from "../../../shared/models";
 
 @Component({
   selector: 'app-products-item',
@@ -10,7 +11,7 @@ import {FireService} from "../../../services/fire.service";
   styleUrls: ['./products-item.component.scss']
 })
 export class ProductsItemComponent implements OnInit {
-  product: any;
+  product!: IWaveSystemProduct;
   isLoading = true;
 
   constructor(
@@ -24,7 +25,7 @@ export class ProductsItemComponent implements OnInit {
   ngOnInit() {
     this.fireService.onGetCollection('products');
     this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
-      this.product = resp.find((l: any) => l.link.replace(/^\/|\/$/g, '') === this.activatedRoute.snapshot.params['id']);
+      this.product = resp.find((l: IWaveSystemProduct) => l.waveSystemProductKey.replace(/^\/|\/$/g, '') === this.activatedRoute.snapshot.params['id']);
       setTimeout(() => {
         this.isLoading = false;
       }, 1000);
@@ -32,9 +33,9 @@ export class ProductsItemComponent implements OnInit {
   }
 
   goTo(type: string, id: string) {
-    this.fireService.onGetCollection(type === 'manufactures' ? 'manufacturer' : 'technologies');
+    this.fireService.onGetCollection(type === 'manufactures' ? 'manufacturer' : 'production-methods');
     this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
-      this.router.navigate([`/${type}/${type === 'manufactures' ? resp.find((l: any) => l.id == id).link : resp.find((l: any) => l.id == id).permalink}`])
+      this.router.navigate([`/${type}/${type === 'technologies' ? resp.find((l: IWaveProductionMethod) => l.waveProductionMethodKey == id).waveProductionMethodKey : resp.find((l: IManufacturer) => l.manufacturerKey == id).manufacturerKey}`])
     })
   }
 }

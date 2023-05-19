@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {take} from "rxjs";
 import {StringParserService} from "../../../services/string-parser.service";
 import {FireService} from "../../../services/fire.service";
+import {IWaveProductionMethod} from "../../../shared/models";
 
 @Component({
   selector: 'app-technologies-item',
@@ -11,7 +12,7 @@ import {FireService} from "../../../services/fire.service";
 })
 export class TechnologiesItemComponent implements OnInit {
   isLoading = true;
-  technology: any;
+  technology!: IWaveProductionMethod;
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -21,9 +22,9 @@ export class TechnologiesItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fireService.onGetCollection('technologies');
+    this.fireService.onGetCollection('production-methods');
     this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
-      this.technology = resp.find((l: any) => l.permalink.replace(/^\/|\/$/g, '') === this.activatedRoute.snapshot.params['id']);
+      this.technology = resp.find((l: IWaveProductionMethod) => l.waveProductionMethodKey.replace(/^\/|\/$/g, '') === this.activatedRoute.snapshot.params['id']);
       setTimeout(() => {
         this.isLoading = false;
       }, 1000);
