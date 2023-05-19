@@ -13,6 +13,8 @@ import {LocationComponent} from './components/location/location.component';
 import {ManufacturesItemComponent} from './components/manufactures/manufactures-item/manufactures-item.component';
 import {TechnologiesItemComponent} from "./components/technologies/technologies-item/technologies-item.component";
 import {ProductsItemComponent} from "./components/products/products-item/products-item.component";
+import {TermsOfUseComponent} from "./components/terms-of-use/terms-of-use.component";
+import {PrivacyPolicyComponent} from "./components/privacy-policy/privacy-policy.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -34,11 +36,12 @@ export const routes: Routes = [
     ]},
   {path: 'contact', component: ContactComponent},
   {path: 'magazine', component: MagazineComponent},
-  {path: 'magazine', component: MagazineComponent},
   {path: 'location', children: [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: ':id', component: LocationComponent},
   ]},
+  {path: 'terms-of-use', component: TermsOfUseComponent},
+  {path: 'privacy-policy', component: PrivacyPolicyComponent}
 ];
 
 @NgModule({

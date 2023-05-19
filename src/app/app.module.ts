@@ -33,6 +33,8 @@ import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {StarsComponent} from "./components/about-us/stars/stars.component";
 import {EllipsisModule} from "ngx-ellipsis";
 import {PopoverModule} from "ngx-bootstrap/popover";
+import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import {PopoverModule} from "ngx-bootstrap/popover";
     TechnologiesItemComponent,
     ProductsItemComponent,
     GoBackButtonComponent,
-    StarsComponent
+    StarsComponent,
+    TermsOfUseComponent,
+    PrivacyPolicyComponent
   ],
     imports: [
         BrowserModule,

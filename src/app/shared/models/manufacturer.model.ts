@@ -1,3 +1,9 @@
+export interface INearbyNaturalSpot {
+  nearbyNaturalSpotName: string;
+  nearbyNaturalSpotLocation: string; // IWaveLocation.key
+  nearbyNaturalSpotAddress: any;
+}
+
 export interface IManufacturer {
   manufacturerKey: string;
   manufacturerName: string;
@@ -126,6 +132,7 @@ export interface IWaveSpecification {
   waveSpecificationVideoRecordingPriceSession: number;
   waveSpecificationPhotoPriceSession: number;
   waveSpecificationOurTestimonial: string;
+  waveSpecificationRecommendedWetSuite?: any
 }
 
 export enum EWaveSpecificationStatus {

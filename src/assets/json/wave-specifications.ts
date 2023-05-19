@@ -34,7 +34,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -67,7 +70,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 7,
     "waveSpecificationPhotoPriceSession": 3,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2",
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -100,7 +107,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 7,
     "waveSpecificationPhotoPriceSession": 3,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2",
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -133,7 +144,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 7,
     "waveSpecificationPhotoPriceSession": 3,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2",
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -166,7 +181,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 7,
     "waveSpecificationPhotoPriceSession": 3,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2",
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -201,7 +220,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -236,7 +258,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -271,7 +296,8 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": "a:1:{i:0;s:5:'lycra\"}"
   },
   {
     "waveSpecificationProduct": null,
@@ -306,7 +332,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -339,7 +368,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -371,7 +403,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -404,7 +439,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -437,7 +475,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -470,7 +511,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -503,7 +547,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -536,7 +583,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -569,7 +619,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -604,7 +657,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 50,
     "waveSpecificationPhotoPriceSession": 50,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -639,7 +695,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 50,
     "waveSpecificationPhotoPriceSession": 50,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -672,7 +731,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 50,
     "waveSpecificationPhotoPriceSession": 50,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -707,7 +769,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -740,7 +805,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -773,7 +841,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -806,7 +877,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -839,7 +913,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -872,7 +949,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -905,7 +985,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -938,7 +1021,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -971,7 +1057,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1004,7 +1093,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1037,7 +1129,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1072,7 +1167,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1105,7 +1203,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1138,7 +1239,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1171,7 +1275,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1204,7 +1311,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1237,7 +1347,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1270,7 +1383,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1303,7 +1419,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1338,7 +1457,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1371,7 +1493,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1404,7 +1529,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1437,7 +1565,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1470,7 +1601,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1503,7 +1637,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1536,7 +1673,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1569,7 +1709,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1602,7 +1745,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1635,7 +1781,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1668,7 +1817,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1701,7 +1853,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1734,7 +1889,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1767,7 +1925,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1800,7 +1961,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1835,7 +1999,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1868,7 +2035,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1901,7 +2071,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra",
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1934,7 +2108,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -1967,7 +2144,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2000,7 +2180,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2033,7 +2216,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2066,7 +2252,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2099,7 +2288,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2132,7 +2324,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2165,7 +2360,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2198,7 +2396,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2233,7 +2434,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2266,7 +2470,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2301,7 +2508,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2334,7 +2544,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2367,7 +2580,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2400,7 +2616,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2433,7 +2652,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2466,7 +2688,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2499,7 +2724,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2534,7 +2762,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2567,7 +2798,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2600,7 +2834,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2633,7 +2870,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2666,7 +2906,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2699,7 +2942,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2732,7 +2978,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2765,7 +3014,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2798,7 +3050,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2831,7 +3086,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2864,7 +3122,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2897,7 +3158,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2930,7 +3194,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2",
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2963,7 +3231,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2",
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -2996,7 +3268,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2",
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3029,7 +3305,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3062,7 +3341,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3095,7 +3377,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3128,7 +3413,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3161,7 +3449,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3194,7 +3485,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3227,7 +3521,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3260,7 +3557,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3293,7 +3593,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3326,7 +3629,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3359,7 +3665,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3392,7 +3701,8 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": "a:2:{i:0;s:3:\"4_3\";i:1;s:3:\"5_4\"}"
   },
   {
     "waveSpecificationProduct": null,
@@ -3425,7 +3735,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3458,7 +3771,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3493,7 +3809,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3526,7 +3845,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3559,7 +3881,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3594,7 +3919,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3629,7 +3957,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3664,7 +3995,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3699,7 +4033,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3732,7 +4069,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3765,7 +4105,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3798,7 +4141,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3831,7 +4177,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3864,7 +4213,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3897,7 +4249,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3930,7 +4285,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3963,7 +4321,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra",
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -3996,7 +4358,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra",
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4031,7 +4397,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra",
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4064,7 +4434,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra",
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4096,7 +4470,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra",
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4129,7 +4507,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra",
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4162,7 +4544,11 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra",
+      "3_2"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4195,7 +4581,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4228,7 +4617,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4261,7 +4653,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4294,7 +4689,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4327,7 +4725,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4360,7 +4761,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4393,7 +4797,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4426,7 +4833,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4459,7 +4869,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4492,7 +4905,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4525,7 +4941,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4558,7 +4977,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4591,7 +5013,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4624,7 +5049,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4657,7 +5085,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4690,7 +5121,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4723,7 +5157,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4756,7 +5193,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4789,7 +5229,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4822,7 +5265,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4855,7 +5301,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4888,7 +5337,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4921,7 +5373,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4954,7 +5409,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -4987,7 +5445,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5020,7 +5481,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5053,7 +5517,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5086,7 +5553,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5119,7 +5589,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5152,7 +5625,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5185,7 +5661,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5218,7 +5697,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5251,7 +5733,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5284,7 +5769,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5317,7 +5805,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "4_3"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5350,7 +5841,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5383,7 +5877,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5416,7 +5913,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5449,7 +5949,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5482,7 +5985,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5515,7 +6021,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5548,7 +6057,10 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "lycra"
+    ]
   },
   {
     "waveSpecificationProduct": null,
@@ -5581,6 +6093,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false
+    "waveSpecificationIndoor": false,
+    "waveSpecificationRecommendedWetSuite": [
+      "5_4"
+    ]
   }
 ]

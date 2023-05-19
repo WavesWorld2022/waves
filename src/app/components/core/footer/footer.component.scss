@@ -70,7 +70,21 @@
   p{
     margin: 0;
     color: #fff;
-    text-align: center;
+    text-align: left;
+  }
+  &__nav{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 0;
+    .nav-link {
+      color: #fff;
+      margin-left: 20px;
+      opacity: 0.8;
+      cursor: pointer;
+      &:hover{
+        opacity: 1;
+      }
+    }
   }
 }
 @media all and (max-width: 768px) {

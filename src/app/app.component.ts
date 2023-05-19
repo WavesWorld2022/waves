@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FireService} from "./services/fire.service";
-import {productionMethod} from "../assets/json/production-method";
+import {locations} from "../assets/json/old/locations";
+import {waveSpecifications} from "../assets/json/wave-specifications";
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,26 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
+    /*const z: any = JSON.parse(JSON.stringify(waveSpecifications))
+    z.forEach((ws: any) => {
+      const waves = locations.find((l: any) => l.id === ws.waveSpecificationLocation)!.waves
+      ws.waveSpecificationRecommendedWetSuite = Object.values(waves).find(w => w.wave_name === ws.waveSpecificationName).recommended_wetsuite;
+    })
+    console.log(z)
+
+    const ns: any = [];
+    locations.filter(l => l.nearby_natural_spots && Array.isArray(l.nearby_natural_spots) && l.nearby_natural_spots.length > 0)
+      .forEach(lo => {
+        lo.nearby_natural_spots.forEach(asd => {
+          ns.push({
+            nearbyNaturalSpotName: asd.name,
+            nearbyNaturalSpotLocation: lo.id,
+            nearbyNaturalSpotAddress: asd.address
+          })
+        })
+      })
+    console.log(ns)*/
+
     // this.fireService.upload(productionMethod, 'production-methods')
     /*const a: any[] = [];
     const locations: any[] = [];

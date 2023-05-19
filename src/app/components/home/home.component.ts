@@ -5,7 +5,7 @@ import {Router} from "@angular/router";
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {NavigationService} from "../../services/navigation.service";
 import {FireService} from "../../services/fire.service";
-import {locations} from "../../../assets/json/locations";
+import {locations} from "../../../assets/json/old/locations";
 import {Subject, take} from "rxjs";
 
 @Component({
