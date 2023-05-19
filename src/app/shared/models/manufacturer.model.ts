@@ -111,6 +111,8 @@ export interface IWaveSpecification {
   waveSpecificationWaveShape: string;
   waveSpecificationWaveHeight: number;
   waveSpecificationWaveDirection: string;
+  waveSpecificationWaveSpeed?: number;
+  waveSpecificationWaveSystem?: string;
   waveSpecificationWaveFrequency?: number; // Rolling
   waveSpecificationWaveLength?: number; // Rolling
   waveSpecificationWaveWidth?: number; // Standing | River | RollingStanding

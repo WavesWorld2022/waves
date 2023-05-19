@@ -37,7 +37,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -74,7 +76,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "cable-foil"
   },
   {
     "waveSpecificationProduct": null,
@@ -111,7 +115,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "cable-foil"
   },
   {
     "waveSpecificationProduct": null,
@@ -148,7 +154,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "cable-foil"
   },
   {
     "waveSpecificationProduct": null,
@@ -185,7 +193,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "cable-foil"
   },
   {
     "waveSpecificationProduct": null,
@@ -223,7 +233,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -261,7 +273,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -297,7 +311,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
     "waveSpecificationIndoor": false,
-    "waveSpecificationRecommendedWetSuite": "a:1:{i:0;s:5:'lycra\"}"
+    "waveSpecificationRecommendedWetSuite": "a:1:{i:0;s:5:'lycra\"}",
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "mystery"
   },
   {
     "waveSpecificationProduct": null,
@@ -335,7 +351,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -371,7 +389,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -406,7 +426,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -442,7 +464,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 8,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -478,7 +502,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -514,7 +540,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 6,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -550,7 +578,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 8,
+    "waveSpecificationWaveSystem": "train"
   },
   {
     "waveSpecificationProduct": null,
@@ -586,7 +616,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 8,
+    "waveSpecificationWaveSystem": "train"
   },
   {
     "waveSpecificationProduct": null,
@@ -622,7 +654,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 8,
+    "waveSpecificationWaveSystem": "train"
   },
   {
     "waveSpecificationProduct": null,
@@ -660,7 +694,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -698,7 +734,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -734,7 +772,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": ""
   },
   {
     "waveSpecificationProduct": null,
@@ -772,7 +812,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -808,7 +850,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -844,7 +888,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -880,7 +926,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7.5,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -916,7 +964,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7.5,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -952,7 +1002,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -988,7 +1040,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1024,7 +1078,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "mechanical-hydraulics-behind-bars-site-of-pool"
   },
   {
     "waveSpecificationProduct": null,
@@ -1060,7 +1116,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "mechanical-hydraulics-behind-bars-site-of-pool"
   },
   {
     "waveSpecificationProduct": null,
@@ -1096,7 +1154,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "mechanical-hydraulics-behind-bars-site-of-pool"
   },
   {
     "waveSpecificationProduct": null,
@@ -1132,7 +1192,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -1170,7 +1232,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -1206,7 +1270,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -1242,7 +1308,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -1278,7 +1346,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -1314,7 +1384,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -1350,7 +1422,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -1386,7 +1460,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -1422,7 +1498,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -1460,7 +1538,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -1496,7 +1576,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "cable-foil"
   },
   {
     "waveSpecificationProduct": null,
@@ -1532,7 +1614,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1568,7 +1652,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1604,7 +1690,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1640,7 +1728,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1676,7 +1766,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1712,7 +1804,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1748,7 +1842,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1784,7 +1880,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1820,7 +1918,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 6,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1856,7 +1956,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -1892,7 +1994,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7.5,
+    "waveSpecificationWaveSystem": "hullwavemaker"
   },
   {
     "waveSpecificationProduct": null,
@@ -1928,7 +2032,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -1964,7 +2070,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "circular"
   },
   {
     "waveSpecificationProduct": null,
@@ -2002,7 +2110,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2038,7 +2148,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2075,7 +2187,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "lycra",
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 8,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -2111,7 +2225,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -2147,7 +2263,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 8,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -2183,7 +2301,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -2219,7 +2339,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -2255,7 +2377,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
     "waveSpecificationProduct": null,
@@ -2291,7 +2415,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2327,7 +2453,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2363,7 +2491,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -2399,7 +2529,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -2437,7 +2569,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2473,7 +2607,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2511,7 +2647,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2547,7 +2685,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2583,7 +2723,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2619,7 +2761,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2655,7 +2799,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2691,7 +2837,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2727,7 +2875,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2765,7 +2915,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2801,7 +2953,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2837,7 +2991,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2873,7 +3029,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "river"
   },
   {
     "waveSpecificationProduct": null,
@@ -2909,7 +3067,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": ""
   },
   {
     "waveSpecificationProduct": null,
@@ -2945,7 +3105,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -2981,7 +3143,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "plunger"
   },
   {
     "waveSpecificationProduct": null,
@@ -3017,7 +3181,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "mystery"
   },
   {
     "waveSpecificationProduct": null,
@@ -3053,7 +3219,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "train"
   },
   {
     "waveSpecificationProduct": null,
@@ -3089,7 +3257,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3125,7 +3295,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3161,7 +3333,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7.5,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3198,7 +3372,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 10,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3235,7 +3411,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 10,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3272,7 +3450,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 10,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3308,7 +3488,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3344,7 +3526,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3380,7 +3564,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3416,7 +3602,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3452,7 +3640,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3488,7 +3678,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3524,7 +3716,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3560,7 +3754,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3596,7 +3792,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3632,7 +3830,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3668,7 +3868,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3702,7 +3904,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
     "waveSpecificationIndoor": false,
-    "waveSpecificationRecommendedWetSuite": "a:2:{i:0;s:3:\"4_3\";i:1;s:3:\"5_4\"}"
+    "waveSpecificationRecommendedWetSuite": "a:2:{i:0;s:3:\"4_3\";i:1;s:3:\"5_4\"}",
+    "waveSpecificationWaveSpeed": 10,
+    "waveSpecificationWaveSystem": "river"
   },
   {
     "waveSpecificationProduct": null,
@@ -3738,7 +3942,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "river"
   },
   {
     "waveSpecificationProduct": null,
@@ -3774,7 +3980,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": ""
   },
   {
     "waveSpecificationProduct": null,
@@ -3812,7 +4020,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -3848,7 +4058,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -3884,7 +4096,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -3922,7 +4136,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -3960,7 +4176,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -3998,7 +4216,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4036,7 +4256,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4072,7 +4294,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7.5,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -4108,7 +4332,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4144,7 +4370,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4180,7 +4408,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4216,7 +4446,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4252,7 +4484,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4288,7 +4522,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4325,7 +4561,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "lycra",
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4362,7 +4600,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "lycra",
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4401,7 +4641,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "lycra",
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4438,7 +4680,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "lycra",
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4474,7 +4718,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "lycra",
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4511,7 +4757,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "lycra",
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -4548,7 +4796,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationRecommendedWetSuite": [
       "lycra",
       "3_2"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -4584,7 +4834,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -4620,7 +4872,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -4656,7 +4910,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -4692,7 +4948,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "mystery"
   },
   {
     "waveSpecificationProduct": null,
@@ -4728,7 +4986,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "hullwavemaker"
   },
   {
     "waveSpecificationProduct": null,
@@ -4764,7 +5024,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -4800,7 +5062,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "river"
   },
   {
     "waveSpecificationProduct": null,
@@ -4836,7 +5100,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 8,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -4872,7 +5138,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -4908,7 +5176,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -4944,7 +5214,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "1022"
   },
   {
     "waveSpecificationProduct": null,
@@ -4980,7 +5252,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -5016,7 +5290,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "river"
   },
   {
     "waveSpecificationProduct": null,
@@ -5052,7 +5328,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -5088,7 +5366,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "river"
   },
   {
     "waveSpecificationProduct": null,
@@ -5124,7 +5404,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 7,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5160,7 +5442,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 9,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5196,7 +5480,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5232,7 +5518,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5268,7 +5556,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5304,7 +5594,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5340,7 +5632,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5376,7 +5670,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5412,7 +5708,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5448,7 +5746,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5484,7 +5784,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5520,7 +5822,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5556,7 +5860,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "plunger"
   },
   {
     "waveSpecificationProduct": null,
@@ -5592,7 +5898,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5628,7 +5936,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -5664,7 +5974,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "river"
   },
   {
     "waveSpecificationProduct": null,
@@ -5700,7 +6012,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "river"
   },
   {
     "waveSpecificationProduct": null,
@@ -5736,7 +6050,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "river"
   },
   {
     "waveSpecificationProduct": null,
@@ -5772,7 +6088,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -5808,7 +6126,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -5844,7 +6164,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -5880,7 +6202,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -5916,7 +6240,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -5952,7 +6278,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -5988,7 +6316,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -6024,7 +6354,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "standing-wave"
   },
   {
     "waveSpecificationProduct": null,
@@ -6060,7 +6392,9 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "pneumatics"
   },
   {
     "waveSpecificationProduct": null,
@@ -6096,6 +6430,8 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationIndoor": false,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
-    ]
+    ],
+    "waveSpecificationWaveSpeed": 0,
+    "waveSpecificationWaveSystem": "submergedtextile"
   }
 ]

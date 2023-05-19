@@ -5,13 +5,13 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-8">
-          <p class="hero__title">{{location.post.title}}</p>
-          <p class="hero__sub-title">{{location.slogan ? location.slogan : location.information}}</p>
+          <p class="hero__title">{{location.waveLocationName}}</p>
+          <p class="hero__sub-title">{{location.waveLocationSlogan ? location.waveLocationSlogan : location.waveLocationAbout}}</p>
           <div class="hero__buttons">
-            <a *ngIf="location.reflink" href="{{location.reflink}}" class="button">
-              {{location.book_now_button_caption}}
+            <a *ngIf="location.waveLocationReferralLink" href="{{location.waveLocationReferralLink}}" class="button">
+              {{location.waveLocationBookingButtonText}}
             </a>
-            <a *ngIf="location.url" href="{{location.url}}" class="button">
+            <a *ngIf="location.waveLocationWebsite" href="{{location.waveLocationWebsite}}" class="button">
               LEARN MORE
             </a>
           </div>
@@ -28,9 +28,9 @@
       <div class="row">
         <div class="col col-12 col-md-8">
           <div class="content__main">
-            <div *ngIf="location.post.content" class="section">
+            <div *ngIf="location.waveLocationAdditionalInfo" class="section">
               <h2 class="section__title">Description</h2>
-              <div class="section__text" [innerHTML]="replaceURLs(location.post.content) | safe: 'html'"></div>
+              <div class="section__text" [innerHTML]="replaceURLs(location.waveLocationAdditionalInfo) | safe: 'html'"></div>
             </div>
 
             <!--<div *ngIf="!isPhoneScreen || isPhoneScreen && location.waves.length === 1" class="section section_waves">
@@ -165,120 +165,135 @@
               {{location.book_now_button_caption}}
             </a>-->
 
-            <div *ngIf="location.waves.length > 1" style="position:relative;">
+            <div *ngIf="locationSpecifications.length >= 1" style="position:relative;">
               <ngx-slick-carousel class="carousel"
                                   #slickModal="slick-carousel"
                                   [config]="slideConfig">
-                <div ngxSlickItem *ngFor="let wave of location.waves" class="slide">
-                  <div *ngIf="location.waves.length" class="section section_waves">
+                <div ngxSlickItem *ngFor="let wave of locationSpecifications" class="slide">
+                  <div *ngIf="locationSpecifications.length" class="section section_waves">
                     <div class="section__header">
                       <h2 class="section__title section__title_bordered">Waves</h2>
-                      <div class="wavename">{{wave.wave_name}}</div>
+                      <div class="wavename">{{wave.waveSpecificationName}}</div>
                     </div>
                     <div class="section__content">
                       <!--<h3 >{{wave.wave_name}}</h3>-->
                       <ul class="section__list section__list-vertical">
-                        <li class="item" *ngIf="+wave.wave_difficulty">
-                          <strong>Wave difficulty:</strong> {{wave.wave_difficulty}}
+                        <li class="item" *ngIf="wave.waveSpecificationDifficulty">
+                          <strong>Wave difficulty:</strong> {{wave.waveSpecificationDifficulty}}
                         </li>
-                        <li class="item" *ngIf="+wave.wave_shape">
-                          <strong>Wave shape:</strong> {{wave.wave_shape}}
+                        <li class="item" *ngIf="wave.waveSpecificationWaveShape">
+                          <strong>Wave shape:</strong> {{wave.waveSpecificationWaveShape}}
                         </li>
-                        <li class="item" *ngIf="+wave.wave_height">
-                          <strong>Wave height:</strong> {{wave.wave_height}} cm
+                        <li class="item" *ngIf="+wave.waveSpecificationWaveHeight">
+                          <strong>Wave height:</strong> {{wave.waveSpecificationWaveHeight}} cm
                         </li>
-                        <li class="item" *ngIf="+wave.wave_speed">
-                          <strong>Wave speed:</strong> {{wave.wave_speed}} m/s
+                        <li class="item" *ngIf="+wave.waveSpecificationWaveSpeed!">
+                          <strong>Wave speed:</strong> {{wave.waveSpecificationWaveSpeed}} m/s
                         </li>
-                        <li class="item" *ngIf="+wave.wave_frequency">
-                          <strong>Wave frequency:</strong> {{wave.wave_frequency}} w/m
+                        <li class="item" *ngIf="+wave.waveSpecificationWaveFrequency!">
+                          <strong>Wave frequency:</strong> {{wave.waveSpecificationWaveFrequency}} w/m
                         </li>
-                        <li class="item" *ngIf="+wave.wave_width">
-                          <strong>Wave width:</strong> {{wave.wave_width}} m
+                        <li class="item" *ngIf="+wave.waveSpecificationWaveWidth!">
+                          <strong>Wave width:</strong> {{wave.waveSpecificationWaveWidth}} m
                         </li>
-                        <li class="item" *ngIf="+wave.wave_length">
-                          <strong>Wave length:</strong> {{wave.wave_length}} m
+                        <li class="item" *ngIf="+wave.waveSpecificationWaveLength!">
+                          <strong>Wave length:</strong> {{wave.waveSpecificationWaveLength}} m
                         </li>
-                        <li class="item" *ngIf="wave.wave_direction">
-                          <strong>Wave direction:</strong> {{wave.wave_direction}}
+                        <li class="item" *ngIf="wave.waveSpecificationWaveDirection">
+                          <strong>Wave direction:</strong> {{wave.waveSpecificationWaveDirection}}
                         </li>
-                        <li class="item" *ngIf="+wave.wave_pump">
-                          <strong>Wave pump:</strong> {{wave.wave_pump}}
+                        <li class="item" *ngIf="+wave.waveSpecificationWavePump!">
+                          <strong>Wave pump:</strong> {{wave.waveSpecificationWavePump}}
                         </li>
-                        <li class="item" *ngIf="wave.wave_system">
-                          <strong>Wave system:</strong> {{wave.wave_system}}
+                        <li class="item" *ngIf="wave.waveSpecificationWaveSystem">
+                          <strong>Wave system:</strong> {{wave.waveSpecificationWaveSystem}}
                         </li>
-                        <li class="item" *ngIf="+wave.waves_per_hour">
-                          <strong>Waves per hour:</strong> {{wave.waves_per_hour}}
+                        <li class="item" *ngIf="+wave.waveSpecificationRidesPerHour">
+                          <strong>Waves per hour:</strong> {{wave.waveSpecificationRidesPerHour}}
                         </li>
-                        <li class="item" *ngIf="+wave.ride_duration">
-                          <strong>Ride duration:</strong> {{wave.ride_duration}} s
+                        <li class="item" *ngIf="+wave.waveSpecificationDurationRide">
+                          <strong>Ride duration:</strong> {{wave.waveSpecificationDurationRide}} s
                         </li>
-                        <li class="item" *ngIf="+wave.customers_per_hour">
-                          <strong>Max customers per hour:</strong> {{wave.customers_per_hour}}
+                        <li class="item" *ngIf="+wave.waveSpecificationMaxCustomersPerHour">
+                          <strong>Max customers per hour:</strong> {{wave.waveSpecificationMaxCustomersPerHour}}
                         </li>
-                        <li class="item" *ngIf="+wave.customers_per_wave">
-                          <strong>Max customers per wave:</strong> {{wave.customers_per_wave}}
+                        <li class="item" *ngIf="+wave.waveSpecificationMaxCustomersPerWave">
+                          <strong>Max customers per wave:</strong> {{wave.waveSpecificationMaxCustomersPerWave}}
                         </li>
-                        <li class="item" *ngIf="+wave.tech_energy_consumption">
-                          <strong>Energy Consumption:</strong> {{wave.tech_energy_consumption}} kWh
+                        <li class="item" *ngIf="+wave.waveSpecificationEnergyConsumption">
+                          <strong>Energy Consumption:</strong> {{wave.waveSpecificationEnergyConsumption}} kWh
                         </li>
-                        <li class="item" *ngIf="wave.commissioning_date">
-                          <strong>Open since:</strong> {{getDate(wave.commissioning_date)}}
+                        <li class="item" *ngIf="wave.waveSpecificationCommissioningDate">
+                          <strong>Open since:</strong> {{getDate(wave.waveSpecificationCommissioningDate)}}
                         </li>
-                        <li class="item" *ngIf="wave.status">
-                          <strong>Status:</strong> {{wave.status}}
+                        <li class="item" *ngIf="wave.waveSpecificationStatus">
+                          <strong>Status:</strong> {{wave.waveSpecificationStatus}}
                         </li>
-                        <li class="item" *ngIf="+wave.minimum_age">
-                          <strong>Minimum age:</strong> {{wave.minimum_age}} years
+                        <li class="item" *ngIf="+wave.waveSpecificationMinimumSurferAge">
+                          <strong>Minimum age:</strong> {{wave.waveSpecificationMinimumSurferAge}} years
+                        </li>
+                        <!--<li class="item" *ngIf="+wave.waveSpecificationBoardIncluded">
+                          <strong>Board included:</strong> {{wave.waveSpecificationBoardIncluded}}
+                        </li>
+                        <li class="item" *ngIf="+wave.waveSpecificationWetSuiteIncluded">
+                          <strong>Wetsuit included:</strong> {{wave.waveSpecificationWetSuiteIncluded}}
+                        </li>-->
+                        <li class="item" *ngIf="+wave.waveSpecificationVideoRecordingPriceSession">
+                          <strong>Session video price / hr</strong> {{wave.waveSpecificationVideoRecordingPriceSession}}
+                        </li>
+                        <li class="item" *ngIf="+wave.waveSpecificationVideoRecordingPriceSession">
+                          <strong>Session video price / hr</strong> {{wave.waveSpecificationVideoRecordingPriceSession}}
+                        </li>
+                        <li class="item" *ngIf="+wave.waveSpecificationPhotoPriceSession">
+                          <strong>Session photo price / hr</strong> {{wave.waveSpecificationPhotoPriceSession}}
                         </li>
                       </ul>
 
                       <ng-container *ngIf="isPricing(wave)">
                         <h3 class="section__subtitle">Pricing</h3>
                         <ul class="section__list section__list-single">
-                          <li class="item" *ngIf="+wave.price_adult_high">
-                            <strong>Price adult high:</strong> € {{wave.price_adult_high}}
+                          <li class="item" *ngIf="+wave.waveSpecificationPriceAdultHigh">
+                            <strong>Price adult high:</strong> € {{wave.waveSpecificationPriceAdultHigh}}
                           </li>
-                          <li class="item" *ngIf="+wave.price_adult_low">
-                            <strong>Price adult low:</strong> € {{wave.price_adult_low}}
+                          <li class="item" *ngIf="+wave.waveSpecificationPriceAdultLow">
+                            <strong>Price adult low:</strong> € {{wave.waveSpecificationPriceAdultLow}}
                           </li>
-                          <li class="item" *ngIf="+wave.price_child_high">
-                            <strong>Price child high:</strong> € {{wave.price_child_high}}
+                          <li class="item" *ngIf="+wave.waveSpecificationPriceChildHigh">
+                            <strong>Price child high:</strong> € {{wave.waveSpecificationPriceChildHigh}}
                           </li>
-                          <li class="item" *ngIf="+wave.price_child_low">
-                            <strong>Price child low:</strong> € {{wave.price_child_low}}
+                          <li class="item" *ngIf="+wave.waveSpecificationPriceChildLow">
+                            <strong>Price child low:</strong> € {{wave.waveSpecificationPriceChildLow}}
                           </li>
-                          <li class="item" *ngIf="+location.board_rental">
-                            <strong>Board rental / hr:</strong> € {{location.board_rental}}
+                          <li class="item" *ngIf="+wave.waveSpecificationBoardRentalHr">
+                            <strong>Board rental / hr:</strong> € {{wave.waveSpecificationBoardRentalHr}}
                           </li>
-                          <li class="item" *ngIf="+location.wetsuit_rental">
-                            <strong>Wetsuit rental / hr:</strong> € {{location.wetsuit_rental}}
+                          <li class="item" *ngIf="+wave.waveSpecificationWetsuitRentalHr">
+                            <strong>Wetsuit rental / hr:</strong> € {{wave.waveSpecificationWetsuitRentalHr}}
                           </li>
                         </ul>
                       </ng-container>
 
                       <ul class="section__list section__list-horizontal">
-                        <li class="item" *ngIf="+wave.water_temp">
+                        <li class="item" *ngIf="+wave.waveSpecificationWaterTemp">
                           <img src="assets/icons/thermometer.png" alt="">
                           <div>
-                            <strong>Water temperature</strong> <br>{{wave.water_temp}}&#8451;
+                            <strong>Water temperature</strong> <br>{{wave.waveSpecificationWaterTemp}}&#8451;
                           </div>
                         </li>
-                        <li class="item" *ngIf="wave.water_type">
+                        <li class="item" *ngIf="wave.waveSpecificationWaterType">
                           <img src="assets/icons/water.png" alt="">
-                          <div><strong>Water type</strong> <br>{{wave.water_type}}</div>
+                          <div><strong>Water type</strong> <br>{{wave.waveSpecificationWaterType}}</div>
                         </li>
                         <!--TODO: Water quality long string -->
-                        <li class="item" *ngIf="wave.water_quality">
+                        <li class="item" *ngIf="wave.waveSpecificationWaterQuality">
                           <img src="assets/icons/water_quality.png" alt="">
-                          <div><strong>Water quality</strong> <br>{{wave.water_quality.length < 20 ? wave.water_quality : 'Good'}}</div>
+                          <div><strong>Water quality</strong> <br>{{wave.waveSpecificationWaterQuality.length < 20 ? wave.waveSpecificationWaterQuality : 'Good'}}</div>
                         </li>
-                        <li class="item" *ngIf="wave.recommended_wetsuite?.length">
+                        <li class="item" *ngIf="wave.waveSpecificationRecommendedWetSuite?.length">
                           <img src="assets/icons/wetsuit.png" alt="">
                           <div>
                             <strong>Recommended wetsuit:</strong><br>
-                            <span *ngFor="let item of wave.recommended_wetsuite">{{item}} </span>
+                            <span *ngFor="let item of wave.waveSpecificationRecommendedWetSuite">{{item}} </span>
                           </div>
                         </li>
                       </ul>
@@ -288,20 +303,20 @@
                 </div>
               </ngx-slick-carousel>
 
-              <button class="button-slider button-slider__next" (click)="next()">
+              <button *ngIf="locationSpecifications.length >= 2" class="button-slider button-slider__next" (click)="next()">
                 <img src="assets/icons/chevron-yellow.svg" alt="chevron">
               </button>
-              <button class="button-slider button-slider__prev" (click)="prev()">
+              <button *ngIf="locationSpecifications.length >= 2" class="button-slider button-slider__prev" (click)="prev()">
                 <img src="assets/icons/chevron-yellow.svg" alt="chevron">
               </button>
 
             </div>
 
-            <a *ngIf="isPhoneScreen && location.reflink" href="{{location.reflink}}" class="button" style="position:relative; margin: 0">
-              {{location.book_now_button_caption}}
+            <a *ngIf="isPhoneScreen && location.waveLocationReferralLink" href="{{location.waveLocationReferralLink}}" class="button" style="position:relative; margin: 0">
+              {{location.waveLocationBookingButtonText}}
             </a>
 
-            <div *ngIf="location.nearby_natural_spots?.length" class="section nearby-points">
+            <div *ngIf="nearbyNaturalSpots?.length" class="section nearby-points">
               <h2 class="section__title">Nearby natural spots</h2>
                 <google-map
                   width="100%"
@@ -349,39 +364,28 @@
               >
               </map-marker>
             </google-map>
-            <div *ngIf="location?.visit_address?.address" class="mt-4 address">
-              <a target="_blank" [href]="'https://www.google.com/maps/dir/?api=1&destination=' + (location.visit_address && location.visit_address.lat && location.visit_address.lng ? location.visit_address.lat + ',' + location.visit_address.lng : '') + '&travelmode=driving'"> {{location.visit_address.address}}</a>
+            <div *ngIf="location?.waveLocationVisitAddress?.address" class="mt-4 address">
+              <a target="_blank" [href]="'https://www.google.com/maps/dir/?api=1&destination=' + (location.waveLocationVisitAddress && location.waveLocationVisitAddress.lat && location.waveLocationVisitAddress.lng ? location.waveLocationVisitAddress.lat + ',' + location.waveLocationVisitAddress.lng : '') + '&travelmode=driving'"> {{location.waveLocationVisitAddress.address}}</a>
             </div>
 
-            <div *ngIf="location.board_rental
-                 || location.wetsuit_rental
-                 || location.session_video_price
-                 || location.session_photo_price
-                 || location.wave_specifications
-                 || location.board_included
-                 || location.wetsuit_included"
-                 class="section mt-4"
-            >
+            <div class="section mt-4">
               <h2 class="section__title">Main Information</h2>
               <div class="section__text">
-                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_video_price">
+                <!--<div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_video_price">
                   <span>Session video price / hr</span><span>€{{location.session_video_price}}/hour</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_photo_price">
+                </div>-->
+                <!--<div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_photo_price">
                   <span>Session photo price / hr</span><span>€{{location.session_photo_price}}/hour</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_photo_price">
-                  <span>Session photo price / hr</span><span>€{{location.session_photo_price}}/hour</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.wave_specifications">
+                </div>-->
+                <!--<div class="d-flex justify-content-between align-items-end" *ngIf="+location.wave_specifications">
                   <span>Wave specifications</span><span>{{location.wave_specifications}}</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.board_included">
+                </div>-->
+                <!--<div class="d-flex justify-content-between align-items-end" *ngIf="+location.board_included">
                   <span>Board included</span><span>{{location.board_included}}</span>
-                </div>
-                <div class="d-flex justify-content-between align-items-end" *ngIf="+location.wetsuit_included">
+                </div>-->
+                <!--<div class="d-flex justify-content-between align-items-end" *ngIf="+location.wetsuit_included">
                   <span>Wetsuit included</span><span>{{location.wetsuit_included}}</span>
-                </div>
+                </div>-->
               </div>
             </div>
           </div>

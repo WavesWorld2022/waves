@@ -4,6 +4,7 @@ import { getDatabase, ref, push, set } from "firebase/database";
 import {child, get} from "@angular/fire/database";
 import {environment} from "../../environments/environment.prod";
 import {Subject} from "rxjs";
+import {waveLocations} from "../../assets/json/wave-locations";
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +45,14 @@ export class FireService {
       }).catch((error) => {
         console.error(error);
       });
+    } else if (environment.firebase.source === 'json') {
+      switch (collection) {
+        case 'locations': {
+          setTimeout(() => {
+            this.collectionData$.next(waveLocations);
+          }, 500)
+        }
+      }
     }
   }
 

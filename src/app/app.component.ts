@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FireService} from "./services/fire.service";
-import {locations} from "../assets/json/old/locations";
 import {waveSpecifications} from "../assets/json/wave-specifications";
+// @ts-ignore
+import {locations} from "../assets/json/old/locations";
 
 @Component({
   selector: 'app-root',
@@ -15,14 +16,16 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
+
+
     /*const z: any = JSON.parse(JSON.stringify(waveSpecifications))
     z.forEach((ws: any) => {
       const waves = locations.find((l: any) => l.id === ws.waveSpecificationLocation)!.waves
-      ws.waveSpecificationRecommendedWetSuite = Object.values(waves).find(w => w.wave_name === ws.waveSpecificationName).recommended_wetsuite;
+      ws.waveSpecificationWaveSystem = Object.values(waves).find(w => w.wave_name === ws.waveSpecificationName).wave_system;
     })
-    console.log(z)
+    console.log(z)*/
 
-    const ns: any = [];
+    /*const ns: any = [];
     locations.filter(l => l.nearby_natural_spots && Array.isArray(l.nearby_natural_spots) && l.nearby_natural_spots.length > 0)
       .forEach(lo => {
         lo.nearby_natural_spots.forEach(asd => {

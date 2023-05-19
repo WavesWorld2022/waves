@@ -7,7 +7,11 @@ import {MapInfoWindow} from "@angular/google-maps";
 import {WeatherService} from "../../services/weather.service";
 import {SlickCarouselComponent} from "ngx-slick-carousel";
 import {FireService} from "../../services/fire.service";
-import {ILocation} from "../../shared/models";
+import {ILocation, INearbyNaturalSpot, IWaveLocation, IWaveSpecification} from "../../shared/models";
+import {waveSpecifications} from "../../../assets/json/wave-specifications";
+import {naturalSpots} from "../../../assets/json/nearby-natural-spots";
+import {products} from "../../../assets/json/products";
+import {productionMethod} from "../../../assets/json/production-method";
 
 @Component({
   selector: 'app-location',
@@ -18,7 +22,7 @@ export class LocationComponent implements OnDestroy {
   @ViewChild(MapInfoWindow, { static: false }) info!: MapInfoWindow;
   @ViewChild('slickModal', {static: false}) slickModal!: SlickCarouselComponent;
   @ViewChild('dropdownToggle') dropdownToggle!: ElementRef;
-  location: any;
+  location!: IWaveLocation;
   zoom = 12;
   nearbySpotsZoom = 10;
   center!: google.maps.LatLngLiteral;
@@ -36,10 +40,13 @@ export class LocationComponent implements OnDestroy {
   marker: any;
   naturalSpotsMarkers: any[] = [];
 
+  locationSpecifications!: IWaveSpecification[];
+  nearbyNaturalSpots!: INearbyNaturalSpot[];
   wave: any;
   selectedWave!: string;
 
   infoContent: any;
+  specificationInfo: any;
 
   slideConfig = {"slidesToShow": 1, "slidesToScroll": 1};
   isPhoneScreen!: boolean;
@@ -56,48 +63,53 @@ export class LocationComponent implements OnDestroy {
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
       this.fireService.onGetCollection('locations');
-      this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: ILocation[]) => {
-        this.location = resp.find((l:any) => l.post && l.post.name === this.activatedRoute.snapshot.params['id']);
+      this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveLocation[]) => {
+        this.location = resp.find((l:any) => l && l.waveLocationKey === this.activatedRoute.snapshot.params['id'])!;
         if(!this.location) {
           this.router.navigate(['../../home'])
         } else {
           this.coords = {
-            lat: +this.location.visit_address.lat,
-            lng: +this.location.visit_address.lng,
+            lat: +this.location.waveLocationVisitAddress.lat,
+            lng: +this.location.waveLocationVisitAddress.lng,
           }
           this.calculateWaterTemp(this.coords.lat, this.coords.lng);
           this.marker = {
             position: {
-              lat: +this.location.visit_address.lat,
-              lng: +this.location.visit_address.lng,
+              lat: +this.location.waveLocationVisitAddress.lat,
+              lng: +this.location.waveLocationVisitAddress.lng,
             },
-            title: this.location.post.title,
+            title: this.location.waveLocationName,
             direction: ''
             /*options: {
               animation: google.maps.Animation.DROP,
               icon: '../assets/iconsInUse/location_1.png'
             }*/
           }
-
-          this.location.nearby_natural_spots?.forEach((spot: any) => {
-            const destination = spot.address.address && spot.address.lat && spot.address.lng ? spot.address.lat + ',' + spot.address.lng : '';
-            const origin = this.location.visit_address.address && this.location.visit_address.lat && this.location.visit_address.lng
-              ? this.location.visit_address.lat + ',' + this.location.visit_address.lng
+          // TODO: nearby spots no data
+          this.nearbyNaturalSpots = naturalSpots.filter(spot => spot.nearbyNaturalSpotLocation === this.activatedRoute.snapshot.params['id']);
+          this.nearbyNaturalSpots.forEach((spot: INearbyNaturalSpot) => {
+            const destination = spot.nearbyNaturalSpotAddress.address && spot.nearbyNaturalSpotAddress.lat && spot.nearbyNaturalSpotAddress.lng ? spot.nearbyNaturalSpotAddress.lat + ',' + spot.nearbyNaturalSpotAddress.lng : '';
+            const origin = this.location.waveLocationVisitAddress.address && this.location.waveLocationVisitAddress.lat && this.location.waveLocationVisitAddress.lng
+              ? this.location.waveLocationVisitAddress.lat + ',' + this.location.waveLocationVisitAddress.lng
               : '';
 
             let marker = {
               position: {
-                lat: +spot.address.lat,
-                lng: +spot.address.lng
+                lat: +spot.nearbyNaturalSpotAddress.lat,
+                lng: +spot.nearbyNaturalSpotAddress.lng
               },
-              title: spot.name,
-              address: spot.address.address,
+              title: spot.nearbyNaturalSpotName,
+              address: spot.nearbyNaturalSpotAddress.address,
               direction: 'https://www.google.com/maps/dir/?api=1&origin='+ origin +'&destination='+ destination +'&travelmode=driving',
             }
             this.naturalSpotsMarkers.push(marker);
           })
-          this.wave = this.location.waves[0];
-          this.selectedWave = this.location.waves[0].wave_name;
+          this.locationSpecifications = waveSpecifications
+              .filter(spec => spec.waveSpecificationLocation === this.activatedRoute.snapshot.params['id']);
+          this.wave = this.locationSpecifications[0];
+          this.selectedWave = this.locationSpecifications[0].waveSpecificationName;
+
+          /*this.specificationInfo = this.getSpecificationInfo(this.locationSpecifications[0].waveSpecificationProduct)*/
         }
       })
     });
@@ -109,14 +121,23 @@ export class LocationComponent implements OnDestroy {
   }
 
   isPricing(wave: any) {
-    return +wave.price_adult_high || +wave.price_adult_low || +wave.price_child_high || +wave.price_child_low;
+    return +wave.waveSpecificationPriceAdultHigh
+        || +wave.waveSpecificationPriceAdultLow
+        || +wave.waveSpecificationPriceChildHigh
+        || +wave.waveSpecificationPriceChildLow;
   }
 
-  onSelectWave(value: any) {
+  getSpecificationInfo(product: string) {
+    const prod = products.find(item => item.waveSystemProductKey === product)!.waveSystemProductName;
+    /*const prodMethod = productionMethod.find(item => )*/
+    //return null;
+  }
+
+  /*onSelectWave(value: any) {
     this.wave = this.location.waves.find((wave: any) => wave.wave_name === value);
     // @ts-ignore
     document.querySelector(".text-box").value = value;
-  }
+  }*/
 
   getDate(date: string) {
     return new Date(date.slice(0, 4) + '.' + date.slice(4, 6) + '.' + date.slice(6)).toDateString().slice(3);
@@ -131,24 +152,24 @@ export class LocationComponent implements OnDestroy {
     this.weatherService.getWeatherData(lat, lng).subscribe(data => {
       const actualWaterTemp = Math.round(data.main.temp - 3);
 
-      this.location.waves.forEach((wave: any, i: number) => {
-        if (!wave.wave_indoor) {
-          this.location.waves[i].water_temp = actualWaterTemp;
+      this.locationSpecifications.forEach((wave: any, i: number) => {
+        if (!wave.waveSpecificationIndoor) {
+          this.locationSpecifications[i].waveSpecificationWaterTemp = actualWaterTemp;
 
           if (actualWaterTemp <= 3) {
-            this.location.waves[i].recommended_wetsuite = ['6/5mm to 7mm thickness wetsuit'];
+            this.locationSpecifications[i].waveSpecificationRecommendedWetSuite = ['6/5mm to 7mm thickness wetsuit'];
           } else if (actualWaterTemp >= 4 && actualWaterTemp <= 7) {
-            this.location.waves[i].recommended_wetsuite = ['5/4mm to 6/5mm thickness wetsuit'];
+            this.locationSpecifications[i].waveSpecificationRecommendedWetSuite = ['5/4mm to 6/5mm thickness wetsuit'];
           } else if (actualWaterTemp >= 8 && actualWaterTemp <= 11) {
-            this.location.waves[i].recommended_wetsuite = ['4/3mm to 5/4mm thickness wetsuit'];
+            this.locationSpecifications[i].waveSpecificationRecommendedWetSuite = ['4/3mm to 5/4mm thickness wetsuit'];
           } else if (actualWaterTemp >= 12 && actualWaterTemp <= 17) {
-            this.location.waves[i].recommended_wetsuite = ['3/2mm to 4/3mm thickness wetsuit'];
+            this.locationSpecifications[i].waveSpecificationRecommendedWetSuite = ['3/2mm to 4/3mm thickness wetsuit'];
           } else if (actualWaterTemp >= 18 && actualWaterTemp <= 20) {
-            this.location.waves[i].recommended_wetsuite = ['wetsuit 2mm'];
+            this.locationSpecifications[i].waveSpecificationRecommendedWetSuite = ['wetsuit 2mm'];
           } else if (actualWaterTemp >= 21 && actualWaterTemp <= 25) {
-            this.location.waves[i].recommended_wetsuite = ['wetsuit 1mm'];
+            this.locationSpecifications[i].waveSpecificationRecommendedWetSuite = ['wetsuit 1mm'];
           } else if (actualWaterTemp >= 26) {
-            this.location.waves[i].recommended_wetsuite = ['wetsuit with UV protection of Lycra (UV Lycra)'];
+            this.locationSpecifications[i].waveSpecificationRecommendedWetSuite = ['wetsuit with UV protection of Lycra (UV Lycra)'];
           }
         }
       })
