@@ -31,7 +31,7 @@ export class ManufacturesComponent implements OnInit {
   ngOnInit(): void {
     this.fireService.onGetCollection('manufacturer');
     this.fireService.collectionData$.pipe(take(1)).subscribe((resp: IManufacturer[]) => {
-      resp.sort((a: any, b: any) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+      resp.sort((a: any, b: any) => (a.manufacturerName > b.manufacturerName) ? 1 : ((b.manufacturerName > a.manufacturerName) ? -1 : 0))
           .forEach((m: any) => {
             this.manufacturers.push(m);
           })

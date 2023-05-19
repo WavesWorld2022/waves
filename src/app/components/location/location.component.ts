@@ -12,6 +12,7 @@ import {waveSpecifications} from "../../../assets/json/wave-specifications";
 import {naturalSpots} from "../../../assets/json/nearby-natural-spots";
 import {products} from "../../../assets/json/products";
 import {productionMethod} from "../../../assets/json/production-method";
+import {manufacturer} from "../../../assets/json/manufacturer";
 
 @Component({
   selector: 'app-location',
@@ -109,7 +110,7 @@ export class LocationComponent implements OnDestroy {
           this.wave = this.locationSpecifications[0];
           this.selectedWave = this.locationSpecifications[0].waveSpecificationName;
 
-          /*this.specificationInfo = this.getSpecificationInfo(this.locationSpecifications[0].waveSpecificationProduct)*/
+          this.specificationInfo = this.getSpecificationInfo(this.locationSpecifications[0].waveSpecificationProduct!);
         }
       })
     });
@@ -127,10 +128,25 @@ export class LocationComponent implements OnDestroy {
         || +wave.waveSpecificationPriceChildLow;
   }
 
-  getSpecificationInfo(product: string) {
-    const prod = products.find(item => item.waveSystemProductKey === product)!.waveSystemProductName;
-    /*const prodMethod = productionMethod.find(item => )*/
-    //return null;
+  getSpecificationInfo(productKey: string) {
+    const productData = products.find(item => item.waveSystemProductKey === productKey)!;
+    const prodMethodData = productionMethod.find(item => item.waveProductionMethodKey === productData?.waveSystemProductProductionMethod)!;
+    const manufacturerData = manufacturer.find(item => item.manufacturerKey === productData?.waveSystemProductManufacturer)!;
+
+    return {
+      product: {
+        name: productData?.waveSystemProductName,
+        path: productData?.waveSystemProductKey,
+      },
+      productionMethod: {
+        name: prodMethodData?.waveProductionMethodName,
+        path: prodMethodData?.waveProductionMethodKey
+      },
+      manufacturer: {
+        name: manufacturerData?.manufacturerName,
+        path: manufacturerData?.manufacturerKey
+      }
+    }
   }
 
   /*onSelectWave(value: any) {

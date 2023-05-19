@@ -5,6 +5,9 @@ import {child, get} from "@angular/fire/database";
 import {environment} from "../../environments/environment.prod";
 import {Subject} from "rxjs";
 import {waveLocations} from "../../assets/json/wave-locations";
+import {manufacturer} from "../../assets/json/manufacturer";
+import {productionMethod} from "../../assets/json/production-method";
+import {products} from "../../assets/json/products";
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +53,26 @@ export class FireService {
         case 'locations': {
           setTimeout(() => {
             this.collectionData$.next(waveLocations);
-          }, 500)
+          }, 500);
+          break;
+        }
+        case 'manufacturer': {
+          setTimeout(() => {
+            this.collectionData$.next(manufacturer);
+          }, 500);
+          break;
+        }
+        case 'production-methods': {
+          setTimeout(() => {
+            this.collectionData$.next(productionMethod);
+          }, 500);
+          break;
+        }
+        case 'products': {
+          setTimeout(() => {
+            this.collectionData$.next(products);
+          }, 500);
+          break;
         }
       }
     }

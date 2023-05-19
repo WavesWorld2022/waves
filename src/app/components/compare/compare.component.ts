@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
 import {Subject, takeUntil} from "rxjs";
+import {IWaveLocation} from "../../shared/models";
+import {waveSpecifications} from "../../../assets/json/wave-specifications";
 
 @Component({
   selector: 'app-compare',
@@ -28,17 +30,17 @@ export class CompareComponent implements OnInit {
   nav = [
     {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: any) => w},
     {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: any) => w},
-    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.wave_system !== 'standing-wave' && w.wave_system !== 'river'},
-    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: any) => w.wave_system === 'standing-wave'},
-    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.wave_system === 'river'},
-    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.wave_system !== 'river'},
-    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.status !== 'permanently closed' && this.isOpenedLocation(w.commissioning_date) || (w.status === 'open only summer season' && this.isSummer)},
-    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.status === 'planned' || !this.isOpenedLocation(w.waves.commissioning_date)},
-    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.status === 'permanently closed' && this.isOpenedLocation(w.commissioning_date)},
-    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: any) => w.minimum_age < 8}
+    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.waveSpecificationWaveSystem !== 'standing-wave' && w.waveSpecificationWaveSystem !== 'river'},
+    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: any) => w.waveSpecificationWaveSystem === 'standing-wave'},
+    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.waveSpecificationWaveSystem === 'river'},
+    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.waveSpecificationWaveSystem !== 'river'},
+    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
+    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waves.waveSpecificationCommissioningDate)},
+    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: any) => w.waveSpecificationMinimumSurferAge < 8}
   ];
   waveLocations: any[] = [];
-  filteredLocations: any[] = [];
+  filteredLocations: IWaveLocation[] = [];
   activeFilters: any[] = [];
   destroyer$ = new Subject();
 
@@ -59,7 +61,7 @@ export class CompareComponent implements OnInit {
 
     this.fireService.onGetCollection('locations');
     this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: any) => {
-      resp.filter((l: any) => l.post && l.post.title && !(isNaN(Number(this.getPPMSonBoard(l))) || Number(this.getPPMSonBoard(l)) === 0))
+      resp.filter((l: any) => l && l.waveLocationName && !(isNaN(Number(this.getPPMSonBoard(l))) || Number(this.getPPMSonBoard(l)) === 0))
         // @ts-ignore
         .sort((a,b) => (this.getPPMSonBoard(a) > this.getPPMSonBoard(b)) ? 1 : ((this.getPPMSonBoard(b) > this.getPPMSonBoard(a)) ? -1 : 0))
         .reverse()
@@ -77,11 +79,12 @@ export class CompareComponent implements OnInit {
     this.destroyer$.complete();
   }
 
-  getPPMSonBoard(item: any) {
+  getPPMSonBoard(item: IWaveLocation) {
+    const specifications = waveSpecifications.filter(s => s.waveSpecificationLocation === item.waveLocationKey);
     //console.log(item)
-    const price = item['waves'] && item['waves'][0] && ['price_adult_high'] ? item['waves'][0]['price_adult_high'] : 0;
-    const waves = item['waves'] && item['waves'][0] && ['waves_per_hour'] ? item['waves'][0]['waves_per_hour'] : 0;
-    const duration = item['waves'] && item['waves'][0] && ['ride_duration'] ? item['waves'][0]['ride_duration'] : 0;
+    const price = specifications && specifications[0] && specifications[0].waveSpecificationPriceAdultHigh ? specifications[0].waveSpecificationPriceAdultHigh : 0;
+    const waves = specifications && specifications[0] && specifications[0].waveSpecificationRidesPerHour ? specifications[0].waveSpecificationRidesPerHour : 0;
+    const duration = specifications && specifications[0] && specifications[0].waveSpecificationDurationRide ? specifications[0].waveSpecificationDurationRide : 0;
     const PPMSonBoard = (Number(price)/(Number(waves)*Number(duration))) * 60;
     /*return (isNaN(PPMSonBoard) || PPMSonBoard === 0) ? '-' : (PPMSonBoard / 60).toFixed(2)*/
     return (isNaN(PPMSonBoard) || PPMSonBoard === 0) ? '-' : Math.round(PPMSonBoard * 100) / 100;
@@ -116,10 +119,10 @@ export class CompareComponent implements OnInit {
         }
 
         this.activeFilters.forEach(f => {
-          filteredGatherData = filteredGatherData.filter(location => {
+          filteredGatherData = filteredGatherData.filter((location: IWaveLocation) => {
             return f.id !== 'f-2'
-                ? (location.waves as any[]).find(f.query)
-                : this.checkDistanceBetweenOriginAndLocation(location.visit_address.lat, location.visit_address.lng);
+                ? (filteredGatherData.filter((location: IWaveLocation) => [...new Set((waveSpecifications as any[]).filter(filter.query).map(spec => spec.waveSpecificationLocation))].includes(location.waveLocationKey)))
+                : this.checkDistanceBetweenOriginAndLocation(location.waveLocationVisitAddress.lat, location.waveLocationVisitAddress.lng);
           });
         })
         filteredGatherData = [...new Set(filteredGatherData)];
@@ -132,8 +135,12 @@ export class CompareComponent implements OnInit {
 
     } else {
       this.activeFilter = 'f-1';
-      this.filteredLocations = [this.filteredLocations.filter(location => location.visit_address && location.visit_address.name && location.visit_address.name.toLowerCase().includes(this.selected.toLowerCase()))];
+      this.filteredLocations = [...this.filteredLocations.filter((location: IWaveLocation) => location.waveLocationVisitAddress && location.waveLocationVisitAddress.name && location.waveLocationVisitAddress.name.toLowerCase().includes(this.selected.toLowerCase()))];
     }
+  }
+
+  getPrice(id: string) {
+    return waveSpecifications.filter(item => item.waveSpecificationLocation === id)[0].waveSpecificationPriceAdultHigh
   }
 
   isOpenedLocation(date: string): boolean {

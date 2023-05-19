@@ -7,6 +7,8 @@ import {NavigationService} from "../../services/navigation.service";
 import {FireService} from "../../services/fire.service";
 import {locations} from "../../../assets/json/old/locations";
 import {Subject, take} from "rxjs";
+import {ILocationWave, IWaveLocation} from "../../shared/models";
+import {waveSpecifications} from "../../../assets/json/wave-specifications";
 
 @Component({
   selector: 'app-home',
@@ -36,14 +38,14 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   nav = [
     {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: any) => w},
     {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: any) => w},
-    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.wave_system !== 'standing-wave' && w.wave_system !== 'river'},
-    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: any) => w.wave_system === 'standing-wave'},
-    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.wave_system === 'river'},
-    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.wave_indoor},
-    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.status !== 'permanently closed' && this.isOpenedLocation(w.commissioning_date) || (w.status === 'open only summer season' && this.isSummer)},
-    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.status === 'planned' || !this.isOpenedLocation(w.commissioning_date)},
-    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.status === 'permanently closed' && this.isOpenedLocation(w.commissioning_date)},
-    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: any) => w.minimum_age <= 8}
+    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.waveSpecificationWaveSystem !== 'standing-wave' && w.waveSpecificationWaveSystem !== 'river'},
+    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: any) => w.waveSpecificationWaveSystem === 'standing-wave'},
+    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.waveSpecificationWaveSystem === 'river'},
+    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.waveSpecificationIndoor},
+    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
+    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: any) => w.waveSpecificationMinimumSurferAge <= 8}
   ];
   @ViewChild('bookingModal', {static: true}) bookingModal!: TemplateRef<any>
   // @ts-ignore
@@ -109,7 +111,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.fireService.onGetCollection('locations');
     this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
       this.data.length = 0;
-      this.data = resp.filter((location: any) => location.post && location.post.title);
+      this.data = resp.filter((location: IWaveLocation) => location && location.waveLocationName);
 
       if (JSON.parse(sessionStorage.getItem('filters')!)?.length > 1) {
         JSON.parse(sessionStorage.getItem('filters')!).forEach((f: any) => {
@@ -135,24 +137,27 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  onGetMarkers(arr: any[]) {
+  onGetMarkers(arr: IWaveLocation[]) {
     this.markers.length = 0;
-    arr.forEach(location => {
 
-      const destination = location.visit_address && location.visit_address.lat && location.visit_address.lng ? location.visit_address.lat + ',' + location.visit_address.lng : '';
+    arr.forEach(location => {
+      const specifications = waveSpecifications.filter(item => item.waveSpecificationLocation === location.waveLocationKey);
+      const destination = location.waveLocationVisitAddress && location.waveLocationVisitAddress.lat && location.waveLocationVisitAddress.lng ? location.waveLocationVisitAddress.lat + ',' + location.waveLocationVisitAddress.lng : '';
+
       const origin = this.center && this.center.lat && this.center.lng ? this.center.lat + ',' + this.center.lng : '';
       this.markers.push(
         {
           position: {
-            lat: Number(location.visit_address.lat),
-            lng: Number(location.visit_address.lng),
+            lat: Number(location.waveLocationVisitAddress.lat),
+            lng: Number(location.waveLocationVisitAddress.lng),
           },
-          id: location.id,
+          id: location.waveLocationKey,
           direction: 'https://www.google.com/maps/dir/?api=1&origin='+ origin +'&destination='+ destination +'&travelmode=driving',
-          title: location.post.title,
-          name: location.post.name,
-          reflink: location.reflink,
-          status: location.status === 'permanently closed' && this.isOpenedLocation(location.waves[0].commissioning_date) ? 'closed' : 'opened',
+          title: location.waveLocationName,
+          name: location.waveLocationKey,
+          reflink: location.waveLocationReferralLink,
+          status: specifications[0].waveSpecificationStatus === 'permanently closed'
+            && this.isOpenedLocation(specifications[0].waveSpecificationCommissioningDate) ? 'closed' : 'opened',
           options: {
             icon: this.activeFilters.length > 1
                 ? '../assets/icons/multiple-filter.png'
@@ -210,7 +215,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     if(filter) {
       if (filter.type === 'keyup') {
-        this.onGetMarkers(this.data.filter((location: any) => location.post.title.toLowerCase().includes(filter.target.value.toLowerCase())));
+        this.onGetMarkers(this.data.filter((location: IWaveLocation) => location.waveLocationName.toLowerCase().includes(filter.target.value.toLowerCase())));
       } else if (filter.id !== 'f-1') {
         if (this.activeFilters.includes(this.nav[0])) {
           this.activeFilters.shift();
@@ -233,20 +238,21 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         }
 
         this.activeFilters.forEach(f => {
-          filteredGatherData = filteredGatherData.filter(location => {
+          filteredGatherData = filteredGatherData.filter((location: IWaveLocation) => {
             return f.id !== 'f-2'
-              ? (location.waves as any[]).find(f.query)
-              : this.checkDistanceBetweenOriginAndLocation(location.visit_address.lat, location.visit_address.lng);
+              ? this.data.filter((location: IWaveLocation) => [...new Set((waveSpecifications as any[]).filter(filter.query).map(spec => spec.waveSpecificationLocation))].includes(location.waveLocationKey))
+              : this.checkDistanceBetweenOriginAndLocation(location.waveLocationVisitAddress.lat, location.waveLocationVisitAddress.lng);
           });
         })
         filteredGatherData = [...new Set(filteredGatherData)];
         this.onGetMarkers(filteredGatherData);
       } else if (filter.id === 'f-1') {
         this.activeFilters = [this.nav[0]];
-        this.onGetMarkers(this.data.filter((location: any) => (location.waves as any[]).find(filter.query)));
+        const locations = this.data.filter((location: IWaveLocation) => [...new Set((waveSpecifications as any[]).filter(filter.query).map(spec => spec.waveSpecificationLocation))].includes(location.waveLocationKey));
+        this.onGetMarkers(locations);
       }
     } else {
-      this.onGetMarkers(this.data.filter((location: any) => location.visit_address && location.visit_address.name && location.visit_address.name.toLowerCase().includes(this.selected.toLowerCase())));
+      this.onGetMarkers(this.data.filter((location: IWaveLocation) => location && location.waveLocationVisitAddress.name && location.waveLocationVisitAddress.name.toLowerCase().includes(this.selected.toLowerCase())));
     }
     sessionStorage.setItem('filters', JSON.stringify(this.activeFilters.map(i => i.id)))
   }

@@ -61,11 +61,11 @@
               Price Per Minute Surfing
             </th>
           </tr>
-          <tr *ngFor="let item of filteredLocations" [routerLink]="['../location', item.post.name]">
+          <tr *ngFor="let item of filteredLocations" [routerLink]="['../location', item.waveLocationKey]">
             <td>
-              <span>{{item.post.title}}</span>
+              <span>{{item.waveLocationName}}</span>
             </td>
-            <td class="text-right">{{+item['waves'][0]['price_adult_high'] > 0 ? +item['waves'][0]['price_adult_high'] : '-'}}</td>
+            <td class="text-right">{{getPrice(item.waveLocationKey) > 0 ? getPrice(item.waveLocationKey) : '-'}}</td>
             <td class="text-right">{{getPPMSonBoard(item)}}</td>
           </tr>
         </table>
