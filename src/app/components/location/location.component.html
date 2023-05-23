@@ -371,14 +371,14 @@
             <div class="section mt-4" *ngIf="specificationInfo && (specificationInfo.product.name || specificationInfo.productionMethod.name || specificationInfo.manufacturer.name)">
               <h2 class="section__title">Main Information</h2>
               <div class="section__text">
-                <div class="d-flex justify-content-between align-items-end" *ngIf="specificationInfo && specificationInfo.product.name">
+                <div class="d-flex justify-content-between flex-column" *ngIf="specificationInfo && specificationInfo.product.name">
                   <span>Product: </span><span>{{specificationInfo.product.name}}</span>
                 </div>
-                <div class="d-flex justify-content-between align-items-end" *ngIf="specificationInfo && specificationInfo.productionMethod.name">
+                <div class="d-flex justify-content-between flex-column" *ngIf="specificationInfo && specificationInfo.productionMethod.name">
                   <span>Production Method: </span><span>{{specificationInfo.productionMethod.name}}</span>
                 </div>
-                <div class="d-flex justify-content-between align-items-end" *ngIf="specificationInfo && specificationInfo.manufacturer.name">
-                  <span>Product: </span><span>{{specificationInfo.manufacturer.name}}</span>
+                <div class="d-flex justify-content-between flex-column" *ngIf="specificationInfo && specificationInfo.manufacturer.name">
+                  <span>Manufacturer: </span><span>{{specificationInfo.manufacturer.name}}</span>
                 </div>
                 <!--<div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_photo_price">
                   <span>Session photo price / hr</span><span>€{{location.session_photo_price}}/hour</span>

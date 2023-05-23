@@ -3,6 +3,9 @@ import {FireService} from "./services/fire.service";
 import {waveSpecifications} from "../assets/json/wave-specifications";
 // @ts-ignore
 import {locations} from "../assets/json/old/locations";
+import {IWaveLocation, IWaveSpecification} from "./shared/models";
+import {data} from "../assets/json/old/data";
+import {_products} from "../assets/json/old/_products";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +19,6 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-
 
     /*const z: any = JSON.parse(JSON.stringify(waveSpecifications))
     z.forEach((ws: any) => {

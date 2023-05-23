@@ -7,7 +7,7 @@ import {NavigationService} from "../../services/navigation.service";
 import {FireService} from "../../services/fire.service";
 import {locations} from "../../../assets/json/old/locations";
 import {Subject, take} from "rxjs";
-import {ILocationWave, IWaveLocation} from "../../shared/models";
+import {IWaveLocation, IWaveSpecification} from "../../shared/models";
 import {waveSpecifications} from "../../../assets/json/wave-specifications";
 
 @Component({
@@ -36,16 +36,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ];*/
 
   nav = [
-    {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: any) => w},
-    {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: any) => w},
-    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.waveSpecificationWaveSystem !== 'standing-wave' && w.waveSpecificationWaveSystem !== 'river'},
-    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: any) => w.waveSpecificationWaveSystem === 'standing-wave'},
-    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.waveSpecificationWaveSystem === 'river'},
-    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.waveSpecificationIndoor},
-    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
-    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
-    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
-    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: any) => w.waveSpecificationMinimumSurferAge <= 8}
+    {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: IWaveSpecification) => w},
+    {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: IWaveSpecification) => w},
+    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem !== 'standing-wave' && w.waveSpecificationWaveSystem !== 'river'},
+    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'standing-wave'},
+    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'river'},
+    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationIndoor},
+    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: IWaveSpecification) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
+    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationMinimumSurferAge <= 8}
   ];
   @ViewChild('bookingModal', {static: true}) bookingModal!: TemplateRef<any>
   // @ts-ignore
@@ -211,7 +211,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onFilter(filter?: any) {
-    let filteredGatherData: any[] = [...this.data];
+    let filteredGatherLocationsData: any[] = [...this.data];
+    let filteredSpecifications = [...waveSpecifications];
+    let locationKeyArray: string[] = [];
 
     if(filter) {
       if (filter.type === 'keyup') {
@@ -238,21 +240,25 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         }
 
         this.activeFilters.forEach(f => {
-          filteredGatherData = filteredGatherData.filter((location: IWaveLocation) => {
-            return f.id !== 'f-2'
-              ? this.data.filter((location: IWaveLocation) => [...new Set((waveSpecifications as any[]).filter(filter.query).map(spec => spec.waveSpecificationLocation))].includes(location.waveLocationKey))
-              : this.checkDistanceBetweenOriginAndLocation(location.waveLocationVisitAddress.lat, location.waveLocationVisitAddress.lng);
-          });
+          if (f.id !== 'f-2') {
+            filteredSpecifications = filteredSpecifications.filter(f.query);
+          }
         })
-        filteredGatherData = [...new Set(filteredGatherData)];
-        this.onGetMarkers(filteredGatherData);
+
+        locationKeyArray = [...new Set(filteredSpecifications.map(spec => spec.waveSpecificationLocation))];
+        filteredGatherLocationsData = this.data.filter((loc: IWaveLocation) => locationKeyArray.includes(loc.waveLocationKey));
+
+        if (this.activeFilters.find((f: any) => f.id === 'f-2')) {
+          filteredGatherLocationsData = filteredGatherLocationsData.filter(location => this.checkDistanceBetweenOriginAndLocation(location.waveLocationVisitAddress.lat, location.waveLocationVisitAddress.lng));
+        }
+
+        this.onGetMarkers(filteredGatherLocationsData);
       } else if (filter.id === 'f-1') {
         this.activeFilters = [this.nav[0]];
-        const locations = this.data.filter((location: IWaveLocation) => [...new Set((waveSpecifications as any[]).filter(filter.query).map(spec => spec.waveSpecificationLocation))].includes(location.waveLocationKey));
-        this.onGetMarkers(locations);
+        this.onGetMarkers(filteredGatherLocationsData);
       }
     } else {
-      this.onGetMarkers(this.data.filter((location: IWaveLocation) => location && location.waveLocationVisitAddress.name && location.waveLocationVisitAddress.name.toLowerCase().includes(this.selected.toLowerCase())));
+      this.onGetMarkers(filteredGatherLocationsData);
     }
     sessionStorage.setItem('filters', JSON.stringify(this.activeFilters.map(i => i.id)))
   }

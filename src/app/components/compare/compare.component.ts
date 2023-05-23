@@ -94,7 +94,9 @@ export class CompareComponent implements OnInit {
 
   onFilter(filter?: any) {
     this.filteredLocations.length = 0;
-    let filteredGatherData = [...this.waveLocations];
+    let filteredGatherLocationsData = [...this.waveLocations];
+    let filteredSpecifications = [...waveSpecifications];
+    let locationKeyArray: string[] = [];
 
     if(filter) {
        if (filter.id !== 'f-1') {
@@ -118,19 +120,29 @@ export class CompareComponent implements OnInit {
           }
         }
 
-        this.activeFilters.forEach(f => {
+        /*this.activeFilters.forEach(f => {
           filteredGatherData = filteredGatherData.filter((location: IWaveLocation) => {
             return f.id !== 'f-2'
                 ? (filteredGatherData.filter((location: IWaveLocation) => [...new Set((waveSpecifications as any[]).filter(filter.query).map(spec => spec.waveSpecificationLocation))].includes(location.waveLocationKey)))
                 : this.checkDistanceBetweenOriginAndLocation(location.waveLocationVisitAddress.lat, location.waveLocationVisitAddress.lng);
           });
-        })
-        filteredGatherData = [...new Set(filteredGatherData)];
-        this.filteredLocations = filteredGatherData;
-      } else if (filter.id === 'f-1') {
+        })*/
+         this.activeFilters.forEach(f => {
+           if (f.id !== 'f-2') {
+             filteredSpecifications = filteredSpecifications.filter(f.query);
+           }
+         })
+         locationKeyArray = [...new Set(filteredSpecifications.map(spec => spec.waveSpecificationLocation))];
+         filteredGatherLocationsData = filteredGatherLocationsData.filter((loc: IWaveLocation) => locationKeyArray.includes(loc.waveLocationKey));
 
+         if (this.activeFilters.find((f: any) => f.id === 'f-2')) {
+           filteredGatherLocationsData = filteredGatherLocationsData.filter(location => this.checkDistanceBetweenOriginAndLocation(location.waveLocationVisitAddress.lat, location.waveLocationVisitAddress.lng));
+         }
+         filteredGatherLocationsData = [...new Set(filteredGatherLocationsData)];
+        this.filteredLocations = filteredGatherLocationsData;
+      } else if (filter.id === 'f-1') {
         this.activeFilters = [this.nav[0]];
-        this.filteredLocations = filteredGatherData;
+        this.filteredLocations = filteredGatherLocationsData;
       }
 
     } else {

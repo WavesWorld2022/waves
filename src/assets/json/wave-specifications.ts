@@ -2,7 +2,7 @@ import {IWaveSpecification} from "../../app/shared/models";
 
 export const waveSpecifications: IWaveSpecification[] = [
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "86",
     "waveSpecificationName": "Eemhof Wavepool",
     "waveSpecificationStatus": "open all year round",
@@ -34,7 +34,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
     ],
@@ -42,7 +42,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-cove",
     "waveSpecificationLocation": "96",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -72,7 +72,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 7,
     "waveSpecificationPhotoPriceSession": 3,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
@@ -81,7 +81,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "cable-foil"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-cove",
     "waveSpecificationLocation": "96",
     "waveSpecificationName": "Intermediate one",
     "waveSpecificationStatus": "open all year round",
@@ -111,7 +111,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 7,
     "waveSpecificationPhotoPriceSession": 3,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
@@ -120,7 +120,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "cable-foil"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-cove",
     "waveSpecificationLocation": "96",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "open all year round",
@@ -150,7 +150,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 7,
     "waveSpecificationPhotoPriceSession": 3,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
@@ -159,7 +159,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "cable-foil"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-cove",
     "waveSpecificationLocation": "96",
     "waveSpecificationName": "Internediate two",
     "waveSpecificationStatus": "open all year round",
@@ -189,7 +189,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 7,
     "waveSpecificationPhotoPriceSession": 3,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
@@ -198,7 +198,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "cable-foil"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-1",
     "waveSpecificationLocation": "157",
     "waveSpecificationName": "Medium Surf Session",
     "waveSpecificationStatus": "open only summer season",
@@ -238,7 +238,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-1",
     "waveSpecificationLocation": "157",
     "waveSpecificationName": "Big Surf Session",
     "waveSpecificationStatus": "open only summer season",
@@ -278,7 +278,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "vapor-wave-product",
     "waveSpecificationLocation": "106",
     "waveSpecificationName": "Olympic training wave",
     "waveSpecificationStatus": "planned",
@@ -310,13 +310,13 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": "a:1:{i:0;s:5:'lycra\"}",
     "waveSpecificationWaveSpeed": 7,
     "waveSpecificationWaveSystem": "mystery"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "point-break-surf",
     "waveSpecificationLocation": "196",
     "waveSpecificationName": "The Wave Palace",
     "waveSpecificationStatus": "open all year round",
@@ -348,7 +348,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -356,7 +356,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "surfstream",
     "waveSpecificationLocation": "230",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open only summer season",
@@ -394,7 +394,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "surfstream",
     "waveSpecificationLocation": "232",
     "waveSpecificationName": "The first surfstream",
     "waveSpecificationStatus": "open all year round",
@@ -431,7 +431,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "freak-peak",
     "waveSpecificationLocation": "240",
     "waveSpecificationName": "Freak Peak",
     "waveSpecificationStatus": "open all year round",
@@ -461,7 +461,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -469,7 +469,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "240",
     "waveSpecificationName": "Intermediate",
     "waveSpecificationStatus": "open all year round",
@@ -499,7 +499,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -507,7 +507,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "240",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "open all year round",
@@ -537,7 +537,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -545,7 +545,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "kelly-slater-wave",
     "waveSpecificationLocation": "241",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -575,7 +575,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -583,7 +583,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "train"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "kelly-slater-wave",
     "waveSpecificationLocation": "241",
     "waveSpecificationName": "Intermediate",
     "waveSpecificationStatus": "open all year round",
@@ -613,7 +613,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -621,7 +621,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "train"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "kelly-slater-wave",
     "waveSpecificationLocation": "241",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "open all year round",
@@ -651,7 +651,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -659,7 +659,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "train"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "point-break-surf",
     "waveSpecificationLocation": "258",
     "waveSpecificationName": "Disney’s Typhoon Lagoon - Hang 10 at a Private Surf Session",
     "waveSpecificationStatus": "open all year round",
@@ -691,7 +691,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 50,
     "waveSpecificationPhotoPriceSession": 50,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -699,7 +699,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "point-break-surf",
     "waveSpecificationLocation": "258",
     "waveSpecificationName": "Disney’s Typhoon Lagoon - Learn to Surf Like a Pro (lesson)",
     "waveSpecificationStatus": "open all year round",
@@ -731,7 +731,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 50,
     "waveSpecificationPhotoPriceSession": 50,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -739,7 +739,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "point-break-surf",
     "waveSpecificationLocation": "258",
     "waveSpecificationName": "Disney’s Blizzard Beach - Melt-away Bay",
     "waveSpecificationStatus": "open all year round",
@@ -769,15 +769,15 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 50,
     "waveSpecificationPhotoPriceSession": 50,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
     "waveSpecificationWaveSpeed": 0,
-    "waveSpecificationWaveSystem": ""
+    "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "260",
     "waveSpecificationName": "Expert",
     "waveSpecificationStatus": "open all year round",
@@ -809,7 +809,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
     ],
@@ -817,7 +817,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "260",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -847,7 +847,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -855,7 +855,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "260",
     "waveSpecificationName": "Cruiser",
     "waveSpecificationStatus": "open all year round",
@@ -885,7 +885,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
     ],
@@ -893,7 +893,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "260",
     "waveSpecificationName": "Intermediate",
     "waveSpecificationStatus": "open all year round",
@@ -923,7 +923,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -931,7 +931,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "260",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "open all year round",
@@ -961,7 +961,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -969,7 +969,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "260",
     "waveSpecificationName": "Learn to surf",
     "waveSpecificationStatus": "open all year round",
@@ -999,7 +999,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 40,
     "waveSpecificationPhotoPriceSession": 12,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1007,7 +1007,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "323",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "planned",
@@ -1037,7 +1037,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1045,7 +1045,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "swellspot",
     "waveSpecificationLocation": "392",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "planned",
@@ -1075,7 +1075,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1083,7 +1083,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "mechanical-hydraulics-behind-bars-site-of-pool"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "swellspot",
     "waveSpecificationLocation": "392",
     "waveSpecificationName": "Intermediate",
     "waveSpecificationStatus": "open all year round",
@@ -1113,7 +1113,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1121,7 +1121,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "mechanical-hydraulics-behind-bars-site-of-pool"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "swellspot",
     "waveSpecificationLocation": "392",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "open all year round",
@@ -1151,7 +1151,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1159,7 +1159,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "mechanical-hydraulics-behind-bars-site-of-pool"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "surfking-wave-machine",
     "waveSpecificationLocation": "311",
     "waveSpecificationName": "Surf Beach",
     "waveSpecificationStatus": "open all year round",
@@ -1189,7 +1189,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1197,7 +1197,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "flowrider-compact",
     "waveSpecificationLocation": "311",
     "waveSpecificationName": "Flow rider",
     "waveSpecificationStatus": "open all year round",
@@ -1237,7 +1237,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "surfstream",
     "waveSpecificationLocation": "414",
     "waveSpecificationName": "Surfstream (flowrider type)",
     "waveSpecificationStatus": "open all year round",
@@ -1275,7 +1275,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "point-break-surf",
     "waveSpecificationLocation": "415",
     "waveSpecificationName": "Wadi Adventure Surf Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -1305,7 +1305,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1313,7 +1313,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "point-break-surf",
     "waveSpecificationLocation": "415",
     "waveSpecificationName": "Wadi Adventure Surf Beginner Lesson",
     "waveSpecificationStatus": "open all year round",
@@ -1343,7 +1343,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1351,7 +1351,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wave-house",
     "waveSpecificationLocation": "415",
     "waveSpecificationName": "Wild Wadi Loch",
     "waveSpecificationStatus": "open all year round",
@@ -1389,7 +1389,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "point-break-surf",
     "waveSpecificationLocation": "415",
     "waveSpecificationName": "Intermediate",
     "waveSpecificationStatus": "open all year round",
@@ -1419,7 +1419,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1427,7 +1427,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "flowbarrel-ten",
     "waveSpecificationLocation": "426",
     "waveSpecificationName": "Barrel",
     "waveSpecificationStatus": "open all year round",
@@ -1465,7 +1465,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "flowbarrel-ten-double",
     "waveSpecificationLocation": "426",
     "waveSpecificationName": "Double",
     "waveSpecificationStatus": "open all year round",
@@ -1503,7 +1503,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wave-house",
     "waveSpecificationLocation": "427",
     "waveSpecificationName": "Wave House",
     "waveSpecificationStatus": "permanently closed",
@@ -1543,7 +1543,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-cove",
     "waveSpecificationLocation": "432",
     "waveSpecificationName": "three breaks - Reef, Inside, and Bay.",
     "waveSpecificationStatus": "permanently closed",
@@ -1573,7 +1573,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1581,7 +1581,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "cable-foil"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "438",
     "waveSpecificationName": "Expert Turns Session",
     "waveSpecificationStatus": "open all year round",
@@ -1611,7 +1611,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
     ],
@@ -1619,7 +1619,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "438",
     "waveSpecificationName": "Expert Barrel session",
     "waveSpecificationStatus": "open all year round",
@@ -1649,7 +1649,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
     ],
@@ -1657,7 +1657,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "438",
     "waveSpecificationName": "Advanced Plus session",
     "waveSpecificationStatus": "open all year round",
@@ -1687,7 +1687,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
     ],
@@ -1695,7 +1695,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "438",
     "waveSpecificationName": "Advanced Surf session",
     "waveSpecificationStatus": "open all year round",
@@ -1725,7 +1725,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
     ],
@@ -1733,7 +1733,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "438",
     "waveSpecificationName": "Intermediate surf session",
     "waveSpecificationStatus": "open all year round",
@@ -1763,7 +1763,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1771,7 +1771,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "438",
     "waveSpecificationName": "Intermediate Surf lesson",
     "waveSpecificationStatus": "open all year round",
@@ -1801,7 +1801,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
     ],
@@ -1809,7 +1809,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "438",
     "waveSpecificationName": "Beginner surf session",
     "waveSpecificationStatus": "open all year round",
@@ -1839,7 +1839,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
     ],
@@ -1847,7 +1847,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "438",
     "waveSpecificationName": "Beginner Surf Lesson",
     "waveSpecificationStatus": "open all year round",
@@ -1877,7 +1877,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
     ],
@@ -1885,7 +1885,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "439",
     "waveSpecificationName": "advanced",
     "waveSpecificationStatus": "open all year round",
@@ -1915,7 +1915,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
     ],
@@ -1923,7 +1923,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "point-break-surf",
     "waveSpecificationLocation": "485",
     "waveSpecificationName": "Lost City",
     "waveSpecificationStatus": "open all year round",
@@ -1953,7 +1953,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -1961,7 +1961,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "surfpoel",
     "waveSpecificationLocation": "488",
     "waveSpecificationName": "Surf Poel",
     "waveSpecificationStatus": "open all year round",
@@ -1991,7 +1991,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
     ],
@@ -1999,7 +1999,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "hullwavemaker"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "492",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -2029,7 +2029,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -2037,7 +2037,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "okahina-wave",
     "waveSpecificationLocation": "494",
     "waveSpecificationName": "Okahina Prototype",
     "waveSpecificationStatus": "open all year round",
@@ -2067,7 +2067,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -2075,7 +2075,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "circular"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "547",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "open all year round",
@@ -2115,7 +2115,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "547",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -2153,7 +2153,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "548",
     "waveSpecificationName": "Advanced: Perfect swell",
     "waveSpecificationStatus": "planned",
@@ -2183,7 +2183,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra",
       "3_2"
@@ -2192,7 +2192,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "550",
     "waveSpecificationName": "American wave machine , perfect swell",
     "waveSpecificationStatus": "open all year round",
@@ -2222,7 +2222,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -2230,7 +2230,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "571",
     "waveSpecificationName": "Advanced: Perfect swell",
     "waveSpecificationStatus": "planned",
@@ -2260,7 +2260,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -2268,7 +2268,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "response-engineer-kobe-wave",
     "waveSpecificationLocation": "583",
     "waveSpecificationName": "100-second cycle",
     "waveSpecificationStatus": "open only summer season",
@@ -2298,7 +2298,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
     ],
@@ -2306,7 +2306,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "response-engineer-kobe-wave",
     "waveSpecificationLocation": "583",
     "waveSpecificationName": "135-second cycle wave",
     "waveSpecificationStatus": "open only summer season",
@@ -2336,7 +2336,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
     ],
@@ -2344,7 +2344,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "dexters-bigsurfaz",
     "waveSpecificationLocation": "584",
     "waveSpecificationName": "BigSurf",
     "waveSpecificationStatus": "permanently closed",
@@ -2374,7 +2374,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -2382,7 +2382,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "water-dump"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wave-house",
     "waveSpecificationLocation": "594",
     "waveSpecificationName": "Standing wave",
     "waveSpecificationStatus": "open all year round",
@@ -2420,7 +2420,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wave-house",
     "waveSpecificationLocation": "595",
     "waveSpecificationName": "Flow",
     "waveSpecificationStatus": "open all year round",
@@ -2458,7 +2458,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "613",
     "waveSpecificationName": "American Dream",
     "waveSpecificationStatus": "open all year round",
@@ -2488,7 +2488,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -2496,7 +2496,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "615",
     "waveSpecificationName": "American Dream",
     "waveSpecificationStatus": "open all year round",
@@ -2526,7 +2526,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -2534,7 +2534,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "617",
     "waveSpecificationName": "Fortgeschrittense",
     "waveSpecificationStatus": "open all year round",
@@ -2574,7 +2574,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "617",
     "waveSpecificationName": "Anfänger ",
     "waveSpecificationStatus": "open all year round",
@@ -2612,7 +2612,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "621",
     "waveSpecificationName": "ANFÄNGER SURF SESSION",
     "waveSpecificationStatus": "open all year round",
@@ -2652,7 +2652,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "621",
     "waveSpecificationName": "FORTGESCHRITTENE SURF SESSION",
     "waveSpecificationStatus": "open all year round",
@@ -2690,7 +2690,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "621",
     "waveSpecificationName": "PROFI SURF SESSION",
     "waveSpecificationStatus": "open all year round",
@@ -2728,7 +2728,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "621",
     "waveSpecificationName": "KINDER SESSION",
     "waveSpecificationStatus": "open all year round",
@@ -2766,7 +2766,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "622",
     "waveSpecificationName": "Fortgeschrittense",
     "waveSpecificationStatus": "open all year round",
@@ -2804,7 +2804,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "622",
     "waveSpecificationName": "Anfänger ",
     "waveSpecificationStatus": "open all year round",
@@ -2842,7 +2842,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-2",
     "waveSpecificationLocation": "625",
     "waveSpecificationName": "Medium Session",
     "waveSpecificationStatus": "open all year round",
@@ -2880,7 +2880,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "626",
     "waveSpecificationName": "PRO SESSION",
     "waveSpecificationStatus": "open only summer season",
@@ -2920,7 +2920,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "627",
     "waveSpecificationName": "PRO SESSION",
     "waveSpecificationStatus": "open only summer season",
@@ -2958,7 +2958,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "627",
     "waveSpecificationName": "PRO SESSION",
     "waveSpecificationStatus": "open all year round",
@@ -2996,7 +2996,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "river",
     "waveSpecificationLocation": "628",
     "waveSpecificationName": "General wave",
     "waveSpecificationStatus": "open all year round",
@@ -3034,7 +3034,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "river"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "river",
     "waveSpecificationLocation": "631",
     "waveSpecificationName": "Profi Surfsession",
     "waveSpecificationStatus": "open all year round",
@@ -3072,7 +3072,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": ""
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "632",
     "waveSpecificationName": "ADVANCED SESSION",
     "waveSpecificationStatus": "open all year round",
@@ -3110,7 +3110,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "5-waves",
     "waveSpecificationLocation": "740",
     "waveSpecificationName": "The slab",
     "waveSpecificationStatus": "planned",
@@ -3140,7 +3140,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -3148,7 +3148,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "plunger"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "vapor-wave-product",
     "waveSpecificationLocation": "743",
     "waveSpecificationName": "Swell",
     "waveSpecificationStatus": "planned",
@@ -3178,7 +3178,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -3186,7 +3186,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "mystery"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "kelly-slater-wave",
     "waveSpecificationLocation": "766",
     "waveSpecificationName": "18-million-gallon wave “pool”",
     "waveSpecificationStatus": "planned",
@@ -3216,7 +3216,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -3224,7 +3224,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "train"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "endless-surf",
     "waveSpecificationLocation": "782",
     "waveSpecificationName": "La Vague Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -3254,7 +3254,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -3262,7 +3262,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "784",
     "waveSpecificationName": "Expert",
     "waveSpecificationStatus": "open all year round",
@@ -3292,7 +3292,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -3300,7 +3300,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "800",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -3330,7 +3330,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
     ],
@@ -3338,7 +3338,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "857",
     "waveSpecificationName": "Advanced Free Surfing",
     "waveSpecificationStatus": "open all year round",
@@ -3368,7 +3368,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
@@ -3377,7 +3377,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "857",
     "waveSpecificationName": "Intermediate Free Surfing",
     "waveSpecificationStatus": "open all year round",
@@ -3407,7 +3407,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
@@ -3416,7 +3416,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "857",
     "waveSpecificationName": "Beginner Free Surfing",
     "waveSpecificationStatus": "open all year round",
@@ -3446,7 +3446,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2",
       "4_3"
@@ -3455,7 +3455,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wave-loch-surfpool",
     "waveSpecificationLocation": "864",
     "waveSpecificationName": "ramps and wedges",
     "waveSpecificationStatus": "planned",
@@ -3485,7 +3485,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -3493,7 +3493,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "887",
     "waveSpecificationName": "Training",
     "waveSpecificationStatus": "planned",
@@ -3523,7 +3523,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -3531,7 +3531,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "890",
     "waveSpecificationName": "Beast (AirSection)",
     "waveSpecificationStatus": "open all year round",
@@ -3561,7 +3561,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
     ],
@@ -3569,7 +3569,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "890",
     "waveSpecificationName": "Pro (Bigger Turns, Bigger Barrel)",
     "waveSpecificationStatus": "open all year round",
@@ -3599,7 +3599,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
     ],
@@ -3607,7 +3607,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "890",
     "waveSpecificationName": "Expert (Turning Shortboard and 20 minute Barrel)",
     "waveSpecificationStatus": "open all year round",
@@ -3637,7 +3637,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
     ],
@@ -3645,7 +3645,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "890",
     "waveSpecificationName": "Advanced (Turning Shortboard)",
     "waveSpecificationStatus": "open all year round",
@@ -3675,7 +3675,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
     ],
@@ -3683,7 +3683,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "890",
     "waveSpecificationName": "Malibu (Longboard)",
     "waveSpecificationStatus": "open all year round",
@@ -3713,7 +3713,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
     ],
@@ -3721,7 +3721,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "890",
     "waveSpecificationName": "Waikiki (Beginner)",
     "waveSpecificationStatus": "open all year round",
@@ -3751,7 +3751,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
     ],
@@ -3759,7 +3759,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "891",
     "waveSpecificationName": "www.praiadagrama",
     "waveSpecificationStatus": "open all year round",
@@ -3789,7 +3789,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -3797,7 +3797,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "892",
     "waveSpecificationName": "Ratho",
     "waveSpecificationStatus": "planned",
@@ -3827,7 +3827,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -3835,7 +3835,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "893",
     "waveSpecificationName": "Florian",
     "waveSpecificationStatus": "planned",
@@ -3865,7 +3865,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -3873,7 +3873,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "river",
     "waveSpecificationLocation": "903",
     "waveSpecificationName": "Nur Experts",
     "waveSpecificationStatus": "open only summer season",
@@ -3909,7 +3909,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "river"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "river",
     "waveSpecificationLocation": "904",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open only summer season",
@@ -3947,7 +3947,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "river"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "river",
     "waveSpecificationLocation": "904",
     "waveSpecificationName": "Intermediate",
     "waveSpecificationStatus": "open only summer season",
@@ -3977,15 +3977,15 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "4_3"
     ],
     "waveSpecificationWaveSpeed": 0,
-    "waveSpecificationWaveSystem": ""
+    "waveSpecificationWaveSystem": "river"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "915",
     "waveSpecificationName": "The Giant",
     "waveSpecificationStatus": "open only summer season",
@@ -4025,7 +4025,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "flowrider-triple",
     "waveSpecificationLocation": "918",
     "waveSpecificationName": "Flowrider tripple",
     "waveSpecificationStatus": "open all year round",
@@ -4063,7 +4063,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "endless-surf",
     "waveSpecificationLocation": "918",
     "waveSpecificationName": "Whitewater Rolling",
     "waveSpecificationStatus": "open all year round",
@@ -4093,7 +4093,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -4101,7 +4101,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "921",
     "waveSpecificationName": "Beginner ",
     "waveSpecificationStatus": "open all year round",
@@ -4141,7 +4141,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "921",
     "waveSpecificationName": "Intermediate",
     "waveSpecificationStatus": "open all year round",
@@ -4181,7 +4181,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "921",
     "waveSpecificationName": "advanced",
     "waveSpecificationStatus": "open all year round",
@@ -4221,7 +4221,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-2",
     "waveSpecificationLocation": "922",
     "waveSpecificationName": "Standing wave - beginner",
     "waveSpecificationStatus": "open only summer season",
@@ -4261,7 +4261,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "922",
     "waveSpecificationName": "Longest Rolling wave - advanced",
     "waveSpecificationStatus": "open all year round",
@@ -4291,7 +4291,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "3_2"
     ],
@@ -4299,7 +4299,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "924",
     "waveSpecificationName": "Kids",
     "waveSpecificationStatus": "open all year round",
@@ -4337,7 +4337,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "924",
     "waveSpecificationName": "NIVEL PRINCIPIANTE 45'",
     "waveSpecificationStatus": "open all year round",
@@ -4375,7 +4375,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "924",
     "waveSpecificationName": "NIVEL INTERMEDIO 45'",
     "waveSpecificationStatus": "open all year round",
@@ -4413,7 +4413,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "924",
     "waveSpecificationName": "NIVEL PRO 60'",
     "waveSpecificationStatus": "open all year round",
@@ -4451,7 +4451,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "925",
     "waveSpecificationName": "First Wave",
     "waveSpecificationStatus": "open all year round",
@@ -4489,7 +4489,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "925",
     "waveSpecificationName": "Big Wave",
     "waveSpecificationStatus": "open all year round",
@@ -4527,7 +4527,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "927",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "open all year round",
@@ -4566,7 +4566,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "927",
     "waveSpecificationName": "Intermediate",
     "waveSpecificationStatus": "open all year round",
@@ -4605,7 +4605,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "927",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -4646,7 +4646,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "flowrider-double",
     "waveSpecificationLocation": "929",
     "waveSpecificationName": "DA WAVE",
     "waveSpecificationStatus": "open all year round",
@@ -4685,7 +4685,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "929",
     "waveSpecificationName": "Citywave -  Beginner",
     "waveSpecificationStatus": "open all year round",
@@ -4723,7 +4723,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "929",
     "waveSpecificationName": "Citywave - Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -4762,7 +4762,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "939",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -4792,7 +4792,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra",
       "3_2"
@@ -4801,7 +4801,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wave-loch-surfpool",
     "waveSpecificationLocation": "941",
     "waveSpecificationName": "Gracht",
     "waveSpecificationStatus": "planned",
@@ -4831,7 +4831,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -4839,7 +4839,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wave-loch-surfpool",
     "waveSpecificationLocation": "994",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -4869,7 +4869,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -4877,7 +4877,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "endless-surf",
     "waveSpecificationLocation": "999",
     "waveSpecificationName": "Endless 1",
     "waveSpecificationStatus": "open all year round",
@@ -4907,7 +4907,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -4915,7 +4915,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavemaster",
     "waveSpecificationLocation": "1002",
     "waveSpecificationName": "UmaOla",
     "waveSpecificationStatus": "open all year round",
@@ -4945,7 +4945,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -4953,7 +4953,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "mystery"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "webber-by-osd",
     "waveSpecificationLocation": "1003",
     "waveSpecificationName": "Webbers Tube",
     "waveSpecificationStatus": "open all year round",
@@ -4983,7 +4983,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -4991,7 +4991,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "hullwavemaker"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "1009",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -5021,7 +5021,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5029,7 +5029,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "blackforestwave",
     "waveSpecificationLocation": "1012",
     "waveSpecificationName": "Riverwave",
     "waveSpecificationStatus": "open all year round",
@@ -5067,7 +5067,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "river"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "1016",
     "waveSpecificationName": "Expert course",
     "waveSpecificationStatus": "open only summer season",
@@ -5097,7 +5097,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5105,7 +5105,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "1016",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open only summer season",
@@ -5135,7 +5135,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5143,7 +5143,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "1016",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "open all year round",
@@ -5173,7 +5173,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5181,7 +5181,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "swelmfg",
     "waveSpecificationLocation": "1020",
     "waveSpecificationName": "Peak wave",
     "waveSpecificationStatus": "open all year round",
@@ -5211,7 +5211,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5219,7 +5219,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "1022"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-2",
     "waveSpecificationLocation": "1020",
     "waveSpecificationName": "StandingUnit",
     "waveSpecificationStatus": "open all year round",
@@ -5257,7 +5257,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "dreamwave-modularsystem",
     "waveSpecificationLocation": "1025",
     "waveSpecificationName": "Leinewelle",
     "waveSpecificationStatus": "open all year round",
@@ -5295,7 +5295,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "river"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "1028",
     "waveSpecificationName": "Citywave 1",
     "waveSpecificationStatus": "planned",
@@ -5333,7 +5333,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "river",
     "waveSpecificationLocation": "1044",
     "waveSpecificationName": "Bend",
     "waveSpecificationStatus": "open all year round",
@@ -5371,7 +5371,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "river"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "endless-surf",
     "waveSpecificationLocation": "1048",
     "waveSpecificationName": "Endless surf 1",
     "waveSpecificationStatus": "open all year round",
@@ -5401,7 +5401,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5409,7 +5409,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "endless-surf",
     "waveSpecificationLocation": "1051",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open only summer season",
@@ -5439,7 +5439,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5447,7 +5447,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "endless-surf",
     "waveSpecificationLocation": "1052",
     "waveSpecificationName": "Loooong",
     "waveSpecificationStatus": "planned",
@@ -5477,7 +5477,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5485,7 +5485,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "1058",
     "waveSpecificationName": "Replanned",
     "waveSpecificationStatus": "planned",
@@ -5515,7 +5515,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5523,7 +5523,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "endless-surf",
     "waveSpecificationLocation": "1059",
     "waveSpecificationName": "Advanced",
     "waveSpecificationStatus": "open all year round",
@@ -5553,7 +5553,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5561,7 +5561,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "1067",
     "waveSpecificationName": "Discussed",
     "waveSpecificationStatus": "open all year round",
@@ -5591,7 +5591,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5599,7 +5599,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "1069",
     "waveSpecificationName": "Nr2",
     "waveSpecificationStatus": "open all year round",
@@ -5629,7 +5629,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5637,7 +5637,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "1077",
     "waveSpecificationName": "Coal 1",
     "waveSpecificationStatus": "planned",
@@ -5667,7 +5667,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5675,7 +5675,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "1078",
     "waveSpecificationName": "Landlocked settings",
     "waveSpecificationStatus": "planned",
@@ -5705,7 +5705,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5713,7 +5713,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "endless-surf",
     "waveSpecificationLocation": "1080",
     "waveSpecificationName": "Inbetween",
     "waveSpecificationStatus": "planned",
@@ -5743,7 +5743,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5751,7 +5751,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "1082",
     "waveSpecificationName": "Londone",
     "waveSpecificationStatus": "open all year round",
@@ -5781,7 +5781,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5789,7 +5789,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "1083",
     "waveSpecificationName": "SouthUK1",
     "waveSpecificationStatus": "open all year round",
@@ -5819,7 +5819,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5827,7 +5827,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "5-waves",
     "waveSpecificationLocation": "1084",
     "waveSpecificationName": "X",
     "waveSpecificationStatus": "planned",
@@ -5857,7 +5857,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5865,7 +5865,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "plunger"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "1085",
     "waveSpecificationName": "South Carolina 1",
     "waveSpecificationStatus": "open all year round",
@@ -5895,7 +5895,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -5903,7 +5903,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-2",
     "waveSpecificationLocation": "1090",
     "waveSpecificationName": "Grande",
     "waveSpecificationStatus": "open all year round",
@@ -5941,7 +5941,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "dreamwave-modularsystem",
     "waveSpecificationLocation": "1094",
     "waveSpecificationName": "Fuchslochwelle",
     "waveSpecificationStatus": "open all year round",
@@ -5979,7 +5979,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "river"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "dreamwave-modularsystem",
     "waveSpecificationLocation": "1100",
     "waveSpecificationName": "Traunstein ",
     "waveSpecificationStatus": "open only summer season",
@@ -6017,7 +6017,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "river"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "dreamwave-modularsystem",
     "waveSpecificationLocation": "1106",
     "waveSpecificationName": "WOLFRATSHAUSEN",
     "waveSpecificationStatus": "planned",
@@ -6055,7 +6055,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "river"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-2",
     "waveSpecificationLocation": "1108",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "planned",
@@ -6093,7 +6093,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-2",
     "waveSpecificationLocation": "1108",
     "waveSpecificationName": "advanced wave",
     "waveSpecificationStatus": "planned",
@@ -6131,7 +6131,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-2",
     "waveSpecificationLocation": "1108",
     "waveSpecificationName": "Pro wave",
     "waveSpecificationStatus": "planned",
@@ -6169,7 +6169,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-2",
     "waveSpecificationLocation": "1109",
     "waveSpecificationName": "beginner wave",
     "waveSpecificationStatus": "planned",
@@ -6207,7 +6207,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "wavegarden-urbnsurf",
     "waveSpecificationLocation": "1110",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "planned",
@@ -6237,7 +6237,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
     ],
@@ -6245,7 +6245,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "citywave",
     "waveSpecificationLocation": "1112",
     "waveSpecificationName": "Secret",
     "waveSpecificationStatus": "planned",
@@ -6283,7 +6283,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "static-wave-tech-france-1",
     "waveSpecificationLocation": "1115",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "open all year round",
@@ -6321,7 +6321,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "unit-surf-pool-2",
     "waveSpecificationLocation": "1116",
     "waveSpecificationName": "Beginner",
     "waveSpecificationStatus": "planned",
@@ -6359,7 +6359,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "standing-wave"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "perfect-swell",
     "waveSpecificationLocation": "1120",
     "waveSpecificationName": "Perfect Swell",
     "waveSpecificationStatus": "planned",
@@ -6389,7 +6389,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "lycra"
     ],
@@ -6397,7 +6397,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationWaveSystem": "pneumatics"
   },
   {
-    "waveSpecificationProduct": null,
+    "waveSpecificationProduct": "allwaves-nr1",
     "waveSpecificationLocation": "1126",
     "waveSpecificationName": "AllWaves nr1",
     "waveSpecificationStatus": "open all year round",
@@ -6427,7 +6427,7 @@ export const waveSpecifications: IWaveSpecification[] = [
     "waveSpecificationVideoRecordingPriceSession": 0,
     "waveSpecificationPhotoPriceSession": 0,
     "waveSpecificationOurTestimonial": "",
-    "waveSpecificationIndoor": false,
+    "waveSpecificationIndoor": true,
     "waveSpecificationRecommendedWetSuite": [
       "5_4"
     ],

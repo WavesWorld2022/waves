@@ -9,7 +9,7 @@ export const _products = [
     technology_type: "267",
     date: "2019-09-27 15:28:28",
     postType: "wave_system",
-    link: "/5-waves/",
+    link: "5-waves",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -22,7 +22,7 @@ export const _products = [
     technology_type: "881",
     date: "2019-09-27 15:29:54",
     postType: "wave_system",
-    link: "/282/",
+    link: "perfect-swell",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -35,7 +35,7 @@ export const _products = [
     technology_type: "269",
     date: "2019-09-27 15:31:50",
     postType: "wave_system",
-    link: "/wavegarden-cove/",
+    link: "wavegarden-cove",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -48,7 +48,7 @@ export const _products = [
     technology_type: "315",
     date: "2019-09-27 15:33:32",
     postType: "wave_system",
-    link: "/284/",
+    link: "kelly-slater-wave",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -61,7 +61,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 15:38:00",
     postType: "wave_system",
-    link: "/unit-surf-pool-1/",
+    link: "unit-surf-pool-1",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -74,7 +74,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 15:38:33",
     postType: "wave_system",
-    link: "/unit-surf-pool-2/",
+    link: "unit-surf-pool-2",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -87,7 +87,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 15:39:51",
     postType: "wave_system",
-    link: "/citywave/",
+    link: "citywave",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -100,7 +100,7 @@ export const _products = [
     technology_type: "271",
     date: "2019-09-27 15:41:33",
     postType: "wave_system",
-    link: "/point-break-surf/",
+    link: "point-break-surf",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -113,7 +113,7 @@ export const _products = [
     technology_type: "1004",
     date: "2019-09-27 15:42:55",
     postType: "wave_system",
-    link: "/surfpoel/",
+    link: "surfpoel",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -126,7 +126,7 @@ export const _products = [
     technology_type: "1041",
     date: "2019-09-27 15:52:40",
     postType: "wave_system",
-    link: "/okahina-wave/",
+    link: "okahina-wave",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -139,7 +139,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 15:57:22",
     postType: "wave_system",
-    link: "/flowrider-compact/",
+    link: "flowrider-compact",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -152,7 +152,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 15:58:29",
     postType: "wave_system",
-    link: "/flowrider-single/",
+    link: "flowrider-single",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -165,7 +165,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 15:59:12",
     postType: "wave_system",
-    link: "/flowrider-double/",
+    link: "flowrider-double",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -178,7 +178,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 15:59:47",
     postType: "wave_system",
-    link: "/flowrider-triple/",
+    link: "flowrider-triple",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -191,7 +191,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 16:00:23",
     postType: "wave_system",
-    link: "/flowrider-wave-in-a-box/",
+    link: "flowrider-wave-in-a-box",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -204,7 +204,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 16:00:55",
     postType: "wave_system",
-    link: "/flowrider-mobile/",
+    link: "flowrider-mobile",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -217,7 +217,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 16:01:42",
     postType: "wave_system",
-    link: "/flowbarrel-ten/",
+    link: "flowbarrel-ten",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -230,7 +230,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 16:02:11",
     postType: "wave_system",
-    link: "/flowbarrel-ten-double/",
+    link: "flowbarrel-ten-double",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -243,7 +243,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 16:03:18",
     postType: "wave_system",
-    link: "/waveoz/",
+    link: "waveoz",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -256,7 +256,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-09-27 16:04:13",
     postType: "wave_system",
-    link: "/latitube/",
+    link: "latitube",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -269,7 +269,7 @@ export const _products = [
     technology_type: "881",
     date: "2019-09-27 20:24:19",
     postType: "wave_system",
-    link: "/wavegarden-urbnsurf/",
+    link: "wavegarden-urbnsurf",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -282,7 +282,7 @@ export const _products = [
     technology_type: "1004",
     date: "2019-10-03 22:17:26",
     postType: "wave_system",
-    link: "/wavepool/",
+    link: "wavepool",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -295,7 +295,7 @@ export const _products = [
     technology_type: "391",
     date: "2019-10-04 15:13:42",
     postType: "wave_system",
-    link: "/swellspot/",
+    link: "swellspot",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -308,7 +308,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-10-11 19:17:59",
     postType: "wave_system",
-    link: "/surfstream/",
+    link: "surfstream",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -321,7 +321,7 @@ export const _products = [
     technology_type: "391",
     date: "2019-10-13 11:54:21",
     postType: "wave_system",
-    link: "/surf-wave-pool/",
+    link: "surf-wave-pool",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -334,7 +334,7 @@ export const _products = [
     technology_type: "881",
     date: "2019-10-13 12:59:36",
     postType: "wave_system",
-    link: "/freak-peak/",
+    link: "freak-peak",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -347,7 +347,7 @@ export const _products = [
     technology_type: "270",
     date: "2019-11-02 08:06:51",
     postType: "wave_system",
-    link: "/wave-house/",
+    link: "wave-house",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -360,7 +360,7 @@ export const _products = [
     technology_type: "881",
     date: "2019-11-02 08:19:45",
     postType: "wave_system",
-    link: "/wave-loch-surfpool/",
+    link: "wave-loch-surfpool",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -373,7 +373,7 @@ export const _products = [
     technology_type: "272",
     date: "2020-04-12 21:14:04",
     postType: "wave_system",
-    link: "/vapor-wave-product/",
+    link: "vapor-wave-product",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -386,7 +386,7 @@ export const _products = [
     technology_type: "271",
     date: "2020-05-10 08:30:30",
     postType: "wave_system",
-    link: "/dexters-bigsurfaz/",
+    link: "dexters-bigsurfaz",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -399,7 +399,7 @@ export const _products = [
     technology_type: "271",
     date: "2020-05-10 20:25:26",
     postType: "wave_system",
-    link: "/response-engineer-kobe-wave/",
+    link: "response-engineer-kobe-wave",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -412,7 +412,7 @@ export const _products = [
     technology_type: "881",
     date: "2020-05-22 14:15:10",
     postType: "wave_system",
-    link: "/endless-surf/",
+    link: "endless-surf",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -425,7 +425,7 @@ export const _products = [
     technology_type: "267",
     date: "2020-10-03 08:41:24",
     postType: "wave_system",
-    link: "/plunger-2-compact-plunger-pool-model/",
+    link: "plunger-2-compact-plunger-pool-model",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -438,7 +438,7 @@ export const _products = [
     technology_type: "272",
     date: "2021-01-10 22:07:20",
     postType: "wave_system",
-    link: "/wavemaster/",
+    link: "wavemaster",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -451,7 +451,7 @@ export const _products = [
     technology_type: "1004",
     date: "2021-01-12 21:30:07",
     postType: "wave_system",
-    link: "/webber-by-osd/",
+    link: "webber-by-osd",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -464,7 +464,7 @@ export const _products = [
     technology_type: "748",
     date: "2021-01-30 21:47:57",
     postType: "wave_system",
-    link: "/1011/",
+    link: "blackforestwave",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -477,7 +477,7 @@ export const _products = [
     technology_type: "272",
     date: "2021-04-04 20:35:53",
     postType: "wave_system",
-    link: "/swelmfg/",
+    link: "swelmfg",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -490,7 +490,7 @@ export const _products = [
     technology_type: "271",
     date: "2021-08-17 19:56:11",
     postType: "wave_system",
-    link: "/surfking-wave-machine/",
+    link: "surfking-wave-machine",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -503,7 +503,7 @@ export const _products = [
     technology_type: "748",
     date: "2021-08-23 07:07:52",
     postType: "wave_system",
-    link: "/river/",
+    link: "river",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -516,7 +516,7 @@ export const _products = [
     technology_type: "270",
     date: "2021-08-29 11:20:25",
     postType: "wave_system",
-    link: "/epic-surf-standing/",
+    link: "epic-surf-standing",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -529,7 +529,7 @@ export const _products = [
     technology_type: "1041",
     date: "2021-08-31 20:04:22",
     postType: "wave_system",
-    link: "/okahina/",
+    link: "okahina",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -542,7 +542,7 @@ export const _products = [
     technology_type: "270",
     date: "2021-10-31 16:29:29",
     postType: "wave_system",
-    link: "/any-wave/",
+    link: "any-wave",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -555,7 +555,7 @@ export const _products = [
     technology_type: "748",
     date: "2021-12-23 19:18:50",
     postType: "wave_system",
-    link: "/dreamwave-modularsystem/",
+    link: "dreamwave-modularsystem",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -568,7 +568,7 @@ export const _products = [
     technology_type: "270",
     date: "2022-01-21 20:40:48",
     postType: "wave_system",
-    link: "/static-wave-tech-france-1/",
+    link: "static-wave-tech-france-1",
     updatedDate: "2023-03-09 12:28:28"
   },
   {
@@ -581,7 +581,7 @@ export const _products = [
     technology_type: "1123",
     date: "2022-02-05 20:53:07",
     postType: "wave_system",
-    link: "/allwaves-nr1/",
+    link: "allwaves-nr1",
     updatedDate: "2023-03-09 12:28:28"
   }
 ]
