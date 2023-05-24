@@ -11389,7 +11389,7 @@ export const data = [
     key: "wave_specifications_1_maintenance",
     value: ""
   },
-  {id: "627", key: "wave_specifications_1_wave_system", value: ""},
+  {id: "627", key: "wave_specifications_1_wave_system", value: "287"},
   {
     id: "627",
     key: "wave_specifications_1_tech_energy_consumption",
@@ -11642,7 +11642,7 @@ export const data = [
     key: "wave_specifications_0_maintenance",
     value: ""
   },
-  {id: "631", key: "wave_specifications_0_wave_system", value: ""},
+  {id: "631", key: "wave_specifications_0_wave_system", value: "1045"},
   {
     id: "631",
     key: "wave_specifications_0_tech_energy_consumption",
@@ -17835,7 +17835,7 @@ export const data = [
     key: "wave_specifications_1_maintenance",
     value: ""
   },
-  {id: "904", key: "wave_specifications_1_wave_system", value: ""},
+  {id: "904", key: "wave_specifications_1_wave_system", value: "1045"},
   {
     id: "904",
     key: "wave_specifications_1_tech_energy_consumption",
@@ -21192,7 +21192,7 @@ export const data = [
     key: "wave_specifications_2_maintenance",
     value: ""
   },
-  {id: "258", key: "wave_specifications_2_wave_system", value: ""},
+  {id: "258", key: "wave_specifications_2_wave_system", value: "288"},
   {
     id: "258",
     key: "wave_specifications_2_tech_energy_consumption",
