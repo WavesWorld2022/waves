@@ -13,13 +13,13 @@
                [(ngModel)]="selected"
                [typeaheadScrollable]="true"
                [typeaheadOptionsInScrollableView]="5"
-               typeaheadOptionField="post.title"
+               typeaheadOptionField="waveLocationName"
                placeholder="Search..."
                [typeaheadItemTemplate]="customItemTemplate"
                class="form-control">
 
         <ng-template #customItemTemplate let-model="item" let-index="index">
-          <h5>{{model.post.title}}</h5>
+          <h5>{{model.waveLocationName}}</h5>
         </ng-template>
 
       </div>
@@ -52,7 +52,7 @@
     <div class="container">
       <div class="row ">
         <div class="col-8">
-          <p>Last updated: <strong>25.12.2022</strong></p>
+          <p>Last updated: <strong>21.05.2023</strong></p>
         </div>
         <div class="col text-right">
           <p>Items: <strong>{{markers.length}}</strong></p>
@@ -87,7 +87,7 @@
           <a [href]="marker.direction" class="locations-item__action locations-item__action-outline" target="_blank">
             <img src="../../../assets/icons/signpost-split.svg" alt="">
           </a>
-          <a [href]="marker.reflink" class="locations-item__action locations-item__action-outline" target="_blank">
+          <a *ngIf="marker.reflink" [href]="marker.reflink" class="locations-item__action locations-item__action-outline" target="_blank">
             <img src="../../../assets/icons/ticket-perforated.svg" alt="">
           </a>
         </div>
@@ -127,7 +127,7 @@
           </p>
           <!--<p class="marker__label">Tap here to get directions</p>-->
           <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
-          <a [href]="infoContent.reflink" class="marker__action marker__action-outline" target="_blank">BOOK NOW</a>
+          <a *ngIf="infoContent.reflink" [href]="infoContent.reflink" class="marker__action marker__action-outline" target="_blank">BOOK NOW</a>
         </div>
       </map-info-window>
 

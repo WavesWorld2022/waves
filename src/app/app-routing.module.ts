@@ -15,6 +15,7 @@ import {TechnologiesItemComponent} from "./components/technologies/technologies-
 import {ProductsItemComponent} from "./components/products/products-item/products-item.component";
 import {TermsOfUseComponent} from "./components/terms-of-use/terms-of-use.component";
 import {PrivacyPolicyComponent} from "./components/privacy-policy/privacy-policy.component";
+import {FaqComponent} from "./components/faq/faq.component";
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -41,7 +42,8 @@ export const routes: Routes = [
     {path: ':id', component: LocationComponent},
   ]},
   {path: 'terms-of-use', component: TermsOfUseComponent},
-  {path: 'privacy-policy', component: PrivacyPolicyComponent}
+  {path: 'privacy-policy', component: PrivacyPolicyComponent},
+  {path: 'faq', component: FaqComponent}
 ];
 
 @NgModule({

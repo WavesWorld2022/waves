@@ -35,6 +35,7 @@ import {EllipsisModule} from "ngx-ellipsis";
 import {PopoverModule} from "ngx-bootstrap/popover";
 import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
     GoBackButtonComponent,
     StarsComponent,
     TermsOfUseComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    FaqComponent
   ],
     imports: [
         BrowserModule,

@@ -140,3 +140,9 @@
 ::ng-deep popover-container {
   max-width: 100% !important;
 }
+.rot{
+  transform: rotate(180deg);
+}
+.rotated{
+  transform: rotate(0deg);
+}

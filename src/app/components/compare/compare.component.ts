@@ -43,6 +43,9 @@ export class CompareComponent implements OnInit {
   filteredLocations: IWaveLocation[] = [];
   activeFilters: any[] = [];
   destroyer$ = new Subject();
+  sortedItems: any[] = []; // Sorted array of items
+  sortColumn: string = '';
+  sortDirection: number = 1;
 
   constructor(private fireService: FireService) { }
 
@@ -61,6 +64,11 @@ export class CompareComponent implements OnInit {
 
     this.fireService.onGetCollection('locations');
     this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: any) => {
+      resp.forEach((l: any) => {
+        l.price = this.getPrice(l.waveLocationKey) > 0 ? this.getPrice(l.waveLocationKey) : '-';
+        l.ppms = this.getPPMSonBoard(l);
+      })
+
       resp.filter((l: any) => l && l.waveLocationName && !(isNaN(Number(this.getPPMSonBoard(l))) || Number(this.getPPMSonBoard(l)) === 0))
         // @ts-ignore
         .sort((a,b) => (this.getPPMSonBoard(a) > this.getPPMSonBoard(b)) ? 1 : ((this.getPPMSonBoard(b) > this.getPPMSonBoard(a)) ? -1 : 0))
@@ -82,9 +90,9 @@ export class CompareComponent implements OnInit {
   getPPMSonBoard(item: IWaveLocation) {
     const specifications = waveSpecifications.filter(s => s.waveSpecificationLocation === item.waveLocationKey);
     //console.log(item)
-    const price = specifications && specifications[0] && specifications[0].waveSpecificationPriceAdultHigh ? specifications[0].waveSpecificationPriceAdultHigh : 0;
-    const waves = specifications && specifications[0] && specifications[0].waveSpecificationRidesPerHour ? specifications[0].waveSpecificationRidesPerHour : 0;
-    const duration = specifications && specifications[0] && specifications[0].waveSpecificationDurationRide ? specifications[0].waveSpecificationDurationRide : 0;
+    const price = specifications && specifications[0] && specifications[0]?.waveSpecificationPriceAdultHigh ? specifications[0].waveSpecificationPriceAdultHigh : 0;
+    const waves = specifications && specifications[0] && specifications[0]?.waveSpecificationRidesPerHour ? specifications[0].waveSpecificationRidesPerHour : 0;
+    const duration = specifications && specifications[0] && specifications[0]?.waveSpecificationDurationRide ? specifications[0].waveSpecificationDurationRide : 0;
     const PPMSonBoard = (Number(price)/(Number(waves)*Number(duration))) * 60;
     /*return (isNaN(PPMSonBoard) || PPMSonBoard === 0) ? '-' : (PPMSonBoard / 60).toFixed(2)*/
     return (isNaN(PPMSonBoard) || PPMSonBoard === 0) ? '-' : Math.round(PPMSonBoard * 100) / 100;
@@ -140,7 +148,7 @@ export class CompareComponent implements OnInit {
   }
 
   getPrice(id: string) {
-    return waveSpecifications.filter(item => item.waveSpecificationLocation === id)[0].waveSpecificationPriceAdultHigh
+    return waveSpecifications.filter(item => item.waveSpecificationLocation === id)[0]?.waveSpecificationPriceAdultHigh
   }
 
   isOpenedLocation(date: string): boolean {
@@ -167,5 +175,32 @@ export class CompareComponent implements OnInit {
 
     return 2 * R * Math.asin(Math.sqrt(Math.sin(difflat / 2) * Math.sin(difflat / 2) + Math.cos(rlat1) * Math.cos(rlat2) * Math.sin(difflon / 2) * Math.sin(difflon / 2)));
   }
+
+  sortTable(column: string) {
+    if (column === this.sortColumn) {
+      // Reverse sort direction if the same column is clicked again
+      this.sortDirection = -this.sortDirection;
+    } else {
+      this.sortColumn = column;
+      this.sortDirection = 1;
+    }
+
+    // Sort the items based on the current column and direction
+    this.sortedItems = this.filteredLocations.sort((a, b) => {
+      // @ts-ignore
+      const aValue = a[this.sortColumn];
+      // @ts-ignore
+      const bValue = b[this.sortColumn];
+
+      if (aValue < bValue) {
+        return -1 * this.sortDirection;
+      } else if (aValue > bValue) {
+        return 1 * this.sortDirection;
+      } else {
+        return 0;
+      }
+    });
+  }
+
 }
 

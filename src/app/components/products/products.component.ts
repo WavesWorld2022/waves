@@ -31,7 +31,7 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.fireService.onGetCollection('products');
     this.fireService.collectionData$.pipe(take(1)).subscribe((resp: IProduct[]) => {
-      resp.sort((a: any, b: any) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+      resp.sort((a: any, b: any) => (a.waveSystemProductName > b.waveSystemProductName) ? 1 : ((b.waveSystemProductName > a.waveSystemProductName) ? -1 : 0))
         .forEach((m: any) => {
           this.products.push(m);
         })

@@ -262,10 +262,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   goToLocation(event: any) {
-    this.router.navigate([`/location/${event.item.post.name}`])
+    console.log(1)
+    this.router.navigate([`/location/${event.item.waveLocationKey}`])
   }
 
   goToNearestLocation(location: string) {
+    console.log(2)
     this.router.navigate(['/location', location])
     this.modalRef?.hide();
     sessionStorage.setItem('homeModalShown', 'true');

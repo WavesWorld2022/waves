@@ -11,7 +11,7 @@
             <a *ngIf="location.waveLocationReferralLink" href="{{location.waveLocationReferralLink}}" class="button">
               {{location.waveLocationBookingButtonText}}
             </a>
-            <a *ngIf="location.waveLocationWebsite" href="{{location.waveLocationWebsite}}" class="button">
+            <a *ngIf="location.waveLocationWebsite" target="_blank" href="{{location.waveLocationWebsite}}" class="button">
               LEARN MORE
             </a>
           </div>
@@ -173,7 +173,9 @@
                   <div *ngIf="locationSpecifications.length" class="section section_waves">
                     <div class="section__header">
                       <h2 class="section__title section__title_bordered">Waves</h2>
-                      <div class="wavename">{{wave.waveSpecificationName}}</div>
+                      <div class="wavename" [class.nomargin]="locationSpecifications.length < 2">
+                        {{wave.waveSpecificationName}}
+                      </div>
                     </div>
                     <div class="section__content">
                       <!--<h3 >{{wave.wave_name}}</h3>-->
@@ -321,7 +323,7 @@
                 <google-map
                   width="100%"
                   height="400"
-                  [zoom]="nearbySpotsZoom"
+                  [zoom]="0"
                   [center]="coords"
                   [options]="options"
                 >
@@ -368,9 +370,12 @@
               <a target="_blank" [href]="'https://www.google.com/maps/dir/?api=1&destination=' + (location.waveLocationVisitAddress && location.waveLocationVisitAddress.lat && location.waveLocationVisitAddress.lng ? location.waveLocationVisitAddress.lat + ',' + location.waveLocationVisitAddress.lng : '') + '&travelmode=driving'"> {{location.waveLocationVisitAddress.address}}</a>
             </div>
 
-            <div class="section mt-4" *ngIf="specificationInfo && (specificationInfo.product.name || specificationInfo.productionMethod.name || specificationInfo.manufacturer.name)">
+            <div class="section mt-4">
               <h2 class="section__title">Main Information</h2>
               <div class="section__text">
+                <div class="d-flex justify-content-between align-items-end">
+                  <span>Amout Of Waves: </span><span>{{locationSpecifications.length}}</span>
+                </div>
                 <div class="d-flex justify-content-between align-items-end" *ngIf="specificationInfo && specificationInfo.product.name">
                   <span>Product: </span><span>{{specificationInfo.product.name}}</span>
                 </div>
@@ -378,7 +383,7 @@
                   <span>Production Method: </span><span>{{specificationInfo.productionMethod.name}}</span>
                 </div>
                 <div class="d-flex justify-content-between align-items-end" *ngIf="specificationInfo && specificationInfo.manufacturer.name">
-                  <span>Product: </span><span>{{specificationInfo.manufacturer.name}}</span>
+                  <span>Manufacturer: </span><span>{{specificationInfo.manufacturer.name}}</span>
                 </div>
                 <!--<div class="d-flex justify-content-between align-items-end" *ngIf="+location.session_photo_price">
                   <span>Session photo price / hr</span><span>€{{location.session_photo_price}}/hour</span>

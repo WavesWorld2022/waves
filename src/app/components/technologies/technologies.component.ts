@@ -30,7 +30,7 @@ export class TechnologiesComponent implements OnInit {
   ngOnInit(): void {
     this.fireService.onGetCollection('production-methods');
     this.fireService.collectionData$.subscribe((resp: IWaveProductionMethod[]) => {
-      resp.sort((a: any, b: any ) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+      resp.sort((a: any, b: any ) => (a.waveProductionMethodName > b.waveProductionMethodName) ? 1 : ((b.waveProductionMethodName > a.waveProductionMethodName) ? -1 : 0))
         .forEach((m: any) => {
           this.technologies.push(m);
         })

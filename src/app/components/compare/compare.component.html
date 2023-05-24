@@ -1,6 +1,6 @@
 <app-header></app-header>
-<app-loader *ngIf="isLoading"></app-loader>
-<div *ngIf="!isLoading" class="page">
+<!--<app-loader *ngIf="isLoading"></app-loader>-->
+<div class="page">
   <div class="hero">
     <div class="container">
       <div class="row align-items-center">
@@ -52,21 +52,32 @@
       <div class="col table-wrapper">
         <table class="table table-striped">
           <tr>
-            <th>Wavelocation</th>
-            <th class="text-right">Hour</th>
-            <th class="text-right"
+            <th (click)="sortTable('waveLocationName')">
+              Wavelocation
+              <img *ngIf="sortColumn === 'waveLocationName'"
+                   class="rot" [class.rotated]="sortDirection !== 1" src="../../../assets/icons/sort.svg" alt="">
+            </th>
+            <th (click)="sortTable('price')" class="text-right">
+              Hour
+              <img *ngIf="sortColumn === 'price'"
+                   class="rot" [class.rotated]="sortDirection !== 1" src="../../../assets/icons/sort.svg" alt="">
+            </th>
+            <th (click)="sortTable('ppms')" class="text-right"
                 [popover]="calculationInfo"
                 triggers="mouseenter:mouseleave"
             >
               Price Per Minute Surfing
+              <img *ngIf="sortColumn === 'ppms'"
+                   class="rot" [class.rotated]="sortDirection !== 1" src="../../../assets/icons/sort.svg" alt="">
             </th>
           </tr>
-          <tr *ngFor="let item of filteredLocations" [routerLink]="['../location', item.waveLocationKey]">
+          <tr *ngFor="let item of sortedItems && sortedItems.length > 0 ? sortedItems : filteredLocations"
+              [routerLink]="['../location', item.waveLocationKey]">
             <td>
               <span>{{item.waveLocationName}}</span>
             </td>
-            <td class="text-right">{{getPrice(item.waveLocationKey) > 0 ? getPrice(item.waveLocationKey) : '-'}}</td>
-            <td class="text-right">{{getPPMSonBoard(item)}}</td>
+            <td class="text-right">{{item['price']}}</td>
+            <td class="text-right">{{item['ppms']}}</td>
           </tr>
         </table>
       </div>

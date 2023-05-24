@@ -1,0 +1,46 @@
+.hero{
+  height: calc(100vh - 206px);
+  background: url("../../../assets/images/bg-1.png") no-repeat center;
+  background-size: cover;
+}
+.page{
+  padding-bottom: 0;
+}
+.page{
+  &__content{
+    padding: 0;
+    h1{
+      font-size: 2.5rem;
+      font-weight: 800;
+      padding: 0;
+      margin: 20px 0;
+    }
+    h3{
+      font-size: 1.3rem;
+      padding: 0;
+      margin: 50px 0 15px;
+      font-weight: 600;
+      color: #008bb2;
+      text-transform: uppercase;
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+    p, li{
+      font-size: 1.1rem;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      opacity: .6;
+    }
+    li{
+      list-style: disc;
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .hero {
+    display: block;
+    height: calc(100vh - 171px);
+  }
+}
