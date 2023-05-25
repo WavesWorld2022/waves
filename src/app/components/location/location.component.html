@@ -165,7 +165,7 @@
               {{location.book_now_button_caption}}
             </a>-->
 
-            <div *ngIf="locationSpecifications.length >= 1" style="position:relative;">
+            <div *ngIf="locationSpecifications && locationSpecifications.length >= 1" style="position:relative;">
               <ngx-slick-carousel class="carousel"
                                   #slickModal="slick-carousel"
                                   [config]="slideConfig">

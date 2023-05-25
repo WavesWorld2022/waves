@@ -17,7 +17,7 @@ import {waveSpecifications} from "../../../assets/json/wave-specifications";
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   modalRef?: BsModalRef;
-  data = [];
+  data: IWaveLocation[] = [];
   selected = '';
   isLoading = false;
   //activeFilter = 'f-1';
@@ -55,6 +55,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   infoContent: any;
   // @ts-ignore
   center: google.maps.LatLngLiteral;
+  specifications: IWaveSpecification[] = [];
   markers: any[] = [];
   activeFilters: any[] = [];
   height: string | number = 500;
@@ -108,40 +109,48 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         lng: position.coords.longitude,
       };
     });
-    this.fireService.onGetCollection('locations');
-    this.fireService.collectionData$.pipe(take(1)).subscribe((resp: any) => {
-      this.data.length = 0;
-      this.data = resp.filter((location: IWaveLocation) => location && location.waveLocationName);
+    this.fireService.onGetSecondCollection('specifications');
+    this.fireService.collectionSecondData$.pipe(take(1)).subscribe((resp: IWaveSpecification[]) => {
+      this.specifications = resp;
 
-      if (JSON.parse(sessionStorage.getItem('filters')!)?.length > 1) {
-        JSON.parse(sessionStorage.getItem('filters')!).forEach((f: any) => {
-          const filter = this.nav.find(i => f === i.id);
+      this.fireService.onGetCollection('locations');
+      this.fireService.collectionData$.pipe(take(1)).subscribe((resp: IWaveLocation[]) => {
+        this.data.length = 0;
+        this.data = resp.filter((location: IWaveLocation) => location && location.waveLocationName);
+
+        if (JSON.parse(sessionStorage.getItem('filters')!)?.length > 1) {
+          JSON.parse(sessionStorage.getItem('filters')!).forEach((f: any) => {
+            const filter = this.nav.find(i => f === i.id);
+            this.onFilter(filter);
+          })
+        } else if (JSON.parse(sessionStorage.getItem('filters')!)?.length === 1) {
+          const filter = this.nav.find(i => JSON.parse(sessionStorage.getItem('filters')!)[0] === i.id)
           this.onFilter(filter);
-        })
-      } else if (JSON.parse(sessionStorage.getItem('filters')!)?.length === 1) {
-        const filter = this.nav.find(i => JSON.parse(sessionStorage.getItem('filters')!)[0] === i.id)
-        this.onFilter(filter);
-      } else {
-        this.onFilter(this.nav[0]);
-      }
+        } else {
+          this.onFilter(this.nav[0]);
+        }
 
         if (!sessionStorage.getItem('homeModalShown')) {
           this.findClosestMarker();
         } else {
           this.browserRefresh
-            ? (setTimeout(() => {
-              this.isLoading = false;
-            }, 1000))
-            : (this.isLoading = false);
+              ? (setTimeout(() => {
+                this.isLoading = false;
+              }, 1000))
+              : (this.isLoading = false);
         }
+      });
     });
   }
 
   onGetMarkers(arr: IWaveLocation[]) {
     this.markers.length = 0;
 
-    arr.forEach(location => {
-      const specifications = waveSpecifications.filter(item => item.waveSpecificationLocation === location.waveLocationKey);
+    arr.forEach((location: IWaveLocation) => {
+      const specifications = this.specifications.filter((item: IWaveSpecification) => {
+        //console.log(item.waveSpecificationLocation, location.waveLocationKey)
+        return item.waveSpecificationLocation === location.waveLocationKey
+      });
       const destination = location.waveLocationVisitAddress && location.waveLocationVisitAddress.lat && location.waveLocationVisitAddress.lng ? location.waveLocationVisitAddress.lat + ',' + location.waveLocationVisitAddress.lng : '';
 
       const origin = this.center && this.center.lat && this.center.lng ? this.center.lat + ',' + this.center.lng : '';
@@ -212,7 +221,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onFilter(filter?: any) {
     let filteredGatherLocationsData: any[] = [...this.data];
-    let filteredSpecifications = [...waveSpecifications];
+    let filteredSpecifications = [...this.specifications];
     let locationKeyArray: string[] = [];
 
     if(filter) {
@@ -336,7 +345,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     return 2 * R * Math.asin(Math.sqrt(Math.sin(difflat / 2) * Math.sin(difflat / 2) + Math.cos(rlat1) * Math.cos(rlat2) * Math.sin(difflon / 2) * Math.sin(difflon / 2)));
   }
 
-  isOpenedLocation(date: string): boolean {
+  isOpenedLocation(date: string | number): boolean {
+    if (typeof date === 'number') {
+      date = date.toString();
+    }
     const toFormat = date.slice(0,4) + '-' + date.slice(4, 6) + '-' + date.slice(6)
     return new Date(toFormat) < new Date();
   }

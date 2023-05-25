@@ -7,12 +7,21 @@ import {MapInfoWindow} from "@angular/google-maps";
 import {WeatherService} from "../../services/weather.service";
 import {SlickCarouselComponent} from "ngx-slick-carousel";
 import {FireService} from "../../services/fire.service";
-import {ILocation, INearbyNaturalSpot, IWaveLocation, IWaveSpecification} from "../../shared/models";
+import {
+  ILocation, IManufacturer,
+  INearbyNaturalSpot,
+  IProduct,
+  IWaveLocation, IWaveProductionMethod,
+  IWaveSpecification,
+  IWaveSystemProduct
+} from "../../shared/models";
 import {waveSpecifications} from "../../../assets/json/wave-specifications";
 import {naturalSpots} from "../../../assets/json/nearby-natural-spots";
-import {products} from "../../../assets/json/products";
+import firebase from "firebase/compat";
+import DataSnapshot = firebase.database.DataSnapshot;
+/*import {products} from "../../../assets/json/products";
 import {productionMethod} from "../../../assets/json/production-method";
-import {manufacturer} from "../../../assets/json/manufacturer";
+import {manufacturer} from "../../../assets/json/manufacturer";*/
 
 @Component({
   selector: 'app-location',
@@ -45,6 +54,7 @@ export class LocationComponent implements OnDestroy {
   nearbyNaturalSpots!: INearbyNaturalSpot[];
   wave: any;
   selectedWave!: string;
+  supportedCollections: any[] = [];
 
   infoContent: any;
   specificationInfo: any;
@@ -73,7 +83,6 @@ export class LocationComponent implements OnDestroy {
             lat: +this.location.waveLocationVisitAddress.lat,
             lng: +this.location.waveLocationVisitAddress.lng,
           }
-          this.calculateWaterTemp(this.coords.lat, this.coords.lng);
           this.marker = {
             position: {
               lat: +this.location.waveLocationVisitAddress.lat,
@@ -86,32 +95,49 @@ export class LocationComponent implements OnDestroy {
               icon: '../assets/iconsInUse/location_1.png'
             }*/
           }
-          // TODO: nearby spots no data
-          this.nearbyNaturalSpots = naturalSpots.filter(spot => spot.nearbyNaturalSpotLocation === this.activatedRoute.snapshot.params['id']);
-          this.nearbyNaturalSpots.forEach((spot: INearbyNaturalSpot) => {
-            const destination = spot.nearbyNaturalSpotAddress.address && spot.nearbyNaturalSpotAddress.lat && spot.nearbyNaturalSpotAddress.lng ? spot.nearbyNaturalSpotAddress.lat + ',' + spot.nearbyNaturalSpotAddress.lng : '';
-            const origin = this.location.waveLocationVisitAddress.address && this.location.waveLocationVisitAddress.lat && this.location.waveLocationVisitAddress.lng
-              ? this.location.waveLocationVisitAddress.lat + ',' + this.location.waveLocationVisitAddress.lng
-              : '';
+          // nearby locations
+          this.fireService.onGetSecondCollection('nearby-natural-spots');
+          this.fireService.collectionSecondData$.subscribe((resp: INearbyNaturalSpot[]) => {
+            this.nearbyNaturalSpots = resp.filter((spot: INearbyNaturalSpot) => spot.nearbyNaturalSpotLocation === this.activatedRoute.snapshot.params['id']);
+            this.nearbyNaturalSpots.forEach((spot: INearbyNaturalSpot) => {
+              const destination = spot.nearbyNaturalSpotAddress.address && spot.nearbyNaturalSpotAddress.lat && spot.nearbyNaturalSpotAddress.lng ? spot.nearbyNaturalSpotAddress.lat + ',' + spot.nearbyNaturalSpotAddress.lng : '';
+              const origin = this.location.waveLocationVisitAddress.address && this.location.waveLocationVisitAddress.lat && this.location.waveLocationVisitAddress.lng
+                  ? this.location.waveLocationVisitAddress.lat + ',' + this.location.waveLocationVisitAddress.lng
+                  : '';
 
-            let marker = {
-              position: {
-                lat: +spot.nearbyNaturalSpotAddress.lat,
-                lng: +spot.nearbyNaturalSpotAddress.lng
-              },
-              title: spot.nearbyNaturalSpotName,
-              address: spot.nearbyNaturalSpotAddress.address,
-              direction: 'https://www.google.com/maps/dir/?api=1&origin='+ origin +'&destination='+ destination +'&travelmode=driving',
-            }
-            this.naturalSpotsMarkers.push(marker);
+              let marker = {
+                position: {
+                  lat: +spot.nearbyNaturalSpotAddress.lat,
+                  lng: +spot.nearbyNaturalSpotAddress.lng
+                },
+                title: spot.nearbyNaturalSpotName,
+                address: spot.nearbyNaturalSpotAddress.address,
+                direction: 'https://www.google.com/maps/dir/?api=1&origin='+ origin +'&destination='+ destination +'&travelmode=driving',
+              }
+              this.naturalSpotsMarkers.push(marker);
+            })
           })
-          this.locationSpecifications = waveSpecifications
-              .filter(spec => spec.waveSpecificationLocation === this.activatedRoute.snapshot.params['id']);
-          this.wave = this.locationSpecifications[0];
-          this.selectedWave = this.locationSpecifications[0].waveSpecificationName;
 
-          this.specificationInfo = this.getSpecificationInfo(this.locationSpecifications[0].waveSpecificationProduct!);
+          this.fireService.onGetThirdCollection('specifications');
+          this.fireService.collectionThirdData$.subscribe((resp: IWaveSpecification[]) => {
+            this.locationSpecifications = resp
+                .filter(spec => spec.waveSpecificationLocation === this.activatedRoute.snapshot.params['id']);
+            console.log(this.locationSpecifications)
+            this.wave = this.locationSpecifications[0];
+            this.selectedWave = this.locationSpecifications[0].waveSpecificationName;
+
+            this.specificationInfo = this.getSpecificationInfo(this.locationSpecifications[0].waveSpecificationProduct!);
+            this.calculateWaterTemp(this.coords.lat, this.coords.lng);
+          })
         }
+      })
+
+      this.fireService.getSupportCollections(['products', 'production-methods', 'manufacturer']).subscribe(resp => {
+        resp.forEach((snapshot: any) => {
+          if (snapshot.val()) {
+            this.supportedCollections.push(snapshot.val())
+          }
+        })
       })
     });
     innerWidth >= 768 ? this.isPhoneScreen = false : this.isPhoneScreen = true;
@@ -129,9 +155,9 @@ export class LocationComponent implements OnDestroy {
   }
 
   getSpecificationInfo(productKey: string) {
-    const productData = products.find(item => item.waveSystemProductKey === productKey)!;
-    const prodMethodData = productionMethod.find(item => item.waveProductionMethodKey === productData?.waveSystemProductProductionMethod)!;
-    const manufacturerData = manufacturer.find(item => item.manufacturerKey === productData?.waveSystemProductManufacturer)!;
+    const productData = this.supportedCollections[0].find((item: IWaveSystemProduct) => item.waveSystemProductKey === productKey)!;
+    const prodMethodData = this.supportedCollections[1].find((item: IWaveProductionMethod) => item.waveProductionMethodKey === productData?.waveSystemProductProductionMethod)!;
+    const manufacturerData = this.supportedCollections[2].find((item: IManufacturer) => item.manufacturerKey === productData?.waveSystemProductManufacturer)!;
 
     return {
       product: {

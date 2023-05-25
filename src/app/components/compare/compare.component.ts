@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
 import {Subject, takeUntil} from "rxjs";
-import {IWaveLocation} from "../../shared/models";
+import {IWaveLocation, IWaveSpecification} from "../../shared/models";
 import {waveSpecifications} from "../../../assets/json/wave-specifications";
 
 @Component({
@@ -35,11 +35,12 @@ export class CompareComponent implements OnInit {
     {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.waveSpecificationWaveSystem === 'river'},
     {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.waveSpecificationWaveSystem !== 'river'},
     {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
-    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waves.waveSpecificationCommissioningDate)},
+    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
     {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
     {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: any) => w.waveSpecificationMinimumSurferAge < 8}
   ];
-  waveLocations: any[] = [];
+  waveLocations: IWaveLocation[] = [];
+  specifications: IWaveSpecification[] = [];
   filteredLocations: IWaveLocation[] = [];
   activeFilters: any[] = [];
   destroyer$ = new Subject();
@@ -62,25 +63,30 @@ export class CompareComponent implements OnInit {
       };
     });
 
-    this.fireService.onGetCollection('locations');
-    this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: any) => {
-      resp.forEach((l: any) => {
-        l.price = this.getPrice(l.waveLocationKey) > 0 ? this.getPrice(l.waveLocationKey) : '-';
-        l.ppms = this.getPPMSonBoard(l);
-      })
+    this.fireService.onGetSecondCollection('specifications');
+    this.fireService.collectionSecondData$.subscribe((resp: IWaveSpecification[]) => {
+      this.specifications = resp;
 
-      resp.filter((l: any) => l && l.waveLocationName && !(isNaN(Number(this.getPPMSonBoard(l))) || Number(this.getPPMSonBoard(l)) === 0))
-        // @ts-ignore
-        .sort((a,b) => (this.getPPMSonBoard(a) > this.getPPMSonBoard(b)) ? 1 : ((this.getPPMSonBoard(b) > this.getPPMSonBoard(a)) ? -1 : 0))
-        .reverse()
-        .forEach((m: any) => {
-          this.waveLocations.push(m);
+      this.fireService.onGetCollection('locations');
+      this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveLocation[]) => {
+        resp.forEach((l: any) => {
+          l.price = this.getPrice(l.waveLocationKey) > 0 ? this.getPrice(l.waveLocationKey) : '-';
+          l.ppms = this.getPPMSonBoard(l);
         })
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 1000);
-      this.onFilter(this.nav[0]);
-    });
+
+        resp.filter((l: any) => l && l.waveLocationName && !(isNaN(Number(this.getPPMSonBoard(l))) || Number(this.getPPMSonBoard(l)) === 0))
+            // @ts-ignore
+            .sort((a,b) => (this.getPPMSonBoard(a) > this.getPPMSonBoard(b)) ? 1 : ((this.getPPMSonBoard(b) > this.getPPMSonBoard(a)) ? -1 : 0))
+            .reverse()
+            .forEach((m: any) => {
+              this.waveLocations.push(m);
+            })
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 1000);
+        this.onFilter(this.nav[0]);
+      });
+    })
   }
 
   ngOnDestroy() {
@@ -88,7 +94,7 @@ export class CompareComponent implements OnInit {
   }
 
   getPPMSonBoard(item: IWaveLocation) {
-    const specifications = waveSpecifications.filter(s => s.waveSpecificationLocation === item.waveLocationKey);
+    const specifications = this.specifications.filter(s => s.waveSpecificationLocation === item.waveLocationKey);
     //console.log(item)
     const price = specifications && specifications[0] && specifications[0]?.waveSpecificationPriceAdultHigh ? specifications[0].waveSpecificationPriceAdultHigh : 0;
     const waves = specifications && specifications[0] && specifications[0]?.waveSpecificationRidesPerHour ? specifications[0].waveSpecificationRidesPerHour : 0;
@@ -103,7 +109,7 @@ export class CompareComponent implements OnInit {
   onFilter(filter?: any) {
     this.filteredLocations.length = 0;
     let filteredGatherLocationsData = [...this.waveLocations];
-    let filteredSpecifications = [...waveSpecifications];
+    let filteredSpecifications = [...this.specifications];
     let locationKeyArray: string[] = [];
 
     if(filter) {
@@ -160,7 +166,7 @@ export class CompareComponent implements OnInit {
   }
 
   getPrice(id: string) {
-    return waveSpecifications.filter(item => item.waveSpecificationLocation === id)[0]?.waveSpecificationPriceAdultHigh
+    return this.specifications.filter(item => item.waveSpecificationLocation === id)[0]?.waveSpecificationPriceAdultHigh
   }
 
   isOpenedLocation(date: string): boolean {

@@ -96,3 +96,9 @@
     }
   }
 }
+
+@media all and (max-width: 576px) {
+  .copyrights__nav {
+    display: none;
+  }
+}
