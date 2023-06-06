@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {filter, Subject, takeUntil} from "rxjs";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
@@ -8,20 +8,13 @@ import {WeatherService} from "../../services/weather.service";
 import {SlickCarouselComponent} from "ngx-slick-carousel";
 import {FireService} from "../../services/fire.service";
 import {
-  ILocation, IManufacturer,
+  IManufacturer,
   INearbyNaturalSpot,
-  IProduct,
-  IWaveLocation, IWaveProductionMethod,
+  IWaveLocation,
+  IWaveProductionMethod,
   IWaveSpecification,
   IWaveSystemProduct
 } from "../../shared/models";
-import {waveSpecifications} from "../../../assets/json/wave-specifications";
-import {naturalSpots} from "../../../assets/json/nearby-natural-spots";
-import firebase from "firebase/compat";
-import DataSnapshot = firebase.database.DataSnapshot;
-/*import {products} from "../../../assets/json/products";
-import {productionMethod} from "../../../assets/json/production-method";
-import {manufacturer} from "../../../assets/json/manufacturer";*/
 
 @Component({
   selector: 'app-location',
@@ -71,10 +64,12 @@ export class LocationComponent implements OnDestroy {
     private weatherService: WeatherService
   ) {
     router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
+      filter(event => event instanceof NavigationEnd),
+      takeUntil(this.destroyer$)
     ).subscribe(() => {
       this.fireService.onGetCollection('locations');
       this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveLocation[]) => {
+        console.log(resp)
         this.location = resp.find((l:any) => l && l.waveLocationKey === this.activatedRoute.snapshot.params['id'])!;
         if(!this.location) {
           this.router.navigate(['../../home'])
@@ -97,7 +92,7 @@ export class LocationComponent implements OnDestroy {
           }
           // nearby locations
           this.fireService.onGetSecondCollection('nearby-natural-spots');
-          this.fireService.collectionSecondData$.subscribe((resp: INearbyNaturalSpot[]) => {
+          this.fireService.collectionSecondData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: INearbyNaturalSpot[]) => {
             this.nearbyNaturalSpots = resp.filter((spot: INearbyNaturalSpot) => spot.nearbyNaturalSpotLocation === this.activatedRoute.snapshot.params['id']);
             this.nearbyNaturalSpots.forEach((spot: INearbyNaturalSpot) => {
               const destination = spot.nearbyNaturalSpotAddress.address && spot.nearbyNaturalSpotAddress.lat && spot.nearbyNaturalSpotAddress.lng ? spot.nearbyNaturalSpotAddress.lat + ',' + spot.nearbyNaturalSpotAddress.lng : '';
@@ -119,10 +114,10 @@ export class LocationComponent implements OnDestroy {
           })
 
           this.fireService.onGetThirdCollection('specifications');
-          this.fireService.collectionThirdData$.subscribe((resp: IWaveSpecification[]) => {
+          this.fireService.collectionThirdData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveSpecification[]) => {
+            console.log(resp)
             this.locationSpecifications = resp
                 .filter(spec => spec.waveSpecificationLocation === this.activatedRoute.snapshot.params['id']);
-            console.log(this.locationSpecifications)
             this.wave = this.locationSpecifications[0];
             this.selectedWave = this.locationSpecifications[0].waveSpecificationName;
 
@@ -132,7 +127,9 @@ export class LocationComponent implements OnDestroy {
         }
       })
 
-      this.fireService.getSupportCollections(['products', 'production-methods', 'manufacturer']).subscribe(resp => {
+      this.fireService.getSupportCollections(['products', 'production-methods', 'manufacturer'])
+          .pipe(takeUntil(this.destroyer$))
+          .subscribe(resp => {
         resp.forEach((snapshot: any) => {
           if (snapshot.val()) {
             this.supportedCollections.push(snapshot.val())
@@ -144,6 +141,7 @@ export class LocationComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
+    this.destroyer$.next(true);
     this.destroyer$.complete();
   }
 
@@ -182,7 +180,8 @@ export class LocationComponent implements OnDestroy {
   }*/
 
   getDate(date: string) {
-    return new Date(date.slice(0, 4) + '.' + date.slice(4, 6) + '.' + date.slice(6)).toDateString().slice(3);
+    return new Date(date.slice(4, 6) + '/' +  + date.slice(6) + '/' + date.slice(0, 4)).toDateString().slice(3);
+    //return new Date(date.slice(0, 4) + '.' + date.slice(4, 6) + '.' + date.slice(6)).toDateString().slice(3);
   }
 
   openInfo(spot: any, content: any) {
@@ -191,7 +190,7 @@ export class LocationComponent implements OnDestroy {
   }
 
   calculateWaterTemp(lat: any, lng: any) {
-    this.weatherService.getWeatherData(lat, lng).subscribe(data => {
+    this.weatherService.getWeatherData(lat, lng).pipe(takeUntil(this.destroyer$)).subscribe(data => {
       const actualWaterTemp = Math.round(data.main.temp - 3);
 
       this.locationSpecifications.forEach((wave: any, i: number) => {

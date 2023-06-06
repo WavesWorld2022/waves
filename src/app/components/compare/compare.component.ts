@@ -64,7 +64,7 @@ export class CompareComponent implements OnInit {
     });
 
     this.fireService.onGetSecondCollection('specifications');
-    this.fireService.collectionSecondData$.subscribe((resp: IWaveSpecification[]) => {
+    this.fireService.collectionSecondData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveSpecification[]) => {
       this.specifications = resp;
 
       this.fireService.onGetCollection('locations');
@@ -90,6 +90,7 @@ export class CompareComponent implements OnInit {
   }
 
   ngOnDestroy() {
+    this.destroyer$.next(true);
     this.destroyer$.complete();
   }
 

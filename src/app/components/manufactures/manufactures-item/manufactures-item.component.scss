@@ -7,16 +7,29 @@
   .row{
     height: auto;
   }
+  &__title {
+    display: inline;
+    cursor: pointer;
+  }
 }
 .page{
   padding-bottom: 0;
+}
+.details{
+  background: #008bb2;
+  padding: 10px 0;
+  p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+  }
 }
 
 .section {
   border-radius: 20px;
   box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
   padding: 25px 30px;
-  margin: 2rem 0;
+  margin: 1rem 0;
   &__text {
     line-height: 1.75;
     font-size: 18px;
@@ -29,6 +42,20 @@
         font-size: 16px;
       }
     }
+  }
+  &__title {
+    color: #00465a;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 25px 0 0 0;
+    display: none;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .section__title {
+    display: block;
   }
 }
 

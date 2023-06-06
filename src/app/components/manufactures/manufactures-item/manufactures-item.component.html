@@ -5,8 +5,17 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-8">
-          <p class="hero__title">{{manufacturer.manufacturerName}}</p><!--
+          <p class="hero__title" (click)="gotoManufacturer(manufacturer.manufacturerURL)">{{manufacturer.manufacturerName}}</p><!--
           <p class="hero__sub-title">{{manufacturer.excerpt}}</p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="details">
+    <div class="container">
+      <div class="row ">
+        <div class="col-8">
+          <p>Last updated: <strong>{{getFormattedDate(manufacturer.manufacturerLastUpdated)}}</strong></p>
         </div>
       </div>
     </div>
@@ -17,6 +26,7 @@
 <!--
         <div class="page__content" [innerHTML]="manufacturer.content.length < manufacturer.excerpt.length ? manufacturer.excerpt : manufacturer.content"></div>
 -->
+        <p class="section__title">{{manufacturer.manufacturerName}}</p>
         <div *ngIf="manufacturer.manufacturerAbout" class="section">
           <!--<h2 class="section__title">About {{manufacturer.title}}</h2>-->
           <div class="section__text" [innerHTML]="parserService.replaceURLs(manufacturer.manufacturerAbout) | safe: 'html'"></div>

@@ -31,4 +31,14 @@ export class ManufacturesItemComponent implements OnInit {
     })
   }
 
+  getFormattedDate(date: string) {
+    return date.split(' ')[0].replace(/-/g, '.');
+  }
+
+  gotoManufacturer(url: string) {
+    if (url) {
+      window.open(url, "_blank");
+    }
+  }
+
 }

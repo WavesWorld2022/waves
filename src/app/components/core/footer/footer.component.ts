@@ -12,7 +12,7 @@ export class FooterComponent {
   nav = [
     { title: 'explore', id: 'home' },
     { title: 'compare', id: 'compare' },
-    { title: 'manufactures', id: 'manufactures' },
+    { title: 'manufacturers', id: 'manufactures' },
     { title: 'technologies', id: 'technologies' },
     { title: 'products', id: 'products' }
   ];

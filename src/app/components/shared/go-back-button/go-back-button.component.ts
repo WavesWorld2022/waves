@@ -12,7 +12,7 @@ export class GoBackButtonComponent implements OnInit {
 
   isDesktop!: boolean;
   route: any;
-  isLocationPage!: boolean;
+  isHigher!: boolean;
 
   constructor(
       private router: Router,
@@ -21,7 +21,10 @@ export class GoBackButtonComponent implements OnInit {
     ngOnInit() {
         this.isDesktop = innerWidth >= 768;
         this.route = this.router.url.split('/').filter(item => item);
-        this.isLocationPage = this.route.includes('location');
+        this.isHigher = this.route.includes('location') ||
+            this.route.includes('about-us') ||
+            this.route.includes('faq') ||
+            (this.route.length === 2 && this.route[0] !== 'manufactures');
     }
 
     goBack(): void {

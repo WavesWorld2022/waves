@@ -77,6 +77,7 @@ export interface IWaveLocation {
   waveLocationB2BAddress: string;
   waveLocationNearestCity: string;
   waveLocationDirection?: string;
+  waveLocationAffiliate?: boolean;
 }
 
 export interface IAddress {

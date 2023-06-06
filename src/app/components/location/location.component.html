@@ -8,8 +8,9 @@
           <p class="hero__title">{{location.waveLocationName}}</p>
           <p class="hero__sub-title">{{location.waveLocationSlogan ? location.waveLocationSlogan : location.waveLocationAbout}}</p>
           <div class="hero__buttons">
-            <a *ngIf="location.waveLocationReferralLink" href="{{location.waveLocationReferralLink}}" class="button">
+            <a *ngIf="location.waveLocationReferralLink" href="{{location.waveLocationReferralLink}}" [ngClass]="location.waveLocationAffiliate ? 'button button-green' : 'button'">
               {{location.waveLocationBookingButtonText}}
+              <span class="button__remark" *ngIf="location.waveLocationAffiliate">Sustainable booking</span>
             </a>
             <a *ngIf="location.waveLocationWebsite" target="_blank" href="{{location.waveLocationWebsite}}" class="button">
               LEARN MORE
@@ -28,6 +29,7 @@
       <div class="row">
         <div class="col col-12 col-md-8">
           <div class="content__main">
+            <h2 class="section__title section__title-mobile">{{location.waveLocationName}}</h2>
             <div *ngIf="location.waveLocationAdditionalInfo" class="section">
               <h2 class="section__title">Description</h2>
               <div class="section__text" [innerHTML]="replaceURLs(location.waveLocationAdditionalInfo) | safe: 'html'"></div>
