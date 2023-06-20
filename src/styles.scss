@@ -130,7 +130,7 @@ a {
     }
   }
   .page {
-    min-height: calc(100vh - 171px);
+    min-height: calc(var(--vh, 1vh) * 100 - 171px);
   }
   .page__navigation .col:first-child {
     display: none;

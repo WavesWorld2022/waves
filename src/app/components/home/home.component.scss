@@ -367,6 +367,7 @@
     .container{
       .navbar {
         padding: 0;
+        flex-wrap: nowrap;
         &-brand {
           img {
             height: 24px;
@@ -381,9 +382,12 @@
 @media all and (max-width: 442px){
   .marker__action {
     margin-left: 0;
-    width: 100%;
+    //width: 100%;
     &:nth-of-type(1) {
       margin-bottom: 12px;
+    }
+    &:nth-of-type(2) {
+      margin-left: 12px;
     }
   }
 }

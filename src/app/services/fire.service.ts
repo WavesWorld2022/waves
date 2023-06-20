@@ -16,6 +16,8 @@ export class FireService {
   public collectionData$ = new Subject<any>;
   public collectionSecondData$ = new Subject<any>;
   public collectionThirdData$ = new Subject<any>;
+  public collectionFourthData$ = new Subject<any>;
+
   constructor(
     private afs: AngularFirestore,
   ) {}
@@ -165,6 +167,52 @@ export class FireService {
         case 'products': {
           setTimeout(() => {
             this.collectionThirdData$.next(products);
+          }, 500);
+          break;
+        }
+      }
+    }
+  }
+
+  onGetFourthCollection(collection: string): any {
+    if (environment.firebase.source === 'fb') {
+      this.afs.collection(collection).valueChanges().subscribe(resp => {
+        this.collectionFourthData$.next(resp);
+      });
+    } else if (environment.firebase.source === 'db') {
+      const dbRef = ref(getDatabase());
+      return get(child(dbRef, collection)).then((snapshot) => {
+        if (snapshot.exists()) {
+          this.collectionFourthData$.next(snapshot.val())
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      });
+    } else if (environment.firebase.source === 'json') {
+      switch (collection) {
+        case 'locations': {
+          setTimeout(() => {
+            this.collectionFourthData$.next(waveLocations);
+          }, 500);
+          break;
+        }
+        case 'manufacturer': {
+          setTimeout(() => {
+            this.collectionFourthData$.next(manufacturer);
+          }, 500);
+          break;
+        }
+        case 'production-methods': {
+          setTimeout(() => {
+            this.collectionFourthData$.next(productionMethod);
+          }, 500);
+          break;
+        }
+        case 'products': {
+          setTimeout(() => {
+            this.collectionFourthData$.next(products);
           }, 500);
           break;
         }

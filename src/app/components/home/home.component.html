@@ -126,8 +126,10 @@
             today?
           </p>
           <!--<p class="marker__label">Tap here to get directions</p>-->
-          <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
-          <a *ngIf="infoContent.reflink" [href]="infoContent.reflink" class="marker__action marker__action-outline" target="_blank">BOOK NOW</a>
+          <div class="d-flex">
+            <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
+            <a *ngIf="infoContent.reflink" [href]="infoContent.reflink" class="marker__action marker__action-outline" target="_blank">BOOK NOW</a>
+          </div>
         </div>
       </map-info-window>
 

@@ -102,7 +102,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.height = (window.innerHeight - (window.innerWidth < 980 ? 171 : 206)) + 'px';
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    this.height = (window.visualViewport.height - (window.innerWidth < 980 ? 171 : 206)) + 'px';
+
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
         lat: position.coords.latitude,
@@ -130,7 +133,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           this.onFilter(this.nav[0]);
         }
 
-        if (!sessionStorage.getItem('homeModalShown')) {
+        if (sessionStorage.getItem('homeModalShown') === null) {
           this.findClosestMarker();
         } else {
           this.browserRefresh
@@ -214,7 +217,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.info.open(marker);
 
     let pos = marker._position;
-    pos.lat = pos.lat + 7;
+    pos.lat = pos.lat + 20;
 
     this.map.googleMap?.panTo(pos);
   }
@@ -322,6 +325,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   getPosition(): Promise<any> {
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resp => {
+        console.log(resp)
         resolve({lng: resp.coords.longitude, lat: resp.coords.latitude});
       }, err => {
         reject(err);

@@ -1,7 +1,7 @@
 <app-header></app-header>
 <app-loader *ngIf="!product"></app-loader>
 <div *ngIf="product" class="page">
-  <div class="hero">
+  <div class="hero position-relative">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-8">
@@ -10,10 +10,22 @@
         </div>
       </div>
     </div>
+    <div class="layout">
+      <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in">
+        <img src="../../../../assets/icons/list-task.svg" alt="">
+        <img src="../../../../assets/icons/pin-map.svg" alt="">
+      </button>
+    </div>
   </div>
-  <div class="container">
+  <div *ngIf="!isMap" class="container">
     <div class="row">
       <div class="col">
+        <div *ngIf="isTablet" class="layout">
+          <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in">
+            <img src="../../../../assets/icons/list-task.svg" alt="">
+            <img src="../../../../assets/icons/pin-map.svg" alt="">
+          </button>
+        </div>
         <!--
                 <div class="page__content" [innerHTML]="manufacturer.content.length < manufacturer.excerpt.length ? manufacturer.excerpt : manufacturer.content"></div>
         -->
@@ -36,5 +48,57 @@
         </div>
       </div>
     </div>
+  </div>
+  <div *ngIf="isMap">
+    <div class="layout layout-map">
+      <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in">
+        <img src="../../../../assets/icons/list-task.svg" alt="" *ngIf="isMap">
+        <img src="../../../../assets/icons/pin-map.svg" alt="" *ngIf="!isMap">
+      </button>
+    </div>
+
+    <div class="zoom" *ngIf="isMap">
+      <button (click)="zoomIn()" class="zoom__btn zoom__btn_in">
+        <img src="../../../../assets/icons/plus.svg" alt="">
+      </button>
+      <button (click)="zoomOut()" class="zoom__btn zoom__btn_out">
+        <img src="../../../../assets/icons/minus.svg" alt="">
+      </button>
+    </div>
+
+    <ng-container *ngIf="isMap">
+      <google-map
+              [height]="height"
+              width="100%"
+              [zoom]="zoom"
+              [center]="center"
+              [options]="options"
+              style="padding-top: 97px"
+      >
+        <map-marker
+            #somemarker="mapMarker"
+            *ngFor="let marker of markers"
+            [position]="marker.position"
+            [label]="marker.label"
+            [title]="marker.title"
+            [options]="marker.options"
+            (mapClick)="openInfo(somemarker, marker)"
+        ></map-marker>
+        <map-info-window>
+          <div *ngIf="infoContent && infoContent.title">
+            <p class="marker__title">
+              Heading to
+              <strong [routerLink]="'../../location/' + infoContent.name">{{infoContent.title}}</strong>
+              today?
+            </p>
+            <!--<p class="marker__label">Tap here to get directions</p>-->
+            <div class="d-flex">
+              <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
+              <a *ngIf="infoContent.reflink" [href]="infoContent.reflink" class="marker__action marker__action-outline" target="_blank">BOOK NOW</a>
+            </div>
+          </div>
+        </map-info-window>
+      </google-map>
+    </ng-container>
   </div>
 </div>

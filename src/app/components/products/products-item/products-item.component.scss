@@ -44,8 +44,145 @@
   }
 }
 
+.navbar-toggler {
+  background: #008bb2;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  margin-right: -5px;
+  img{
+    width: 24px;
+  }
+}
+.locations{
+  overflow: auto;
+  padding: 135px 15px 15px;
+  &__list{
+    padding: 0;
+    margin: 0;
+  }
+  &-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid 1px #008bb2;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 15px;
+    border-radius: 10px;
+    &__title{
+      margin: 0;
+      font-size: 16px;
+      color: #008bb2;
+      font-weight: 600;
+      line-height: 20px;
+      padding-right: 5px;
+    }
+    &__actions{
+      display: flex;
+    }
+    &__action{
+      background: #0086ab;
+      color: #FFF;
+      width: 34px;
+      height: 35px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      margin: 0 0 0 5px;
+      img {
+        width: 21px;
+      }
+    }
+  }
+}
+.layout{
+  position: absolute;
+  z-index: 99;
+  bottom: 10px;
+  right: 0;
+  left: inherit;
+  padding: 5px 15px 5px 10px;
+  button{
+    width: 45px;
+    height: 45px;
+    img{
+      width: 30px !important;
+    }
+  }
+}
+
+.marker{
+  &__label{
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #c2a026;
+  }
+  &__title{
+    font-size: 16px;
+    margin: 10px 0 10px;
+    font-weight: 600;
+    color: #0b4871;
+    max-width: 320px;
+    line-height: 18px;
+    strong{
+      cursor: pointer;
+      font-weight: 600;
+      color: #008bb2;
+    }
+  }
+  &__action{
+    font-weight: 600;
+    height: 29px;
+    text-decoration: none;
+    background: #008bb2;
+    padding: 8px 16px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 7px;
+    font-size: 13px;
+    margin: 0;
+    box-sizing: border-box;
+
+    &-outline {
+      background: transparent;
+      border: 2px #008bb2 solid;
+      padding: 7px 15px;
+      color: #008bb2;
+      margin-left: 12px;
+    }
+  }
+}
+
+.zoom{
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1;
+  flex-direction: column;
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: #008bb2;
+    border-radius: 5px;
+    margin-top: 5px;
+    img{
+      width: 45px;
+    }
+  }
+}
+
 @media all and (max-width: 768px) {
   .section__title {
     display: block;
+  }
+
+  .layout {
+    top: 10px;
   }
 }
