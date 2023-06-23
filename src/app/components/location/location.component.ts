@@ -54,6 +54,7 @@ export class LocationComponent implements OnDestroy {
 
   slideConfig = {"slidesToShow": 1, "slidesToScroll": 1};
   isPhoneScreen!: boolean;
+  currentSpecificationIndex = 0;
   destroyer$ = new Subject();
 
   constructor(
@@ -121,7 +122,8 @@ export class LocationComponent implements OnDestroy {
             this.wave = this.locationSpecifications[0];
             this.selectedWave = this.locationSpecifications[0].waveSpecificationName;
 
-            this.specificationInfo = this.getSpecificationInfo(this.locationSpecifications[0].waveSpecificationProduct!);
+            console.log(this.locationSpecifications)
+            this.specificationInfo = this.getSpecificationInfo(this.locationSpecifications[this.currentSpecificationIndex].waveSpecificationProduct!);
             this.calculateWaterTemp(this.coords.lat, this.coords.lng);
           })
         }
@@ -171,6 +173,11 @@ export class LocationComponent implements OnDestroy {
         path: manufacturerData?.manufacturerKey
       }
     }
+  }
+
+  getCurrentSlide(event: any) {
+    this.currentSpecificationIndex = event.currentSlide;
+    this.specificationInfo = this.getSpecificationInfo(this.locationSpecifications[this.currentSpecificationIndex].waveSpecificationProduct!);
   }
 
   /*onSelectWave(value: any) {

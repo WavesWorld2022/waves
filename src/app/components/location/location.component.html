@@ -170,6 +170,7 @@
             <div *ngIf="locationSpecifications && locationSpecifications.length >= 1" style="position:relative;">
               <ngx-slick-carousel class="carousel"
                                   #slickModal="slick-carousel"
+                                  (afterChange)="getCurrentSlide($event)"
                                   [config]="slideConfig">
                 <div ngxSlickItem *ngFor="let wave of locationSpecifications" class="slide">
                   <div *ngIf="locationSpecifications.length" class="section section_waves">
@@ -354,25 +355,7 @@
 
         <div class="col">
           <div class="content__side">
-            <google-map
-              width="100%"
-              height="300"
-              [zoom]="zoom"
-              [center]="coords"
-              [options]="options"
-            >
-              <map-marker
-                [position]="marker.position"
-                [title]="marker.title"
-                [options]="marker.options"
-              >
-              </map-marker>
-            </google-map>
-            <div *ngIf="location?.waveLocationVisitAddress?.address" class="mt-4 address">
-              <a target="_blank" [href]="'https://www.google.com/maps/dir/?api=1&destination=' + (location.waveLocationVisitAddress && location.waveLocationVisitAddress.lat && location.waveLocationVisitAddress.lng ? location.waveLocationVisitAddress.lat + ',' + location.waveLocationVisitAddress.lng : '') + '&travelmode=driving'"> {{location.waveLocationVisitAddress.address}}</a>
-            </div>
-
-            <div class="section mt-4" *ngIf="specificationInfo && (specificationInfo.product.name || specificationInfo.productionMethod.name || specificationInfo.manufacturer.name)">
+            <div class="section" *ngIf="specificationInfo && (specificationInfo.product.name || specificationInfo.productionMethod.name || specificationInfo.manufacturer.name)">
               <h2 class="section__title">Main Information</h2>
               <div class="section__text">
                 <div class="d-flex justify-content-between align-items-end">
@@ -400,6 +383,25 @@
                   <span>Wetsuit included</span><span>{{location.wetsuit_included}}</span>
                 </div>-->
               </div>
+            </div>
+
+            <google-map
+              width="100%"
+              height="300"
+              [zoom]="zoom"
+              [center]="coords"
+              [options]="options"
+            >
+              <map-marker
+                [position]="marker.position"
+                [title]="marker.title"
+                [options]="marker.options"
+              >
+              </map-marker>
+            </google-map>
+
+            <div *ngIf="location?.waveLocationVisitAddress?.address" class="mt-4 address">
+              <a target="_blank" [href]="'https://www.google.com/maps/dir/?api=1&destination=' + (location.waveLocationVisitAddress && location.waveLocationVisitAddress.lat && location.waveLocationVisitAddress.lng ? location.waveLocationVisitAddress.lat + ',' + location.waveLocationVisitAddress.lng : '') + '&travelmode=driving'"> {{location.waveLocationVisitAddress.address}}</a>
             </div>
           </div>
         </div>

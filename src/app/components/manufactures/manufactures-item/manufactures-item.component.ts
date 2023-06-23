@@ -147,10 +147,12 @@ export class ManufacturesItemComponent implements OnInit, OnDestroy {
   }
 
   zoomIn() {
+    console.log('zoomin')
     // @ts-ignore
     if (this.zoom < this.options.maxZoom) this.zoom++;
   }
   zoomOut() {
+    console.log('zoomout')
     // @ts-ignore
     if (this.zoom > this.options.minZoom) this.zoom--;
   }

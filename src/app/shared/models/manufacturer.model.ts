@@ -78,6 +78,7 @@ export interface IWaveLocation {
   waveLocationNearestCity: string;
   waveLocationDirection?: string;
   waveLocationAffiliate?: boolean;
+  waveLocationLastUpdated?: string
 }
 
 export interface IAddress {
@@ -135,7 +136,8 @@ export interface IWaveSpecification {
   waveSpecificationVideoRecordingPriceSession: number;
   waveSpecificationPhotoPriceSession: number;
   waveSpecificationOurTestimonial: string;
-  waveSpecificationRecommendedWetSuite?: any
+  waveSpecificationRecommendedWetSuite?: any;
+  waveSpecificationLastUpdated?: string;
 }
 
 export enum EWaveSpecificationStatus {

@@ -12,8 +12,8 @@
     </div>
     <div class="layout">
       <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in">
-        <img src="../../../../assets/icons/list-task.svg" alt="">
-        <img src="../../../../assets/icons/pin-map.svg" alt="">
+        <img *ngIf="isMap" src="../../../../assets/icons/list-task.svg" alt="">
+        <img *ngIf="!isMap" src="../../../../assets/icons/pin-map.svg" alt="">
       </button>
     </div>
   </div>
@@ -33,12 +33,12 @@
         <div class="page__content" [innerHTML]="manufacturer.content.length < manufacturer.excerpt.length ? manufacturer.excerpt : manufacturer.content"></div>
 -->
         <div *ngIf="isTablet" class="layout">
-          <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in">
-            <img src="../../../../assets/icons/list-task.svg" alt="">
-            <img src="../../../../assets/icons/pin-map.svg" alt="">
+          <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in bordered">
+            <img *ngIf="isMap" src="../../../../assets/icons/list-task.svg" alt="">
+            <img *ngIf="!isMap" src="../../../../assets/icons/pin-map.svg" alt="">
           </button>
         </div>
-        <p class="section__title">{{manufacturer.manufacturerName}}</p>
+        <p (click)="gotoManufacturer(manufacturer.manufacturerURL)" class="section__title">{{manufacturer.manufacturerName}}</p>
         <div *ngIf="manufacturer.manufacturerAbout" class="section">
           <!--<h2 class="section__title">About {{manufacturer.title}}</h2>-->
           <div class="section__text" [innerHTML]="parserService.replaceURLs(manufacturer.manufacturerAbout) | safe: 'html'"></div>
@@ -50,8 +50,8 @@
     </div>
   </div>
   <div *ngIf="isMap">
-    <div class="layout layout-map">
-      <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in">
+    <div *ngIf="isTablet" class="layout layout-map">
+      <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in bordered">
         <img src="../../../../assets/icons/list-task.svg" alt="" *ngIf="isMap">
         <img src="../../../../assets/icons/pin-map.svg" alt="" *ngIf="!isMap">
       </button>
@@ -73,7 +73,6 @@
               [zoom]="zoom"
               [center]="center"
               [options]="options"
-              style="padding-top: 97px"
       >
         <map-marker
             #somemarker="mapMarker"

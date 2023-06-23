@@ -12,18 +12,27 @@
     </div>
     <div class="layout">
       <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in">
-        <img src="../../../../assets/icons/list-task.svg" alt="">
-        <img src="../../../../assets/icons/pin-map.svg" alt="">
+        <img *ngIf="isMap" src="../../../../assets/icons/list-task.svg" alt="">
+        <img *ngIf="!isMap" src="../../../../assets/icons/pin-map.svg" alt="">
       </button>
+    </div>
+  </div>
+  <div class="details">
+    <div class="container">
+      <div class="row ">
+        <div class="col-8">
+          <p>Last updated: <strong>{{getFormattedDate(technology.waveProductionMethodLastUpdated)}}</strong></p>
+        </div>
+      </div>
     </div>
   </div>
   <div *ngIf="!isMap" class="container">
     <div class="row">
       <div class="col">
         <div *ngIf="isTablet" class="layout">
-          <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in">
-            <img src="../../../../assets/icons/list-task.svg" alt="">
-            <img src="../../../../assets/icons/pin-map.svg" alt="">
+          <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in bordered">
+            <img *ngIf="isMap" src="../../../../assets/icons/list-task.svg" alt="">
+            <img *ngIf="!isMap" src="../../../../assets/icons/pin-map.svg" alt="">
           </button>
         </div>
         <!--
@@ -41,8 +50,8 @@
     </div>
   </div>
   <div *ngIf="isMap">
-    <div class="layout layout-map">
-      <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in">
+    <div *ngIf="isTablet" class="layout layout-map">
+      <button (click)="onToggleLayout()" class="zoom__btn zoom__btn_in bordered">
         <img src="../../../../assets/icons/list-task.svg" alt="" *ngIf="isMap">
         <img src="../../../../assets/icons/pin-map.svg" alt="" *ngIf="!isMap">
       </button>
@@ -64,7 +73,6 @@
               [zoom]="zoom"
               [center]="center"
               [options]="options"
-              style="padding-top: 97px"
       >
         <map-marker
             #somemarker="mapMarker"

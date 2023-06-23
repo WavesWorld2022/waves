@@ -47,6 +47,7 @@ export class CompareComponent implements OnInit {
   sortedItems: any[] = []; // Sorted array of items
   sortColumn: string = '';
   sortDirection: number = 1;
+  lastUpdated?: string;
 
   constructor(private fireService: FireService) { }
 
@@ -66,6 +67,8 @@ export class CompareComponent implements OnInit {
     this.fireService.onGetSecondCollection('specifications');
     this.fireService.collectionSecondData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveSpecification[]) => {
       this.specifications = resp;
+
+      this.lastUpdated = this.getLastUpdated(this.specifications);
 
       this.fireService.onGetCollection('locations');
       this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveLocation[]) => {
@@ -94,6 +97,18 @@ export class CompareComponent implements OnInit {
     this.destroyer$.complete();
   }
 
+  getLastUpdated(specifications: IWaveSpecification[]) {
+    let lastUpdatedDate = specifications[0].waveSpecificationLastUpdated;
+    specifications.forEach((spec: IWaveSpecification) => {
+      // @ts-ignore
+      if (new Date(spec.waveSpecificationLastUpdated) > new Date(lastUpdatedDate)) {
+        lastUpdatedDate = spec.waveSpecificationLastUpdated;
+      }
+    });
+
+    return lastUpdatedDate!.split(' ')[0].split('-').reverse().join('.');
+  }
+
   getPPMSonBoard(item: IWaveLocation) {
     const specifications = this.specifications.filter(s => s.waveSpecificationLocation === item.waveLocationKey);
     //console.log(item)
@@ -112,6 +127,7 @@ export class CompareComponent implements OnInit {
     let filteredGatherLocationsData = [...this.waveLocations];
     let filteredSpecifications = [...this.specifications];
     let locationKeyArray: string[] = [];
+    let mixArrayOfSpec = [];
 
     if(filter) {
        if (filter.id !== 'f-1') {
@@ -142,13 +158,30 @@ export class CompareComponent implements OnInit {
                 : this.checkDistanceBetweenOriginAndLocation(location.waveLocationVisitAddress.lat, location.waveLocationVisitAddress.lng);
           });
         })*/
-         this.activeFilters.forEach(f => {
+         /*this.activeFilters.forEach(f => {
            if (f.id !== 'f-2') {
              filteredSpecifications = filteredSpecifications.filter(f.query);
            }
          })
          locationKeyArray = [...new Set(filteredSpecifications.map(spec => spec.waveSpecificationLocation))];
-         filteredGatherLocationsData = filteredGatherLocationsData.filter((loc: IWaveLocation) => locationKeyArray.includes(loc.waveLocationKey));
+         filteredGatherLocationsData = filteredGatherLocationsData.filter((loc: IWaveLocation) => locationKeyArray.includes(loc.waveLocationKey));*/
+         if (this.activeFilters.length === 1) {
+           if (this.activeFilters[0].id !== 'f-2') {
+             filteredSpecifications = filteredSpecifications.filter(this.activeFilters[0].query);
+           }
+
+           locationKeyArray = [...new Set(filteredSpecifications.map(spec => spec.waveSpecificationLocation))];
+           filteredGatherLocationsData = filteredGatherLocationsData.filter((loc: IWaveLocation) => locationKeyArray.includes(loc.waveLocationKey));
+         } else if (this.activeFilters.length > 1) {
+           for (let i = 0; i <= this.activeFilters.length - 1; i++) {
+             const tempArr = [...this.specifications].filter(this.activeFilters[i].query);
+             const tempArrLocationKeys = [...new Set(tempArr.map(s => s.waveSpecificationLocation))];
+             mixArrayOfSpec.push(tempArrLocationKeys);
+           }
+           // @ts-ignore
+           const filteredLocationsKeys = this.findAppropriateElement(mixArrayOfSpec);
+           filteredGatherLocationsData = [...this.waveLocations].filter((loc: IWaveLocation) => filteredLocationsKeys.includes(loc.waveLocationKey));
+         }
 
          if (this.activeFilters.find((f: any) => f.id === 'f-2')) {
            filteredGatherLocationsData = filteredGatherLocationsData.filter(location => this.checkDistanceBetweenOriginAndLocation(location.waveLocationVisitAddress.lat, location.waveLocationVisitAddress.lng));
@@ -164,6 +197,43 @@ export class CompareComponent implements OnInit {
       this.activeFilter = 'f-1';
       this.filteredLocations = [...this.filteredLocations.filter((location: IWaveLocation) => location.waveLocationVisitAddress && location.waveLocationVisitAddress.name && location.waveLocationVisitAddress.name.toLowerCase().includes(this.selected.toLowerCase()))];
     }
+  }
+
+  findAppropriateElement(arrays: [][]) {
+    let commonElements: any = [];
+
+    let firstArray = arrays[0];
+
+    for (let i = 0; i < firstArray.length; i++) {
+      let currentObject = firstArray[i];
+      let isCommon = true;
+
+      for (let j = 1; j < arrays.length; j++) {
+        let found = false;
+        for (let k = 0; k < arrays[j].length; k++) {
+          let innerObject = arrays[j][k];
+          if (this.isObjectEqual(currentObject, innerObject)) {
+            found = true;
+            break;
+          }
+        }
+
+        if (!found) {
+          isCommon = false;
+          break;
+        }
+      }
+
+      if (isCommon) {
+        commonElements.push(currentObject);
+      }
+    }
+
+    return commonElements;
+  }
+
+  isObjectEqual(obj1: any, obj2: any) {
+    return obj1 === obj2;
   }
 
   getPrice(id: string) {

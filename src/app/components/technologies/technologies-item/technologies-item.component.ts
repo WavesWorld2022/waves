@@ -102,6 +102,10 @@ export class TechnologiesItemComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
+  getFormattedDate(date: string) {
+    return date.split(' ')[0].replace(/-/g, '.');
+  }
+
   onFilterByProductionMethod() {
     let fitSpecifications: IWaveSpecification[] = [];
     let locationKeysArray: string[] = [];

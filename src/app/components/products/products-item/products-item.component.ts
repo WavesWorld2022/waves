@@ -151,6 +151,10 @@ export class ProductsItemComponent implements OnInit {
     })
   }
 
+  getFormattedDate(date: string) {
+    return date.split(' ')[0].replace(/-/g, '.');
+  }
+
   zoomIn() {
     // @ts-ignore
     if (this.zoom < this.options.maxZoom) this.zoom++;

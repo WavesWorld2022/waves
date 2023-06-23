@@ -10,11 +10,11 @@ import {NavigationService} from "../../../services/navigation.service";
 })
 export class FooterComponent {
   nav = [
-    { title: 'explore', id: 'home' },
     { title: 'compare', id: 'compare' },
     { title: 'manufacturers', id: 'manufactures' },
     { title: 'technologies', id: 'technologies' },
-    { title: 'products', id: 'products' }
+    { title: 'products', id: 'products' },
+    { title: 'explore', id: 'home' }
   ];
 
   constructor(

@@ -23,8 +23,7 @@ export class GoBackButtonComponent implements OnInit {
         this.route = this.router.url.split('/').filter(item => item);
         this.isHigher = this.route.includes('location') ||
             this.route.includes('about-us') ||
-            this.route.includes('faq') ||
-            (this.route.length === 2 && this.route[0] !== 'manufactures');
+            this.route.includes('faq');
     }
 
     goBack(): void {

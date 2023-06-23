@@ -123,6 +123,11 @@
 }
 
 @media all and (max-width: 768px){
+  .page{
+    &__navigation {
+      padding-top: 50px;
+    }
+  }
   .location-nav{
     li{
       img{

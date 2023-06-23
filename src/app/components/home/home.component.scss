@@ -160,7 +160,7 @@
   }
 }
 .navbar-toggler {
-  background: #008bb2;
+  //background: #008bb2;
   width: 45px;
   height: 45px;
   padding: 0;
@@ -312,6 +312,10 @@
   height: 85px;
   .container {
     .navbar {
+      .navbar-collapse {
+        z-index: 100000;
+        background-color: #fff;
+      }
       padding: 0;
       &-brand {
         img {
@@ -367,12 +371,27 @@
     .container{
       .navbar {
         padding: 0;
-        flex-wrap: nowrap;
+        //flex-wrap: nowrap;
         &-brand {
           img {
             height: 24px;
             margin: 12px 0;
           }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px){
+  .header{
+    .container{
+      .navbar {
+        padding: 0;
+        //flex-wrap: nowrap;
+
+        .d-flex {
+          width: 65%;
         }
       }
     }

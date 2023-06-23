@@ -44,6 +44,16 @@
   }
 }
 
+.details{
+  background: #008bb2;
+  padding: 10px 0;
+  p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+  }
+}
+
 .navbar-toggler {
   background: #008bb2;
   width: 45px;
@@ -105,12 +115,17 @@
   right: 0;
   left: inherit;
   padding: 5px 15px 5px 10px;
+  height: 60px;
   button{
     width: 45px;
     height: 45px;
+
     img{
       width: 30px !important;
     }
+  }
+  button.bordered {
+    border: 1px solid #ffffff;
   }
 }
 
@@ -183,6 +198,6 @@
   }
 
   .layout {
-    top: 10px;
+    top: 6px;
   }
 }
