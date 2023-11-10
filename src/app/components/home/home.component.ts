@@ -191,7 +191,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           name: location.waveLocationKey,
           reflink: location.waveLocationReferralLink,
           status: ['planned', 'permanently closed', 'cancelled'].includes(specifications[0].waveSpecificationStatus.toLowerCase())
-            && this.isOpenedLocation(specifications[0].waveSpecificationCommissioningDate) ? 'closed' : 'opened',
+            || !this.isOpenedLocation(specifications[0].waveSpecificationCommissioningDate) ? 'closed' : 'opened',
           options: {
             zIndex: location.waveLocationAffiliate ? 99 : null,
             label: location.waveLocationAffiliate ? {className: 'affiliate-za', text: 'a'} : '',
