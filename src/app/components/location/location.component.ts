@@ -59,6 +59,7 @@ export class LocationComponent implements OnDestroy {
   destroyer$ = new Subject();
 
   isInfoExpanded = false;
+  isTestimonialsExpanded = false;
   isDescriptionExpanded = false;
   isProductsExpanded = false;
   isWavesExpanded = false;
