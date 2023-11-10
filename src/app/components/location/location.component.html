@@ -146,15 +146,15 @@
                         </ul>
                       </ng-container>
 
-                      <ng-container *ngIf="wave.waveSpecificationOurTestimonial">
-                        <h3 class="section__subtitle">Our Testimonial</h3>
-                        <div style="color: #ffffff; margin-bottom: 15px;">{{wave.waveSpecificationOurTestimonial}}</div>
-                      </ng-container>
-
                       <div style="color: #ffffff; margin-bottom: 15px;" *ngIf="wave.waveSpecificationWaterQuality">
                         <h3 class="section__subtitle">Water quality</h3>
                         <div>{{wave.waveSpecificationWaterQuality}}</div>
                       </div>
+
+                      <ng-container *ngIf="wave.waveSpecificationOurTestimonial">
+                        <h3 class="section__subtitle">Our Testimonial</h3>
+                        <div style="color: #ffffff; margin-bottom: 15px;">{{wave.waveSpecificationOurTestimonial}}</div>
+                      </ng-container>
 
                       <div *ngIf="asAny(wave)['waveSpecificationSurflineCompatibleCamera']" style="color: #fff;
     font-size: 12px;
