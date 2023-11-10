@@ -319,4 +319,11 @@ export class LocationComponent implements OnDestroy {
     (document.getElementById(element) as HTMLElement).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
+  asAny(obj: any): any {
+    return obj as any
+  }
+
+  replaceQuote(str: string): string {
+    return str.replace(/"/g, '')
+  }
 }
