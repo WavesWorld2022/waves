@@ -60,6 +60,7 @@ export class LocationComponent implements OnDestroy {
   destroyer$ = new Subject();
 
   isInfoExpanded = false;
+  isTestimonialsExpanded = false;
   isDescriptionExpanded = false;
   isProductsExpanded = false;
   isWavesExpanded = false;
@@ -324,4 +325,11 @@ export class LocationComponent implements OnDestroy {
     (document.getElementById(element) as HTMLElement).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
+  asAny(obj: any): any {
+    return obj as any
+  }
+
+  replaceQuote(str: string): string {
+    return str.replace(/"/g, '')
+  }
 }

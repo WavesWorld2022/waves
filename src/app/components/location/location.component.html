@@ -338,7 +338,7 @@
             </google-map>
 
             <div *ngIf="location?.waveLocationVisitAddress?.address" class="mt-4 address">
-              <a target="_blank" [href]="'https://www.google.com/maps/dir/?api=1&destination=' + (location.waveLocationVisitAddress && location.waveLocationVisitAddress.lat && location.waveLocationVisitAddress.lng ? location.waveLocationVisitAddress.lat + ',' + location.waveLocationVisitAddress.lng : '') + '&travelmode=driving'"> {{location.waveLocationVisitAddress.address}}</a>
+              <a target="_blank" [href]="'https://www.google.com/maps/dir/?api=1&destination=' + (location.waveLocationVisitAddress && location.waveLocationVisitAddress.lat && location.waveLocationVisitAddress.lng ? location.waveLocationVisitAddress.lat + ',' + location.waveLocationVisitAddress.lng : '') + '&travelmode=driving'">{{replaceQuote(location.waveLocationVisitAddress.address)}}</a>
             </div>
           </div>
         </div>
@@ -474,7 +474,8 @@
                 {{locationSpecifications[currentSpecificationIndex].waveSpecificationIndoor ? 'Yes' : 'No'}}
               </div>
               <div class="product__item"
-                   *ngIf="onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductName">
+                   *ngIf="onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductName"
+                   [routerLink]="'../../products/' + onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductKey">
                 <span>Wave Product Name:</span>
                 <span class="link">{{onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductName}}</span>
               </div>
@@ -563,15 +564,9 @@
                 <span>Production Method Type:</span>
                 <span>{{specificationInfo.productionMethod.type}}</span>
               </div>
-              <div class="wave__item" *ngIf="+wave.waveSpecificationMinimumSurferAge">
-                <span>Minimum Surfer Age:</span> {{wave.waveSpecificationMinimumSurferAge}} years
-              </div>
-              <div class="wave__item" *ngIf="isTrue(wave.waveSpecificationMinimumSurferWeight)">
-                <span>Minimum Surfer Weight:</span> {{wave.waveSpecificationMinimumSurferWeight}}
-              </div>
-              <div class="wave__item" *ngIf="+wave.waveSpecificationMinimumSurferLength">
-                <span>Minimum Surfer Length:</span> {{wave.waveSpecificationMinimumSurferLength}}
-              </div>
+              <li class="wave__item" *ngIf="wave.waveSpecificationDifficulty">
+                <span>Wave difficulty:</span> {{wave.waveSpecificationDifficulty}}
+              </li>
               <div class="wave__item" *ngIf="wave.waveSpecificationWaveShape">
                 <span>Wave shape:</span> {{wave.waveSpecificationWaveShape}}
               </div>
@@ -580,9 +575,6 @@
               </div>
               <div class="wave__item" *ngIf="wave.waveSpecificationWaveDirection">
                 <span>Wave direction:</span> {{wave.waveSpecificationWaveDirection}}
-              </div>
-              <div class="wave__item" *ngIf="wave.waveSpecificationDifficulty">
-                <span>Wave difficulty:</span> {{wave.waveSpecificationDifficulty}}
               </div>
               <div class="wave__item" *ngIf="wave.waveSpecificationStandingWaveWidth">
                 <span>Standing Wave Width:</span> {{wave.waveSpecificationStandingWaveWidth}}
@@ -610,9 +602,6 @@
               </div>
               <div class="wave__item" *ngIf="+wave.waveSpecificationMaxCustomersPerWave">
                 <span>Max customers per wave:</span> {{wave.waveSpecificationMaxCustomersPerWave}}
-              </div>
-              <div class="wave__item" *ngIf="+wave.waveSpecificationOurTestimonial">
-                <span>Our Testimonial:</span> {{wave.waveSpecificationOurTestimonial}}
               </div>
               <div class="wave__item"
                    *ngIf="onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductLastUpdated">
@@ -649,6 +638,18 @@
                 <span>Open since:</span> {{getDate(wave.waveSpecificationCommissioningDate)}}
               </div>
               >-->
+              <ng-container *ngIf="+wave.waveSpecificationMinimumSurferAge || isTrue(wave.waveSpecificationMinimumSurferWeight) || +wave.waveSpecificationMinimumSurferLength">
+                <p class="wave__subtitle">Kids</p>
+                <div class="wave__item" *ngIf="+wave.waveSpecificationMinimumSurferAge">
+                  <span>Minimum Surfer Age:</span> {{wave.waveSpecificationMinimumSurferAge}} years
+                </div>
+                <div class="wave__item" *ngIf="isTrue(wave.waveSpecificationMinimumSurferWeight)">
+                  <span>Minimum Surfer Weight:</span> {{wave.waveSpecificationMinimumSurferWeight}}
+                </div>
+                <div class="wave__item" *ngIf="+wave.waveSpecificationMinimumSurferLength">
+                  <span>Minimum Surfer Length:</span> {{wave.waveSpecificationMinimumSurferLength}}
+                </div>
+              </ng-container>
 
 
               <ng-container *ngIf="isPricing(wave)">
@@ -693,10 +694,10 @@
                 <span>Water type:</span>
                 {{wave.waveSpecificationWaterType}}
               </div>
-              <div class="wave__item"
+              <div class="wave__item" style="display: block"
                    *ngIf="wave.waveSpecificationWaterQuality">
-                <span>Water quality:</span>
-                {{wave.waveSpecificationWaterQuality.length < 20 ? wave.waveSpecificationWaterQuality : 'Good'}}
+                <span>Water quality:</span><br>
+                {{wave.waveSpecificationWaterQuality}}
               </div>
               <div class="wave__item"
                    *ngIf="wave.waveSpecificationRecommendedWetSuite?.length">
@@ -705,6 +706,38 @@
                   <i *ngFor="let item of wave.waveSpecificationRecommendedWetSuite">{{item}} </i>
                 </i>
               </div>
+              <ng-container *ngIf="wave.waveSpecificationOurTestimonial">
+                <p class="wave__subtitle">Our Testimonial</p>
+                <div class="wave__item" style="overflow: hidden">{{wave.waveSpecificationOurTestimonial}}</div>
+              </ng-container>
+
+              <ng-container *ngIf="asAny(wave)['waveSpecificationSurflineCompatibleCamera']">
+                <p class="wave__subtitle">Surfline Sessions™</p>
+                <div class="wave__item" style="display: block; overflow: hidden">
+                  Creates a video of every wave you ride in front of a Surfline camera (eg at Alaia bay) while wearing a compatible Garmin watch— then sends it to your iPhone.
+                  <br><br>
+                  <strong>How?</strong><br>
+                  1. Goto Alaia or any other of 600+ Surfline compatible camera’s around the world!
+                  (Does Scheveningen have Surfline compatible cam?)
+                  How do I connect my Garmin watch with Surfline Sessions?<br><br>
+
+                  <strong>Make sure you have the following:</strong><br>
+                  • A Surfline account and the Surfline iOS App. <br>
+                  • A Garmin account and the Garmin Connect iOS App.<br>
+                  • A Garmin device with the Surf Activity installed.<br><br>
+
+                  <strong>Once you’ve verified that your Garmin device has the Surf Activity, connect your Surfline and Garmin accounts by following these steps:</strong><br>
+                  • Make sure you’re signed into both apps.<br>
+                  • Go to the Sessions tab on the Surfline App.<br>
+                  • Tap Connect to Partner.<br>
+                  • Enter your Garmin Account info and complete the connection process.<br>
+                  • Verify your connection on the Done screen.<br>
+                  • Make sure your Garmin device is connected to your phone and the Garmin Connect App.<br>
+                  • Go surf!<br><br>
+
+                  <strong>End result:</strong> all Your waves from one session, Automatically concatenated, on your iphone not android!
+                </div>
+              </ng-container>
             </div>
           </div>
         </ngx-slick-carousel>

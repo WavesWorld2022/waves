@@ -14,6 +14,7 @@ import {_products} from "../assets/json/old/_products";
 })
 export class AppComponent implements OnInit {
   title = 'waves';
+  cookies = !!localStorage.getItem('cookies');
 
   constructor(private fireService: FireService) { }
 
@@ -148,5 +149,13 @@ export class AppComponent implements OnInit {
     document.body.appendChild(element);
     element.click(); // simulate click
     document.body.removeChild(element);
+  }
+
+  onDecline() {
+    window.location.href = 'https://google.com'
+  }
+  onAccept() {
+    this.cookies = true;
+    localStorage.setItem('cookies', 'true')
   }
 }

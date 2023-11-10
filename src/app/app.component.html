@@ -3,3 +3,21 @@
   <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>
+<div class="cookies" *ngIf="!cookies">
+  <div class="cookies__content">
+    <div class="cookies__inner">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+          <p>
+            <strong>We use cookies!</strong><br>
+            this website uses cookies to ensure you get the best experience on our website
+          </p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 cookies__btns">
+          <button class="apply" (click)="onAccept()">Accept</button>
+          <button (click)="onDecline()">Decline</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
