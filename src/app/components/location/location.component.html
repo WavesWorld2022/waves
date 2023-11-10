@@ -151,6 +151,40 @@
                         <div>{{wave.waveSpecificationWaterQuality}}</div>
                       </div>
 
+                      <div *ngIf="asAny(wave)['waveSpecificationSurflineCompatibleCamera']" style="color: #fff;
+    font-size: 12px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    background: rgba(0,0,0,.3);
+    padding: 15px;
+    border-radius: 10px;">
+                        <h3 class="section__subtitle">Surfline Sessions™</h3>
+                        <div class="wave__item" style="display: block; overflow: hidden">
+                          Creates a video of every wave you ride in front of a Surfline camera (eg at Alaia bay) while wearing a compatible Garmin watch— then sends it to your iPhone.
+                          <br><br>
+                          <strong>How?</strong><br>
+                          1. Goto Alaia or any other of 600+ Surfline compatible camera’s around the world!
+                          (Does Scheveningen have Surfline compatible cam?)
+                          How do I connect my Garmin watch with Surfline Sessions?<br><br>
+
+                          <strong>Make sure you have the following:</strong><br>
+                          • A Surfline account and the Surfline iOS App. <br>
+                          • A Garmin account and the Garmin Connect iOS App.<br>
+                          • A Garmin device with the Surf Activity installed.<br><br>
+
+                          <strong>Once you’ve verified that your Garmin device has the Surf Activity, connect your Surfline and Garmin accounts by following these steps:</strong><br>
+                          • Make sure you’re signed into both apps.<br>
+                          • Go to the Sessions tab on the Surfline App.<br>
+                          • Tap Connect to Partner.<br>
+                          • Enter your Garmin Account info and complete the connection process.<br>
+                          • Verify your connection on the Done screen.<br>
+                          • Make sure your Garmin device is connected to your phone and the Garmin Connect App.<br>
+                          • Go surf!<br><br>
+
+                          <strong>End result:</strong> all Your waves from one session, Automatically concatenated, on your iphone not android!
+                        </div>
+                      </div>
+
                       <ul class="section__list section__list-horizontal">
                         <li class="item" *ngIf="+wave.waveSpecificationWaterTemp">
                           <img src="assets/icons/thermometer.png" alt="">

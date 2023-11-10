@@ -1,10 +1,10 @@
 .hero{
-  height: calc(100vh - 206px);
   background: url("../../../assets/images/bg-1.png") no-repeat center;
   background-size: cover;
 
   .container {
     .row {
+      height: calc(100vh - 206px);
       padding: 5rem 0;
     }
   }
@@ -21,9 +21,15 @@
   line-height: 1.2;
   display: inline-block;
   margin: 20px 14px 0 0;
+  &:hover{
+    background: #ccaa28;
+  }
 
   &-green {
     background-color: #0b9644;
+    &:hover{
+      background-color: #097335;
+    }
   }
 
   &__remark {
