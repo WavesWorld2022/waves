@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
-import {IProduct, IWaveSystemProduct} from "../../shared/models";
+import {IProduct, IWaveProductionMethod, IWaveSystemProduct} from "../../shared/models";
 import {take, takeUntil} from "rxjs";
 
 @Component({
@@ -25,6 +25,7 @@ export class ProductsComponent implements OnInit {
     {id: 'f-10', title: '<8', icon: 'shield-0'}
   ];
   products: IWaveSystemProduct[] = [];
+  lastUpdated = ''
 
   constructor(private fireService: FireService) { }
 
@@ -35,9 +36,23 @@ export class ProductsComponent implements OnInit {
         .forEach((m: any) => {
           this.products.push(m);
         })
+      this.lastUpdated = this.getLastUpdated(this.products);
       setTimeout(() => {
         this.isLoading = false;
       }, 1000);
     })
+  }
+
+  getLastUpdated(data: IWaveSystemProduct[]) {
+    let lastUpdatedDate = data[0].waveSystemProductLastUpdated;
+    const methods = data.map(item => item.waveSystemProductLastUpdated).filter(item => !!item);
+    methods.forEach((date: any) => {
+      // @ts-ignore
+      if (new Date(date) > new Date(lastUpdatedDate)) {
+        lastUpdatedDate = date;
+      }
+    });
+
+    return lastUpdatedDate!.split(' ')[0].split('-').reverse().join('.');
   }
 }

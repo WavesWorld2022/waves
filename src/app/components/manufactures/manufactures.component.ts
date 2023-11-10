@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FireService} from "../../services/fire.service";
-import {IManufacturer} from "../../shared/models";
+import {IManufacturer, IWaveProductionMethod} from "../../shared/models";
 import {take} from "rxjs";
 
 @Component({
@@ -11,6 +11,7 @@ import {take} from "rxjs";
 export class ManufacturesComponent implements OnInit {
   isLoading = false;
   activeFilter = 'f-1';
+  lastUpdated = '';
 
   nav = [
     {id: 'f-1', title: 'All', icon: 'shield-0'},
@@ -35,9 +36,23 @@ export class ManufacturesComponent implements OnInit {
           .forEach((m: any) => {
             this.manufacturers.push(m);
           })
+      this.lastUpdated = this.getLastUpdated(this.manufacturers);
       setTimeout(() => {
         this.isLoading = false;
       }, 1000);
     })
+  }
+
+  getLastUpdated(data: IManufacturer[]) {
+    let lastUpdatedDate = data[0].manufacturerLastUpdated;
+    const methods = data.map(item => item.manufacturerLastUpdated).filter(item => !!item);
+    methods.forEach((date: any) => {
+      // @ts-ignore
+      if (new Date(date) > new Date(lastUpdatedDate)) {
+        lastUpdatedDate = date;
+      }
+    });
+
+    return lastUpdatedDate!.split(' ')[0].split('-').reverse().join('.');
   }
 }
