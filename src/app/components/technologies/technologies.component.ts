@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
-import {ITechnology, IWaveProductionMethod} from "../../shared/models";
+import {ITechnology, IWaveLocation, IWaveProductionMethod, IWaveSpecification} from "../../shared/models";
 
 @Component({
   selector: 'app-technologies',
@@ -24,6 +24,7 @@ export class TechnologiesComponent implements OnInit {
     {id: 'f-10', title: '<8', icon: 'shield-0'}
   ];
   technologies: IWaveProductionMethod[] = [];
+  lastUpdated = '';
 
   constructor(private fireService: FireService) { }
 
@@ -34,9 +35,23 @@ export class TechnologiesComponent implements OnInit {
         .forEach((m: any) => {
           this.technologies.push(m);
         })
+      this.lastUpdated = this.getLastUpdated(this.technologies);
       setTimeout(() => {
         this.isLoading = false;
       }, 1000);
     })
+  }
+
+  getLastUpdated(data: IWaveProductionMethod[]) {
+    let lastUpdatedDate = data[0].waveProductionMethodLastUpdated;
+    const methods = data.map(item => item.waveProductionMethodLastUpdated).filter(item => !!item);
+    methods.forEach((date: any) => {
+      // @ts-ignore
+      if (new Date(date) > new Date(lastUpdatedDate)) {
+        lastUpdatedDate = date;
+      }
+    });
+
+    return lastUpdatedDate!.split(' ')[0].split('-').reverse().join('.');
   }
 }
