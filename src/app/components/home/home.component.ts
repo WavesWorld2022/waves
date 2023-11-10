@@ -6,9 +6,10 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {NavigationService} from "../../services/navigation.service";
 import {FireService} from "../../services/fire.service";
 import {locations} from "../../../assets/json/old/locations";
-import {Subject, take} from "rxjs";
-import {IWaveLocation, IWaveSpecification} from "../../shared/models";
+import {Subject, take, takeUntil} from "rxjs";
+import {IWaveLocation, IWaveProductionMethod, IWaveSpecification, IWaveSystemProduct} from "../../shared/models";
 import {DOCUMENT} from "@angular/common";
+import {products} from "../../../assets/json/products";
 
 @Component({
   selector: 'app-home',
@@ -26,9 +27,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   nav = [
     {titleH: "World Map", id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: IWaveSpecification) => w},
     {titleH: "Near-me", id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: IWaveSpecification) => w},
-    {titleH: "Rolling", id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem !== 'standing-wave' && w.waveSpecificationWaveSystem !== 'river'},
-    {titleH: "Standing", id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'standing-wave'},
-    {titleH: "River", id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'river'},
+    {titleH: "Rolling", id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: IWaveSpecification) => this.onGetProductionMethodType(w.waveSpecificationProduct) !== 'Standing' && this.onGetProductionMethodType(w.waveSpecificationProduct) !== 'River'},
+    {titleH: "Standing", id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: IWaveSpecification) => this.onGetProductionMethodType(w.waveSpecificationProduct) === 'Standing'},
+    {titleH: "River", id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: IWaveSpecification) => this.onGetProductionMethodType(w.waveSpecificationProduct) === 'River'},
     {titleH: "Indoor", id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationIndoor},
     {titleH: "Open", id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: IWaveSpecification) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
     {titleH: "Planned", id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
@@ -68,6 +69,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   lastUpdated?: string;
 
   browserRefresh?: boolean;
+
+  products: IWaveSystemProduct[] = [];
+  productionMethods: IWaveProductionMethod[] = [];
+
   destroyer$ = new Subject();
 
   constructor(
@@ -142,6 +147,21 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         }
       });
     });
+    this.fireService.onGetThirdCollection('products');
+    this.fireService.onGetFourthCollection('production-methods');
+    this.fireService.collectionThirdData$.pipe(takeUntil(this.destroyer$)).subscribe(res => {
+      this.products = res;
+    });
+    this.fireService.collectionFourthData$.pipe(takeUntil(this.destroyer$)).subscribe(res => {
+      this.productionMethods = res
+    })
+  }
+
+  // pass waveSpecificationProduct
+  onGetProductionMethodType(product: any) {
+    const productItem = this.products.find(pr => pr.waveSystemProductKey === product);
+    const waveProductionMethodType = this.productionMethods.find(pm => pm.waveProductionMethodKey === productItem?.waveSystemProductProductionMethod)?.waveProductionMethodType;
+    return waveProductionMethodType ? waveProductionMethodType : '';
   }
 
   toggleMenu() {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FireService} from "../../services/fire.service";
 import {Subject, takeUntil} from "rxjs";
-import {IWaveLocation, IWaveSpecification} from "../../shared/models";
+import {IWaveLocation, IWaveProductionMethod, IWaveSpecification, IWaveSystemProduct} from "../../shared/models";
 import {waveSpecifications} from "../../../assets/json/wave-specifications";
 
 @Component({
@@ -30,9 +30,9 @@ export class CompareComponent implements OnInit {
   nav = [
     {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: IWaveSpecification) => w},
     {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: IWaveSpecification) => w},
-    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem !== 'standing-wave' && w.waveSpecificationWaveSystem !== 'river'},
-    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'standing-wave'},
-    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'river'},
+    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: IWaveSpecification) => this.onGetProductionMethodType(w.waveSpecificationProduct) !== 'Standing' && this.onGetProductionMethodType(w.waveSpecificationProduct) !== 'River'},
+    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: IWaveSpecification) => this.onGetProductionMethodType(w.waveSpecificationProduct) === 'Standing'},
+    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: IWaveSpecification) => this.onGetProductionMethodType(w.waveSpecificationProduct) === 'River'},
     {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationIndoor},
     {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: IWaveSpecification) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
     {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
@@ -49,6 +49,10 @@ export class CompareComponent implements OnInit {
   sortColumn: string = '';
   sortDirection: number = 1;
   lastUpdated?: string;
+
+  products: IWaveSystemProduct[] = [];
+  productionMethods: IWaveProductionMethod[] = [];
+
 
   constructor(private fireService: FireService) { }
 
@@ -97,11 +101,26 @@ export class CompareComponent implements OnInit {
         this.onFilter(this.nav[0]);
       });
     })
+
+    this.fireService.onGetThirdCollection('products');
+    this.fireService.onGetFourthCollection('production-methods');
+    this.fireService.collectionThirdData$.pipe(takeUntil(this.destroyer$)).subscribe(res => {
+      this.products = res;
+    });
+    this.fireService.collectionFourthData$.pipe(takeUntil(this.destroyer$)).subscribe(res => {
+      this.productionMethods = res
+    })
   }
 
   ngOnDestroy() {
     this.destroyer$.next(true);
     this.destroyer$.complete();
+  }
+
+  onGetProductionMethodType(product: any) {
+    const productItem = this.products.find(pr => pr.waveSystemProductKey === product);
+    const waveProductionMethodType = this.productionMethods.find(pm => pm.waveProductionMethodKey === productItem?.waveSystemProductProductionMethod)?.waveProductionMethodType;
+    return waveProductionMethodType ? waveProductionMethodType : '';
   }
 
   getLastUpdated(specifications: IWaveSpecification[],  locations: IWaveLocation[]) {
