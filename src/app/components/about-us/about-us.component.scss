@@ -93,5 +93,27 @@
 }
 
 @media all and (max-width: 768px) {
-
+  p.page__title {
+    font-size: 15px;
+    margin: 32px 0 20px;
+    text-align: right;
+  }
+  .card{
+    padding: 60% 15px 10px !important;
+    color: #00465a !important;
+    gap: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .member{
+    &__text {
+      font-size: 11px;
+      height: 50px !important;
+    }
+    &__name{
+      font-size: 16px !important;
+    }
+    &-wrapper{
+      margin-bottom: 5px;
+    }
+  }
 }

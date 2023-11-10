@@ -33,9 +33,10 @@ import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {StarsComponent} from "./components/about-us/stars/stars.component";
 import {EllipsisModule} from "ngx-ellipsis";
 import {PopoverModule} from "ngx-bootstrap/popover";
-import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
-import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
-import { FaqComponent } from './components/faq/faq.component';
+import {TermsOfUseComponent} from './components/terms-of-use/terms-of-use.component';
+import {PrivacyPolicyComponent} from './components/privacy-policy/privacy-policy.component';
+import {FaqComponent} from './components/faq/faq.component';
+import {TooltipModule} from "ngx-bootstrap/tooltip";
 
 @NgModule({
   declarations: [
@@ -62,24 +63,26 @@ import { FaqComponent } from './components/faq/faq.component';
     PrivacyPolicyComponent,
     FaqComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        AngularFireModule.initializeApp(environment.firebase),
-        AngularFirestoreModule,
-        GoogleMapsModule,
-        BrowserAnimationsModule,
-        TypeaheadModule.forRoot(),
-        FormsModule,
-        ReactiveFormsModule,
-        SafePipeModule,
-        ModalModule.forRoot(),
-        HttpClientModule,
-        SlickCarouselModule,
-        EllipsisModule,
-        PopoverModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    GoogleMapsModule,
+    BrowserAnimationsModule,
+    TypeaheadModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    SafePipeModule,
+    ModalModule.forRoot(),
+    HttpClientModule,
+    SlickCarouselModule,
+    EllipsisModule,
+    PopoverModule,
+    TooltipModule.forRoot()
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

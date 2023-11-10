@@ -104,13 +104,17 @@
 .nodata {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 10px;
   justify-content: center;
   align-items: center;
   padding: 30px 0;
 
   &__title {
     text-align: center;
+    color: #008bb2;
+  }
+  &__img{
+    display: none;
   }
   &__button {
     font-weight: 600;
@@ -150,4 +154,34 @@
 }
 .rotated{
   transform: rotate(0deg);
+}
+
+@media all and (max-width: 768px){
+  .table-wrapper {
+    max-height: calc(100vh - 316px);
+    overflow: auto;
+    .table-striped {
+      margin-bottom: 15px;
+    }
+  }
+  .location-nav.navbar {
+    border-bottom: solid 1px #dcd7d7;
+    margin: 0 -12px;
+    width: calc(100% + 24px);
+    padding: 0 12px !important;
+  }
+  .nodata{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    h3{
+      color: #008bb2;
+    }
+    &__img{
+      width: 100px;
+    }
+  }
 }

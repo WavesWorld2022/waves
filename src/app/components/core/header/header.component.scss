@@ -11,15 +11,23 @@
         background-color: #fff;
         padding: 0;
       }
-      .navbar-collapse {
+      .navbar-collapse.show {
         z-index: 100000;
         background-color: #fff;
-        //height: 100%;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 60px;
+        border-top: solid 1px #008bb3;
 
         .navbar-nav {
           height: 100%;
 
           .nav-item {
+            white-space: nowrap !important;
+            padding: 10px 10px 10px 15px;
+            border-bottom: solid 1px #e5e5e5;
             .nav-link {
               white-space: nowrap;
             }
@@ -71,4 +79,63 @@
       }
     }
   }
+}
+
+
+
+@media all and (max-width: 768px){
+  .dropdown.open {
+    z-index: 999 !important;
+    transform: none !important;
+    top: 45px !important;
+    width: calc(100vw - 20px) !important;
+  }
+  .search{
+    margin: 0;
+  }
+  .locations{
+    padding: 105px 10px 0;
+  }
+  .layout{
+    top: 36px;
+    right: 0;
+  }
+  .header{
+    height: 60px;
+    .container{
+      .navbar {
+        padding: 0;
+        //flex-wrap: nowrap;
+        &-brand {
+          img {
+            height: 24px;
+            margin: 12px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px){
+  .header{
+    .container{
+      .navbar {
+        padding: 0;
+        //flex-wrap: nowrap;
+
+        .d-flex {
+          width: 65%;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .menu-open .search {
+  pointer-events: none;
+}
+
+.nav-item{
+  white-space: nowrap !important;
 }

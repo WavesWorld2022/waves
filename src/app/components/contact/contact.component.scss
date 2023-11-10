@@ -18,8 +18,19 @@
 }
 
 @media all and (max-width: 768px) {
+  ::ng-deep button.go-back {
+    display: none !important;
+  }
   .hero {
     display: block;
     height: calc(100vh - 171px);
+    text-align: center;
+    &:before {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    &__title{
+      text-align: center;
+      margin: 0 !important;
+    }
   }
 }

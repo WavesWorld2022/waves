@@ -2,6 +2,7 @@ export interface INearbyNaturalSpot {
   nearbyNaturalSpotName: string;
   nearbyNaturalSpotLocation: string; // IWaveLocation.key
   nearbyNaturalSpotAddress: any;
+  nearbyNaturalSpotNameExpertSiteSearch?: string;
 }
 
 export interface IManufacturer {
@@ -138,6 +139,16 @@ export interface IWaveSpecification {
   waveSpecificationOurTestimonial: string;
   waveSpecificationRecommendedWetSuite?: any;
   waveSpecificationLastUpdated?: string;
+  waveSpecificationEndingDate?: string,
+  waveSpecificationAffiliate?: boolean,
+  // new
+  waveSpecificationStandingWaveWidth?: string | number;
+  waveSpecificationMinimumSurferWeight?: string | number;
+  waveSpecificationStandingWavePump?: string | number;
+  waveSpecificationRollingWaveSpeed?: string | number;
+  waveSpecificationRollingWaveFrequency?: string | number;
+  waveSpecificationRollingWaveLength?: string | number;
+  waveSpecificationHelmetRentalHr?: string | number;
 }
 
 export enum EWaveSpecificationStatus {

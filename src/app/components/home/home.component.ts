@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Inject, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {GoogleMap, MapInfoWindow} from "@angular/google-maps";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
 import {Router} from "@angular/router";
@@ -8,6 +8,7 @@ import {FireService} from "../../services/fire.service";
 import {locations} from "../../../assets/json/old/locations";
 import {Subject, take} from "rxjs";
 import {IWaveLocation, IWaveSpecification} from "../../shared/models";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-home',
@@ -19,20 +20,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   data: IWaveLocation[] = [];
   selected = '';
   isLoading = false;
+  isMenuOpen = false;
   //activeFilter = 'f-1';
-
-  /*nav = [
-    {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: any) => w},
-    {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: any) => w},
-    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.wave_system !== 'standing-wave' && w.wave_system !== 'river'},
-    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: any) => w.wave_system === 'standing-wave'},
-    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.wave_system === 'river'},
-    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.wave_system !== 'river'},
-    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.status !== 'planned' && w.status !== 'permanently closed' || (w.status === 'open only summer season' && this.isSummer)},
-    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.status === 'planned'},
-    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.status === 'permanently closed' || (w.status === 'open only summer season' && !this.isSummer)},
-    {id: 'f-10', title: '<8',  icon: 'shield-0', query: (w: any) => w.minimum_age < 8}
-  ];*/
 
   nav = [
     {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: IWaveSpecification) => w},
@@ -44,7 +33,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: IWaveSpecification) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
     {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
     {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
-    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationMinimumSurferAge && w.waveSpecificationMinimumSurferAge <= 8}
+    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationMinimumSurferAge && w.waveSpecificationMinimumSurferAge <= 8},
+    {id: 'f-11', title: '♕',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationAffiliate},
   ];
   @ViewChild('bookingModal', {static: true}) bookingModal!: TemplateRef<any>
   // @ts-ignore
@@ -83,7 +73,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     private fireService: FireService,
     private router: Router,
     private modalService: BsModalService,
-    private navService: NavigationService
+    private navService: NavigationService,
+    @Inject(DOCUMENT) private document: Document
   ) {
     this.browserRefresh = this.navService.browserRefreshed;
     this.isLoading = this.browserRefresh;
@@ -121,6 +112,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.data.length = 0;
         this.data = resp.filter((location: IWaveLocation) => location && location.waveLocationName);
         this.lastUpdated = this.getLastUpdated(this.specifications);
+        this.data.filter(s => s.waveLocationAffiliate).forEach(s => {
+          this.specifications.filter(sp => sp.waveSpecificationLocation === s.waveLocationKey).forEach(z => {
+            z.waveSpecificationAffiliate = true;
+          })
+        })
 
         if (JSON.parse(sessionStorage.getItem('filters')!)?.length > 1) {
           JSON.parse(sessionStorage.getItem('filters')!).forEach((f: any) => {
@@ -147,16 +143,20 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    if(this.isMenuOpen) {
+      this.document.body.classList.add('menu-open');
+    } else {
+      this.document.body.classList.remove('menu-open');
+    }
+  }
+
   onGetMarkers(arr: IWaveLocation[]) {
     this.markers.length = 0;
-
     arr.forEach((location: IWaveLocation) => {
-      const specifications = this.specifications.filter((item: IWaveSpecification) => {
-        //console.log(item.waveSpecificationLocation, location.waveLocationKey)
-        return item.waveSpecificationLocation === location.waveLocationKey
-      });
+      const specifications = this.specifications.filter((item: IWaveSpecification) => item.waveSpecificationLocation === location.waveLocationKey);
       const destination = location.waveLocationVisitAddress && location.waveLocationVisitAddress.lat && location.waveLocationVisitAddress.lng ? location.waveLocationVisitAddress.lat + ',' + location.waveLocationVisitAddress.lng : '';
-
       const origin = this.center && this.center.lat && this.center.lng ? this.center.lat + ',' + this.center.lng : '';
       this.markers.push(
         {
@@ -169,9 +169,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           title: location.waveLocationName,
           name: location.waveLocationKey,
           reflink: location.waveLocationReferralLink,
-          status: specifications[0].waveSpecificationStatus === 'permanently closed'
+          status: ['planned', 'permanently closed', 'cancelled'].includes(specifications[0].waveSpecificationStatus.toLowerCase())
             && this.isOpenedLocation(specifications[0].waveSpecificationCommissioningDate) ? 'closed' : 'opened',
           options: {
+            zIndex: location.waveLocationAffiliate ? 99 : null,
+            label: location.waveLocationAffiliate ? {className: 'affiliate-za', text: 'a'} : '',
             icon: this.activeFilters.length > 1
                 ? '../assets/icons/multiple-filter.png'
                 : '../assets/icons/' + this.activeFilters[0].id + '.png'

@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, ViewChild, Renderer2} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {filter, Subject, takeUntil} from "rxjs";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
@@ -24,6 +24,7 @@ import {
 export class LocationComponent implements OnDestroy {
   @ViewChild(MapInfoWindow, { static: false }) info!: MapInfoWindow;
   @ViewChild('slickModal', {static: false}) slickModal!: SlickCarouselComponent;
+  @ViewChild('slickModalMobile', {static: false}) slickModalMobile!: SlickCarouselComponent;
   @ViewChild('dropdownToggle') dropdownToggle!: ElementRef;
   location!: IWaveLocation;
   zoom = 12;
@@ -57,13 +58,22 @@ export class LocationComponent implements OnDestroy {
   currentSpecificationIndex = 0;
   destroyer$ = new Subject();
 
+  isInfoExpanded = false;
+  isDescriptionExpanded = false;
+  isProductsExpanded = false;
+  isWavesExpanded = false;
+  isWaterExpanded = false;
+  isNearbyExpanded = false;
+
   constructor(
     private fireService: FireService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private weatherService: WeatherService
+    private weatherService: WeatherService,
+    private renderer: Renderer2
   ) {
+    this.renderer.addClass(document.body, 'location-details');
     router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       takeUntil(this.destroyer$)
@@ -101,6 +111,8 @@ export class LocationComponent implements OnDestroy {
                   ? this.location.waveLocationVisitAddress.lat + ',' + this.location.waveLocationVisitAddress.lng
                   : '';
 
+              console.log(spot)
+
               let marker = {
                 position: {
                   lat: +spot.nearbyNaturalSpotAddress.lat,
@@ -109,6 +121,7 @@ export class LocationComponent implements OnDestroy {
                 title: spot.nearbyNaturalSpotName,
                 address: spot.nearbyNaturalSpotAddress.address,
                 direction: 'https://www.google.com/maps/dir/?api=1&origin='+ origin +'&destination='+ destination +'&travelmode=driving',
+                search: spot.nearbyNaturalSpotNameExpertSiteSearch
               }
               this.naturalSpotsMarkers.push(marker);
             })
@@ -145,6 +158,7 @@ export class LocationComponent implements OnDestroy {
   ngOnDestroy() {
     this.destroyer$.next(true);
     this.destroyer$.complete();
+    this.renderer.removeClass(document.body, 'location-details');
   }
 
   isPricing(wave: any) {
@@ -166,7 +180,8 @@ export class LocationComponent implements OnDestroy {
       },
       productionMethod: {
         name: prodMethodData?.waveProductionMethodName,
-        path: prodMethodData?.waveProductionMethodKey
+        path: prodMethodData?.waveProductionMethodKey,
+        type: prodMethodData?.waveProductionMethodType,
       },
       manufacturer: {
         name: manufacturerData?.manufacturerName,
@@ -253,8 +268,54 @@ export class LocationComponent implements OnDestroy {
     this.slickModal.slickNext();
   }
 
+  nextMobile() {
+    this.slickModalMobile.slickNext();
+  }
+
   prev() {
-    console.log(this.slickModal)
     this.slickModal.slickPrev();
   }
+
+  prevMobile() {
+    this.slickModalMobile.slickPrev();
+  }
+
+  onGetProduct(ls: any) {
+    return this.supportedCollections[0].find((w: any) => w.waveSystemProductKey === ls.waveSpecificationProduct)
+  }
+
+  onGetProductsLength() {
+    const productsKeys = [...new Set(this.locationSpecifications.map(ls => ls.waveSpecificationProduct))];
+    const products: IWaveSystemProduct[] = this.supportedCollections[0].filter((w: any) => productsKeys.includes(w.waveSystemProductKey))
+    return products.length
+  }
+
+  getSpecificationByProduct(product: IWaveSystemProduct) {
+    return this.locationSpecifications.find(s => s.waveSpecificationProduct === product.waveSystemProductKey) || null;
+  }
+
+  getSpecificationByProductLength(product: IWaveSystemProduct) {
+    return this.locationSpecifications.filter(s => s.waveSpecificationProduct === product.waveSystemProductKey).length || 0;
+  }
+
+  concatSearch(s: string, n:string) {
+    return s.trim() + '+' + n.replace(/ /g, '+')
+  }
+
+  isTrue(val: any) {
+    return val === 0 || (val !== null && val !== undefined && val !== '')
+  }
+
+  scrollTo(element: any): void {
+    if(element === 'products') {
+      this.isInfoExpanded = false;
+      this.isProductsExpanded = true;
+    }
+    if(element === 'waves') {
+      this.isInfoExpanded = false;
+      this.isNearbyExpanded = true;
+    }
+    (document.getElementById(element) as HTMLElement).scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+
 }

@@ -36,7 +36,7 @@
             <li *ngFor="let i of nav"
                 [class.active]="activeFilterCheck(i.id)"
                 (click)="onFilter(i)">
-              <div class="picture">
+              <div class="picture" [id]="i.id">
                 <img src="assets/images/{{i.icon}}.png" alt="shield">
                 <span>{{i.title}}</span>
               </div>
@@ -62,11 +62,22 @@
               <img *ngIf="sortColumn === 'price'"
                    class="rot" [class.rotated]="sortDirection !== 1" src="../../../assets/icons/sort.svg" alt="">
             </th>
-            <th (click)="sortTable('ppms')" class="text-right"
-                [popover]="calculationInfo"
-                triggers="mouseenter:mouseleave"
-            >
-              Price Per Minute Surfing
+            <th (click)="sortTable('ppms')" class="text-right">
+              <span title="Price Per Minute Surfing">
+                Price Per Minute Surfing
+                <i style="display: inline-block;
+                          font-style: normal;
+                          background: #008bb2;
+                          color: #fff;
+                          width: 16px;
+                          height: 16px;
+                          text-align: center;
+                          line-height: 16px;
+                          border-radius: 10px;"
+                          [popover]="calculationInfo"
+                          triggers="mouseenter:mouseleave"
+                          class="d-none-mobile">i</i>
+              </span>
               <img *ngIf="sortColumn === 'ppms'"
                    class="rot" [class.rotated]="sortDirection !== 1" src="../../../assets/icons/sort.svg" alt="">
             </th>
@@ -85,9 +96,11 @@
   </div>
 
   <div *ngIf="!filteredLocations.length" class="container nodata">
-      <h3 class="nodata__title">No available wavelocations on Your request</h3>
-      <button class="nodata__button" (click)="onFilter(nav[0])">Reset filter</button>
+    <img src="../../../assets/icons/no-results.svg" class="nodata__img" alt="">
+    <h3 class="nodata__title">No available wavelocations on Your request</h3>
+    <button class="nodata__button" (click)="onFilter(nav[0])">Reset filter</button>
   </div>
+
 </div>
 
 <ng-template #calculationInfo >

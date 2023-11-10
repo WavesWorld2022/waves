@@ -90,8 +90,15 @@
   }
 
   .page__content {
+    margin: 60px 0 0;
+    h3{
+      font-size: 15px;
+      margin: -30px 0px 20px !important;
+      text-align: right;
+    }
     ol {
       padding-left: 0 !important;
     }
   }
+
 }

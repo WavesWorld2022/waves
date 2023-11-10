@@ -28,16 +28,17 @@ export class CompareComponent implements OnInit {
     {id: 'f-10', title: '<8',  icon: 'shield-0', query: (w: any) => w.minimum_age < 8}
   ];*/
   nav = [
-    {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: any) => w},
-    {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: any) => w},
-    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: any) => w.waveSpecificationWaveSystem !== 'standing-wave' && w.waveSpecificationWaveSystem !== 'river'},
-    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: any) => w.waveSpecificationWaveSystem === 'standing-wave'},
-    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: any) => w.waveSpecificationWaveSystem === 'river'},
-    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: any) => w.waveSpecificationWaveSystem !== 'river'},
-    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: any) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
-    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: any) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
-    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: any) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
-    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: any) => w.waveSpecificationMinimumSurferAge < 8}
+    {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: IWaveSpecification) => w},
+    {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: IWaveSpecification) => w},
+    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem !== 'standing-wave' && w.waveSpecificationWaveSystem !== 'river'},
+    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'standing-wave'},
+    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'river'},
+    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationIndoor},
+    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: IWaveSpecification) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
+    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationMinimumSurferAge && w.waveSpecificationMinimumSurferAge <= 8},
+    {id: 'f-11', title: '♕',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationAffiliate},
   ];
   waveLocations: IWaveLocation[] = [];
   specifications: IWaveSpecification[] = [];
@@ -72,6 +73,11 @@ export class CompareComponent implements OnInit {
 
       this.fireService.onGetCollection('locations');
       this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveLocation[]) => {
+        resp.filter(s => s.waveLocationAffiliate).forEach(s => {
+          this.specifications.filter(sp => sp.waveSpecificationLocation === s.waveLocationKey).forEach(z => {
+            z.waveSpecificationAffiliate = true;
+          })
+        })
         resp.forEach((l: any) => {
           l.price = this.getPrice(l.waveLocationKey) > 0 ? this.getPrice(l.waveLocationKey) : '-';
           l.ppms = this.getPPMSonBoard(l);

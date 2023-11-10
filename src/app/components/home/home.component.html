@@ -25,7 +25,13 @@
           </ng-template>
         </div>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button (click)="toggleMenu()" class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
@@ -57,7 +63,7 @@
             <li *ngFor="let i of nav"
                 [class.active]="activeFilterCheck(i.id)"
                 (click)="onFilter(i)">
-              <div class="picture">
+              <div class="picture" [id]="i.id">
                 <img src="assets/images/{{i.icon}}.png" alt="shield">
                 <span>{{i.title}}</span>
               </div>
