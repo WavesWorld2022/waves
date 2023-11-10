@@ -69,10 +69,11 @@ export class CompareComponent implements OnInit {
     this.fireService.collectionSecondData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveSpecification[]) => {
       this.specifications = resp;
 
-      this.lastUpdated = this.getLastUpdated(this.specifications);
-
       this.fireService.onGetCollection('locations');
       this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveLocation[]) => {
+
+        this.lastUpdated = this.getLastUpdated(this.specifications, resp);
+
         resp.filter(s => s.waveLocationAffiliate).forEach(s => {
           this.specifications.filter(sp => sp.waveSpecificationLocation === s.waveLocationKey).forEach(z => {
             z.waveSpecificationAffiliate = true;
@@ -103,12 +104,14 @@ export class CompareComponent implements OnInit {
     this.destroyer$.complete();
   }
 
-  getLastUpdated(specifications: IWaveSpecification[]) {
+  getLastUpdated(specifications: IWaveSpecification[],  locations: IWaveLocation[]) {
     let lastUpdatedDate = specifications[0].waveSpecificationLastUpdated;
-    specifications.forEach((spec: IWaveSpecification) => {
+    const specificationDates = specifications.map(item => item.waveSpecificationLastUpdated).filter(item => !!item);
+    const locationDates = locations.map(item => item.waveLocationLastUpdated).filter(item => !!item);
+    specificationDates.concat(locationDates).forEach((date: any) => {
       // @ts-ignore
-      if (new Date(spec.waveSpecificationLastUpdated) > new Date(lastUpdatedDate)) {
-        lastUpdatedDate = spec.waveSpecificationLastUpdated;
+      if (new Date(date) > new Date(lastUpdatedDate)) {
+        lastUpdatedDate = date;
       }
     });
 

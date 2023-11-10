@@ -111,7 +111,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.fireService.collectionData$.pipe(take(1)).subscribe((resp: IWaveLocation[]) => {
         this.data.length = 0;
         this.data = resp.filter((location: IWaveLocation) => location && location.waveLocationName);
-        this.lastUpdated = this.getLastUpdated(this.specifications);
+        this.lastUpdated = this.getLastUpdated(this.specifications, this.data);
         this.data.filter(s => s.waveLocationAffiliate).forEach(s => {
           this.specifications.filter(sp => sp.waveSpecificationLocation === s.waveLocationKey).forEach(z => {
             z.waveSpecificationAffiliate = true;
@@ -197,12 +197,14 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isFiltersShown = !this.isFiltersShown;
   }
 
-  getLastUpdated(specifications: IWaveSpecification[]) {
+  getLastUpdated(specifications: IWaveSpecification[], locations: IWaveLocation[]) {
     let lastUpdatedDate = specifications[0].waveSpecificationLastUpdated;
-    specifications.forEach((spec: IWaveSpecification) => {
+    const specificationDates = specifications.map(item => item.waveSpecificationLastUpdated).filter(item => !!item);
+    const locationDates = locations.map(item => item.waveLocationLastUpdated).filter(item => !!item);
+    specificationDates.concat(locationDates).forEach((date: any) => {
       // @ts-ignore
-      if (new Date(spec.waveSpecificationLastUpdated) > new Date(lastUpdatedDate)) {
-        lastUpdatedDate = spec.waveSpecificationLastUpdated;
+      if (new Date(date) > new Date(lastUpdatedDate)) {
+        lastUpdatedDate = date;
       }
     });
 

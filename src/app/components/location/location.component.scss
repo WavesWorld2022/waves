@@ -40,6 +40,11 @@
   padding: 70px 0 30px;
   display: flex;
   gap: 1rem;
+  .get-direction {
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 16px;
+  }
   ::ng-deep{
     a {
       font-weight: 600;
@@ -109,6 +114,23 @@
           }
         }
       }
+    }
+  }
+  &_waves-light {
+    background: none;
+    &:before{
+      content: "";
+      background: rgb(0, 77, 101);
+      position: absolute;
+      //z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .section__header {
+      background: rgb(0 57 75);
     }
   }
   &__title {

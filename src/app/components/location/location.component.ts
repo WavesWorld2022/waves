@@ -24,6 +24,7 @@ import {
 export class LocationComponent implements OnDestroy {
   @ViewChild(MapInfoWindow, { static: false }) info!: MapInfoWindow;
   @ViewChild('slickModal', {static: false}) slickModal!: SlickCarouselComponent;
+  @ViewChild('slickModalProducts', {static: false}) slickModalProducts!: SlickCarouselComponent;
   @ViewChild('slickModalMobile', {static: false}) slickModalMobile!: SlickCarouselComponent;
   @ViewChild('dropdownToggle') dropdownToggle!: ElementRef;
   location!: IWaveLocation;
@@ -264,20 +265,25 @@ export class LocationComponent implements OnDestroy {
     this.dropdownToggle.nativeElement.classList.toggle("active")
   }
 
-  next() {
-    this.slickModal.slickNext();
+  next(c?: string) {
+    c && c === 'prod' ? this.slickModalProducts.slickNext() : this.slickModal.slickNext();
+
   }
 
   nextMobile() {
     this.slickModalMobile.slickNext();
   }
 
-  prev() {
-    this.slickModal.slickPrev();
+  prev(c?: string) {
+    c && c === 'prod' ? this.slickModalProducts.slickPrev() : this.slickModal.slickPrev();
   }
 
   prevMobile() {
     this.slickModalMobile.slickPrev();
+  }
+
+  dateToCorrectFormat(date: string): string {
+    return date.split(' ')[0].split('-').reverse().join('.');
   }
 
   onGetProduct(ls: any) {
