@@ -218,12 +218,13 @@
                           <span>Indoor: </span>
                           {{locationSpecifications[currentSpecificationIndex].waveSpecificationIndoor ? 'Yes' : 'No'}}
                         </li>
-                        <li class="item"
-                             *ngIf="onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductName">
+                        <li class="item" style="cursor: pointer"
+                             *ngIf="onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductName"
+                             [routerLink]="'../../products/' + onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductKey">
                           <span>Wave Product Name: </span>
                           <span class="link">{{onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductName}}</span>
                         </li>
-                        <li class="item"
+                        <li class="item" style="cursor: pointer"
                              *ngIf="specificationInfo && specificationInfo.productionMethod.name"
                              [routerLink]="'../../technologies/' + specificationInfo.productionMethod.path">
                           <span>Production Method: </span>
@@ -234,7 +235,7 @@
                           <span>Production Method Type: </span>
                           <span>{{specificationInfo.productionMethod.type}}</span>
                         </li>
-                        <li class="item"
+                        <li class="item" style="cursor: pointer"
                              *ngIf="specificationInfo && specificationInfo.manufacturer.name"
                              [routerLink]="'../../manufactures/' + specificationInfo.manufacturer.path">
                           <span>Manufacturer: </span>
