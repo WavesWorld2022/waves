@@ -102,3 +102,16 @@
   }
 
 }
+#f-11:before {
+  content: "";
+  display: inline-block;
+  background: #6aa511;
+  font-size: 0 !important;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  border: solid 1px #fff;
+  position: absolute;
+  bottom: 0px;
+  right: 2px;
+}

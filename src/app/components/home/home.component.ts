@@ -24,18 +24,19 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   //activeFilter = 'f-1';
 
   nav = [
-    {id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: IWaveSpecification) => w},
-    {id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: IWaveSpecification) => w},
-    {id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem !== 'standing-wave' && w.waveSpecificationWaveSystem !== 'river'},
-    {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'standing-wave'},
-    {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'river'},
-    {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationIndoor},
-    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: IWaveSpecification) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
-    {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
-    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
-    {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationMinimumSurferAge && w.waveSpecificationMinimumSurferAge <= 8},
-    {id: 'f-11', title: '♕',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationAffiliate},
+    {titleH: "World Map", id: 'f-1',  title: 'All', icon: 'shield-0', query: (w: IWaveSpecification) => w},
+    {titleH: "Near-me", id: 'f-2',  title: '',  icon: 'shield-1-2', query: (w: IWaveSpecification) => w},
+    {titleH: "Rolling", id: 'f-3',  title: '~',   icon: 'shield-2', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem !== 'standing-wave' && w.waveSpecificationWaveSystem !== 'river'},
+    {titleH: "Standing", id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'standing-wave'},
+    {titleH: "River", id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: IWaveSpecification) => w.waveSpecificationWaveSystem === 'river'},
+    {titleH: "Indoor", id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationIndoor},
+    {titleH: "Open", id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: IWaveSpecification) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
+    {titleH: "Planned", id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {titleH: "Closed", id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {titleH: "Kids", id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationMinimumSurferAge && w.waveSpecificationMinimumSurferAge <= 8},
+    {titleH: "Sustainable booking", id: 'f-11', title: '♕',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationAffiliate},
   ];
+
   @ViewChild('bookingModal', {static: true}) bookingModal!: TemplateRef<any>
   // @ts-ignore
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap

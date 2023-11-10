@@ -63,7 +63,7 @@
             <li *ngFor="let i of nav"
                 [class.active]="activeFilterCheck(i.id)"
                 (click)="onFilter(i)">
-              <div class="picture" [id]="i.id">
+              <div class="picture" [id]="i.id" [title]="i.titleH">
                 <img src="assets/images/{{i.icon}}.png" alt="shield">
                 <span>{{i.title}}</span>
               </div>
