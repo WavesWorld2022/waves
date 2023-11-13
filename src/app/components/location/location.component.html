@@ -107,9 +107,9 @@
                           <strong>Our Testimonial:</strong> {{wave.waveSpecificationOurTestimonial}}
                         </li>
                         <li class="item"
-                             *ngIf="onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductLastUpdated">
+                             *ngIf="locationSpecifications[currentSpecificationIndex].waveSpecificationLastUpdated">
                           <strong>Last Updated At:</strong>
-                          {{dateToCorrectFormat(onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductLastUpdated)}}
+                          {{locationSpecifications[currentSpecificationIndex].waveSpecificationLastUpdated | date: 'dd.MM.yyyy'}}
                         </li>
                       </ul>
 
@@ -332,7 +332,7 @@
                       <p class="marker__title" style="margin-bottom: 5px">
                         <a [href]="'https://www.google.com/search?q=' + concatSearch(infoContent.search, infoContent.title)" target="_blank">{{infoContent.title}}</a>
                       </p>
-                      <p class="marker__label" style="margin-bottom: 15px">{{infoContent.address}}</p>
+                      <p class="marker__label" style="margin-bottom: 15px">{{replaceQuote(infoContent.address)}}</p>
                       <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
                     </div>
                   </map-info-window>
@@ -644,9 +644,9 @@
                 <span>Max customers per wave:</span> {{wave.waveSpecificationMaxCustomersPerWave}}
               </div>
               <div class="wave__item"
-                   *ngIf="onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductLastUpdated">
+                   *ngIf="locationSpecifications[currentSpecificationIndex].waveSpecificationLastUpdated">
                 <span>Last Updated At:</span>
-                {{dateToCorrectFormat(onGetProduct(locationSpecifications[currentSpecificationIndex]).waveSystemProductLastUpdated)}}
+                {{locationSpecifications[currentSpecificationIndex].waveSpecificationLastUpdated | date: 'dd.MM.yyyy'}}
               </div>
 
               <!--<div class="wave__item" *ngIf="wave.waveSpecificationDifficulty">
@@ -823,7 +823,7 @@
               <p class="marker__title" style="margin-bottom: 5px">
                 <a [href]="'https://www.google.com/search?q=' + concatSearch(infoContent.search, infoContent.title)" target="_blank">{{infoContent.title}}</a>
               </p>
-              <p class="marker__label" style="margin-bottom: 15px">{{infoContent.address}}</p>
+              <p class="marker__label" style="margin-bottom: 15px">{{replaceQuote(infoContent.address)}}</p>
               <a [href]="infoContent.direction" class="marker__action" target="_blank">GET DIRECTIONS</a>
             </div>
           </map-info-window>
