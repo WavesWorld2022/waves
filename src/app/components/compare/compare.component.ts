@@ -34,9 +34,9 @@ export class CompareComponent implements OnInit {
     {id: 'f-4',  title: 'S',   icon: 'shield-3', query: (w: IWaveSpecification) => this.onGetProductionMethodType(w.waveSpecificationProduct) === 'Standing'},
     {id: 'f-5',  title: 'R',   icon: 'shield-4', query: (w: IWaveSpecification) => this.onGetProductionMethodType(w.waveSpecificationProduct) === 'River'},
     {id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationIndoor},
-    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: IWaveSpecification) => w.waveSpecificationStatus !== 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
+    {id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: IWaveSpecification) => !w.waveSpecificationStatus.includes('closed') && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
     {id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
-    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'permanently closed' && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationStatus.includes('closed') && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
     {id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationMinimumSurferAge && w.waveSpecificationMinimumSurferAge <= 8},
     {id: 'f-11', title: '♕',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationAffiliate},
   ];
