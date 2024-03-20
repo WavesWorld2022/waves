@@ -1,0 +1,28 @@
+.search{
+  margin: 0;
+  position: relative;
+  min-width: 225px;
+
+  img{
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 20px;
+  }
+  input{
+    padding-left: 45px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: solid 1px #008bb2;
+    color: #008bb2;
+    background: #f6f6f6;
+  }
+}
+
+@media all and (max-width: 768px){
+  .search {
+    width: 100%;
+    margin-left: 0;
+  }
+}

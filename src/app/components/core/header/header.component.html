@@ -21,6 +21,9 @@
               <a class="nav-link" [routerLink]="['/contact']" [routerLinkActive]="'active'">Contact</a>
             </li>
           </ul>
+          <ng-container *ngIf="isSearchShown()">
+            <app-search-input></app-search-input>
+          </ng-container>
         </div>
       </nav>
     </div>

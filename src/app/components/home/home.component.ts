@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Inject, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, HostListener, Inject, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {GoogleMap, MapInfoWindow} from "@angular/google-maps";
 import {GoogleMapConfig} from "../../../assets/json/google-map.config";
 import {Router} from "@angular/router";
@@ -17,6 +17,12 @@ import {products} from "../../../assets/json/products";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+  @HostListener('contextmenu', ['$event'])
+  onRightClick(event: Event) {
+    event.preventDefault();
+    return false;
+  }
+
   modalRef?: BsModalRef;
   data: IWaveLocation[] = [];
   selected = '';
@@ -33,7 +39,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     {titleH: "Indoor", id: 'f-6',  title: 'TT',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationIndoor},
     {titleH: "Open", id: 'f-7',  title: '[-',  icon: 'shield-5', query: (w: IWaveSpecification) => !w.waveSpecificationStatus.includes('closed') && this.isOpenedLocation(w.waveSpecificationCommissioningDate) || (w.waveSpecificationStatus === 'open only summer season' && this.isSummer)},
     {titleH: "Planned", id: 'f-8',  title: '[',   icon: 'shield-6', query: (w: IWaveSpecification) => w.waveSpecificationStatus === 'planned' || !this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
-    {titleH: "Closed", id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationStatus.includes('closed') && this.isOpenedLocation(w.waveSpecificationCommissioningDate)},
+    {titleH: "Closed", id: 'f-9',  title: '[-]', icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationStatus.includes('closed')},
     {titleH: "Kids", id: 'f-10', title: 'K',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationMinimumSurferAge && w.waveSpecificationMinimumSurferAge <= 8},
     {titleH: "Sustainable booking", id: 'f-11', title: '♕',  icon: 'shield-0', query: (w: IWaveSpecification) => w.waveSpecificationAffiliate},
   ];
@@ -366,7 +372,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   goToLocation(event: any) {
-    console.log(1)
     this.router.navigate([`/location/${event.item.waveLocationKey}`])
   }
 
@@ -441,4 +446,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const toFormat = date.slice(0,4) + '-' + date.slice(4, 6) + '-' + date.slice(6)
     return new Date(toFormat) < new Date();
   }
+
+  protected readonly encodeURI = encodeURI;
 }

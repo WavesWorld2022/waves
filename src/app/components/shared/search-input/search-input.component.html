@@ -1,0 +1,16 @@
+<div class="search">
+  <img src="../../../../assets/icons/search.svg" alt="">
+  <input [typeahead]="data"
+         [(ngModel)]="selected"
+         (typeaheadOnSelect)="goToLocation($event)"
+         [typeaheadScrollable]="true"
+         [typeaheadOptionsInScrollableView]="5"
+         typeaheadOptionField="waveLocationName"
+         placeholder="Search..."
+         [typeaheadItemTemplate]="customItemTemplate"
+         class="form-control">
+
+  <ng-template #customItemTemplate let-model="item" let-index="index">
+    <h5>{{model.waveLocationName}}</h5>
+  </ng-template>
+</div>

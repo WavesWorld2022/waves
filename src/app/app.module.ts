@@ -37,6 +37,7 @@ import {TermsOfUseComponent} from './components/terms-of-use/terms-of-use.compon
 import {PrivacyPolicyComponent} from './components/privacy-policy/privacy-policy.component';
 import {FaqComponent} from './components/faq/faq.component';
 import {TooltipModule} from "ngx-bootstrap/tooltip";
+import { SearchInputComponent } from './components/shared/search-input/search-input.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {TooltipModule} from "ngx-bootstrap/tooltip";
     StarsComponent,
     TermsOfUseComponent,
     PrivacyPolicyComponent,
-    FaqComponent
+    FaqComponent,
+    SearchInputComponent
   ],
   imports: [
     BrowserModule,

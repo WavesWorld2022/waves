@@ -94,6 +94,8 @@
       align-items: center;
       justify-content: center;
 
+      pointer-events: none;
+
       span {
         position: absolute;
         font-size: 18px;
@@ -294,6 +296,13 @@
       strong {
         cursor: pointer;
         color: #008bb2;
+        background-color: #ffd334;
+        border: 2px solid #008bb2;
+        border-radius: 7px;
+        padding: 8px 16px;
+        margin: 16px auto;
+        display: block;
+        width: fit-content;
       }
     }
     &__close {
@@ -319,7 +328,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        top: 60px;
+        top: 85px;
         border-top: solid 1px #008bb3;
       }
       padding: 0;
@@ -386,9 +395,14 @@
             margin: 12px 0;
           }
         }
+        .navbar-collapse.show {
+          top: 60px;
+          z-index: 100000;
+        }
       }
     }
   }
+
 }
 
 @media all and (max-width: 768px){

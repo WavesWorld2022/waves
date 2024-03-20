@@ -82,7 +82,12 @@ export class LocationComponent implements OnDestroy {
     ).subscribe(() => {
       this.fireService.onGetCollection('locations');
       this.fireService.collectionData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveLocation[]) => {
-        console.log(resp)
+        //console.log(resp)
+        resp.forEach(item => {
+          if (item.waveLocationStokeCertifiedStatus) {
+            console.log(item.waveLocationKey, item.waveLocationStokeCertifiedStatus);
+          }
+        })
         this.location = resp.find((l:any) => l && l.waveLocationKey === this.activatedRoute.snapshot.params['id'])!;
         if(!this.location) {
           this.router.navigate(['../../home'])
@@ -113,8 +118,6 @@ export class LocationComponent implements OnDestroy {
                   ? this.location.waveLocationVisitAddress.lat + ',' + this.location.waveLocationVisitAddress.lng
                   : '';
 
-              console.log(spot)
-
               let marker = {
                 position: {
                   lat: +spot.nearbyNaturalSpotAddress.lat,
@@ -131,13 +134,11 @@ export class LocationComponent implements OnDestroy {
 
           this.fireService.onGetThirdCollection('specifications');
           this.fireService.collectionThirdData$.pipe(takeUntil(this.destroyer$)).subscribe((resp: IWaveSpecification[]) => {
-            console.log(resp)
             this.locationSpecifications = resp
                 .filter(spec => spec.waveSpecificationLocation === this.activatedRoute.snapshot.params['id']);
             this.wave = this.locationSpecifications[0];
             this.selectedWave = this.locationSpecifications[0].waveSpecificationName;
 
-            console.log(this.locationSpecifications)
             this.specificationInfo = this.getSpecificationInfo(this.locationSpecifications[this.currentSpecificationIndex].waveSpecificationProduct!);
             this.calculateWaterTemp(this.coords.lat, this.coords.lng);
           })
@@ -219,7 +220,7 @@ export class LocationComponent implements OnDestroy {
 
       this.locationSpecifications.forEach((wave: any, i: number) => {
         if (!wave.waveSpecificationIndoor) {
-          this.locationSpecifications[i].waveSpecificationWaterTemp = actualWaterTemp;
+          this.locationSpecifications[i].waveSpecificationWaterTemp = 1;
 
           if (actualWaterTemp <= 3) {
             this.locationSpecifications[i].waveSpecificationRecommendedWetSuite = ['6/5mm to 7mm thickness wetsuit'];

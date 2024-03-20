@@ -11,7 +11,7 @@
         background-color: #fff;
         padding: 0;
       }
-      .navbar-collapse.show {
+      .navbar-collapse {
         z-index: 100000;
         background-color: #fff;
         position: fixed;
@@ -20,6 +20,7 @@
         bottom: 0;
         top: 60px;
         border-top: solid 1px #008bb3;
+        transition-duration: 0s;
 
         .navbar-nav {
           height: 100%;
@@ -32,6 +33,10 @@
               white-space: nowrap;
             }
           }
+        }
+
+        &.show {
+          display: block;
         }
       }
       &-brand {

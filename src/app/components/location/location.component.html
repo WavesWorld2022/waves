@@ -55,15 +55,6 @@
                           <strong>Production Method Type: </strong>
                           <span>{{specificationInfo.productionMethod.type}}</span>
                         </li>
-                        <li class="item" *ngIf="+wave.waveSpecificationMinimumSurferAge">
-                          <strong>Minimum Surfer Age:</strong> {{wave.waveSpecificationMinimumSurferAge}} years
-                        </li>
-                        <li class="item" *ngIf="isTrue(wave.waveSpecificationMinimumSurferWeight)">
-                          <strong>Minimum Surfer Weight:</strong> {{wave.waveSpecificationMinimumSurferWeight}}
-                        </li>
-                        <li class="item" *ngIf="+wave.waveSpecificationMinimumSurferLength">
-                          <strong>Minimum Surfer Length:</strong> {{wave.waveSpecificationMinimumSurferLength}}
-                        </li>
                         <li class="item" *ngIf="wave.waveSpecificationWaveShape">
                           <strong>Wave shape:</strong> {{wave.waveSpecificationWaveShape}}
                         </li>
@@ -77,10 +68,10 @@
                           <strong>Wave difficulty:</strong> {{wave.waveSpecificationDifficulty}}
                         </li>
                         <li class="item" *ngIf="wave.waveSpecificationStandingWaveWidth">
-                          <strong>Standing Wave Width:</strong> {{wave.waveSpecificationStandingWaveWidth}}
+                          <strong>Standing Wave Width:</strong> {{wave.waveSpecificationStandingWaveWidth}} m
                         </li>
                         <li class="item" *ngIf="wave.waveSpecificationStandingWavePump">
-                          <strong>Standing Wave Pump:</strong> {{wave.waveSpecificationStandingWaveWidth}}
+                          <strong>Standing Wave Pump:</strong> {{wave.waveSpecificationStandingWavePump}}
                         </li>
                         <li class="item" *ngIf="wave.waveSpecificationRollingWaveSpeed">
                           <strong>Rolling Wave Speed:</strong> {{wave.waveSpecificationRollingWaveSpeed}}
@@ -105,6 +96,9 @@
                         </li>
                         <li class="item" *ngIf="+wave.waveSpecificationOurTestimonial">
                           <strong>Our Testimonial:</strong> {{wave.waveSpecificationOurTestimonial}}
+                        </li>
+                        <li class="item" *ngIf="locationSpecifications[currentSpecificationIndex].waveSpecificationAICompatibleCamera">
+                          <strong>Video System Support (AI):</strong> {{locationSpecifications[currentSpecificationIndex].waveSpecificationAICompatibleCamera}}
                         </li>
                         <li class="item"
                              *ngIf="locationSpecifications[currentSpecificationIndex].waveSpecificationLastUpdated">
@@ -142,6 +136,23 @@
                           </li>
                           <li class="item" *ngIf="+wave.waveSpecificationPhotoPriceSession">
                             <strong>Session photo price / hr:</strong> € {{wave.waveSpecificationPhotoPriceSession}}
+                          </li>
+                        </ul>
+                      </ng-container>
+
+                      <ng-container *ngIf="+wave.waveSpecificationMinimumSurferAge || isTrue(wave.waveSpecificationMinimumSurferWeight) || +wave.waveSpecificationMinimumSurferLength">
+                        <h3 class="section__subtitle" style="margin-bottom: -2rem">
+                          Kids
+                        </h3>
+                        <ul class="section__list section__list-single">
+                          <li *ngIf="+wave.waveSpecificationMinimumSurferAge" class="item">
+                            <strong>Minimum Surfer Age:</strong> {{wave.waveSpecificationMinimumSurferAge}} years
+                          </li>
+                          <li *ngIf="isTrue(wave.waveSpecificationMinimumSurferWeight)" class="item">
+                            <strong>Minimum Surfer Weight:</strong> {{wave.waveSpecificationMinimumSurferWeight}} kg
+                          </li>
+                          <li *ngIf="+wave.waveSpecificationMinimumSurferLength" class="item">
+                            <strong>Minimum Surfer Length:</strong> {{wave.waveSpecificationMinimumSurferLength}} cm
                           </li>
                         </ul>
                       </ng-container>
@@ -194,7 +205,7 @@
                         <li class="item" *ngIf="+wave.waveSpecificationWaterTemp">
                           <img src="assets/icons/thermometer.png" alt="">
                           <div>
-                            <strong>Water temperature</strong> <br>{{wave.waveSpecificationWaterTemp}}&#8451;
+                            <strong>Water temperature</strong> <br>{{wave.waveSpecificationWaterTemp < 3 ? '< 3' : wave.waveSpecificationWaterTemp}}&#8451;
                           </div>
                         </li>
                         <li class="item" *ngIf="wave.waveSpecificationWaterType">
@@ -352,7 +363,10 @@
                 <div class="d-flex justify-content-between align-items-end">
                   <span>Nearby Natural Waves:</span> {{nearbyNaturalSpots?.length}}
                 </div>
-                <div class="information__item information__item_green" *ngIf="location.waveLocationAffiliate">
+                <div *ngIf="location.waveLocationStokeCertifiedStatus" class="d-flex justify-content-between align-items-end">
+                  <span>Stoke Certified:</span> {{location.waveLocationStokeCertifiedStatus}}
+                </div>
+                <div class="green" *ngIf="location.waveLocationAffiliate">
                   <span>Sustainable Booking</span>
                 </div>
                 <a class="get-direction"
@@ -427,6 +441,9 @@
         </div>
         <div class="information__item" (click)="scrollTo('waves')">
           <span>Nearby Natural Waves:</span> {{nearbyNaturalSpots?.length}}
+        </div>
+        <div *ngIf="location.waveLocationStokeCertifiedStatus" class="information__item">
+          <span>Stoke Certified:</span> {{location.waveLocationStokeCertifiedStatus}}
         </div>
         <div class="information__item information__item_green" *ngIf="location.waveLocationAffiliate">
           <span>Sustainable Booking</span>
@@ -617,10 +634,10 @@
                 <span>Wave direction:</span> {{wave.waveSpecificationWaveDirection}}
               </div>
               <div class="wave__item" *ngIf="wave.waveSpecificationStandingWaveWidth">
-                <span>Standing Wave Width:</span> {{wave.waveSpecificationStandingWaveWidth}}
+                <span>Standing Wave Width:</span> {{wave.waveSpecificationStandingWaveWidth}} m
               </div>
               <div class="wave__item" *ngIf="wave.waveSpecificationStandingWavePump">
-                <span>Standing Wave Pump:</span> {{wave.waveSpecificationStandingWaveWidth}}
+                <span>Standing Wave Pump:</span> {{wave.waveSpecificationStandingWavePump}}
               </div>
               <div class="wave__item" *ngIf="wave.waveSpecificationRollingWaveSpeed">
                 <span>Rolling Wave Speed:</span> {{wave.waveSpecificationRollingWaveSpeed}}
@@ -642,6 +659,9 @@
               </div>
               <div class="wave__item" *ngIf="+wave.waveSpecificationMaxCustomersPerWave">
                 <span>Max customers per wave:</span> {{wave.waveSpecificationMaxCustomersPerWave}}
+              </div>
+              <div class="wave__item" *ngIf="wave.waveSpecificationAICompatibleCamera">
+                <span>Video System Support (AI):</span> {{wave.waveSpecificationAICompatibleCamera}}
               </div>
               <div class="wave__item"
                    *ngIf="locationSpecifications[currentSpecificationIndex].waveSpecificationLastUpdated">
@@ -684,10 +704,10 @@
                   <span>Minimum Surfer Age:</span> {{wave.waveSpecificationMinimumSurferAge}} years
                 </div>
                 <div class="wave__item" *ngIf="isTrue(wave.waveSpecificationMinimumSurferWeight)">
-                  <span>Minimum Surfer Weight:</span> {{wave.waveSpecificationMinimumSurferWeight}}
+                  <span>Minimum Surfer Weight:</span> {{wave.waveSpecificationMinimumSurferWeight}} kg
                 </div>
                 <div class="wave__item" *ngIf="+wave.waveSpecificationMinimumSurferLength">
-                  <span>Minimum Surfer Length:</span> {{wave.waveSpecificationMinimumSurferLength}}
+                  <span>Minimum Surfer Length:</span> {{wave.waveSpecificationMinimumSurferLength}} cm
                 </div>
               </ng-container>
 
@@ -727,7 +747,7 @@
               <div class="wave__item"
                    *ngIf="+wave.waveSpecificationWaterTemp">
                 <span>Water temperature:</span>
-                {{wave.waveSpecificationWaterTemp}}&#8451;
+                {{wave.waveSpecificationWaterTemp < 3 ? '< 3' : wave.waveSpecificationWaterTemp}}&#8451;
               </div>
               <div class="wave__item"
                    *ngIf="wave.waveSpecificationWaterType">
